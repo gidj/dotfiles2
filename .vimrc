@@ -70,6 +70,8 @@ endif
 "This makes the space bar toggle folding on and off.
 noremap <Space> za 
 
+"----------------- YouCompleteMe --------------
+"let g:ycm_confirm_extra_conf = 0
 "This makes YouCompleteMe and UltiSnips work together well
 "let g:UltiSnipsExpandTrigger="<c-j>"
 "let g:UltiSnipsJumpForwardTrigger="<c-j>"
