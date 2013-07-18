@@ -1,4 +1,5 @@
 devops
 ======
 
-Dotfiles and scripts to help keep development environments consistent across machines.
+These are my all of my dotfiles and configuration directories that I share across machines. 
+So far only my vim folder (with vimrc) and tmux.conf are included.
