@@ -1,0 +1,103 @@
+"-- Vundle --------------------------------------------------------------
+set nocompatible
+filetype off  " Required for Vundle to operate correctly
+set encoding=utf-8
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+"let Vundle manage Vundle
+"required! 
+Bundle 'gmarik/vundle'
+
+"My Bundles here:
+"original repos on github
+
+Bundle 'tomasr/molokai'
+Bundle 'tpope/vim-fugitive'
+Bundle 'SirVer/ultisnips'
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'scrooloose/syntastic'
+Bundle 'derekwyatt/vim-scala'
+Bundle 'jpalardy/vim-slime'
+Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+
+"-- End Vundle ----------------------------------------------------------
+
+syntax on
+filetype plugin indent on
+
+set backspace=indent,eol,start
+set modeline
+set tabstop=4 expandtab shiftwidth=4 softtabstop=4
+
+" Activate line numbering on the left side of the screen
+set number
+highlight LineNr ctermfg=DarkGrey
+
+" Set the theme, and background. 
+set background=dark
+colorscheme molokai
+
+" Turn on highlighting of active line:
+set cursorline
+
+" Turn on mouse mode, for terminals that can use it:
+set mouse=a
+
+" Use the same symbols as TextMate for tabstops and EOLs
+set listchars=tab:▸\ ,eol:¬
+"Invisible character colors
+highlight NonText guifg=#4a4a59
+highlight SpecialKey guifg=#4a4a59
+
+"-- Powerline -----------------------------------------------------------
+" Removes delay when exiting Insert Mode
+if ! has('gui_running')
+    set ttimeoutlen=10
+    augroup FastEscape
+        autocmd!
+        au InsertEnter * set timeoutlen=0
+        au InsertLeave * set timeoutlen=1000
+    augroup END
+endif
+
+set laststatus=2 " Activate persistent status line:
+set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
+let g:Powerline_symbols = 'fancy'
+
+"-- End Powerline--------------------------------------------------------
+
+"-- Syntastic -----------------------------------------------------------
+let g:syntastic_python_checkers=['pylint']
+let g:syntastic_check_on_open = 1
+"-- End Syntastic -------------------------------------------------------
+
+"-- YouCompleteMe -------------------------------------------------------
+let g:ycm_confirm_extra_conf = 0
+"
+" This makes YouCompleteMe and UltiSnips work together well
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+"-- End YouCompleteMe ---------------------------------------------------
+
+"-- Filetype Options ----------------------------------------------------
+if has("autocmd")
+    "Options for C files
+    autocmd Filetype c setlocal foldmethod=syntax ts=2 sts=2 sw=2 expandtab
+    "Options for C header files
+    autocmd Filetype h setlocal foldmethod=syntax ts=2 sts=2 sw=2 expandtab
+
+endif 
+
+"-- End Filetype Options ------------------------------------------------
+
+"-- Keymapping ----------------------------------------------------------
+" This makes the space bar toggle folding on and off.
+noremap <Space> za 
+"-- End Keymapping ------------------------------------------------------
+
+"-- Vim Slime -----------------------------------------------------------
+let g:slime_target = "tmux"
+"-- End Vim Slime -------------------------------------------------------
