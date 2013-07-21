@@ -15,12 +15,12 @@ Bundle 'gmarik/vundle'
 
 Bundle 'tomasr/molokai'
 Bundle 'tpope/vim-fugitive'
-Bundle 'SirVer/ultisnips'   "Requires python
-Bundle 'Valloric/YouCompleteMe'     "Requires compilation against clang > 3.2
+Bundle 'SirVer/ultisnips' 
+Bundle 'Valloric/YouCompleteMe' 
 Bundle 'scrooloose/syntastic'
 Bundle 'derekwyatt/vim-scala'
 Bundle 'jpalardy/vim-slime'
-Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'} "Requires python
+Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'} 
 
 "-- End Vundle ----------------------------------------------------------
 
