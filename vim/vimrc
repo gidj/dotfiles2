@@ -15,38 +15,36 @@ Bundle 'gmarik/vundle'
 
 Bundle 'tomasr/molokai'
 Bundle 'tpope/vim-fugitive'
-Bundle 'SirVer/ultisnips'
-"Bundle 'Valloric/YouCompleteMe'
+Bundle 'SirVer/ultisnips'   "Requires python
+Bundle 'Valloric/YouCompleteMe'     "Requires compilation against clang > 3.2
 Bundle 'scrooloose/syntastic'
 Bundle 'derekwyatt/vim-scala'
 Bundle 'jpalardy/vim-slime'
-Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'} "Requires python
 
 "-- End Vundle ----------------------------------------------------------
 
 syntax on
 filetype plugin indent on
 
-set backspace=indent,eol,start
+set backspace=indent,eol,start  " Let backspace cross over end of line
 set modeline
-set tabstop=4 expandtab shiftwidth=4 softtabstop=4
+set tabstop=4 expandtab shiftwidth=4 softtabstop=4 " Default to 4-space tabs, written in spaces
 
-" Activate line numbering on the left side of the screen
-set number
+set hlsearch " Hightlight search items
+set incsearch " Hightlight search items as they are searched for
+
+set number " Activate line numbering on the left side of the screen
 highlight LineNr ctermfg=DarkGrey
 
-" Set the theme, and background. 
-set background=dark
-colorscheme molokai
+set background=dark " Set the background
+colorscheme molokai " Set the theme
 
-" Turn on highlighting of active line:
-set cursorline
+set cursorline " Turn on highlighting of active line:
 
-" Turn on mouse mode, for terminals that can use it:
-set mouse=a
+set mouse=a " Turn on mouse mode, for terminals that can use it:
 
-" Use the same symbols as TextMate for tabstops and EOLs
-set listchars=tab:▸\ ,eol:¬
+set listchars=tab:▸\ ,eol:¬  " Use the same symbols as TextMate for tabstops and EOLs
 "Invisible character colors
 highlight NonText guifg=#4a4a59
 highlight SpecialKey guifg=#4a4a59
@@ -65,17 +63,16 @@ endif
 set laststatus=2 " Activate persistent status line:
 set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
 let g:Powerline_symbols = 'fancy'
-
 "-- End Powerline--------------------------------------------------------
 
 "-- Syntastic -----------------------------------------------------------
-let g:syntastic_python_checkers=['pylint']
+let g:syntastic_python_checkers=['pylint'] " Requires pylint
 let g:syntastic_check_on_open = 1
 "-- End Syntastic -------------------------------------------------------
 
 "-- YouCompleteMe -------------------------------------------------------
 let g:ycm_confirm_extra_conf = 0
-"
+
 " This makes YouCompleteMe and UltiSnips work together well
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
@@ -84,13 +81,13 @@ let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 "-- Filetype Options ----------------------------------------------------
 if has("autocmd")
-    "Options for C files
+    " Options for C files
     autocmd Filetype c setlocal foldmethod=syntax ts=2 sts=2 sw=2 expandtab
-    "Options for C header files
+    " Options for C header files
     autocmd Filetype h setlocal foldmethod=syntax ts=2 sts=2 sw=2 expandtab
-
+    " Options for make files 
+    autocmd FileType make setlocal noexpandtab
 endif 
-
 "-- End Filetype Options ------------------------------------------------
 
 "-- Keymapping ----------------------------------------------------------
@@ -99,5 +96,5 @@ noremap <Space> za
 "-- End Keymapping ------------------------------------------------------
 
 "-- Vim Slime -----------------------------------------------------------
-let g:slime_target = "tmux"
+let g:slime_target = "tmux" " Have vim-slime use tmux instead of screen
 "-- End Vim Slime -------------------------------------------------------
