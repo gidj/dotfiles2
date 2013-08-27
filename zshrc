@@ -27,10 +27,10 @@ ZSH_THEME="agnoster"
 DISABLE_AUTO_TITLE="true"
 
 # Uncomment following line if you want to disable command autocorrection
-# DISABLE_CORRECTION="true"
+DISABLE_CORRECTION="true"
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment following line if you want to disable marking untracked files under
 # VCS as dirty. This makes repository status check for large repositories much,
@@ -46,6 +46,11 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
+# Set locale; this fixes the probelm in 'agnoster' theme where autocomplete 
+# repeats the command it is completing 
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
 # Aliases 
 alias ll="ls -alrtFG"
 alias la="ls -AF"
@@ -55,6 +60,8 @@ alias ..='cd ..'
 alias ...='cd ..;cd ..'
 alias md='mkdir'
 alias cl='clear'
+alias essentialvim='vim -u ~/Learning/vim/essential.vim'
+alias sicp-racket='racket -ip neil/sicp' 
 
 # 2.4) grep options
 export GREP_OPTIONS='--color=auto'
