@@ -46,6 +46,9 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
+# Set default user to remove the user@hostname if logged in via regular user:
+DEFAULT_USER="gideon"
+
 # Set locale; this fixes the probelm in 'agnoster' theme where autocomplete 
 # repeats the command it is completing 
 export LC_ALL=en_US.UTF-8
