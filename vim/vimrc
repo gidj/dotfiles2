@@ -54,7 +54,7 @@ set cursorline " Turn on highlighting of active line:
 let g:indentLine_color_term = 234 
 let g:indentLine_char = '│'
 
-set mouse=a " Turn on mouse mode, for terminals that can use it:
+set mouse=a " Turn on mouse mode, for terminals that can use it
 
 set listchars=tab:▸\ ,eol:¬  " Use the same symbols as TextMate for tabstops and EOLs
 "Invisible character colors
@@ -125,7 +125,7 @@ if has("autocmd")
     " Options for make files 
     autocmd FileType make setlocal noexpandtab
     " Scheme- and Lisp-style files
-    autocmd Filetype lisp,scheme setlocal lisp 
+    autocmd Filetype lisp,scheme setlocal lisp "foldmethod=syntax
 endif 
 "-- End Filetype Options ------------------------------------------------
 
