@@ -78,7 +78,7 @@ let g:Powerline_symbols = 'fancy'
 "-- End Powerline--------------------------------------------------------
 
 "-- Syntastic -----------------------------------------------------------
-let g:syntastic_python_checkers=['pylint'] " Requires pylint
+"let g:syntastic_python_checkers=['pylint'] " Requires pylint
 let g:syntastic_check_on_open = 1 " Check on loading the buffer
 let g:syntastic_check_on_wq=0 " Don't check on closing the buffer
 let g:syntastic_error_symbol= 'X' " '✗'

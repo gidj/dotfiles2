@@ -40,7 +40,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=()
+plugins=(osx brew git python tmux)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -70,18 +70,26 @@ alias sicp-racket='racket -ip neil/sicp'
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='1;31' # green for matches
 
+# This function checks to see if the directory given as a parameter is already in the path;
+# if not, it adds it to the path.
+pathadd() {
+    if [ -d "$1"] && [[ ":$PATH:" != *":$1:"* ]]; then
+        PATH="${PATH:+"$PATH:"}$1"
+    fi
+}
+
 # Add Homebrew
 PATH="/usr/local/bin:$PATH"
 export PATH
 
-# Add python from Homebrew 
-export PATH="/usr/local/share/python:/usr/local/lib/python2.7/site-packages:$PATH"
+# Add virtualenvwrapper global variables
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/Projects
+# export VIRTUAL_ENV_DISABLE_PROMPT=1
+source /usr/local/bin/virtualenvwrapper.sh
 
 # Add Racket 
 export PATH="/Applications/Racket v5.3.5/bin:$PATH"
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
 
 export VISUAL=vim
 export EDITOR=vim
