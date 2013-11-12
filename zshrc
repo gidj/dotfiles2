@@ -40,7 +40,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(osx brew git python tmux)
+plugins=(django osx virtualenv brew git python tmux)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -49,13 +49,14 @@ source $ZSH/oh-my-zsh.sh
 # Set default user to remove the user@hostname if logged in via regular user:
 DEFAULT_USER="gideon"
 
-# Set locale; this fixes the probelm in 'agnoster' theme where autocomplete 
+# Set locale; this fixes the problem in 'agnoster' theme where autocomplete 
 # repeats the command it is completing 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 # Aliases 
 alias ll="ls -alrtFG"
+alias lsa="ls -lahF"
 alias la="ls -AF"
 alias l="ls -CF"
 alias m='less'
@@ -63,37 +64,9 @@ alias ..='cd ..'
 alias ...='cd ..;cd ..'
 alias md='mkdir'
 alias cl='clear'
-alias essentialvim='vim -u ~/Learning/vim/essential.vim'
 alias sicp-racket='racket -ip neil/sicp' 
 
 # 2.4) grep options
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='1;31' # green for matches
-
-# This function checks to see if the directory given as a parameter is already in the path;
-# if not, it adds it to the path.
-pathadd() {
-    if [ -d "$1"] && [[ ":$PATH:" != *":$1:"* ]]; then
-        PATH="${PATH:+"$PATH:"}$1"
-    fi
-}
-
-# Add Homebrew
-PATH="/usr/local/bin:$PATH"
-export PATH
-
-# Add virtualenvwrapper global variables
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/Projects
-# export VIRTUAL_ENV_DISABLE_PROMPT=1
-source /usr/local/bin/virtualenvwrapper.sh
-
-# Add Racket 
-export PATH="/Applications/Racket v5.3.5/bin:$PATH"
-
-export VISUAL=vim
-export EDITOR=vim
-
-LANG=en_US.utf8
-
 
