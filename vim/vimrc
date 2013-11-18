@@ -29,6 +29,11 @@ Bundle 'pfdevilliers/Pretty-Vim-Python'
 
 syntax on
 filetype plugin indent on
+let mapleader="," " Change the leader character to the comma.
+
+" Quickly edit/reload the vimrc file
+nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
 set backspace=indent,eol,start  " Let backspace cross over end of line
 set modeline
@@ -88,6 +93,9 @@ let g:syntastic_warning_symbol='⚠'
 "-- YouCompleteMe -------------------------------------------------------
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_allow_changing_updatetime = 0 " This lets the 1 second option above stand
+let g:ycm_autoclose_preview_window_after_completion=1
+nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
 
 " This makes YouCompleteMe and UltiSnips work together well
 let g:UltiSnipsExpandTrigger="<c-j>"
