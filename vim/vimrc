@@ -1,36 +1,42 @@
-"-- Vundle --------------------------------------------------------------
-set nocompatible
+"-- NewBundle --------------------------------------------------------------
 filetype off  " Required for Vundle to operate correctly
 set encoding=utf-8
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+if has('vim_starting')
+    set nocompatible               " Be iMproved
+    set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
 
-"let Vundle manage Vundle
-"required! 
-Bundle 'gmarik/vundle'
+call neobundle#rc(expand('~/.vim/bundle/'))
 
-"My Bundles here:
-"original repos on github
+" Let NeoBundle manage NeoBundle
+NeoBundleFetch 'Shougo/neobundle.vim'
 
-Bundle 'tomasr/molokai'
-Bundle 'tpope/vim-fugitive'
-Bundle 'SirVer/ultisnips' 
-Bundle 'Valloric/YouCompleteMe' 
-Bundle 'scrooloose/syntastic'
-Bundle 'derekwyatt/vim-scala'
-Bundle 'jpalardy/vim-slime'
-Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'} 
-Bundle 'oblitum/rainbow'
-Bundle 'Yggdroot/indentLine'
-Bundle 'pfdevilliers/Pretty-Vim-Python'
-Bundle 'vincent/Command-T'
+" Recommended to install
+NeoBundle 'Shougo/vimproc'
 
-"-- End Vundle ----------------------------------------------------------
+" My Plugins
+NeoBundle 'tomasr/molokai'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'SirVer/ultisnips' 
+NeoBundle 'Valloric/YouCompleteMe' 
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'derekwyatt/vim-scala'
+NeoBundle 'jpalardy/vim-slime'
+NeoBundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'} 
+NeoBundle 'oblitum/rainbow'
+NeoBundle 'Yggdroot/indentLine'
+NeoBundle 'pfdevilliers/Pretty-Vim-Python'
+NeoBundle 'wincent/Command-T'
+
+"- End NeoBundle ---------------------------------------------------------
 
 syntax on
 filetype plugin indent on
-let mapleader="," " Change the leader character to the comma.
+let mapleader="," " Change the leader to the comma character
+
+set background=dark " Set the background
+colorscheme molokai " Set the theme
 
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
@@ -48,9 +54,6 @@ set incsearch " Hightlight search items as they are searched for
 
 set number " Activate line numbering on the left side of the screen
 highlight LineNr ctermfg=DarkGrey
-
-set background=dark " Set the background
-colorscheme molokai " Set the theme
 
 set updatetime=1000 " This has syntastic update every second instead of every two
 set synmaxcol=120 " This stops syntax highlighting from trying after column 120
@@ -96,7 +99,6 @@ let g:ycm_confirm_extra_conf = 0
 let g:ycm_allow_changing_updatetime = 0 " This lets the 1 second option above stand
 let g:ycm_autoclose_preview_window_after_completion=1
 nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
-
 
 " This makes YouCompleteMe and UltiSnips work together well
 let g:UltiSnipsExpandTrigger="<c-j>"
