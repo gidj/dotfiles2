@@ -24,6 +24,7 @@ Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Bundle 'oblitum/rainbow'
 Bundle 'Yggdroot/indentLine'
 Bundle 'pfdevilliers/Pretty-Vim-Python'
+Bundle 'vincent/Command-T'
 
 "-- End Vundle ----------------------------------------------------------
 
