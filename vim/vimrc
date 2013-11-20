@@ -18,7 +18,7 @@ NeoBundle 'Shougo/vimproc'
 " My Plugins
 NeoBundle 'tomasr/molokai'
 NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'SirVer/ultisnips' 
+"NeoBundle 'SirVer/ultisnips' 
 "NeoBundle 'Valloric/YouCompleteMe' 
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'derekwyatt/vim-scala'
