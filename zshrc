@@ -40,7 +40,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(django osx virtualenv brew git python tmux)
+plugins=(django virtualenv git python tmux)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -64,7 +64,6 @@ alias ..='cd ..'
 alias ...='cd ..;cd ..'
 alias md='mkdir'
 alias cl='clear'
-alias sicp-racket='racket -ip neil/sicp' 
 
 # 2.4) grep options
 export GREP_OPTIONS='--color=auto'

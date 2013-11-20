@@ -19,15 +19,15 @@ NeoBundle 'Shougo/vimproc'
 NeoBundle 'tomasr/molokai'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'SirVer/ultisnips' 
-NeoBundle 'Valloric/YouCompleteMe' 
+"NeoBundle 'Valloric/YouCompleteMe' 
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'derekwyatt/vim-scala'
 NeoBundle 'jpalardy/vim-slime'
-NeoBundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'} 
+"NeoBundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'} 
 NeoBundle 'oblitum/rainbow'
 NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'pfdevilliers/Pretty-Vim-Python'
-NeoBundle 'wincent/Command-T'
+"NeoBundle 'wincent/Command-T'
 
 "- End NeoBundle ---------------------------------------------------------
 
