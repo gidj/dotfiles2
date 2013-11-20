@@ -20,6 +20,7 @@ NeoBundle 'tomasr/molokai'
 NeoBundle 'tpope/vim-fugitive'
 "NeoBundle 'SirVer/ultisnips' 
 "NeoBundle 'Valloric/YouCompleteMe' 
+NeoBundle 'tpope/vim-surround'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'derekwyatt/vim-scala'
 NeoBundle 'jpalardy/vim-slime'
@@ -28,6 +29,8 @@ NeoBundle 'oblitum/rainbow'
 NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'pfdevilliers/Pretty-Vim-Python'
 "NeoBundle 'wincent/Command-T'
+NeoBundle 'scrooloose/nerdcommenter'
+"NeoBundle 'kien/rainbow_parentheses.vim'
 
 "- End NeoBundle ---------------------------------------------------------
 
@@ -51,6 +54,10 @@ set splitbelow " Horizontal split below
 
 set hlsearch " Hightlight search items
 set incsearch " Hightlight search items as they are searched for
+set showmatch 
+nnoremap <leader><space> :noh<cr>
+nnoremap <tab> %
+vnoremap <tab> %
 
 set number " Activate line numbering on the left side of the screen
 highlight LineNr ctermfg=DarkGrey
@@ -58,6 +65,7 @@ highlight LineNr ctermfg=DarkGrey
 set updatetime=1000 " This has syntastic update every second instead of every two
 set synmaxcol=120 " This stops syntax highlighting from trying after column 120
 set cursorline " Turn on highlighting of active line:
+set relativenumber
 
 " Set the color of the IndentLine
 let g:indentLine_color_term = 234 
@@ -132,7 +140,7 @@ let g:rainbow_guifgs = [
 "-- Filetype Options ----------------------------------------------------
 if has("autocmd")
     " Options for C files
-    autocmd Filetype c,h setlocal foldmethod=syntax ts=2 sts=2 sw=2 expandtab
+    autocmd Filetype c,h setlocal ts=2 sts=2 sw=2 expandtab
     " Options for make files 
     autocmd FileType make setlocal noexpandtab
     " Scheme- and Lisp-style files
