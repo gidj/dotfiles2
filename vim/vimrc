@@ -18,6 +18,7 @@ NeoBundle 'Shougo/vimproc'
 " My Plugins
 NeoBundle 'tomasr/molokai'
 NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'tpope/vim-surround'
 NeoBundle 'SirVer/ultisnips' 
 NeoBundle 'Valloric/YouCompleteMe' 
 NeoBundle 'scrooloose/syntastic'
@@ -27,7 +28,9 @@ NeoBundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 NeoBundle 'oblitum/rainbow'
 NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'pfdevilliers/Pretty-Vim-Python'
+NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'wincent/Command-T'
+"NeoBundle 'kien/rainbow_parentheses.vim'
 
 "- End NeoBundle ---------------------------------------------------------
 
@@ -51,6 +54,10 @@ set splitbelow " Horizontal split below
 
 set hlsearch " Hightlight search items
 set incsearch " Hightlight search items as they are searched for
+set showmatch 
+nnoremap <leader><space> :noh<cr>
+nnoremap <tab> %
+vnoremap <tab> %
 
 set number " Activate line numbering on the left side of the screen
 highlight LineNr ctermfg=DarkGrey
