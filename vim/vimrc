@@ -30,9 +30,8 @@ NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'pfdevilliers/Pretty-Vim-Python'
 NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'wincent/Command-T'
+NeoBundle 'sjl/gundo.vim'
 "NeoBundle 'kien/rainbow_parentheses.vim'
-
-"- End NeoBundle ---------------------------------------------------------
 
 syntax on
 filetype plugin indent on
@@ -137,10 +136,14 @@ let g:rainbow_guifgs = [
     \ ]
 "-- End Rainbow Parentheses ---------------------------------------------
 
+"-- Gundo Options -------------------------------------------------------
+nnoremap <F5> :GundoToggle<CR>
+"-- End Gundo Options ---------------------------------------------------
+
 "-- Filetype Options ----------------------------------------------------
 if has("autocmd")
     " Options for C files
-    autocmd Filetype c,h setlocal ts=2 sts=2 sw=2 expandtab
+    autocmd Filetype c,h setlocal ts=2 sts=2 sw=2 expandtab foldmethod=syntax
     " Options for make files 
     autocmd FileType make setlocal noexpandtab
     " Scheme- and Lisp-style files
