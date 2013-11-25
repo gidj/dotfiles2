@@ -17,6 +17,7 @@ NeoBundle 'Shougo/vimproc'
 
 " My Plugins
 NeoBundle 'tomasr/molokai'
+NeoBundle 'chriskempson/base16-vim'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'SirVer/ultisnips' 
@@ -24,7 +25,7 @@ NeoBundle 'Valloric/YouCompleteMe'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'derekwyatt/vim-scala'
 NeoBundle 'jpalardy/vim-slime'
-NeoBundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'} 
+"NeoBundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'} 
 NeoBundle 'oblitum/rainbow'
 NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'pfdevilliers/Pretty-Vim-Python'
@@ -33,10 +34,15 @@ NeoBundle 'wincent/Command-T'
 NeoBundle 'sjl/gundo.vim'
 "NeoBundle 'kien/rainbow_parentheses.vim'
 
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
+
 syntax on
 filetype plugin indent on
 let mapleader="," " Change the leader to the comma character
 
+let base16colorspace=256
 set background=dark " Set the background
 colorscheme molokai " Set the theme
 
