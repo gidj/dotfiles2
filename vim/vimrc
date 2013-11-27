@@ -18,18 +18,18 @@ NeoBundle 'Shougo/vimproc'
 " My Plugins
 NeoBundle 'tomasr/molokai'
 NeoBundle 'tpope/vim-fugitive'
-"NeoBundle 'SirVer/ultisnips' 
-"NeoBundle 'Valloric/YouCompleteMe' 
+NeoBundle 'SirVer/ultisnips' 
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'derekwyatt/vim-scala'
 NeoBundle 'jpalardy/vim-slime'
-"NeoBundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'} 
 NeoBundle 'oblitum/rainbow'
 NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'pfdevilliers/Pretty-Vim-Python'
-"NeoBundle 'wincent/Command-T'
 NeoBundle 'scrooloose/nerdcommenter'
+"NeoBundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'} 
+"NeoBundle 'wincent/Command-T'
+"NeoBundle 'Valloric/YouCompleteMe' 
 "NeoBundle 'kien/rainbow_parentheses.vim'
 
 "- End NeoBundle ---------------------------------------------------------
