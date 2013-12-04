@@ -5,10 +5,10 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="agnoster"
+ZSH_THEME="kolo"
 
 # Base16 Shell
-#BASE16_SCHEME="tomorrow"
+#BASE16_SCHEME="bright"
 #BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh"
 #[[ -s $BASE16_SHELL ]] && . $BASE16_SHELL
 

@@ -1,4 +1,4 @@
-"-- NewBundle --------------------------------------------------------------
+"-- NeoBundle --------------------------------------------------------------
 filetype off  " Required for Vundle to operate correctly
 set encoding=utf-8
 
@@ -17,6 +17,7 @@ NeoBundle 'Shougo/vimproc'
 
 " My Plugins
 NeoBundle 'tomasr/molokai'
+NeoBundle 'morhetz/gruvbox'
 NeoBundle 'chriskempson/base16-vim'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-surround'
@@ -25,7 +26,6 @@ NeoBundle 'Valloric/YouCompleteMe'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'derekwyatt/vim-scala'
 NeoBundle 'jpalardy/vim-slime'
-"NeoBundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'} 
 NeoBundle 'oblitum/rainbow'
 NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'pfdevilliers/Pretty-Vim-Python'
@@ -33,6 +33,7 @@ NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'wincent/Command-T'
 NeoBundle 'sjl/gundo.vim'
 "NeoBundle 'kien/rainbow_parentheses.vim'
+"-- End NeoBundle --------------------------------------------------------
 
 python from powerline.vim import setup as powerline_setup
 python powerline_setup()
@@ -42,7 +43,7 @@ syntax on
 filetype plugin indent on
 let mapleader="," " Change the leader to the comma character
 
-let base16colorspace=256
+set t_Co=256
 set background=dark " Set the background
 colorscheme molokai " Set the theme
 
@@ -67,7 +68,7 @@ vnoremap <tab> %
 set number " Activate line numbering on the left side of the screen
 highlight LineNr ctermfg=DarkGrey
 
-set updatetime=1000 " This has syntastic update every second instead of every two
+set updatetime=2000 " This has syntastic update every second instead of every two
 set synmaxcol=120 " This stops syntax highlighting from trying after column 120
 set cursorline " Turn on highlighting of active line:
 set relativenumber
@@ -100,14 +101,21 @@ let g:Powerline_symbols = 'fancy'
 "-- End Powerline--------------------------------------------------------
 
 "-- Syntastic -----------------------------------------------------------
-"let g:syntastic_python_checkers=['pylint'] " Requires pylint
+let g:syntastic_c_compiler = 'clang'
+let g:syntastic_c_compiler_options = '-std=c99'
+"let g:syntastic_c_checkers=['gcc']
+let g:loaded_syntastic_c_gcc_checker = 1 
+
+let g:syntastic_python_checkers=['pylint']
+
 let g:syntastic_check_on_open = 1 " Check on loading the buffer
 let g:syntastic_check_on_wq=0 " Don't check on closing the buffer
-let g:syntastic_error_symbol= 'X' " '✗'
+let g:syntastic_error_symbol= '>' " 'X'  '✗'
 let g:syntastic_warning_symbol='⚠'
 "-- End Syntastic -------------------------------------------------------
 
 "-- YouCompleteMe -------------------------------------------------------
+let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_allow_changing_updatetime = 0 " This lets the 1 second option above stand
 let g:ycm_autoclose_preview_window_after_completion=1
@@ -149,7 +157,8 @@ nnoremap <F5> :GundoToggle<CR>
 "-- Filetype Options ----------------------------------------------------
 if has("autocmd")
     " Options for C files
-    autocmd Filetype c,h setlocal ts=2 sts=2 sw=2 expandtab foldmethod=syntax
+    autocmd Filetype c,h setlocal ts=2 sts=2 sw=2 expandtab "foldmethod=syntax
+
     " Options for make files 
     autocmd FileType make setlocal noexpandtab
     " Scheme- and Lisp-style files
