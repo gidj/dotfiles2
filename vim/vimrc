@@ -32,6 +32,7 @@ NeoBundle 'pfdevilliers/Pretty-Vim-Python'
 NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'wincent/Command-T'
 NeoBundle 'sjl/gundo.vim'
+NeoBundle 'majutsushi/tagbar'
 "NeoBundle 'kien/rainbow_parentheses.vim'
 "-- End NeoBundle --------------------------------------------------------
 
@@ -154,10 +155,14 @@ let g:rainbow_guifgs = [
 nnoremap <F5> :GundoToggle<CR>
 "-- End Gundo Options ---------------------------------------------------
 
+"-- Tabar Options -------------------------------------------------------
+nnoremap <F8> :TagbarToggle<CR>
+"-- End Tabar Options ---------------------------------------------------
+
 "-- Filetype Options ----------------------------------------------------
 if has("autocmd")
     " Options for C files
-    autocmd Filetype c,h setlocal ts=2 sts=2 sw=2 expandtab "foldmethod=syntax
+    autocmd Filetype c,h setlocal ts=2 sts=2 sw=2 expandtab foldmethod=syntax
 
     " Options for make files 
     autocmd FileType make setlocal noexpandtab
