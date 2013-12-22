@@ -17,8 +17,9 @@ NeoBundle 'Shougo/vimproc'
 
 " My Plugins
 NeoBundle 'tomasr/molokai'
+NeoBundle 'w0ng/vim-hybrid'
+NeoBundle 'vim-scripts/Mustang2'
 NeoBundle 'morhetz/gruvbox'
-NeoBundle 'chriskempson/base16-vim'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'SirVer/ultisnips' 
