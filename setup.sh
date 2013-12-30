@@ -5,15 +5,23 @@ cd $HOME
 if [ -e ./.vimrc ]; then
     mv .vimrc .vimrc~
 fi
-if [ -e ./.tmux.conf ]; then
-    mv .tmux.conf .tmux.conf~
-fi
 if [ -d ./.vim/ ]; then 
     mv .vim .vim.old
 fi
+if [ -e ./.tmux.conf ]; then
+    mv .tmux.conf .tmux.conf~
+fi
+if [ -e ./.zshrc ]; then
+    mv .zshrc .zshrc~
+fi
+if [ -e ./.zprofile ]; then
+    mv .zprofile .zprofile~
+fi
 
 # Create symlinks to various configuration folders and files.
-ln -s devops/vim .vim
+ln -s dotfiles/vim .vim
 ln -s .vim/vimrc .vimrc
-ln -s devops/tmux.conf .tmux.conf
+ln -s dotfiles/tmux.conf .tmux.conf
+ln -s dotfiles/zshrc .zshrc
+ln -s dotfiles/zprofile .zprofile
 
