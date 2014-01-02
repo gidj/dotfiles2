@@ -17,8 +17,13 @@ NeoBundle 'Shougo/vimproc'
 
 " My Plugins
 NeoBundle 'tomasr/molokai'
-NeoBundle 'w0ng/vim-hybrid'
+NeoBundle 'chriskempson/base16-vim'
+NeoBundle 'Lokaltog/vim-distinguished'
 NeoBundle 'vim-scripts/Mustang2'
+NeoBundle 'nanotech/jellybeans.vim'
+NeoBundle 'altercation/vim-colors-solarized'
+
+NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'morhetz/gruvbox'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-surround'
@@ -27,7 +32,8 @@ NeoBundle 'Valloric/YouCompleteMe'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'derekwyatt/vim-scala'
 NeoBundle 'jpalardy/vim-slime'
-NeoBundle 'oblitum/rainbow'
+"NeoBundle 'oblitum/rainbow'
+NeoBundle 'luochen1990/rainbow'
 NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'pfdevilliers/Pretty-Vim-Python'
 NeoBundle 'scrooloose/nerdcommenter'
@@ -73,7 +79,7 @@ highlight LineNr ctermfg=DarkGrey
 set updatetime=2000 " This has syntastic update every second instead of every two
 set synmaxcol=120 " This stops syntax highlighting from trying after column 120
 set cursorline " Turn on highlighting of active line:
-set relativenumber
+"set relativenumber
 
 " Set the color of the IndentLine
 let g:indentLine_color_term = 234 
