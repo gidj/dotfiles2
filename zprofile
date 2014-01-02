@@ -4,9 +4,11 @@ typeset -U path
 #path=(/usr/local/opt/ruby/bin $path)
 
 # Add virtualenvwrapper global variables
-#export WORKON_HOME=$HOME/.virtualenvs
-#export PROJECT_HOME=$HOME/Projects
-#source /usr/local/bin/virtualenvwrapper.sh
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2
+export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv2
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/Projects
+source /usr/bin/virtualenvwrapper.sh
 
 export VISUAL=vim
 export EDITOR=vim
