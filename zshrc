@@ -45,7 +45,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(make django osx virtualenv brew git python tmux)
+plugins=(make django npm osx virtualenv brew git python tmux)
 
 source $ZSH/oh-my-zsh.sh
 #. /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
@@ -70,6 +70,11 @@ alias ...='cd ..;cd ..'
 alias md='mkdir'
 alias cl='clear'
 alias sicp-racket='racket -ip neil/sicp' 
+alias django-paths='python -c "
+import sys
+sys.path = sys.path[1:]
+import django
+print(django.__path__)"'
 
 # 2.4) grep options
 export GREP_OPTIONS='--color=auto'
