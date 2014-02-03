@@ -34,6 +34,8 @@ NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'sjl/gundo.vim'
 NeoBundle 'majutsushi/tagbar'
+NeoBundle 'mattn/emmet-vim'
+NeoBundle 'jmcantrell/vim-virtualenv'
 "-- End NeoBundle --------------------------------------------------------
 
 "-- Filetype Options ----------------------------------------------------
@@ -48,7 +50,7 @@ if has("autocmd")
     " HTML files
     "autocmd Filetype html,css setlocal ts=2 sts=2 sw=2 expandtab
     " C files
-    autocmd Filetype c,h setlocal foldmethod=syntax "ts=2 sts=2 sw=2 expandtab 
+    autocmd Filetype c,h setlocal foldmethod=syntax ts=2 sts=2 sw=2 expandtab 
     " make files 
     autocmd FileType make setlocal noexpandtab
     " Scheme- and Lisp-style files
@@ -56,10 +58,32 @@ if has("autocmd")
 endif 
 "-- End Filetype Options ------------------------------------------------
 
+"python << EOF
+"import sys, vim, os
+
+"ve_dir = vim.eval('$VIRTUAL_ENV')
+"ve_dir in sys.path or sys.path.insert(0, ve_dir)
+"activate_this = os.path.join(os.path.join(ve_dir, 'bin'), 'activate_this.py')
+
+"execfile(activate_this, dict(__file__=activate_this))
+"EOF
+
+"if has("python") && !empty($VIRTUAL_ENV)
+"python << EOF
+"import os
+"import sys
+"a = os.environ['VIRTUAL_ENV'] + '/bin/activate_this.py'
+"execfile(a, dict(__file__ = a))
+"if 'PYTHONPATH' not in os.environ:
+    "os.environ['PYTHONPATH'] = ''
+    "os.environ['PYTHONPATH'] += ":"+os.getcwd()
+    "os.environ['PYTHONPATH'] += ":".join(sys.path)
+"EOF
+"endif
+
 python from powerline.vim import setup as powerline_setup
 python powerline_setup()
 python del powerline_setup
-
 
 set t_Co=256
 set background=dark " Set the background
@@ -120,7 +144,7 @@ let g:Powerline_symbols = 'fancy'
 
 "-- Syntastic -----------------------------------------------------------
 let g:syntastic_c_compiler = 'clang'
-let g:syntastic_c_compiler_options = '-std=c99'
+let g:syntastic_c_compiler_options = '-std=c11'
 "let g:syntastic_c_checkers=['gcc']
 let g:loaded_syntastic_c_gcc_checker = 1 
 
@@ -179,6 +203,7 @@ nnoremap <F8> :TagbarToggle<CR>
 "-- Keymapping ----------------------------------------------------------
 " This makes the space bar toggle folding on and off.
 noremap <Space> za 
+vnoremap . :norm.<CR>
 "-- End Keymapping ------------------------------------------------------
 
 "-- Vim Slime -----------------------------------------------------------
