@@ -18,7 +18,9 @@ NeoBundle 'Shougo/vimproc'
 " My Plugins
 NeoBundle 'tomasr/molokai'
 NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'SirVer/ultisnips' 
+NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'Shougo/neosnippet.vim' 
+NeoBundle 'Shougo/neocomplete.vim'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'derekwyatt/vim-scala'
@@ -27,10 +29,6 @@ NeoBundle 'oblitum/rainbow'
 NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'pfdevilliers/Pretty-Vim-Python'
 NeoBundle 'scrooloose/nerdcommenter'
-"NeoBundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'} 
-"NeoBundle 'wincent/Command-T'
-"NeoBundle 'Valloric/YouCompleteMe' 
-"NeoBundle 'kien/rainbow_parentheses.vim'
 
 "- End NeoBundle ---------------------------------------------------------
 
@@ -102,16 +100,35 @@ let g:syntastic_error_symbol= 'X' " '✗'
 let g:syntastic_warning_symbol='⚠'
 "-- End Syntastic -------------------------------------------------------
 
+" Plugin key-mappings.
+ imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+ smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+ xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+" " SuperTab like snippets behavior.
+ imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+ \ "\<Plug>(neosnippet_expand_or_jump)"
+ \: pumvisible() ? "\<C-n>" : "\<TAB>"
+ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+ \ "\<Plug>(neosnippet_expand_or_jump)"
+ \: "\<TAB>"
+
+" " For snippet_complete marker.
+ if has('conceal')
+     set conceallevel=2 concealcursor=i
+ endif
+
+
 "-- YouCompleteMe -------------------------------------------------------
-let g:ycm_confirm_extra_conf = 0
-let g:ycm_allow_changing_updatetime = 0 " This lets the 1 second option above stand
-let g:ycm_autoclose_preview_window_after_completion=1
-nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
+"let g:ycm_confirm_extra_conf = 0
+"let g:ycm_allow_changing_updatetime = 0 " This lets the 1 second option above stand
+"let g:ycm_autoclose_preview_window_after_completion=1
+"nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " This makes YouCompleteMe and UltiSnips work together well
-let g:UltiSnipsExpandTrigger="<c-j>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+"let g:UltiSnipsExpandTrigger="<c-j>"
+"let g:UltiSnipsJumpForwardTrigger="<c-j>"
+"let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 "-- End YouCompleteMe ---------------------------------------------------
 
 "-- Rainbow Parentheses -------------------------------------------------
