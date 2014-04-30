@@ -18,15 +18,20 @@ NeoBundle 'Shougo/vimproc'
 " My Plugins
 NeoBundle 'tomasr/molokai'
 
+NeoBundle 'vim-ruby/vim-ruby'
+NeoBundle 'ap/vim-css-color'
+NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'othree/html5.vim'
 NeoBundle 'gidj/vim-csyn'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-repeat'
 NeoBundle 'SirVer/ultisnips' 
+NeoBundle 'honza/vim-snippets'
 NeoBundle 'Valloric/YouCompleteMe' 
 NeoBundle 'scrooloose/syntastic'
-NeoBundle 'jpalardy/vim-slime'
+NeoBundle 'epeli/slimux'
+"NeoBundle 'jpalardy/vim-slime'
 NeoBundle 'oblitum/rainbow'
 NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'hdima/python-syntax'
@@ -39,6 +44,7 @@ NeoBundle 'jmcantrell/vim-virtualenv'
 "-- End NeoBundle --------------------------------------------------------
 
 "-- Filetype Options ----------------------------------------------------
+filetype on
 filetype plugin indent on
 syntax on
 let mapleader="," " Change the leader to the comma character
@@ -55,31 +61,13 @@ if has("autocmd")
     autocmd FileType make setlocal noexpandtab
     " Scheme- and Lisp-style files
     autocmd Filetype lisp,scheme setlocal lisp "foldmethod=syntax
+    " Ruby
+    autocmd FileType ruby,eruby setlocal ts=2 sts=2 sw=2 expandtab
+    autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1 
+    autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+    autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 endif 
 "-- End Filetype Options ------------------------------------------------
-
-"python << EOF
-"import sys, vim, os
-
-"ve_dir = vim.eval('$VIRTUAL_ENV')
-"ve_dir in sys.path or sys.path.insert(0, ve_dir)
-"activate_this = os.path.join(os.path.join(ve_dir, 'bin'), 'activate_this.py')
-
-"execfile(activate_this, dict(__file__=activate_this))
-"EOF
-
-"if has("python") && !empty($VIRTUAL_ENV)
-"python << EOF
-"import os
-"import sys
-"a = os.environ['VIRTUAL_ENV'] + '/bin/activate_this.py'
-"execfile(a, dict(__file__ = a))
-"if 'PYTHONPATH' not in os.environ:
-    "os.environ['PYTHONPATH'] = ''
-    "os.environ['PYTHONPATH'] += ":"+os.getcwd()
-    "os.environ['PYTHONPATH'] += ":".join(sys.path)
-"EOF
-"endif
 
 python from powerline.vim import setup as powerline_setup
 python powerline_setup()
@@ -141,6 +129,19 @@ set laststatus=2 " Activate persistent status line:
 set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
 let g:Powerline_symbols = 'fancy'
 "-- End Powerline--------------------------------------------------------
+
+"-- Suround -------------------------------------------------------------
+"For Django 
+let b:surround_{char2nr("v")} = "{{ \r }}"
+let b:surround_{char2nr("{")} = "{{ \r }}"
+let b:surround_{char2nr("%")} = "{% \r %}"
+let b:surround_{char2nr("b")} = "{% block \1block name: \1 %}\r{% endblock %}"
+let b:surround_{char2nr("i")} = "{% if \1condition: \1 %}\r{% endif %}"
+let b:surround_{char2nr("w")} = "{% with \1with: \1 %}\r{% endwith %}"
+let b:surround_{char2nr("f")} = "{% for \1for loop: \1 %}\r{% endfor %}"
+let b:surround_{char2nr("c")} = "{% comment %}\r{% endcomment %}"
+"-- End Suround ---------------------------------------------------------
+
 
 "-- Syntastic -----------------------------------------------------------
 let g:syntastic_c_compiler = 'clang'
@@ -206,6 +207,7 @@ noremap <Space> za
 vnoremap . :norm.<CR>
 "-- End Keymapping ------------------------------------------------------
 
-"-- Vim Slime -----------------------------------------------------------
-let g:slime_target = "tmux" " Have vim-slime use tmux instead of screen
-"-- End Vim Slime -------------------------------------------------------
+"-- Slimux --------------------------------------------------------------
+map <C-c><C-c> :SlimuxREPLSendLine<CR>
+vmap <C-c><C-c> :SlimuxREPLSendSelection<CR>
+"-- End Slimux ----------------------------------------------------------

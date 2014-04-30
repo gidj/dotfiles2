@@ -59,6 +59,9 @@ DEFAULT_USER="gideon"
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
+# Enable vim mode
+#bindkey -v
+
 # Aliases 
 alias ll="ls -alrtFG"
 alias lsa="ls -lahF"
