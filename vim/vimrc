@@ -1,14 +1,4 @@
 "-- Vundle  --------------------------------------------------------------
-"filetype off  " Required for Vundle to operate correctly
-"set encoding=utf-8
-
-"if has('vim_starting')
-    "set nocompatible               " Be iMproved
-    "set runtimepath+=~/.vim/bundle/neobundle.vim/
-"endif
-
-"call neobundle#rc(expand('~/.vim/bundle/'))
-
 set nocompatible
 filetype off
 
@@ -16,15 +6,15 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" Let NeoBundle manage NeoBundle
-"NeoBundleFetch 'Shougo/neobundle.vim'
-
 " Recommended to install
 Plugin 'Shougo/vimproc'
 
 " My Plugins
 Plugin 'tomasr/molokai'
-
+Plugin 'marijnh/tern_for_vim'
+"Plugin 'jelera/vim-javascript-syntax'
+Plugin 'othree/javascript-libraries-syntax.vim'
+Plugin 'tpope/vim-rails'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'ap/vim-css-color'
 Plugin 'scrooloose/nerdtree'
@@ -40,7 +30,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'epeli/slimux'
 "NeoBundle 'jpalardy/vim-slime'
 Plugin 'oblitum/rainbow'
-Plugin 'Yggdroot/indentLine'
+"Plugin 'Yggdroot/indentLine'
 Plugin 'hdima/python-syntax'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'kien/ctrlp.vim'
@@ -51,13 +41,13 @@ Plugin 'jmcantrell/vim-virtualenv'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
-filetype plugin indent on    " required
-"-- End NeoBundle --------------------------------------------------------
+"-- End Vundle   --------------------------------------------------------
 
 "-- Filetype Options ----------------------------------------------------
-filetype on
-"filetype plugin indent on
 syntax on
+filetype on
+filetype plugin on
+filetype indent on
 let mapleader="," " Change the leader to the comma character
 
 if has("autocmd")
@@ -155,14 +145,19 @@ let b:surround_{char2nr("c")} = "{% comment %}\r{% endcomment %}"
 
 
 "-- Syntastic -----------------------------------------------------------
+"let g:syntastic_debug=1
+let g:syntastic_mode_map = { 'mode': 'active',
+                           \ 'active_filetypes': ['ruby', 'python'],
+                           \ 'passive_filetypes': ['puppet'] }
 let g:syntastic_c_compiler = 'clang'
 let g:syntastic_c_compiler_options = '-std=c11'
 "let g:syntastic_c_checkers=['gcc']
 let g:loaded_syntastic_c_gcc_checker = 1 
 
-let g:syntastic_python_checkers=['pylint']
-
-let g:syntastic_check_on_open = 1 " Check on loading the buffer
+let g:syntastic_enable_signs=1
+"let g:syntastic_auto_jump=1
+let g:syntastic_python_checkers=['pylint', 'pyflakes']
+let g:syntastic_check_on_open=1 " Check on loading the buffer
 let g:syntastic_check_on_wq=0 " Don't check on closing the buffer
 let g:syntastic_error_symbol= '>' " 'X'  '✗'
 let g:syntastic_warning_symbol='⚠'
@@ -174,12 +169,14 @@ let g:ycm_confirm_extra_conf = 0
 let g:ycm_allow_changing_updatetime = 0 " This lets the 1 second option above stand
 let g:ycm_autoclose_preview_window_after_completion=1
 nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
+let g:ycm_server_log_level = "error"
+"let g:EclimCompletionMethod = 'omnifunc'
 
 " This makes YouCompleteMe and UltiSnips work together well
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
-"-- End YouCompleteMe ---------------------------------------------------
+""-- End YouCompleteMe ---------------------------------------------------
 
 "-- Rainbow Parentheses -------------------------------------------------
 let g:rainbow_active = 1 
