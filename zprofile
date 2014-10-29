@@ -9,12 +9,19 @@ path=("/Applications/Racket v5.3.5/bin" $path)
 # Add ruby gems
 path=(/usr/local/opt/ruby/bin $path)
 
+# Add TEX
+path=(/usr/texbin $path)
+
+# Add Haskell
+path=(~/.cabal/bin $path)
+
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Projects
 source /usr/local/bin/virtualenvwrapper.sh
 
 export VISUAL=vim
 export EDITOR=vim
+export GNUTERM=x11
 
 # API Keys for various web services
 export TWITTER_TOKEN=wSGbLHa4UDQAinb91IEF1Q

@@ -38,6 +38,7 @@ Plugin 'sjl/gundo.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'mattn/emmet-vim'
 Plugin 'jmcantrell/vim-virtualenv'
+Plugin 'dag/vim2hs'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -77,6 +78,8 @@ python del powerline_setup
 set t_Co=256
 set background=dark " Set the background
 colorscheme molokai " Set the theme
+let g:molokai_original = 1
+"let g:rehash256 = 1
 
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
