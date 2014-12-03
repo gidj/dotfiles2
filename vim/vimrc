@@ -10,35 +10,41 @@ call vundle#begin()
 Plugin 'Shougo/vimproc'
 
 " My Plugins
+
+" Themes
 Plugin 'tomasr/molokai'
-Plugin 'marijnh/tern_for_vim'
-"Plugin 'jelera/vim-javascript-syntax'
-Plugin 'othree/javascript-libraries-syntax.vim'
-Plugin 'tpope/vim-rails'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'ap/vim-css-color'
-Plugin 'scrooloose/nerdtree'
-Plugin 'othree/html5.vim'
-Plugin 'gidj/vim-csyn'
+
+" Useful plugins from Tim Pope
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
+
+" Various Language Plugings
+Plugin 'marijnh/tern_for_vim'
+Plugin 'othree/javascript-libraries-syntax.vim'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'ap/vim-css-color'
+Plugin 'othree/html5.vim'
+Plugin 'gidj/vim-csyn'
+Plugin 'hdima/python-syntax'
+Plugin 'oblitum/rainbow'
+Plugin 'Yggdroot/indentLine'
+
+" File Browsing
+Plugin 'scrooloose/nerdtree'
+Plugin 'kien/ctrlp.vim'
+Plugin 'sjl/gundo.vim'
+Plugin 'majutsushi/tagbar'
 Plugin 'SirVer/ultisnips' 
 Plugin 'honza/vim-snippets'
 Plugin 'Valloric/YouCompleteMe' 
 Plugin 'scrooloose/syntastic'
 Plugin 'epeli/slimux'
-"NeoBundle 'jpalardy/vim-slime'
 Plugin 'oblitum/rainbow'
-"Plugin 'Yggdroot/indentLine'
-Plugin 'hdima/python-syntax'
+Plugin 'Yggdroot/indentLine'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'kien/ctrlp.vim'
-Plugin 'sjl/gundo.vim'
-Plugin 'majutsushi/tagbar'
 Plugin 'mattn/emmet-vim'
 Plugin 'jmcantrell/vim-virtualenv'
-Plugin 'dag/vim2hs'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -54,8 +60,8 @@ let mapleader="," " Change the leader to the comma character
 if has("autocmd")
     "autocmd FileType * set tabstop=2|set shiftwidth=2|set noexpandtab
     " Python files
-    autocmd Filetype python setlocal ts=4 sts=4 sw=4 et 
-    " HTML files
+    autocmd Filetype python setlocal foldmethod=indent ts=4 sts=4 sw=4 et 
+     "HTML files
     "autocmd Filetype html,css setlocal ts=2 sts=2 sw=2 expandtab
     " C files
     autocmd Filetype c,h setlocal foldmethod=syntax ts=2 sts=2 sw=2 expandtab 
@@ -65,9 +71,9 @@ if has("autocmd")
     autocmd Filetype lisp,scheme setlocal lisp "foldmethod=syntax
     " Ruby
     autocmd FileType ruby,eruby setlocal ts=2 sts=2 sw=2 expandtab
-    autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1 
-    autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
-    autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+    " Haskell
+    autocmd Filetype haskell setlocal omnifunc=necoghc#omnifunc
+    "autocmd BufEnter *.hs compiler ghc
 endif 
 "-- End Filetype Options ------------------------------------------------
 
@@ -167,13 +173,17 @@ let g:syntastic_warning_symbol='⚠'
 "-- End Syntastic -------------------------------------------------------
 
 "-- YouCompleteMe -------------------------------------------------------
+let g:ycm_filetype_blacklist = {
+            \ 'ruby' : 1,
+            \ 'eruby' : 1
+            \}
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_allow_changing_updatetime = 0 " This lets the 1 second option above stand
 let g:ycm_autoclose_preview_window_after_completion=1
 nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 let g:ycm_server_log_level = "error"
-"let g:EclimCompletionMethod = 'omnifunc'
+let g:ycm_semantic_triggers = {'haskell' : ['.']}
 
 " This makes YouCompleteMe and UltiSnips work together well
 let g:UltiSnipsExpandTrigger="<c-j>"
@@ -212,6 +222,10 @@ nnoremap <F5> :GundoToggle<CR>
 nnoremap <F8> :TagbarToggle<CR>
 "-- End Tabar Options ---------------------------------------------------
 
+"-- Haskellmode-Vim Options ---------------------------------------------
+:let g:haddock_browser="/Applications/Google Chrome.app"
+"-- End Haskellmode-Vim Options -----------------------------------------
+"
 "-- Keymapping ----------------------------------------------------------
 " This makes the space bar toggle folding on and off.
 noremap <Space> za 
