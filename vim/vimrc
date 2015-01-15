@@ -1,4 +1,4 @@
-" tempalte-- Vundle  --------------------------------------------------------------
+" -- Vundle  --------------------------------------------------------------
 set nocompatible
 filetype off
 
@@ -6,37 +6,45 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
 " Recommended to install
 Plugin 'Shougo/vimproc'
 
 " My Plugins
-Plugin 'Glench/Vim-Jinja2-Syntax'
+
+" Themes
 Plugin 'tomasr/molokai'
-"Plugin 'marijnh/tern_for_vim'
-"Plugin 'jelera/vim-javascript-syntax'
-Plugin 'othree/javascript-libraries-syntax.vim'
-Plugin 'tpope/vim-rails'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'ap/vim-css-color'
-Plugin 'scrooloose/nerdtree'
-Plugin 'othree/html5.vim'
-Plugin 'gidj/vim-csyn'
+
+" Useful plugins from Tim Pope
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'scrooloose/syntastic'
-Plugin 'epeli/slimux'
-"NeoBundle 'jpalardy/vim-slime'
-Plugin 'oblitum/rainbow'
-"Plugin 'Yggdroot/indentLine'
+Plugin 'tpope/vim-commentary'
+
+" Various Language Plugings
+Plugin 'marijnh/tern_for_vim'
+Plugin 'othree/javascript-libraries-syntax.vim'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'ap/vim-css-color'
+Plugin 'othree/html5.vim'
+Plugin 'gidj/vim-csyn'
 Plugin 'hdima/python-syntax'
-Plugin 'scrooloose/nerdcommenter'
+Plugin 'luochen1990/rainbow'
+Plugin 'Yggdroot/indentLine'
+Plugin 'dag/vim2hs'
+Plugin 'eagletmt/ghcmod-vim'
+Plugin 'eagletmt/neco-ghc'
+
+" File Browsing
+Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
 Plugin 'sjl/gundo.vim'
 Plugin 'majutsushi/tagbar'
+Plugin 'Valloric/YouCompleteMe' 
+Plugin 'scrooloose/syntastic'
+Plugin 'epeli/slimux'
 Plugin 'mattn/emmet-vim'
 Plugin 'jmcantrell/vim-virtualenv'
 Plugin 'whatyouhide/vim-gotham'
@@ -76,19 +84,21 @@ if has("autocmd")
     autocmd Filetype lisp,scheme setlocal lisp "foldmethod=syntax
     " Ruby
     autocmd FileType ruby,eruby setlocal ts=2 sts=2 sw=2 expandtab
-    autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
-    autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
-    autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-endif
+    " Haskell
+    autocmd Filetype haskell setlocal omnifunc=necoghc#omnifunc
+    "autocmd BufEnter *.hs compiler ghc
+endif 
 "-- End Filetype Options ------------------------------------------------
 
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
+"python from powerline.vim import setup as powerline_setup
+"python powerline_setup()
+"python del powerline_setup
 
 set t_Co=256
 set background=dark " Set the background
 colorscheme molokai " Set the theme
+let g:molokai_original = 1
+"let g:rehash256 = 1
 
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
@@ -155,7 +165,6 @@ let b:surround_{char2nr("f")} = "{% for \1for loop: \1 %}\r{% endfor %}"
 let b:surround_{char2nr("c")} = "{% comment %}\r{% endcomment %}"
 "-- End Suround ---------------------------------------------------------
 
-
 "-- Syntastic -----------------------------------------------------------
 "let g:syntastic_debug=1
 let g:syntastic_mode_map = { 'mode': 'active',
@@ -176,18 +185,17 @@ let g:syntastic_warning_symbol='⚠'
 "-- End Syntastic -------------------------------------------------------
 
 "-- YouCompleteMe -------------------------------------------------------
+let g:ycm_filetype_blacklist = {
+            \ 'ruby' : 1,
+            \ 'eruby' : 1
+            \}
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_allow_changing_updatetime = 0 " This lets the 1 second option above stand
 let g:ycm_autoclose_preview_window_after_completion=1
 nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 let g:ycm_server_log_level = "error"
-"let g:EclimCompletionMethod = 'omnifunc'
-
-" This makes YouCompleteMe and UltiSnips work together well
-let g:UltiSnipsExpandTrigger="<c-j>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+let g:ycm_semantic_triggers = {'haskell' : ['.']}
 ""-- End YouCompleteMe ---------------------------------------------------
 
 "-- Rainbow Parentheses -------------------------------------------------
@@ -221,6 +229,10 @@ nnoremap <F5> :GundoToggle<CR>
 nnoremap <F8> :TagbarToggle<CR>
 "-- End Tabar Options ---------------------------------------------------
 
+"-- Haskellmode-Vim Options ---------------------------------------------
+:let g:haddock_browser="/Applications/Google Chrome.app"
+"-- End Haskellmode-Vim Options -----------------------------------------
+"
 "-- Keymapping ----------------------------------------------------------
 " This makes the space bar toggle folding on and off.
 noremap <Space> za

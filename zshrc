@@ -45,7 +45,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(make django npm osx virtualenv brew git python tmux mercurial)
+plugins=(make django osx virtualenv brew git python tmux vagrant)
 
 source $ZSH/oh-my-zsh.sh
 #. /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
@@ -54,15 +54,15 @@ source $ZSH/oh-my-zsh.sh
 # Set default user to remove the user@hostname if logged in via regular user:
 DEFAULT_USER="gideon"
 
-# Set locale; this fixes the problem in 'agnoster' theme where autocomplete 
-# repeats the command it is completing 
+# Set locale; this fixes the problem in 'agnoster' theme where autocomplete
+# repeats the command it is completing
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 # Enable vim mode
 #bindkey -v
 
-# Aliases 
+# Aliases
 alias ll="ls -alrtFG"
 alias lsa="ls -lahF"
 alias la="ls -AF"
@@ -72,7 +72,7 @@ alias ..='cd ..'
 alias ...='cd ..;cd ..'
 alias md='mkdir'
 alias cl='clear'
-alias sicp-racket='racket -ip neil/sicp' 
+alias sicp-racket='racket -ip neil/sicp'
 alias vi="vim"
 #alias vim="rvm system do /usr/local/bin/vim $@"
 alias django-paths='python -c "
