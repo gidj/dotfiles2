@@ -15,13 +15,18 @@ path=(/usr/texbin $path)
 # Add Haskell
 path=(~/.cabal/bin $path)
 
+# Add TEX
+path=(/usr/texbin $path)
+
+# Add Haskell
+path=(~/.cabal/bin $path)
+
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Projects
 source /usr/local/bin/virtualenvwrapper.sh
 
 export VISUAL=vim
 export EDITOR=vim
-export GNUTERM=x11
 
 export PATH
 
