@@ -1,4 +1,4 @@
-"-- Vundle  --------------------------------------------------------------
+" tempalte-- Vundle  --------------------------------------------------------------
 set nocompatible
 filetype off
 
@@ -10,8 +10,9 @@ call vundle#begin()
 Plugin 'Shougo/vimproc'
 
 " My Plugins
+Plugin 'Glench/Vim-Jinja2-Syntax'
 Plugin 'tomasr/molokai'
-Plugin 'marijnh/tern_for_vim'
+"Plugin 'marijnh/tern_for_vim'
 "Plugin 'jelera/vim-javascript-syntax'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'tpope/vim-rails'
@@ -23,9 +24,9 @@ Plugin 'gidj/vim-csyn'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
-Plugin 'SirVer/ultisnips' 
+Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
-Plugin 'Valloric/YouCompleteMe' 
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/syntastic'
 Plugin 'epeli/slimux'
 "NeoBundle 'jpalardy/vim-slime'
@@ -38,6 +39,7 @@ Plugin 'sjl/gundo.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'mattn/emmet-vim'
 Plugin 'jmcantrell/vim-virtualenv'
+Plugin 'whatyouhide/vim-gotham'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -50,24 +52,34 @@ filetype plugin on
 filetype indent on
 let mapleader="," " Change the leader to the comma character
 
+" Function to strip whitespaces on write, while retaining position in the file
+function! <SID>StripTrailingWhitespaces()
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    call cursor(l, c)
+endfun
+
 if has("autocmd")
+    autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
     "autocmd FileType * set tabstop=2|set shiftwidth=2|set noexpandtab
     " Python files
-    autocmd Filetype python setlocal ts=4 sts=4 sw=4 et 
+    autocmd Filetype python setlocal ts=4 sts=4 sw=4 et
+    autocmd Filetype python set foldmethod=indent
     " HTML files
     "autocmd Filetype html,css setlocal ts=2 sts=2 sw=2 expandtab
     " C files
-    autocmd Filetype c,h setlocal foldmethod=syntax ts=2 sts=2 sw=2 expandtab 
-    " make files 
+    autocmd Filetype c,h setlocal foldmethod=syntax ts=2 sts=2 sw=2 expandtab
+    " make files
     autocmd FileType make setlocal noexpandtab
     " Scheme- and Lisp-style files
     autocmd Filetype lisp,scheme setlocal lisp "foldmethod=syntax
     " Ruby
     autocmd FileType ruby,eruby setlocal ts=2 sts=2 sw=2 expandtab
-    autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1 
+    autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
     autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
     autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-endif 
+endif
 "-- End Filetype Options ------------------------------------------------
 
 python from powerline.vim import setup as powerline_setup
@@ -91,7 +103,7 @@ set splitbelow " Horizontal split below
 
 set hlsearch " Hightlight search items
 set incsearch " Hightlight search items as they are searched for
-set showmatch 
+set showmatch
 nnoremap <leader><space> :noh<cr>
 nnoremap <tab> %
 vnoremap <tab> %
@@ -105,7 +117,7 @@ set cursorline " Turn on highlighting of active line:
 "set relativenumber
 
 " Set the color of the IndentLine
-let g:indentLine_color_term = 234 
+let g:indentLine_color_term = 234
 let g:indentLine_char = '│'
 
 set mouse=a " Turn on mouse mode, for terminals that can use it
@@ -132,7 +144,7 @@ let g:Powerline_symbols = 'fancy'
 "-- End Powerline--------------------------------------------------------
 
 "-- Suround -------------------------------------------------------------
-"For Django 
+"For Django
 let b:surround_{char2nr("v")} = "{{ \r }}"
 let b:surround_{char2nr("{")} = "{{ \r }}"
 let b:surround_{char2nr("%")} = "{% \r %}"
@@ -152,11 +164,11 @@ let g:syntastic_mode_map = { 'mode': 'active',
 let g:syntastic_c_compiler = 'clang'
 let g:syntastic_c_compiler_options = '-std=c11'
 "let g:syntastic_c_checkers=['gcc']
-let g:loaded_syntastic_c_gcc_checker = 1 
+let g:loaded_syntastic_c_gcc_checker = 1
 
 let g:syntastic_enable_signs=1
 "let g:syntastic_auto_jump=1
-let g:syntastic_python_checkers=['pylint', 'pyflakes']
+let g:syntastic_python_checkers=['pyflakes']
 let g:syntastic_check_on_open=1 " Check on loading the buffer
 let g:syntastic_check_on_wq=0 " Don't check on closing the buffer
 let g:syntastic_error_symbol= '>' " 'X'  '✗'
@@ -179,8 +191,8 @@ let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 ""-- End YouCompleteMe ---------------------------------------------------
 
 "-- Rainbow Parentheses -------------------------------------------------
-let g:rainbow_active = 1 
-let g:rainbow_operators = 1 
+let g:rainbow_active = 1
+let g:rainbow_operators = 1
 let g:rainbow_guifgs = [
     \ '#458588',
     \ '#b16286',
@@ -211,7 +223,7 @@ nnoremap <F8> :TagbarToggle<CR>
 
 "-- Keymapping ----------------------------------------------------------
 " This makes the space bar toggle folding on and off.
-noremap <Space> za 
+noremap <Space> za
 vnoremap . :norm.<CR>
 "-- End Keymapping ------------------------------------------------------
 
