@@ -42,7 +42,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
 Plugin 'sjl/gundo.vim'
 Plugin 'majutsushi/tagbar'
-Plugin 'Valloric/YouCompleteMe' 
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/syntastic'
 Plugin 'epeli/slimux'
 Plugin 'mattn/emmet-vim'
@@ -87,12 +87,12 @@ if has("autocmd")
     " Haskell
     autocmd Filetype haskell setlocal omnifunc=necoghc#omnifunc
     "autocmd BufEnter *.hs compiler ghc
-endif 
+endif
 "-- End Filetype Options ------------------------------------------------
 
-"python from powerline.vim import setup as powerline_setup
-"python powerline_setup()
-"python del powerline_setup
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
 
 set t_Co=256
 set background=dark " Set the background
