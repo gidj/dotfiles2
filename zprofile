@@ -15,11 +15,8 @@ path=(/usr/texbin $path)
 # Add Haskell
 path=(~/.cabal/bin $path)
 
-# Add TEX
-path=(/usr/texbin $path)
-
-# Add Haskell
-path=(~/.cabal/bin $path)
+# Add Node
+path=(~/node_modules/.bin $path)
 
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Projects
