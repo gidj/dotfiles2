@@ -24,6 +24,7 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-commentary'
 
 " Various Language Plugings
+Plugin 'Glench/Vim-Jinja2-Syntax'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'vim-ruby/vim-ruby'
@@ -76,6 +77,7 @@ if has("autocmd")
     autocmd Filetype python set foldmethod=indent
     " HTML files
     "autocmd Filetype html,css setlocal ts=2 sts=2 sw=2 expandtab
+    " autocmd Filetype jinja setlocal syntax on
     " C files
     autocmd Filetype c,h setlocal foldmethod=syntax ts=2 sts=2 sw=2 expandtab
     " make files
@@ -97,7 +99,7 @@ python del powerline_setup
 set t_Co=256
 set background=dark " Set the background
 colorscheme molokai " Set the theme
-let g:molokai_original = 1
+" let g:molokai_original = 1
 "let g:rehash256 = 1
 
 " Quickly edit/reload the vimrc file
