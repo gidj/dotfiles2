@@ -16,16 +16,21 @@ Plugin 'Shougo/vimproc'
 
 " Themes
 Plugin 'tomasr/molokai'
+Plugin 'stulzer/heroku-colorscheme'
+Plugin 'GertjanReynaert/cobalt2-vim-theme'
+Plugin 'blerins/flattown'
+Plugin 'chankaward/vim-railscasts-theme'
 
 " Useful plugins from Tim Pope
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-vinegar'
 
 " Various Language Plugings
 Plugin 'Glench/Vim-Jinja2-Syntax'
-Plugin 'marijnh/tern_for_vim'
+" Plugin 'marijnh/tern_for_vim'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'ap/vim-css-color'
@@ -100,7 +105,7 @@ set t_Co=256
 set background=dark " Set the background
 colorscheme molokai " Set the theme
 " let g:molokai_original = 1
-"let g:rehash256 = 1
+" let g:rehash256 = 1
 
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
@@ -170,7 +175,7 @@ let b:surround_{char2nr("c")} = "{% comment %}\r{% endcomment %}"
 "-- Syntastic -----------------------------------------------------------
 "let g:syntastic_debug=1
 let g:syntastic_mode_map = { 'mode': 'active',
-                           \ 'active_filetypes': ['ruby', 'python'],
+                           \ 'active_filetypes': ['ruby', 'python', 'javascript'],
                            \ 'passive_filetypes': ['puppet'] }
 let g:syntastic_c_compiler = 'clang'
 let g:syntastic_c_compiler_options = '-std=c11'
@@ -180,6 +185,7 @@ let g:loaded_syntastic_c_gcc_checker = 1
 let g:syntastic_enable_signs=1
 "let g:syntastic_auto_jump=1
 let g:syntastic_python_checkers=['pyflakes']
+let g:syntastic_javascript_checkers=['jshint']
 let g:syntastic_check_on_open=1 " Check on loading the buffer
 let g:syntastic_check_on_wq=0 " Don't check on closing the buffer
 let g:syntastic_error_symbol= '>' " 'X'  '✗'
