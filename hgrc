@@ -1,0 +1,18 @@
+# example config (see "hg help config" for more info)
+
+[ui]
+# name and email, e.g.
+# username = Jane Doe <jdoe@example.com>
+username = Gideon VanRiette <gvanriette@cloverwireless.com>
+ui.merge = internal:merge
+
+[extensions]
+# uncomment these lines to enable some popular extensions
+# (see "hg help extensions" for more info)
+# pager =
+# progress =
+color =
+graphlog =
+mq =
+shelve =
+rebase = 
