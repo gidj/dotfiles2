@@ -81,9 +81,12 @@ sys.path = sys.path[1:]
 import django
 print(django.__path__)"'
 
+# Work aliases
+alias ayad="~/development/cloverwireless/aya"
+
 # 2.4) grep options
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='1;31' # green for matches
 
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+# Make Gruvbox colors in vim better
+source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette_osx.sh"
