@@ -1,72 +1,60 @@
-" -- Vundle  --------------------------------------------------------------
+" -- vim-plug  --------------------------------------------------------------
 set nocompatible
 filetype off
 
-"set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" Use vim-plug to manage plugins
+call plug#begin('~/.vim/plugged')
 
 " let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+" Plugin 'gmarik/Vundle.vim'
 
 " Recommended to install
-Plugin 'Shougo/vimproc'
+" Plugin 'Shougo/vimproc'
 
 " My Plugins
 
 " Themes
-Plugin 'morhetz/gruvbox'
-Plugin 'zenorocha/dracula-theme', {'rtp': 'vim/'}
-Plugin 'tomasr/molokai'
-Plugin 'nanotech/jellybeans.vim'
-Plugin 'stulzer/heroku-colorscheme'
-Plugin 'GertjanReynaert/cobalt2-vim-theme'
-Plugin 'blerins/flattown'
-Plugin 'chankaward/vim-railscasts-theme'
-Plugin 'Pychimp/vim-luna'
-Plugin 'chriskempson/base16-vim'
-Plugin 'w0ng/vim-hybrid'
-Plugin 'chriskempson/vim-tomorrow-theme'
-Plugin 'altercation/vim-colors-solarized.git'
-Plugin 'whatyouhide/vim-gotham'
+Plug 'morhetz/gruvbox'
+Plug 'tomasr/molokai'
+
+" Indispensable Plugins
+Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
+Plug 'scrooloose/syntastic'
+Plug 'kien/ctrlp.vim'
+Plug 'sjl/gundo.vim'
+Plug 'majutsushi/tagbar'
+Plug 'epeli/slimux'
+Plug 'jmcantrell/vim-virtualenv'
 
 " Useful plugins from Tim Pope
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-vinegar'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-vinegar'
 
 " Various Language Plugings
-Plugin 'ludovicchabant/vim-lawrencium'
-Plugin 'Glench/Vim-Jinja2-Syntax'
-" Plugin 'marijnh/tern_for_vim'
-Plugin 'othree/javascript-libraries-syntax.vim'
-" Plugin 'vim-ruby/vim-ruby'
-Plugin 'ap/vim-css-color'
-Plugin 'othree/html5.vim'
-" Plugin 'gidj/vim-csyn'
-Plugin 'hdima/python-syntax'
-Plugin 'luochen1990/rainbow'
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'dag/vim2hs'
-Plugin 'eagletmt/ghcmod-vim'
-Plugin 'eagletmt/neco-ghc'
-
-" Plugin 'bling/vim-airline'
-Plugin 'scrooloose/nerdtree'
-Plugin 'kien/ctrlp.vim'
-Plugin 'sjl/gundo.vim'
-Plugin 'majutsushi/tagbar'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'scrooloose/syntastic'
-Plugin 'epeli/slimux'
-" Plugin 'mattn/emmet-vim'
-Plugin 'jmcantrell/vim-virtualenv'
+Plug 'ludovicchabant/vim-lawrencium'
+Plug 'Glench/Vim-Jinja2-Syntax'
+Plug 'othree/javascript-libraries-syntax.vim'
+Plug 'ap/vim-css-color'
+Plug 'othree/html5.vim'
+Plug 'hdima/python-syntax'
+Plug 'luochen1990/rainbow'
+Plug 'nathanaelkane/vim-indent-guides'
+" Plug 'dag/vim2hs'
+" Plug 'eagletmt/ghcmod-vim'
+" Plug 'eagletmt/neco-ghc'
+" Plug 'scrooloose/nerdtree'
+" Plug 'vim-ruby/vim-ruby'
+" Plug 'gidj/vim-csyn'
+" Plug 'bling/vim-airline'
+" Plug 'mattn/emmet-vim'
+" Plug 'marijnh/tern_for_vim'
 
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
-"-- End Vundle   --------------------------------------------------------
+call plug#end()            " required
+"-- End vim-plug   --------------------------------------------------------
 
 "-- Filetype Options ----------------------------------------------------
 syntax on
@@ -115,7 +103,6 @@ python del powerline_setup
 
 set t_Co=256
 set background=dark " Set the background
-" let g:gruvbox_improved_strings=1
 let g:gruvbox_improved_warnings=1
 colorscheme gruvbox " Set the theme
 
@@ -141,13 +128,9 @@ set number " Activate line numbering on the left side of the screen
 highlight LineNr ctermfg=DarkGrey
 
 set updatetime=2000 " This has syntastic update every second instead of every two
-"set synmaxcol=120 " This stops syntax highlighting from trying after column 120
+set synmaxcol=120 " This stops syntax highlighting from trying after column 120
 set cursorline " Turn on highlighting of active line:
 "set relativenumber
-
-" Set the color of the IndentLine
-let g:indentLine_color_term = 234
-let g:indentLine_char = '│'
 
 set mouse=a " Turn on mouse mode, for terminals that can use it
 
@@ -169,7 +152,7 @@ endif
 
 set laststatus=2 " Activate persistent status line:
 set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
-let g:Powerline_symbols = 'fancy'
+" let g:Powerline_symbols = 'fancy'
 "-- End Powerline--------------------------------------------------------
 
 "-- Suround -------------------------------------------------------------
@@ -190,7 +173,7 @@ let g:syntastic_auto_loc_list = 0
 
 "let g:syntastic_debug=1
 let g:syntastic_mode_map = { 'mode': 'active',
-                           \ 'active_filetypes': ['ruby', 'python', 'javascript'],
+                           \ 'active_filetypes': ['ruby', 'python', 'javascript', 'jinja'],
                            \ 'passive_filetypes': ['puppet'] }
 let g:syntastic_c_compiler = 'clang'
 let g:syntastic_c_compiler_options = '-std=c11'
@@ -220,24 +203,6 @@ let g:ycm_semantic_triggers = {'haskell' : ['.']}
 "-- Rainbow Parentheses -------------------------------------------------
 let g:rainbow_active = 1
 let g:rainbow_operators = 1
-let g:rainbow_guifgs = [
-    \ '#458588',
-    \ '#b16286',
-    \ '#cc241d',
-    \ '#d65d0e',
-    \ '#458588',
-    \ '#b16286',
-    \ '#cc241d',
-    \ '#d65d0e',
-    \ '#458588',
-    \ '#b16286',
-    \ '#cc241d',
-    \ '#d65d0e',
-    \ '#458588',
-    \ '#b16286',
-    \ '#cc241d',
-    \ '#d65d0e',
-    \ ]
 "-- End Rainbow Parentheses ---------------------------------------------
 
 "-- Gundo Options -------------------------------------------------------

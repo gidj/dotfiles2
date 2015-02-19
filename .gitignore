@@ -1,4 +1,4 @@
-vim/bundle/
+vim/plugged/
 *.swp
 vim/.netrwhist
 zprofile
