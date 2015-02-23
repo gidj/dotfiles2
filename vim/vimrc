@@ -128,7 +128,7 @@ set number " Activate line numbering on the left side of the screen
 highlight LineNr ctermfg=DarkGrey
 
 set updatetime=2000 " This has syntastic update every second instead of every two
-set synmaxcol=120 " This stops syntax highlighting from trying after column 120
+" set synmaxcol=120 " This stops syntax highlighting from trying after column 120
 set cursorline " Turn on highlighting of active line:
 "set relativenumber
 
