@@ -5,25 +5,30 @@ filetype off
 " Use vim-plug to manage plugins
 call plug#begin('~/.vim/plugged')
 
-" let Vundle manage Vundle, required
-" Plugin 'gmarik/Vundle.vim'
-
 " Recommended to install
-" Plugin 'Shougo/vimproc'
+Plug 'Shougo/vimproc', { 'do': 'make' }
 
 " My Plugins
 
 " Themes
 Plug 'morhetz/gruvbox'
+Plug 'jdkanani/vim-material-theme'
 Plug 'tomasr/molokai'
 Plug 'noahfrederick/vim-hemisu'
 Plug 'nanotech/jellybeans.vim'
 Plug 'whatyouhide/vim-gotham'
+Plug 'chriskempson/base16-vim'
+Plug 'altercation/vim-colors-solarized'
+Plug 'gertjanreynaert/cobalt2-vim-theme'
+Plug 'abra/vim-abra'
+Plug 'jordwalke/flatlandia'
+Plug 'blerins/flattown'
+Plug 'gertjanreynaert/cobalt2-vim-theme'
 
 " Indispensable Plugins
-Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 Plug 'scrooloose/syntastic'
-Plug 'kien/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'sjl/gundo.vim'
 Plug 'majutsushi/tagbar'
 Plug 'epeli/slimux'
@@ -40,6 +45,7 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-fireplace'
 
 " Various Language Plugings
+" Plug 'bling/vim-airline'
 Plug 'ludovicchabant/vim-lawrencium'
 Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'othree/javascript-libraries-syntax.vim'
@@ -47,16 +53,16 @@ Plug 'ap/vim-css-color'
 Plug 'othree/html5.vim'
 Plug 'hdima/python-syntax'
 Plug 'mattn/emmet-vim'
-Plug 'luochen1990/rainbow'
+" Plug 'luochen1990/rainbow'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'Keithbsmiley/swift.vim'
 Plug 'dag/vim2hs'
-" Plug 'eagletmt/ghcmod-vim'
-" Plug 'eagletmt/neco-ghc'
+Plug 'mhinz/vim-signify'
+Plug 'eagletmt/ghcmod-vim'
+Plug 'eagletmt/neco-ghc'
 " Plug 'scrooloose/nerdtree'
 " Plug 'vim-ruby/vim-ruby'
 " Plug 'gidj/vim-csyn'
-" Plug 'bling/vim-airline'
 " Plug 'marijnh/tern_for_vim'
 
 " All of your Plugins must be added before the following line
@@ -106,11 +112,24 @@ python powerline_setup()
 python del powerline_setup
 " let g:airline_powerline_fonts=1
 " let g:airline#extensions#branch#use_vcscommand=1
-" let g:airline_theme='powerlineish'
+" let g:airline_theme='gruvbox'
 
 let python_highlight_all = 1
 
-set t_Co=256
+" Truecolor settings
+set term=screen-256color
+if &term =~ '256color'
+    " disable Background Color Erase (BCE) so that color schemes
+    " render properly when inside 256-color tmux and GNU screen.
+    " see also http://snk.tuxfamily.org/log/vim-256color-bce.html
+    set t_ut=
+endif
+
+" set t_Co=256
+let &t_8f="\e[38;2;%ld;%ld;%ldm"
+let &t_8b="\e[48;2;%ld;%ld;%ldm"
+set guicolors
+
 set background=dark " Set the background
 let g:gruvbox_improved_warnings=1
 colorscheme gruvbox " Set the theme
@@ -136,7 +155,7 @@ vnoremap <tab> %
 set number " Activate line numbering on the left side of the screen
 highlight LineNr ctermfg=DarkGrey
 
-set updatetime=2000 " This has syntastic update every second instead of every two
+set updatetime=1000 " This has syntastic update every second instead of every two
 " set synmaxcol=120 " This stops syntax highlighting from trying after column 120
 set cursorline " Turn on highlighting of active line:
 "set relativenumber
@@ -239,6 +258,8 @@ vnoremap . :norm.<CR>
 "-- End Keymapping ------------------------------------------------------
 
 "-- Slimux --------------------------------------------------------------
+" let g:slimux_select_from_current_window=0
+let g:slimux_exclude_vim_pane=0
 map <C-c><C-c> :SlimuxREPLSendLine<CR>
 vmap <C-c><C-c> :SlimuxREPLSendSelection<CR>
 "-- End Slimux ----------------------------------------------------------
