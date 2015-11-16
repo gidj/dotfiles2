@@ -1,7 +1,7 @@
 typeset -U path
 
 # Add Homebrew
-path=(/usr/local/bin $path)
+# path=(/usr/local/bin $path)
 
 # Add Racket
 #path=("/Applications/Racket v5.3.5/bin" $path)
@@ -10,13 +10,13 @@ path=(/usr/local/bin $path)
 #path=(/usr/local/opt/ruby/bin $path)
 
 # Add TEX
-path=(/usr/texbin $path)
+# path=(/usr/texbin $path)
 
 # Add Haskell
 path=(~/.cabal/bin $path)
 
 # Add Node
-path=(~/node_modules/.bin $path)
+# path=(~/node_modules/.bin $path)
 
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Projects
@@ -36,6 +36,8 @@ function start_agent {
      chmod 600 "${SSH_ENV}"
      . "${SSH_ENV}" > /dev/null
      /usr/bin/ssh-add;
+     /usr/bin/ssh-add ~/.ssh/qa.pem;
+     /usr/bin/ssh-add ~/.ssh/production.pem;
 }
 
 # Source SSH settings, if applicable
