@@ -3,8 +3,13 @@
 [ui]
 # name and email, e.g.
 # username = Jane Doe <jdoe@example.com>
+ignore = ~/.hgignore
 username = Gideon VanRiette <gvanriette@cloverwireless.com>
-ui.merge = internal:merge
+merge = vimdiff
+
+[mergetools]
+vimdiff.executable = vim
+vimdiff.args = -d $base $local $ output $other +close +close
 
 [extensions]
 # uncomment these lines to enable some popular extensions
@@ -15,4 +20,4 @@ color =
 graphlog =
 mq =
 shelve =
-rebase = 
+rebase =
