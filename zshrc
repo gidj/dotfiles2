@@ -47,3 +47,25 @@ if ! zgen saved; then
     # save all to init script
     zgen save
 fi
+
+# Aliases
+alias ll="ls -alrtFG"
+alias lsa="ls -lahF"
+alias la="ls -AF"
+alias l="ls -CF"
+alias m='less'
+alias ..='cd ..'
+alias ...='cd ..;cd ..'
+alias md='mkdir'
+alias cl='clear'
+alias sicp-racket='racket -ip neil/sicp'
+alias vi="nvim"
+alias vim="nvim"
+alias django-paths='python -c "
+import sys
+sys.path = sys.path[1:]
+import django
+print(django.__path__)"'
+
+# Work aliases
+alias aya="/Volumes/Development/cloverwireless/aya"
