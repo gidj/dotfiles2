@@ -17,13 +17,14 @@ if ! zgen saved; then
     # prezto and modules
     zgen prezto
     zgen prezto git
+    zgen prezto haskell
     zgen prezto homebrew
     zgen prezto osx
     zgen prezto python
     zgen prezto ruby
-    zgen prezto command-not-found
+    zgen prezto ssh
     zgen prezto tmux
-    zgen prezto haskell
+    zgen prezto command-not-found
     zgen prezto history-substring-search
     zgen prezto syntax-highlighting
 
