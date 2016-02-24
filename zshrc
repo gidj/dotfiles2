@@ -3,8 +3,8 @@ export ZGEN_RESET_ON_CHANGE=($HOME/.zshrc)
 source "${HOME}/dotfiles/zgen/zgen.zsh"
 
 # Autoenv files
-export AUTOENV_FILE_ENTER=".env"
-export AUTOENV_FILE_LEAVE=".out"
+export AUTOENV_FILE_ENTER=".env.zsh"
+export AUTOENV_FILE_LEAVE=".out.zsh"
 
 # check if there's no init script
 if ! zgen saved; then
