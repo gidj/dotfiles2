@@ -1,92 +1,37 @@
-# Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
+# load zgen
+export ZGEN_RESET_ON_CHANGE=($HOME/.zshrc)
+source "${HOME}/dotfiles/zgen/zgen.zsh"
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-ZSH_THEME="kolo"
+# check if there's no init script
+if ! zgen saved; then
+    echo "Creating a zgen save"
 
-# Base16 Shell
-#BASE16_SCHEME="bright"
-#BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh"
-#[[ -s $BASE16_SHELL ]] && . $BASE16_SHELL
+    # prezto options
+    zgen prezto editor key-bindings 'emacs'
+    zgen prezto editor dot-expansion 'yes'
+    zgen prezto prompt theme 'giddie'
+    # zgen prezto tmux:auto-start local 'yes'
+    zgen prezto '*:*' case-sensitive 'yes'
+    zgen prezto '*:*' color 'yes'
 
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+    # prezto and modules
+    zgen prezto
+    zgen prezto git
+    zgen prezto homebrew
+    zgen prezto osx
+    zgen prezto python
+    zgen prezto ruby
+    zgen prezto command-not-found
+    zgen prezto tmux
+    zgen prezto haskell
+    zgen prezto history-substring-search
+    zgen prezto syntax-highlighting
 
-# Set to this to use case-sensitive completion
-# CASE_SENSITIVE="true"
+    # completions
+    # zgen load zsh-users/zsh-completions src
+    zgen load zsh-users/zsh-syntax-highlighting
+    zgen load tarruda/zsh-autosuggestions
 
-# Comment this out to disable bi-weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment to change how often before auto-updates occur? (in days)
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
-
-# Uncomment following line if you want to disable autosetting terminal title.
-DISABLE_AUTO_TITLE="true"
-
-# Uncomment following line if you want to disable command autocorrection
-DISABLE_CORRECTION="true"
-
-# Uncomment following line if you want red dots to be displayed while waiting for completion
-COMPLETION_WAITING_DOTS="true"
-
-# Uncomment following line if you want to disable marking untracked files under
-# VCS as dirty. This makes repository status check for large repositories much,
-# much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(make django osx virtualenv brew git python tmux vagrant mercurial)
-
-source $ZSH/oh-my-zsh.sh
-#. /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
-# Customize to your needs...
-
-# Set default user to remove the user@hostname if logged in via regular user:
-DEFAULT_USER="gideon"
-
-# Set locale; this fixes the problem in 'agnoster' theme where autocomplete
-# repeats the command it is completing
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-
-# Enable vim mode
-#bindkey -v
-
-# Aliases
-alias ll="ls -alrtFG"
-alias lsa="ls -lahF"
-alias la="ls -AF"
-alias l="ls -CF"
-alias m='less'
-alias ..='cd ..'
-alias ...='cd ..;cd ..'
-alias md='mkdir'
-alias cl='clear'
-alias sicp-racket='racket -ip neil/sicp'
-alias vi="vim"
-#alias vim="rvm system do /usr/local/bin/vim $@"
-alias django-paths='python -c "
-import sys
-sys.path = sys.path[1:]
-import django
-print(django.__path__)"'
-
-# Work aliases
-alias ayad="~/development/cloverwireless/aya"
-
-# 2.4) grep options
-export GREP_OPTIONS='--color=auto'
-export GREP_COLOR='1;31' # green for matches
-
-# Make Gruvbox colors in vim better
-source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette_osx.sh"
+    # save all to init script
+    zgen save
+fi
