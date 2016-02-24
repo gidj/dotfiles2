@@ -5,10 +5,10 @@
 # username = Jane Doe <jdoe@example.com>
 ignore = ~/.hgignore
 username = Gideon VanRiette <gvanriette@cloverwireless.com>
-merge = vimdiff
+merge = nvim -d
 
 [mergetools]
-vimdiff.executable = vim
+vimdiff.executable = nvim
 vimdiff.args = -d $base $local $ output $other +close +close
 
 [extensions]
