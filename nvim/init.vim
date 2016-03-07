@@ -38,7 +38,7 @@ Plug 'eagletmt/ghcmod-vim'
 Plug 'eagletmt/neco-ghc'
 
 " Ruby Plugins
-Plug 'vim-ruby/vim-ruby'
+" Plug 'vim-ruby/vim-ruby'
 
 " Useful plugins from Tim Pope
 Plug 'tpope/vim-fugitive'
