@@ -19,7 +19,7 @@ Plug 'mkarmona/colorsbox'
 Plug 'notpratheek/vim-luna'
 
 " Indispensable Plugins
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --tern-completer' }
 " Plug 'benekastah/neomake'
 Plug 'scrooloose/syntastic'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -49,8 +49,9 @@ Plug 'eagletmt/ghcmod-vim'
 Plug 'eagletmt/neco-ghc'
 
 " Javascript Plugins
-Plug 'othree/javascript-libraries-syntax.vim'
-Plug 'mxw/vim-jsx'
+Plug 'pangloss/vim-javascript'
+Plug 'othree/javascript-libraries-syntax.vim' " For all JS libraries
+Plug 'mxw/vim-jsx' " For ReactJS
 
 " Ruby Plugins
 " Plug 'vim-ruby/vim-ruby' " Doesn't work with Neovim yet
@@ -92,6 +93,8 @@ endfun
 
 if has("autocmd")
     autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+    " Javascript, JSX
+    autocmd FileType javascript.jsx set ts=4 sts=4 sw=4 et
     " Python files
     autocmd Filetype python setlocal ts=4 sts=4 sw=4 et
     " C files
@@ -105,7 +108,6 @@ if has("autocmd")
     " Haskell
     autocmd Filetype haskell setlocal omnifunc=necoghc#omnifunc foldlevelstart=20
     " autocmd BufEnter *.hs compiler ghc
-
     " HTML files
     "autocmd Filetype html,css setlocal ts=2 sts=2 sw=2 expandtab
     " autocmd Filetype jinja setlocal syntax on
