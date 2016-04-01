@@ -29,6 +29,7 @@ if ! zgen saved; then
     zgen prezto git
     zgen prezto haskell
     zgen prezto homebrew
+    zgen prezto node
     zgen prezto osx
     zgen prezto python
     zgen prezto ruby

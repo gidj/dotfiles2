@@ -9,6 +9,7 @@ Plug 'Shougo/vimproc', { 'do': 'make' }
 
 " Themes
 Plug 'morhetz/gruvbox'
+Plug 'mhartington/oceanic-next'
 Plug 'jdkanani/vim-material-theme'
 Plug 'tomasr/molokai'
 Plug 'whatyouhide/vim-gotham'
@@ -26,6 +27,16 @@ Plug 'sjl/gundo.vim'
 Plug 'majutsushi/tagbar'
 Plug 'epeli/slimux'
 Plug 'rking/ag.vim'
+Plug 'bling/vim-airline'
+
+" Useful plugins from Tim Pope
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-vinegar'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-fireplace'
 
 " Python Plugins
 " Plug 'pfdevilliers/Pretty-Vim-Python'
@@ -37,30 +48,25 @@ Plug 'dag/vim2hs'
 Plug 'eagletmt/ghcmod-vim'
 Plug 'eagletmt/neco-ghc'
 
-" Ruby Plugins
-" Plug 'vim-ruby/vim-ruby'
+" Javascript Plugins
+Plug 'othree/javascript-libraries-syntax.vim'
+Plug 'mxw/vim-jsx'
 
-" Useful plugins from Tim Pope
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-vinegar'
-Plug 'tpope/vim-sensible'
-Plug 'tpope/vim-fireplace'
+" Ruby Plugins
+" Plug 'vim-ruby/vim-ruby' " Doesn't work with Neovim yet
+
+" Version control related
+Plug 'ludovicchabant/vim-lawrencium'
+Plug 'mhinz/vim-signify'
 
 " Various Language Plugings
-Plug 'bling/vim-airline'
-Plug 'ludovicchabant/vim-lawrencium'
 Plug 'Glench/Vim-Jinja2-Syntax'
-Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'ap/vim-css-color'
 Plug 'othree/html5.vim'
 Plug 'mattn/emmet-vim'
 " Plug 'luochen1990/rainbow'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'Keithbsmiley/swift.vim'
-Plug 'mhinz/vim-signify'
 " Plug 'scrooloose/nerdtree'
 " Plug 'gidj/vim-csyn'
 " Plug 'marijnh/tern_for_vim'
@@ -110,8 +116,8 @@ endif
 "-- End Filetype Options ------------------------------------------------
 
 "-- EClim ---------------------------------------------------------------
-let g:EclimCompletionMethod = 'omnifunc'
-let g:EclimPythonValidate = 0 " Disable validation of python files so syntastic takes over
+" let g:EclimCompletionMethod = 'omnifunc'
+" let g:EclimPythonValidate = 0 " Disable validation of python files so syntastic takes over
 
 let g:airline_powerline_fonts=1
 let g:airline#extensions#branch#use_vcscommand=1
@@ -119,18 +125,12 @@ let g:airline_theme='gruvbox'
 
 let python_highlight_all = 1
 
-" Truecolor settings
+" Theme settings
 :let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-
-" " set t_Co=256
-" let &t_8f="\e[38;2;%ld;%ld;%ldm"
-" let &t_8b="\e[48;2;%ld;%ld;%ldm"
-" set guicolors
-
 set background=dark " Set the background
 let g:gruvbox_improved_warnings=1
 let g:gruvbox_contrast_dark='hard'
-colorscheme gruvbox " Set the theme
+colorscheme gruvbox
 
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
@@ -228,7 +228,8 @@ let g:loaded_syntastic_c_gcc_checker = 1
 let g:syntastic_enable_signs=1
 "let g:syntastic_auto_jump=1
 let g:syntastic_python_checkers=['pyflakes']
-let g:syntastic_javascript_checkers=['jshint']
+" let g:syntastic_javascript_checkers=['jshint']
+let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_error_symbol= '>' " 'X'  '✗'
 let g:syntastic_warning_symbol='⚠'
 "-- End Syntastic -------------------------------------------------------
