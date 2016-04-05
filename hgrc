@@ -7,9 +7,13 @@ ignore = ~/.hgignore
 username = Gideon VanRiette <gvanriette@cloverwireless.com>
 merge = nvim -d
 
-[mergetools]
+[merge-tools]
 vimdiff.executable = nvim
 vimdiff.args = -d $base $local $ output $other +close +close
+
+[merge-patterns]
+**.mo = internal:other
+**.po = internal:other
 
 [extensions]
 # uncomment these lines to enable some popular extensions
@@ -19,5 +23,6 @@ vimdiff.args = -d $base $local $ output $other +close +close
 color =
 graphlog =
 mq =
-shelve =
+purge =
 rebase =
+shelve =
