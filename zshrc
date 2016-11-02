@@ -71,6 +71,9 @@ print(django.__path__)"'
 # Work aliases
 alias aya="/Volumes/Development/cloverwireless/aya"
 
+# Project aliases
+alias rackr="~/Projects/rackr"
+
 # Mercurial
 alias hgc='hg commit'
 alias hgb='hg branch'
@@ -90,3 +93,7 @@ alias hgsl='hg log --limit 20 --template "{node|short} | {date|isodatesec} | {au
 alias hgca='hg commit --amend'
 # list unresolved files (since hg does not list unmerged files in the status command)
 alias hgun='hg resolve --list'
+
+# Eclimd
+alias eclimd='/Applications/Eclipse.app/Contents/Eclipse/eclimd'
+

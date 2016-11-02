@@ -9,6 +9,8 @@ Plug 'Shougo/vimproc', { 'do': 'make' }
 
 " Themes
 Plug 'morhetz/gruvbox'
+Plug 'w0ng/vim-hybrid'
+Plug 'jacoborus/tender.vim'
 Plug 'mhartington/oceanic-next'
 Plug 'jdkanani/vim-material-theme'
 Plug 'tomasr/molokai'
@@ -68,6 +70,7 @@ Plug 'mattn/emmet-vim'
 " Plug 'luochen1990/rainbow'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'Keithbsmiley/swift.vim'
+" Plug 'jiangmiao/auto-pairs'
 " Plug 'scrooloose/nerdtree'
 " Plug 'gidj/vim-csyn'
 " Plug 'marijnh/tern_for_vim'
@@ -118,8 +121,8 @@ endif
 "-- End Filetype Options ------------------------------------------------
 
 "-- EClim ---------------------------------------------------------------
-" let g:EclimCompletionMethod = 'omnifunc'
-" let g:EclimPythonValidate = 0 " Disable validation of python files so syntastic takes over
+let g:EclimCompletionMethod = 'omnifunc'
+let g:EclimPythonValidate = 0 " Disable validation of python files so syntastic takes over
 
 let g:airline_powerline_fonts=1
 let g:airline#extensions#branch#use_vcscommand=1
@@ -128,11 +131,15 @@ let g:airline_theme='gruvbox'
 let python_highlight_all = 1
 
 " Theme settings
-:let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+" let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+set termguicolors
+
 set background=dark " Set the background
 let g:gruvbox_improved_warnings=1
 let g:gruvbox_contrast_dark='hard'
 colorscheme gruvbox
+
+set clipboard=unnamed
 
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
