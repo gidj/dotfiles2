@@ -6,6 +6,7 @@
 ignore = ~/.hgignore
 username = Gideon VanRiette <gvanriette@cloverwireless.com>
 merge = nvim -d
+ssh = ssh -C -i ~/.ssh/id_rsa
 
 [merge-tools]
 vimdiff.executable = nvim
