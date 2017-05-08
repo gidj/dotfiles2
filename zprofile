@@ -26,3 +26,9 @@ SSH_ENV="$HOME/.ssh/environment"
 # Get sensitive environmental variables
 source ~/.tokens.zsh
 
+# Make sure keys are loaded in ssh-agent
+if [ -z "$SSH_AUTH_SOCK" ] ; then
+    eval ssh-agent -s
+    ssh-add
+    ssh-add ~/.ssh/*.pem
+fi
