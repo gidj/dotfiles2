@@ -39,7 +39,7 @@ if ! zgen saved; then
     zgen prezto history-substring-search
 
     # Autoenv
-    zgen load Tarrasch/zsh-autoenv
+    # zgen load Tarrasch/zsh-autoenv
 
     # External Plugins
     zgen load zsh-users/zsh-completions src
