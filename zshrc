@@ -1,99 +1,49 @@
-# load zgen
-export ZGEN_RESET_ON_CHANGE=($HOME/.zshrc)
-source "${HOME}/dotfiles/zgen/zgen.zsh"
+source ~/.zplug/init.zsh
 
-# Autoenv files
-export AUTOENV_FILE_ENTER=".env.zsh"
-export AUTOENV_FILE_LEAVE=".out.zsh"
+zstyle ":prezto:*:*" color "yes"
+zstyle ":prezto:*:*" case-sensitive "yes"
 
-# check if there's no init script
-if ! zgen saved; then
-    echo "Creating a zgen save"
+zstyle ":prezto:module:editor" key-bindings "emacs"
+zstyle ":prezto:module:editor" dot-expansion "yes"
+zstyle ":prezto:module:terminal" auto-title "yes"
+zstyle ":prezto:module:syntax-highlighting" highlighters \
+    "main" \
+    "brackets" \
+    "pattern" \
+    "root"
 
-    # prezto options
-    zgen prezto editor key-bindings 'emacs'
-    zgen prezto editor dot-expansion 'yes'
-    zgen prezto prompt theme 'giddie'
-    zgen prezto 'syntax-highlighting' highlighters \
-        'main' \
-        'brackets' \
-        'pattern' \
-        'root'
-    # zgen prezto tmux:auto-start local 'yes'
-    zgen prezto tmux:auto-start remote 'yes'
-    zgen prezto '*:*' case-sensitive 'yes'
-    zgen prezto '*:*' color 'yes'
+# zplug "sorin-ionescu/prezto", \
+#   as:plugin, \
+#   use:init.zsh, \
+#   hook-build:"ln -s $ZPLUG_ROOT/repos/sorin-ionescu/prezto ${ZDOTDIR:-$HOME}/.zprezto"
 
-    # prezto and modules
-    zgen prezto
-    zgen prezto git
-    zgen prezto haskell
-    zgen prezto homebrew
-    zgen prezto node
-    zgen prezto osx
-    zgen prezto python
-    zgen prezto ruby
-    zgen prezto tmux
-    zgen prezto command-not-found
-    zgen prezto syntax-highlighting
-    zgen prezto history-substring-search
 
-    # Autoenv
-    # zgen load Tarrasch/zsh-autoenv
+# zplug "modules/prompt", from:prezto
+# zplug "modules/haskell", from:prezto
+# zplug "modules/node", from:prezto
+# zplug "modules/ruby", from:prezto
+# zplug "modules/tmux", from:prezto
+zplug "modules/editor", from:prezto
+zplug "modules/utility", from:prezto
+zplug "modules/completion", from:prezto
+zplug "modules/osx", from:prezto
+zplug "modules/git", from:prezto
+zplug "modules/terminal", from:prezto
+zplug "modules/homebrew", from:prezto
+zplug "modules/python", from:prezto
+zplug "modules/syntax-highlighting", from:prezto
+zplug "modules/history-substring-search", from:prezto
 
-    # External Plugins
-    zgen load zsh-users/zsh-completions src
-    # zgen load tarruda/zsh-autosuggestions
+zplug mafredri/zsh-async, from:github
+zplug gidj/pure, use:pure.zsh, from:github, as:theme
 
-    # save all to init script
-    zgen save
+# Install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
 fi
 
-# Aliases
-alias ll="ls -alrtFG"
-alias lsa="ls -lahF"
-alias la="ls -AF"
-alias l="ls -CF"
-alias m='less'
-alias ..='cd ..'
-alias ...='cd ..;cd ..'
-alias md='mkdir'
-alias cl='clear'
-alias sicp-racket='racket -ip neil/sicp'
-alias vi="nvim"
-alias vim="nvim"
-alias django-paths='python -c "
-import sys
-sys.path = sys.path[1:]
-import django
-print(django.__path__)"'
-
-# Work aliases
-alias aya="/Volumes/Development/cloverwireless/aya"
-
-# Project aliases
-alias rackr="~/Projects/rackr"
-
-# Mercurial
-alias hgc='hg commit'
-alias hgb='hg branch'
-alias hgba='hg branches'
-alias hgbk='hg bookmarks'
-alias hgco='hg checkout'
-alias hgd='hg diff'
-alias hged='hg diffmerge'
-# pull and update
-alias hgi='hg incoming'
-alias hgl='hg pull -u'
-alias hglr='hg pull --rebase'
-alias hgo='hg outgoing'
-alias hgp='hg push'
-alias hgs='hg status'
-alias hgsl='hg log --limit 20 --template "{node|short} | {date|isodatesec} | {author|user}: {desc|strip|firstline}\n" '
-alias hgca='hg commit --amend'
-# list unresolved files (since hg does not list unmerged files in the status command)
-alias hgun='hg resolve --list'
-
-# Eclimd
-alias eclimd='/Applications/Eclipse.app/Contents/Eclipse/eclimd'
-
+# Then, source plugins and add commands to $PATH
+zplug load

@@ -9,20 +9,21 @@ Plug 'Shougo/vimproc', { 'do': 'make' }
 
 " Themes
 Plug 'morhetz/gruvbox'
-Plug 'w0ng/vim-hybrid'
-Plug 'jacoborus/tender.vim'
-Plug 'mhartington/oceanic-next'
-Plug 'jdkanani/vim-material-theme'
-Plug 'tomasr/molokai'
-Plug 'whatyouhide/vim-gotham'
-Plug 'chriskempson/base16-vim'
-Plug 'effkay/argonaut.vim'
-Plug 'mkarmona/colorsbox'
-Plug 'notpratheek/vim-luna'
+" Plug 'w0ng/vim-hybrid'
+" Plug 'jacoborus/tender.vim'
+" Plug 'mhartington/oceanic-next'
+" Plug 'jdkanani/vim-material-theme'
+" Plug 'tomasr/molokai'
+" Plug 'whatyouhide/vim-gotham'
+" Plug 'chriskempson/base16-vim'
+" Plug 'effkay/argonaut.vim'
+" Plug 'mkarmona/colorsbox'
+" Plug 'notpratheek/vim-luna'
+" Plug 'tyrannicaltoucan/vim-quantum'
+" Plug 'ayu-theme/ayu-vim'
 
 " Indispensable Plugins
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --tern-completer' }
-" Plug 'benekastah/neomake'
 Plug 'scrooloose/syntastic'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'sjl/gundo.vim'
@@ -30,6 +31,7 @@ Plug 'majutsushi/tagbar'
 Plug 'epeli/slimux'
 Plug 'rking/ag.vim'
 Plug 'bling/vim-airline'
+" Plug 'benekastah/neomake'
 
 " Useful plugins from Tim Pope
 Plug 'tpope/vim-fugitive'
@@ -38,7 +40,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-sensible'
-Plug 'tpope/vim-fireplace'
+" Plug 'tpope/vim-fireplace'
 
 " Python Plugins
 " Plug 'pfdevilliers/Pretty-Vim-Python'
@@ -59,19 +61,17 @@ Plug 'mxw/vim-jsx' " For ReactJS
 " Plug 'vim-ruby/vim-ruby' " Doesn't work with Neovim yet
 
 " Version control related
-Plug 'ludovicchabant/vim-lawrencium'
 Plug 'mhinz/vim-signify'
+" Plug 'ludovicchabant/vim-lawrencium'
 
 " Various Language Plugings
 Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'ap/vim-css-color'
 Plug 'othree/html5.vim'
-" Plug 'mattn/emmet-vim'
-" Plug 'luochen1990/rainbow'
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'Keithbsmiley/swift.vim'
+" Plug 'mattn/emmet-vim'
+" Plug 'Keithbsmiley/swift.vim'
 " Plug 'jiangmiao/auto-pairs'
-" Plug 'scrooloose/nerdtree'
 " Plug 'gidj/vim-csyn'
 " Plug 'marijnh/tern_for_vim'
 
@@ -137,6 +137,7 @@ set termguicolors
 set background=dark " Set the background
 let g:gruvbox_improved_warnings=1
 let g:gruvbox_contrast_dark='hard'
+let g:quantum_black=1
 colorscheme gruvbox
 
 set clipboard=unnamed
@@ -147,7 +148,7 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
 set backspace=indent,eol,start  " Let backspace cross over end of line
 set modeline
-set tabstop=4 expandtab shiftwidth=4 softtabstop=4 " Default to 4-space tabs, written in spaces
+" set tabstop=4 expandtab shiftwidth=4 softtabstop=4 " Default to 4-space tabs, written in spaces
 
 set splitright " Vertical split to the right
 set splitbelow " Horizontal split below
@@ -165,7 +166,7 @@ highlight LineNr ctermfg=DarkGrey
 set updatetime=1000 " This has syntastic update every second instead of every two
 " set synmaxcol=120 " This stops syntax highlighting from trying after column 120
 set cursorline " Turn on highlighting of active line:
-"set relativenumber
+" set relativenumber
 
 set mouse=a " Turn on mouse mode, for terminals that can use it
 
@@ -187,7 +188,6 @@ endif
 
 set laststatus=2 " Activate persistent status line:
 set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
-" let g:Powerline_symbols = 'fancy'
 "-- End Powerline--------------------------------------------------------
 
 "-- Suround -------------------------------------------------------------
@@ -258,11 +258,6 @@ let g:ycm_seed_identifiers_with_syntax = 1 " Completion for programming language
 let g:ycm_complete_in_comments = 1 " Completion in comments
 let g:ycm_complete_in_strings = 1 " Completion in string
 ""-- End YouCompleteMe ---------------------------------------------------
-
-"-- Rainbow Parentheses -------------------------------------------------
-let g:rainbow_active = 1
-let g:rainbow_operators = 1
-"-- End Rainbow Parentheses ---------------------------------------------
 
 "-- Gundo Options -------------------------------------------------------
 nnoremap <F5> :GundoToggle<CR>
