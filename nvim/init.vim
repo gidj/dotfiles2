@@ -9,6 +9,7 @@ Plug 'Shougo/vimproc', { 'do': 'make' }
 
 " Themes
 Plug 'morhetz/gruvbox'
+Plug 'gidj/vim-vimbrant'
 " Plug 'w0ng/vim-hybrid'
 " Plug 'jacoborus/tender.vim'
 " Plug 'mhartington/oceanic-next'
@@ -23,8 +24,12 @@ Plug 'morhetz/gruvbox'
 " Plug 'ayu-theme/ayu-vim'
 
 " Indispensable Plugins
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --tern-completer' }
-Plug 'scrooloose/syntastic'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'zchee/deoplete-jedi'
+Plug 'neomake/neomake'
+" Plug 'ervandew/supertab'
+" Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --tern-completer' }
+" Plug 'scrooloose/syntastic'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'sjl/gundo.vim'
 Plug 'majutsushi/tagbar'
@@ -120,9 +125,32 @@ if has("autocmd")
 endif
 "-- End Filetype Options ------------------------------------------------
 
+"-- Deoplete ------------------------------------------------------------
+let g:deoplete#enable_at_startup = 1
+" Create comnifunc hash
+if !exists('g:deoplete#omni#input_patterns')
+  let g:deoplete#omni#input_patterns = {}
+endif
+let g:deoplete#omni_patterns = {}
+let g:deoplete#omni_patterns.java = '[^. \t].\w'
+let g:deoplete#ignore_sources = {}
+let g:deoplete#ignore_sources.java = ['tag']
+
+" use tab to forward cycle
+inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+" use tab to backward cycle
+inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
+" Close the documentation window when completion is done
+autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+
+let g:python_host_prog = '/Users/gideon/.virtualenvs/neovim/bin/python'
+let g:python3_host_prog = '/Users/gideon/.virtualenvs/neovim3/bin/python'
+"-- End Deoplete --------------------------------------------------------
+
 "-- EClim ---------------------------------------------------------------
 let g:EclimCompletionMethod = 'omnifunc'
 let g:EclimPythonValidate = 0 " Disable validation of python files so syntastic takes over
+"-- End EClim -----------------------------------------------------------
 
 let g:airline_powerline_fonts=1
 let g:airline#extensions#branch#use_vcscommand=1
@@ -163,7 +191,7 @@ vnoremap <tab> %
 set number " Activate line numbering on the left side of the screen
 highlight LineNr ctermfg=DarkGrey
 
-set updatetime=1000 " This has syntastic update every second instead of every two
+" set updatetime=1000 " This has syntastic update every second instead of every two
 " set synmaxcol=120 " This stops syntax highlighting from trying after column 120
 set cursorline " Turn on highlighting of active line:
 " set relativenumber
@@ -207,16 +235,17 @@ let g:signify_vcs_list = ['hg', 'git']
 "-- End Signify----------------------------------------------------------
 
 "-- NeoMake -------------------------------------------------------------
-" let g:neomake_error_sign = {
-"             \ 'text': '>',
-"             \ }
-" " hi MyWarningMsg ctermbg=3 ctermfg=0
-" let g:neomake_warning_sign = {
-"             \ 'text': '⚠',
-"             \ }
-
-" autocm! BufWritePost,BufEnter * Neomake
+let g:neomake_error_sign = { 'text': '>', }
+" hi MyWarningMsg ctermbg=3 ctermfg=0
+let g:neomake_warning_sign = { 'text': '⚠', }
+autocm! BufWritePost,BufEnter * Neomake
+" let g:neomake_javascript_jshint_maker = {
+"     \ 'args': ['--verbose'],
+"     \ 'errorformat': '%A%f: line %l\, col %v\, %m \(%t%*\d\)',
+"     \ }
+let g:neomake_python_enabled_makers = ['pyflakes', 'pylint']
 "-- End NeoMake ----------------------------------------------------------
+
 "-- Syntastic -----------------------------------------------------------
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
