@@ -2,5 +2,8 @@
 vim/.netrwhist
 nvim/.netrwhist
 nvim/autoload
+nvim/eclim
+nvim/plugin
 nvim/plugged
+nvim/workbench.xmi
 zgen
