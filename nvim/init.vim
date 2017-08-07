@@ -126,6 +126,8 @@ function! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfun
 
+nnoremap n nzz
+
 if has("autocmd")
     autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
     " Javascript, JSX

@@ -4,6 +4,21 @@ typeset -U path
 export AUTOENV_FILE_ENTER=".env.zsh"
 export AUTOENV_FILE_LEAVE=".out.zsh"
 
+# Add Racket
+#path=("/Applications/Racket v5.3.5/bin" $path)
+
+# Add TEX
+# path=(/usr/texbin $path)
+
+# Add Haskell
+path=(~/.cabal/bin $path)
+
+# Add Python
+path=(/usr/local/opt/python/libexec/bin $path)
+
+# Add Node
+# path=(~/node_modules/.bin $path)
+
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Projects
 source /usr/local/bin/virtualenvwrapper.sh
