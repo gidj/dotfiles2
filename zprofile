@@ -9,6 +9,9 @@ typeset -U path
 # Add Haskell
 path=(~/.cabal/bin $path)
 
+# Add Python
+path=(/usr/local/opt/python/libexec/bin $path)
+
 # Add Node
 # path=(~/node_modules/.bin $path)
 
