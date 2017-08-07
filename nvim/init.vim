@@ -2,6 +2,31 @@
 " Use vim-plug to manage plugins
 call plug#begin('~/.config/nvim/plugged')
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Make sure neovim doesn't use the virtualenv
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+if has("nvim")
+    if filereadable(expand('~/.virtualenvs/neovim/bin/python'))
+        let g:python_host_prog = expand('~/.virtualenvs/neovim/bin/python')
+    elseif filereadable('/usr/local/bin/python2')
+        let g:python_host_prog = '/usr/local/bin/python'
+    elseif filereadable('/usr/bin/python')
+        let g:python_host_prog = '/usr/bin/python'
+    else
+        echom "WARNING: no valid python2 install found"
+    endif
+
+    if filereadable(expand('~/.virtualenvs/neovim3/bin/python'))
+        let g:python3_host_prog = expand('~/.virtualenvs/neovim3/bin/python')
+    elseif filereadable('/usr/local/bin/python3')
+        let g:python3_host_prog = '/usr/local/bin/python3'
+    elseif filereadable('/usr/bin/python3')
+        let g:python3_host_prog = '/usr/bin/python3'
+    else
+        echom "WARNING: no valid python3 install found"
+    endif
+endif
+
 " Recommended to install
 Plug 'Shougo/vimproc', { 'do': 'make' }
 
@@ -24,12 +49,13 @@ Plug 'gidj/vim-vimbrant'
 " Plug 'ayu-theme/ayu-vim'
 
 " Indispensable Plugins
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'zchee/deoplete-jedi'
-Plug 'neomake/neomake'
+" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" Plug 'zchee/deoplete-jedi'
+" Plug 'neomake/neomake'
 " Plug 'ervandew/supertab'
-" Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --tern-completer' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --tern-completer' }
 " Plug 'scrooloose/syntastic'
+Plug 'w0rp/ale'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'sjl/gundo.vim'
 Plug 'majutsushi/tagbar'
@@ -50,7 +76,8 @@ Plug 'tpope/vim-sensible'
 " Python Plugins
 " Plug 'pfdevilliers/Pretty-Vim-Python'
 Plug 'jmcantrell/vim-virtualenv'
-Plug 'hdima/python-syntax'
+" Plug 'hdima/python-syntax'
+Plug 'vim-python/python-syntax'
 
 " Haskell Plugins
 Plug 'dag/vim2hs'
@@ -125,6 +152,14 @@ if has("autocmd")
 endif
 "-- End Filetype Options ------------------------------------------------
 
+
+let g:airline#extensions#ale#enabled = 1
+
+" let g:ale_python_flake8_executable = '/Users/gideon/.virtualenvs/neovim/bin/python/flake8'
+" let g:ale_python_pylint_executable = '/Users/gideon/.virtualenvs/neovim/bin/python/pylint'
+
+let g:ale_python_pylint_use_global = 1
+
 "-- Deoplete ------------------------------------------------------------
 let g:deoplete#enable_at_startup = 1
 " Create comnifunc hash
@@ -132,9 +167,12 @@ if !exists('g:deoplete#omni#input_patterns')
   let g:deoplete#omni#input_patterns = {}
 endif
 let g:deoplete#omni_patterns = {}
-let g:deoplete#omni_patterns.java = '[^. \t].\w'
+let g:deoplete#omni_patterns.java = '[^. *\t].\w*'
 let g:deoplete#ignore_sources = {}
 let g:deoplete#ignore_sources.java = ['tag']
+
+let g:deoplete#omni_patterns = {}
+let g:deoplete#omni_patterns.ruby = '[^. *\t].\w*'
 
 " use tab to forward cycle
 inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
@@ -143,8 +181,8 @@ inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 " Close the documentation window when completion is done
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
-let g:python_host_prog = '/Users/gideon/.virtualenvs/neovim/bin/python'
-let g:python3_host_prog = '/Users/gideon/.virtualenvs/neovim3/bin/python'
+" let g:python_host_prog = '/Users/gideon/.virtualenvs/neovim/bin/python'
+" let g:python3_host_prog = '/Users/gideon/.virtualenvs/neovim3/bin/python'
 "-- End Deoplete --------------------------------------------------------
 
 "-- EClim ---------------------------------------------------------------
@@ -192,7 +230,7 @@ set number " Activate line numbering on the left side of the screen
 highlight LineNr ctermfg=DarkGrey
 
 " set updatetime=1000 " This has syntastic update every second instead of every two
-" set synmaxcol=120 " This stops syntax highlighting from trying after column 120
+set synmaxcol=120 " This stops syntax highlighting from trying after column 120
 set cursorline " Turn on highlighting of active line:
 " set relativenumber
 
@@ -238,7 +276,7 @@ let g:signify_vcs_list = ['hg', 'git']
 let g:neomake_error_sign = { 'text': '>', }
 " hi MyWarningMsg ctermbg=3 ctermfg=0
 let g:neomake_warning_sign = { 'text': '⚠', }
-autocm! BufWritePost,BufEnter * Neomake
+" autocm! BufWritePost,BufEnter * Neomake
 " let g:neomake_javascript_jshint_maker = {
 "     \ 'args': ['--verbose'],
 "     \ 'errorformat': '%A%f: line %l\, col %v\, %m \(%t%*\d\)',
@@ -266,6 +304,7 @@ let g:loaded_syntastic_c_gcc_checker = 1
 let g:syntastic_enable_signs=1
 "let g:syntastic_auto_jump=1
 let g:syntastic_python_checkers=['pyflakes']
+
 " let g:syntastic_javascript_checkers=['jshint']
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_error_symbol= '>' " 'X'  '✗'
@@ -286,6 +325,9 @@ let g:ycm_collect_identifiers_from_tags_files = 1 " Let YCM read tags from Ctags
 let g:ycm_seed_identifiers_with_syntax = 1 " Completion for programming language's keyword
 let g:ycm_complete_in_comments = 1 " Completion in comments
 let g:ycm_complete_in_strings = 1 " Completion in string
+
+let g:ycm_python_binary_path = 'python'
+let g:ycm_server_python_interpreter = 'python'
 ""-- End YouCompleteMe ---------------------------------------------------
 
 "-- Gundo Options -------------------------------------------------------
