@@ -1,4 +1,5 @@
-source ~/.zplug/init.zsh
+export ZPLUG_HOME=/usr/local/opt/zplug
+source $ZPLUG_HOME/init.zsh
 
 zstyle ":prezto:*:*" color "yes"
 zstyle ":prezto:*:*" case-sensitive "yes"
@@ -25,7 +26,7 @@ zstyle ":prezto:*:*" color "yes"
 # zplug "modules/haskell", from:prezto
 # zplug "modules/node", from:prezto
 # zplug "modules/ruby", from:prezto
-# zplug "modules/tmux", from:prezto
+zplug "modules/tmux", from:prezto
 zplug "modules/directory", from:prezto
 zplug "modules/history", from:prezto
 zplug "modules/editor", from:prezto

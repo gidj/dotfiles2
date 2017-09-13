@@ -131,7 +131,7 @@ nnoremap n nzz
 if has("autocmd")
     autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
     " Javascript, JSX
-    autocmd FileType javascript.jsx set ts=4 sts=4 sw=4 et
+    autocmd FileType javascript,jsx set ts=4 sts=4 sw=4 et
     " Python files
     autocmd Filetype python setlocal ts=4 sts=4 sw=4 et
     " C files
@@ -149,7 +149,7 @@ if has("autocmd")
     "autocmd Filetype html,css setlocal ts=2 sts=2 sw=2 expandtab
     " autocmd Filetype jinja setlocal syntax on
 
-    "autocmd FileType * set tabstop=2|set shiftwidth=2|set noexpandtab
+    " autocmd FileType * set tabstop=2|set shiftwidth=2|set noexpandtab
     " autocmd Filetype python set foldmethod=indent
 endif
 "-- End Filetype Options ------------------------------------------------
