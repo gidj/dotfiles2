@@ -169,7 +169,13 @@ nnoremap <leader>dm ggO# ---DEADMODULE
 nnoremap <leader>dc A # ---DEADCLASS
 nnoremap <leader>df A # ---DEADFUNCTION
 " }}}
+" Keymapping: {{{
+" This makes the space bar toggle folding on and off.
+noremap <Space> za
+vnoremap . :norm.<CR>
+" }}}
 
+let g:python_highlight_indent_errors = 0
 let g:python_highlight_all = 1
 
 " Theme settings
@@ -219,6 +225,16 @@ highlight SpecialKey guifg=#4a4a59
 " set list!
 
 " Ale: {{{
+let g:ale_linters = {
+\ 'python': ['flake8'],
+\ 'vim': ['vint'],
+\}
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+let g:ale_lint_delay = 500
+let g:ale_set_highlights = 0
+
+let g:ale_vim_vint_executable = '/Users/gideon/.virtualenvs/neovim/bin/vint'
+
 let g:pylint_params = ''
 if !empty($VIRTUAL_ENV)
   let g:venv = join([$VIRTUAL_ENV, 'lib/python2.7/site-packages'], '/')
@@ -227,29 +243,23 @@ else
   let g:venv = ''
 endif
 
-let g:ale_lint_delay = 500
-" let g:ale_virtualenv_dir_names = ['.env', 'env', 've-py3', 've', 'virtualenv']
-let g:ale_linters = {
-\ 'python': ['pylint'],
-\ 'vim': ['vint'],
-\}
-let g:ail_vim_vint_executable = '/Users/gideon/.virtualenvs/neovim/bin/vint'
+let g:ale_python_pylint_executable = '/Users/gideon/.virtualenvs/neovim/bin/pylint'
+let g:ale_python_pylint_use_global = 1
+" --disable=all
+" --enalbe=E
+let g:ale_python_pylint_options = g:pylint_params
 
 let g:ale_python_flake8_executable = '/Users/gideon/.virtualenvs/neovim/bin/flake8'
 let g:ale_python_flake8_use_global = 1
-let g:ale_python_flake8_options = '--ignore=E265,E501'
-let g:ale_python_pylint_executable = '/Users/gideon/.virtualenvs/neovim/bin/pylint'
-let g:ale_python_pylint_use_global = 1
-let g:ale_python_pylint_options = g:pylint_params
-
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+let g:ale_python_flake8_options = '--ignore=E128,E221,E265,E501'
 " let g:ale_sign_error = '⤫'
 " let g:ale_sign_warning = '⚠'
 " }}}
 " Airline: {{{
+let g:airline#extensions#whitespace#show_message = 0
 let g:airline#extensions#ale#enabled = 1
 let g:airline_powerline_fonts=1
-let g:airline#extensions#branch#use_vcscommand=1
+" let g:airline#extensions#branch#use_vcscommand=1
 let g:airline_theme='gruvbox'
 
 " Removes delay when exiting Insert Mode
@@ -286,11 +296,6 @@ nnoremap <F5> :GundoToggle<CR>
 " Haskellmode-Vim: {{{
 :let g:haddock_browser='/Applications/Google Chrome.app'
 " }}}
-" Keymapping: {{{
-" This makes the space bar toggle folding on and off.
-noremap <Space> za
-vnoremap . :norm.<CR>
-" }}}
 " Signify: {{{
 let g:signify_vcs_list = ['hg', 'git']
 " }}}
@@ -306,7 +311,7 @@ hi link TagbarNestedKind SVDBlueBold
 nnoremap <F8> :TagbarToggle<CR>
 " }}}
 " YouCompleteMe: {{{
-" let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
+" let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py' " For C-style languages
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_allow_changing_updatetime = 0 " This lets the 1 second option above stand
 let g:ycm_autoclose_preview_window_after_completion=1
@@ -326,39 +331,37 @@ let g:ycm_python_binary_path = 'python'
 let g:ycm_server_python_interpreter = '/usr/local/bin/python2'
 "" }}}
 
-" CtrlP: {{{
-" }}}
 " Deoplete: {{{
-let g:deoplete#enable_at_startup = 1
-" Create comnifunc hash
-if !exists('g:deoplete#omni#input_patterns')
-  let g:deoplete#omni#input_patterns = {}
-endif
-let g:deoplete#omni_patterns = {}
-let g:deoplete#omni_patterns.java = '[^. *\t].\w*'
-let g:deoplete#ignore_sources = {}
-let g:deoplete#ignore_sources.java = ['tag']
+" let g:deoplete#enable_at_startup = 1
+" " Create comnifunc hash
+" if !exists('g:deoplete#omni#input_patterns')
+"   let g:deoplete#omni#input_patterns = {}
+" endif
+" let g:deoplete#omni_patterns = {}
+" let g:deoplete#omni_patterns.java = '[^. *\t].\w*'
+" let g:deoplete#ignore_sources = {}
+" let g:deoplete#ignore_sources.java = ['tag']
 
-let g:deoplete#omni_patterns = {}
-let g:deoplete#omni_patterns.ruby = '[^. *\t].\w*'
+" let g:deoplete#omni_patterns = {}
+" let g:deoplete#omni_patterns.ruby = '[^. *\t].\w*'
 
-" use tab to forward cycle
-inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-" use tab to backward cycle
-inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
-" Close the documentation window when completion is done
-autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+" " use tab to forward cycle
+" inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+" " use tab to backward cycle
+" inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
+" " Close the documentation window when completion is done
+" autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 " }}}
 " NeoMake: {{{
-let g:neomake_error_sign = { 'text': '>', }
+" let g:neomake_error_sign = { 'text': '>', }
 " hi MyWarningMsg ctermbg=3 ctermfg=0
-let g:neomake_warning_sign = { 'text': '⚠', }
+" let g:neomake_warning_sign = { 'text': '⚠', }
 " autocm! BufWritePost,BufEnter * Neomake
 " let g:neomake_javascript_jshint_maker = {
 "     \ 'args': ['--verbose'],
 "     \ 'errorformat': '%A%f: line %l\, col %v\, %m \(%t%*\d\)',
 "     \ }
-let g:neomake_python_enabled_makers = ['pyflakes', 'pylint']
+" let g:neomake_python_enabled_makers = ['pyflakes', 'pylint']
 " }}}
 " Syntastic: {{{
 " set statusline+=%#warningmsg#
@@ -372,24 +375,23 @@ let g:neomake_python_enabled_makers = ['pyflakes', 'pylint']
 " let g:syntastic_javascript_checkers=['jshint']
 "
 " The Below were enabled
-let g:syntastic_check_on_open=1 " Check on loading the buffer
-let g:syntastic_check_on_wq=0 " Don't check on closing the buffer
+" let g:syntastic_check_on_open=1 " Check on loading the buffer
+" let g:syntastic_check_on_wq=0 " Don't check on closing the buffer
 
-let g:syntastic_mode_map = { 'mode': 'active',
-                           \ 'active_filetypes': ['ruby', 'python', 'javascript', 'jinja'],
-                           \ 'passive_filetypes': ['puppet', 'java'] }
-let g:syntastic_c_compiler = 'clang'
-let g:syntastic_c_compiler_options = '-std=c11'
-let g:loaded_syntastic_c_gcc_checker = 1
+" let g:syntastic_mode_map = { 'mode': 'active',
+"                            \ 'active_filetypes': ['ruby', 'python', 'javascript', 'jinja'],
+"                            \ 'passive_filetypes': ['puppet', 'java'] }
+" let g:syntastic_c_compiler = 'clang'
+" let g:syntastic_c_compiler_options = '-std=c11'
+" let g:loaded_syntastic_c_gcc_checker = 1
 
-let g:syntastic_enable_signs=1
+" let g:syntastic_enable_signs=1
 " let g:syntastic_python_checkers=['pyflakes']
-let g:syntastic_python_checkers=['flake8']
+" let g:syntastic_python_checkers=['flake8']
 
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_error_symbol= '>' " 'X'  '✗'
-let g:syntastic_warning_symbol='⚠'
+" let g:syntastic_javascript_checkers = ['eslint']
+" let g:syntastic_error_symbol= '>' " 'X'  '✗'
+" let g:syntastic_warning_symbol='⚠'
 " }}}
-
 
 " vim: set sw=2 ts=2 sts=2 et tw=80 ft=vim fdm=marker:
