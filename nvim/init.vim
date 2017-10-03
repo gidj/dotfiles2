@@ -5,7 +5,7 @@ call plug#begin('~/.config/nvim/plugged')
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Make sure neovim doesn't use the virtualenv
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-if has("nvim")
+if has('nvim')
     if filereadable(expand('~/.virtualenvs/neovim/bin/python'))
         let g:python_host_prog = expand('~/.virtualenvs/neovim/bin/python')
     elseif filereadable('/usr/local/bin/python2')
@@ -13,7 +13,7 @@ if has("nvim")
     elseif filereadable('/usr/bin/python')
         let g:python_host_prog = '/usr/bin/python'
     else
-        echom "WARNING: no valid python2 install found"
+        echom 'WARNING: no valid python2 install found'
     endif
 
     if filereadable(expand('~/.virtualenvs/neovim3/bin/python'))
@@ -23,7 +23,7 @@ if has("nvim")
     elseif filereadable('/usr/bin/python3')
         let g:python3_host_prog = '/usr/bin/python3'
     else
-        echom "WARNING: no valid python3 install found"
+        echom 'WARNING: no valid python3 install found'
     endif
 endif
 
@@ -36,26 +36,11 @@ Plug 'Shougo/vimproc', { 'do': 'make' }
 Plug 'morhetz/gruvbox'
 Plug 'gidj/vim-vimbrant'
 Plug 'dikiaap/minimalist'
-" Plug 'w0ng/vim-hybrid'
-" Plug 'jacoborus/tender.vim'
-" Plug 'mhartington/oceanic-next'
-" Plug 'jdkanani/vim-material-theme'
-" Plug 'tomasr/molokai'
-" Plug 'whatyouhide/vim-gotham'
-" Plug 'chriskempson/base16-vim'
-" Plug 'effkay/argonaut.vim'
-" Plug 'mkarmona/colorsbox'
-" Plug 'notpratheek/vim-luna'
-" Plug 'tyrannicaltoucan/vim-quantum'
-" Plug 'ayu-theme/ayu-vim'
 
 " Indispensable Plugins
 " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " Plug 'zchee/deoplete-jedi'
-" Plug 'neomake/neomake'
-" Plug 'ervandew/supertab'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --tern-completer' }
-" Plug 'scrooloose/syntastic'
 Plug 'w0rp/ale'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'sjl/gundo.vim'
@@ -63,8 +48,8 @@ Plug 'majutsushi/tagbar'
 Plug 'epeli/slimux'
 Plug 'rking/ag.vim'
 Plug 'bling/vim-airline'
-" Plug 'benekastah/neomake'
 " Plug 'pearofducks/ansible-vim'
+
 " Useful plugins from Tim Pope
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
@@ -73,13 +58,13 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-unimpaired'
-" Plug 'tpope/vim-fireplace'
 
 " Python Plugins
 " Plug 'pfdevilliers/Pretty-Vim-Python'
-Plug 'jmcantrell/vim-virtualenv'
+" Plug 'jmcantrell/vim-virtualenv'
 " Plug 'hdima/python-syntax'
 Plug 'vim-python/python-syntax'
+" Plug 'python-mode/python-mode'
 " Plug 'tmhedberg/SimpylFold'
 
 " Haskell Plugins
@@ -119,12 +104,12 @@ syntax on
 filetype on
 filetype plugin on
 filetype indent on
-let mapleader="," " Change the leader to the comma character
+let mapleader=',' " Change the leader to the comma character
 
 " Function to strip whitespaces on write, while retaining position in the file
 function! <SID>StripTrailingWhitespaces()
-    let l = line(".")
-    let c = col(".")
+    let l = line('.')
+    let c = col('.')
     %s/\s\+$//e
     call cursor(l, c)
 endfun
@@ -185,7 +170,7 @@ nnoremap <leader>dc A # ---DEADCLASS
 nnoremap <leader>df A # ---DEADFUNCTION
 " }}}
 
-let python_highlight_all = 1
+let g:python_highlight_all = 1
 
 " Theme settings
 " let $NVIM_TUI_ENABLE_TRUE_COLOR=1
@@ -194,7 +179,7 @@ set termguicolors
 set background=dark " Set the background
 let g:gruvbox_improved_warnings=1
 let g:gruvbox_contrast_dark='hard'
-let g:quantum_black=1
+" let g:quantum_black=1
 colorscheme gruvbox
 
 set clipboard=unnamed
@@ -234,26 +219,35 @@ highlight SpecialKey guifg=#4a4a59
 " set list!
 
 " Ale: {{{
+let g:pylint_params = ''
+if !empty($VIRTUAL_ENV)
+  let g:venv = join([$VIRTUAL_ENV, 'lib/python2.7/site-packages'], '/')
+  let g:pylint_params .= '--init-hook=''' . 'import sys; sys.path.insert(0, "' . g:venv . '")'''
+else
+  let g:venv = ''
+endif
+
+let g:ale_lint_delay = 500
+" let g:ale_virtualenv_dir_names = ['.env', 'env', 've-py3', 've', 'virtualenv']
 let g:ale_linters = {
-\ 'python': ['flake8'],
+\ 'python': ['pylint'],
+\ 'vim': ['vint'],
 \}
-let g:airline#extensions#ale#enabled = 1
+let g:ail_vim_vint_executable = '/Users/gideon/.virtualenvs/neovim/bin/vint'
+
 let g:ale_python_flake8_executable = '/Users/gideon/.virtualenvs/neovim/bin/flake8'
 let g:ale_python_flake8_use_global = 1
-let g:ale_python_flake8_options = '--ignore=E501'
-" let g:ale_python_pylint_use_global = 1
-" let g:ale_python_pylint_executable = '/Users/gideon/.virtualenvs/neovim/bin/pylint'
+let g:ale_python_flake8_options = '--ignore=E265,E501'
+let g:ale_python_pylint_executable = '/Users/gideon/.virtualenvs/neovim/bin/pylint'
+let g:ale_python_pylint_use_global = 1
+let g:ale_python_pylint_options = g:pylint_params
 
-" highlight link ALEError error
-let g:ale_echo_msg_error_str = 'E'
-let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 " let g:ale_sign_error = '⤫'
 " let g:ale_sign_warning = '⚠'
-" let g:ale_sign_error = '>>'
-" let g:ale_sign_warning = '--'
 " }}}
 " Airline: {{{
+let g:airline#extensions#ale#enabled = 1
 let g:airline_powerline_fonts=1
 let g:airline#extensions#branch#use_vcscommand=1
 let g:airline_theme='gruvbox'
@@ -271,6 +265,17 @@ endif
 set laststatus=2 " Activate persistent status line:
 set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
 " }}}
+" Customized Syntax: {{{
+hi! link htmlTag GruvboxBlue
+hi! link htmlEndTag GruvboxBlue
+
+hi! link htmlTagName GruvboxBlueBold
+hi! link htmlArg GruvboxYellow
+
+hi! link htmlScriptTag GruvboxPurple
+hi! link htmlTagN GruvboxFg1
+hi! link htmlSpecialTagName GruvboxOrangeBold
+" }}}
 " EClim: {{{
 let g:EclimCompletionMethod = 'omnifunc'
 let g:EclimPythonValidate = 0 " Disable validation of python files so syntastic takes over
@@ -279,7 +284,7 @@ let g:EclimPythonValidate = 0 " Disable validation of python files so syntastic 
 nnoremap <F5> :GundoToggle<CR>
 " }}}
 " Haskellmode-Vim: {{{
-:let g:haddock_browser="/Applications/Google Chrome.app"
+:let g:haddock_browser='/Applications/Google Chrome.app'
 " }}}
 " Keymapping: {{{
 " This makes the space bar toggle folding on and off.
@@ -296,17 +301,19 @@ map <C-c><C-c> :SlimuxREPLSendLine<CR>
 vmap <C-c><C-c> :SlimuxREPLSendSelection<CR>
 " }}}
 " Tabar: {{{
+hi link TagbarKind       Function
+hi link TagbarNestedKind SVDBlueBold
 nnoremap <F8> :TagbarToggle<CR>
 " }}}
 " YouCompleteMe: {{{
-let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
+" let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_allow_changing_updatetime = 0 " This lets the 1 second option above stand
 let g:ycm_autoclose_preview_window_after_completion=1
 nnoremap <leader>g :YcmCompleter GoTo<CR>
 " map <C-]> :YcmCompleter GoTo<CR>
 nnoremap <leader>a :YcmCompleter GoToReferences<CR>
-let g:ycm_server_log_level = "error"
+let g:ycm_server_log_level = 'error'
 let g:ycm_semantic_triggers = {'haskell' : ['.']}
 " Recommended for Django:
 let g:ycm_collect_identifiers_from_tags_files = 1 " Let YCM read tags from Ctags file
@@ -316,7 +323,7 @@ let g:ycm_complete_in_comments = 1 " Completion in comments
 let g:ycm_complete_in_strings = 1 " Completion in string
 
 let g:ycm_python_binary_path = 'python'
-let g:ycm_server_python_interpreter = 'python'
+let g:ycm_server_python_interpreter = '/usr/local/bin/python2'
 "" }}}
 
 " CtrlP: {{{
@@ -341,9 +348,6 @@ inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 " Close the documentation window when completion is done
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
-
-" let g:python_host_prog = '/Users/gideon/.virtualenvs/neovim/bin/python'
-" let g:python3_host_prog = '/Users/gideon/.virtualenvs/neovim3/bin/python'
 " }}}
 " NeoMake: {{{
 let g:neomake_error_sign = { 'text': '>', }
@@ -386,5 +390,6 @@ let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_error_symbol= '>' " 'X'  '✗'
 let g:syntastic_warning_symbol='⚠'
 " }}}
+
 
 " vim: set sw=2 ts=2 sts=2 et tw=80 ft=vim fdm=marker:
