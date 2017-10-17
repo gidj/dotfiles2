@@ -28,19 +28,29 @@ if has('nvim')
 endif
 
 " Recommended to install
-Plug 'Shougo/vimproc', { 'do': 'make' }
+" Plug 'Shougo/vimproc', { 'do': 'make' }
 
 " My Plugins
 
 " Themes
+Plug 'tyrannicaltoucan/vim-quantum'
+Plug 'TheBB/badwolf'
 Plug 'morhetz/gruvbox'
 Plug 'gidj/vim-vimbrant'
 Plug 'dikiaap/minimalist'
+Plug 'rakr/vim-one'
+Plug 'hzchirs/vim-material'
+
 
 " Indispensable Plugins
-" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
 " Plug 'zchee/deoplete-jedi'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --tern-completer' }
+Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+Plug 'Shougo/neco-syntax'
+" Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --tern-completer' }
+
+
 Plug 'w0rp/ale'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'sjl/gundo.vim'
@@ -49,6 +59,7 @@ Plug 'epeli/slimux'
 Plug 'rking/ag.vim'
 Plug 'bling/vim-airline'
 " Plug 'pearofducks/ansible-vim'
+Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
 
 " Useful plugins from Tim Pope
 Plug 'tpope/vim-fugitive'
@@ -58,7 +69,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-unimpaired'
-
+" Plug 'sheerun/vim-polyglot'
 " Python Plugins
 " Plug 'pfdevilliers/Pretty-Vim-Python'
 " Plug 'jmcantrell/vim-virtualenv'
@@ -104,6 +115,7 @@ syntax on
 filetype on
 filetype plugin on
 filetype indent on
+" set smartindent
 let mapleader=',' " Change the leader to the comma character
 
 " Function to strip whitespaces on write, while retaining position in the file
@@ -114,8 +126,10 @@ function! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfun
 
+set t_ZH=[3m
+set t_ZR=[23m
 "" Yank text to the OS X clipboard
-noremap <leader>y "*y
+noremap <leade>y "*y
 noremap <leader>yy "*Y
 
 " Preserve indentation while pasting text from the OS X clipboard
@@ -130,9 +144,13 @@ set pumheight=25
 if has("autocmd")
     autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
     " Javascript, JSX
-    autocmd FileType javascript.jsx set ts=4 sts=4 sw=4 et
+    autocmd FileType javascript,javascript.jsx set ts=4 sts=4 sw=4 et
     " Python files
-    autocmd Filetype python setlocal ts=4 sts=4 sw=4 et
+    augroup filetype_python
+      autocmd!
+      autocmd Filetype python setlocal ts=4 sts=4 sw=4 et
+      autocmd Filetype python let &formatprg=expand('~/.virtualenvs/neovim/bin/yapf')
+    augroup END
     " C files
     autocmd Filetype c,h setlocal foldmethod=syntax ts=2 sts=2 sw=2 expandtab
     " make files
@@ -145,7 +163,12 @@ if has("autocmd")
     autocmd Filetype haskell setlocal omnifunc=necoghc#omnifunc foldlevelstart=20
     " autocmd BufEnter *.hs compiler ghc
     " HTML files
-    autocmd Filetype html,css,jinja,xml setlocal ts=4 sts=4 sw=4 expandtab
+    augroup filtype_html_jinja
+      autocmd!
+      autocmd Filetype html,jinja setlocal ts=4 sts=4 sw=4 expandtab
+      autocmd Filetype html,jinjs set formatprg=/usr/local/bin/tidy
+    augroup END
+    autocmd Filetype css,scss,xml setlocal ts=4 sts=4 sw=4 expandtab
     " autocmd Filetype jinja setlocal syntax on
 
     "autocmd FileType * set tabstop=2|set shiftwidth=2|set noexpandtab
@@ -175,6 +198,19 @@ noremap <Space> za
 vnoremap . :norm.<CR>
 " }}}
 
+let g:LanguageClient_serverCommands = {
+    \ 'python': ['/Users/gideon/.virtualenvs/neovim/bin/pyls'],
+    \ }
+
+" Automatically start language servers.
+let g:LanguageClient_autoStart = 1
+" Disable Diagnostics
+let g:LanguageClient_diagnosticsEnable=0
+
+nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
+nnoremap <silent> <leader>g :call LanguageClient_textDocument_definition()<CR>
+nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
+
 let g:python_highlight_indent_errors = 0
 let g:python_highlight_all = 1
 
@@ -183,8 +219,12 @@ let g:python_highlight_all = 1
 set termguicolors
 
 set background=dark " Set the background
-let g:gruvbox_improved_warnings=1
+" let g:gruvbox_improved_warnings=1
+let g:gruvbox_italic=1
 let g:gruvbox_contrast_dark='hard'
+let g:gruvbox_italicize_strings=1
+" let g:gruvbox_improved_strings=1
+
 " let g:quantum_black=1
 colorscheme gruvbox
 
@@ -225,16 +265,30 @@ highlight SpecialKey guifg=#4a4a59
 " set list!
 
 " Ale: {{{
+let g:ale_fixers = {
+  \ 'html': ['tidy'],
+  \ 'python': ['isort'],
+\}
 let g:ale_linters = {
-\ 'python': ['flake8'],
-\ 'vim': ['vint'],
+  \ 'html': ['htmlhint'],
+  \ 'jinja': ['htmlhint'],
+  \ 'python': ['flake8'],
+  \ 'vim': ['vint'],
+\}
+let g:ale_linter_aliases = {
+  \ 'jinja': 'html',
 \}
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_lint_delay = 500
 let g:ale_set_highlights = 0
+" let g:ale_sign_error = '⤫'
+" let g:ale_sign_warning = '⚠'
 
-let g:ale_vim_vint_executable = '/Users/gideon/.virtualenvs/neovim/bin/vint'
+let g:ale_html_tidy_excecutable = expand('/usr/local/bin/tidy')
+let g:ale_vim_vint_executable = expand('~/.virtualenvs/neovim/bin/vint')
 
+let g:ale_python_yapf_executable = expand('~/.virtualenvs/neovim/bin/yapf')
+let g:ale_python_isort_executable = expand('~/.virtualenvs/neovim/bin/isort')
 let g:pylint_params = ''
 if !empty($VIRTUAL_ENV)
   let g:venv = join([$VIRTUAL_ENV, 'lib/python2.7/site-packages'], '/')
@@ -243,20 +297,18 @@ else
   let g:venv = ''
 endif
 
-let g:ale_python_pylint_executable = '/Users/gideon/.virtualenvs/neovim/bin/pylint'
+let g:ale_python_pylint_executable = expand('~/.virtualenvs/neovim/bin/pylint')
 let g:ale_python_pylint_use_global = 1
 " --disable=all
 " --enalbe=E
 let g:ale_python_pylint_options = g:pylint_params
 
-let g:ale_python_flake8_executable = '/Users/gideon/.virtualenvs/neovim/bin/flake8'
+let g:ale_python_flake8_executable = expand('~/.virtualenvs/neovim/bin/flake8')
 let g:ale_python_flake8_use_global = 1
-let g:ale_python_flake8_options = '--ignore=E128,E221,E265,E501'
-" let g:ale_sign_error = '⤫'
-" let g:ale_sign_warning = '⚠'
+let g:ale_python_flake8_options = '--ignore=E128,E221,E241,E251,E265,E303,E501'
 " }}}
 " Airline: {{{
-let g:airline#extensions#whitespace#show_message = 0
+" let g:airline#extensions#whitespace#show_message = 0
 let g:airline#extensions#ale#enabled = 1
 let g:airline_powerline_fonts=1
 " let g:airline#extensions#branch#use_vcscommand=1
@@ -285,6 +337,7 @@ hi! link htmlArg GruvboxYellow
 hi! link htmlScriptTag GruvboxPurple
 hi! link htmlTagN GruvboxFg1
 hi! link htmlSpecialTagName GruvboxOrangeBold
+highlight Comment cterm=italic
 " }}}
 " EClim: {{{
 let g:EclimCompletionMethod = 'omnifunc'
@@ -315,7 +368,7 @@ nnoremap <F8> :TagbarToggle<CR>
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_allow_changing_updatetime = 0 " This lets the 1 second option above stand
 let g:ycm_autoclose_preview_window_after_completion=1
-nnoremap <leader>g :YcmCompleter GoTo<CR>
+" nnoremap <leader>g :YcmCompleter GoTo<CR>
 " map <C-]> :YcmCompleter GoTo<CR>
 nnoremap <leader>a :YcmCompleter GoToReferences<CR>
 let g:ycm_server_log_level = 'error'
@@ -332,26 +385,28 @@ let g:ycm_server_python_interpreter = '/usr/local/bin/python2'
 "" }}}
 
 " Deoplete: {{{
-" let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_at_startup = 1
 " " Create comnifunc hash
-" if !exists('g:deoplete#omni#input_patterns')
-"   let g:deoplete#omni#input_patterns = {}
-" endif
-" let g:deoplete#omni_patterns = {}
+if !exists('g:deoplete#omni#input_patterns')
+  let g:deoplete#omni#input_patterns = {}
+endif
+let g:deoplete#omni_patterns = {}
 " let g:deoplete#omni_patterns.java = '[^. *\t].\w*'
-" let g:deoplete#ignore_sources = {}
+let g:deoplete#ignore_sources = {}
 " let g:deoplete#ignore_sources.java = ['tag']
 
-" let g:deoplete#omni_patterns = {}
+let g:deoplete#omni_patterns = {}
 " let g:deoplete#omni_patterns.ruby = '[^. *\t].\w*'
+let g:deoplete#auto_refresh_delay=200
 
 " " use tab to forward cycle
-" inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 " " use tab to backward cycle
-" inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
+inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 " " Close the documentation window when completion is done
-" autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 " }}}
+
 " NeoMake: {{{
 " let g:neomake_error_sign = { 'text': '>', }
 " hi MyWarningMsg ctermbg=3 ctermfg=0

@@ -39,7 +39,7 @@ if ! zgen saved; then
     zgen prezto history-substring-search
 
     # Autoenv
-    # zgen load Tarrasch/zsh-autoenv
+    zgen load Tarrasch/zsh-autoenv
 
     # External Plugins
     zgen load zsh-users/zsh-completions src
@@ -62,6 +62,11 @@ alias cl='clear'
 alias sicp-racket='racket -ip neil/sicp'
 alias vi="nvim"
 alias vim="nvim"
+
+# Be sure to always send a TERM that the other machine can understand
+alias ssh='TERM=screen-256color ssh'
+alias vagrant='TERM=screen-256color vagrant'
+
 alias django-paths='python -c "
 import sys
 sys.path = sys.path[1:]

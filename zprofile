@@ -24,6 +24,7 @@ export EDITOR=nvim
 
 export PATH
 
+export TERM=tmux-256color
 SSH_ENV="$HOME/.ssh/environment"
 
 # Get sensitive environmental variables
