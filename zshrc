@@ -5,6 +5,10 @@ source "${HOME}/dotfiles/zgen/zgen.zsh"
 # Autoenv files
 export AUTOENV_FILE_ENTER=".env.zsh"
 export AUTOENV_FILE_LEAVE=".out.zsh"
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+
+# this is required for spaceship theme
+export ZSH_CUSTOM="${HOME}/.zsh_custom"
 
 # check if there's no init script
 if ! zgen saved; then
@@ -13,7 +17,8 @@ if ! zgen saved; then
     # prezto options
     zgen prezto editor key-bindings 'emacs'
     zgen prezto editor dot-expansion 'yes'
-    zgen prezto prompt theme 'giddie'
+    zgen prezto prompt theme 'nicoulaj'
+    # zgen prezto prompt theme 'sorin'
     zgen prezto 'syntax-highlighting' highlighters \
         'main' \
         'brackets' \
@@ -45,9 +50,14 @@ if ! zgen saved; then
     zgen load zsh-users/zsh-completions src
     # zgen load tarruda/zsh-autosuggestions
 
+    # Theme
+    # zgen load denysdovhan/spaceship-zsh-theme spaceship
+
     # save all to init script
     zgen save
 fi
+
+ZSH_THEME="spaceship"
 
 # Aliases
 alias ll="ls -alrtFG"
@@ -102,4 +112,23 @@ alias hgun='hg resolve --list'
 
 # Eclimd
 alias eclimd='/Applications/Eclipse.app/Contents/Eclipse/eclimd'
+
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Returns whether the given command is executable or aliased.
+_has() {
+  return $( whence $1 >/dev/null )
+}
+
+# fzf + ag configuration
+if _has fzf && _has ag; then
+  export FZF_DEFAULT_COMMAND='ag --nocolor -g ""'
+  export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+  export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
+  export FZF_DEFAULT_OPTS='
+  '
+fi
+  # --color fg:242,bg:236,hl:65,fg+:15,bg+:239,hl+:108
+  # --color info:108,prompt:109,spinner:108,pointer:168,marker:168
 
