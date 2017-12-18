@@ -50,8 +50,6 @@ Plug 'morhetz/gruvbox'
 " Plug 'Shougo/neco-syntax'
 "
 " Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
-" Plug 'zchee/deoplete-jedi'
-" Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --tern-completer' }
 
 Plug 'roxma/nvim-completion-manager'
 Plug 'roxma/nvim-cm-tern',  {'do': 'npm install'}
@@ -82,6 +80,7 @@ Plug 'tpope/vim-unimpaired'
 " Python Plugins
 " Plug 'jmcantrell/vim-virtualenv'
 Plug 'vim-python/python-syntax'
+Plug 'Vimjas/vim-python-pep8-indent'
 " Plug 'python-mode/python-mode'
 " Plug 'tmhedberg/SimpylFold'
 
@@ -160,7 +159,8 @@ if has("autocmd")
     " Python files
     augroup filetype_python
       autocmd!
-      autocmd Filetype python setlocal ts=4 sts=4 sw=4 et
+      autocmd Filetype python setlocal ts=4 sts=4 sw=4 expandtab
+      autocmd Filetype python setlocal textwidth=120
       autocmd Filetype python let &formatprg=expand('~/.virtualenvs/neovim/bin/yapf')
     augroup END
     " C files
