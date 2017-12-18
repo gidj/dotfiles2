@@ -1,6 +1,14 @@
 export ZPLUG_HOME=/usr/local/opt/zplug
 source $ZPLUG_HOME/init.zsh
 
+# export SPACESHIP_PROMPT_ADD_NEWLINE=false
+export SPACESHIP_PROMPT_SEPARATE_LINE=false
+
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+
+# this is required for spaceship theme
+export ZSH_CUSTOM="${HOME}/.zsh_custom"
+
 zstyle ":prezto:*:*" color "yes"
 zstyle ":prezto:*:*" case-sensitive "yes"
 
@@ -41,9 +49,12 @@ zplug "modules/python", from:prezto
 zplug "modules/syntax-highlighting", from:prezto
 zplug "modules/history-substring-search", from:prezto
 
-zplug mafredri/zsh-async, from:github
-zplug zsh-users/zsh-completions, from:github
-zplug gidj/pure, use:pure.zsh, from:github, as:theme
+zplug "mafredri/zsh-async", from:github
+zplug "zsh-users/zsh-completions", from:github
+# zplug "sindresorhus/pure, use:pure.zsh", from:github, as:theme
+
+# Theme
+zplug "denysdovhan/spaceship-zsh-theme", use:spaceship.zsh, from:github, at:3.0, as:theme
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
