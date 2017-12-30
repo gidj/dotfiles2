@@ -28,6 +28,7 @@ export EDITOR=nvim
 
 export PATH
 
+export TERM=tmux-256color
 SSH_ENV="$HOME/.ssh/environment"
 
 # Make sure keys are loaded in ssh-agent

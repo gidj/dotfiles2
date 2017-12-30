@@ -4,11 +4,13 @@ source $ZPLUG_HOME/init.zsh
 # Autoenv files
 export AUTOENV_FILE_ENTER=".env.zsh"
 export AUTOENV_FILE_LEAVE=".out.zsh"
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+
+# this is required for spaceship theme
+export ZSH_CUSTOM="${HOME}/.zsh_custom"
 
 # export SPACESHIP_PROMPT_ADD_NEWLINE=false
 export SPACESHIP_PROMPT_SEPARATE_LINE=false
-
-export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 
 # This is required for spaceship theme
 export ZSH_CUSTOM="${HOME}/.zsh_custom"
@@ -122,6 +124,8 @@ alias hgun='hg resolve --list'
 # Eclimd
 alias eclimd='/Applications/Eclipse.app/Contents/Eclipse/eclimd'
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+#
 # Returns whether the given command is executable or aliased.
 _has() {
   return $( whence $1 >/dev/null )
@@ -138,5 +142,3 @@ fi
   # --color fg:242,bg:236,hl:65,fg+:15,bg+:239,hl+:108
   # --color info:108,prompt:109,spinner:108,pointer:168,marker:168
 
-# fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
