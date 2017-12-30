@@ -1,0 +1,5 @@
+syntax: glob
+.env.zsh
+.out.zsh
+.tern-project
+.ropeproject
