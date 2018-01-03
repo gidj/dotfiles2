@@ -284,12 +284,13 @@ let g:ale_fixers = {
   \ 'html': ['tidy'],
   \ 'python': ['isort'],
 \}
+  " \ 'javascript': ['eslint'],
 let g:ale_linters = {
   \ 'html': ['htmlhint'],
   \ 'jinja': ['htmlhint'],
   \ 'python': ['flake8'],
-  \ 'vim': ['vint'],
 \}
+  " \ 'vim': ['vint'],
 let g:ale_linter_aliases = {
   \ 'jinja': 'html',
 \}
@@ -406,66 +407,8 @@ autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 " Haskellmode-Vim: {{{
 " :let g:haddock_browser='/Applications/Google Chrome.app'
 " }}}
-" YouCompleteMe: {{{
-" let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py' " For C-style languages
-" let g:ycm_confirm_extra_conf = 0
-" let g:ycm_allow_changing_updatetime = 0 " This lets the 1 second option above stand
-" let g:ycm_autoclose_preview_window_after_completion=1
-" " nnoremap <leader>g :YcmCompleter GoTo<CR>
-" " map <C-]> :YcmCompleter GoTo<CR>
-" nnoremap <leader>a :YcmCompleter GoToReferences<CR>
-" let g:ycm_server_log_level = 'error'
-" let g:ycm_semantic_triggers = {'haskell' : ['.']}
-" " Recommended for Django:
-" let g:ycm_collect_identifiers_from_tags_files = 1 " Let YCM read tags from Ctags file
-" " let g:ycm_use_ultisnips_completer = 1 " Default 1, just ensure
-" let g:ycm_seed_identifiers_with_syntax = 1 " Completion for programming language's keyword
-" let g:ycm_complete_in_comments = 1 " Completion in comments
-" let g:ycm_complete_in_strings = 1 " Completion in string
-
-" let g:ycm_python_binary_path = 'python'
-" let g:ycm_server_python_interpreter = '/usr/local/bin/python2'
-"" }}}
-" NeoMake: {{{
-" let g:neomake_error_sign = { 'text': '>', }
-" hi MyWarningMsg ctermbg=3 ctermfg=0
-" let g:neomake_warning_sign = { 'text': '⚠', }
-" autocm! BufWritePost,BufEnter * Neomake
-" let g:neomake_javascript_jshint_maker = {
-"     \ 'args': ['--verbose'],
-"     \ 'errorformat': '%A%f: line %l\, col %v\, %m \(%t%*\d\)',
-"     \ }
-" let g:neomake_python_enabled_makers = ['pyflakes', 'pylint']
-" }}}
-" Syntastic: {{{
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
-
-" let g:syntastic_always_populate_loc_list = 1
-" let g:ycm_always_populate_vocaction_list = 1
-" let g:syntastic_auto_loc_list=0
-" let g:syntastic_auto_jump=1
-" let g:syntastic_javascript_checkers=['jshint']
-"
-" The Below were enabled
-" let g:syntastic_check_on_open=1 " Check on loading the buffer
-" let g:syntastic_check_on_wq=0 " Don't check on closing the buffer
-
-" let g:syntastic_mode_map = { 'mode': 'active',
-"                            \ 'active_filetypes': ['ruby', 'python', 'javascript', 'jinja'],
-"                            \ 'passive_filetypes': ['puppet', 'java'] }
-" let g:syntastic_c_compiler = 'clang'
-" let g:syntastic_c_compiler_options = '-std=c11'
-" let g:loaded_syntastic_c_gcc_checker = 1
-
-" let g:syntastic_enable_signs=1
-" let g:syntastic_python_checkers=['pyflakes']
-" let g:syntastic_python_checkers=['flake8']
-
-" let g:syntastic_javascript_checkers = ['eslint']
-" let g:syntastic_error_symbol= '>' " 'X'  '✗'
-" let g:syntastic_warning_symbol='⚠'
-" }}}
 
 " vim: set sw=2 ts=2 sts=2 et tw=80 ft=vim fdm=marker:
+" (finished - exit code 1) ['/usr/local/bin/zsh', '-c', '''eslint'' -f unix --stdin --stdin-filename ''/Users/gideon/projects/webpack_samp
+le/webpack-demo/src/index.js'' < ''/var/folders/z8/7vv3761n3fgbdlqk50zdnsh00000gn/T/nvimvzzqqg/4/index.js''']
+

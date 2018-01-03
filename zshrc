@@ -14,30 +14,30 @@ export SPACESHIP_PROMPT_SEPARATE_LINE=false
 export SPACESHIP_PYENV_SHOW=false
 export SPACESHIP_BATTERY_SHOW=false
 # USER
-# SPACESHIP_USER_PREFIX="" # remove `with` before username
-# SPACESHIP_USER_SUFFIX="" # remove space before host
+SPACESHIP_USER_PREFIX="" # remove `with` before username
+SPACESHIP_USER_SUFFIX="" # remove space before host
 
-# # HOST
-# # Result will look like this:
-# #   username@:(hostname)
-# SPACESHIP_HOST_PREFIX="@:("
-# SPACESHIP_HOST_SUFFIX=") "
+# HOST
+# Result will look like this:
+#   username@:(hostname)
+SPACESHIP_HOST_PREFIX="@:("
+SPACESHIP_HOST_SUFFIX=") "
 
-# # DIR
-# SPACESHIP_DIR_PREFIX='' # disable directory prefix, cause it's not the first section
-# SPACESHIP_DIR_TRUNC='1' # show only last directory
+# DIR
+SPACESHIP_DIR_PREFIX='' # disable directory prefix, cause it's not the first section
+SPACESHIP_DIR_TRUNC='1' # show only last directory
 
-# # GIT
-# # Disable git symbol
-# SPACESHIP_GIT_SYMBOL="" # disable git prefix
-# SPACESHIP_GIT_BRANCH_PREFIX="" # disable branch prefix too
-# # Wrap git in `git:(...)`
-# SPACESHIP_GIT_PREFIX='git:('
-# SPACESHIP_GIT_SUFFIX=") "
-# SPACESHIP_GIT_BRANCH_SUFFIX="" # remove space after branch name
-# # Unwrap git status from `[...]`
-# SPACESHIP_GIT_STATUS_PREFIX=""
-# SPACESHIP_GIT_STATUS_SUFFIX=""
+# GIT
+# Disable git symbol
+SPACESHIP_GIT_SYMBOL="" # disable git prefix
+SPACESHIP_GIT_BRANCH_PREFIX="" # disable branch prefix too
+# Wrap git in `git:(...)`
+SPACESHIP_GIT_PREFIX='git:('
+SPACESHIP_GIT_SUFFIX=") "
+SPACESHIP_GIT_BRANCH_SUFFIX="" # remove space after branch name
+# Unwrap git status from `[...]`
+SPACESHIP_GIT_STATUS_PREFIX=""
+SPACESHIP_GIT_STATUS_SUFFIX=""
 
 # HG
 # Disable HG symbol
@@ -52,42 +52,46 @@ SPACESHIP_HG_STATUS_PREFIX=""
 SPACESHIP_HG_STATUS_SUFFIX=""
 SPACESHIP_HG_STATUS_COLOR="yellow"
 
-# # NODE
-# SPACESHIP_NODE_PREFIX="node:("
-# SPACESHIP_NODE_SUFFIX=") "
-# SPACESHIP_NODE_SYMBOL=""
+# NODE
+SPACESHIP_NODE_PREFIX="node:("
+SPACESHIP_NODE_SUFFIX=") "
+SPACESHIP_NODE_SYMBOL=""
 
-# # RUBY
-# SPACESHIP_RUBY_PREFIX="ruby:("
-# SPACESHIP_RUBY_SUFFIX=") "
-# SPACESHIP_RUBY_SYMBOL=""
+# RUBY
+SPACESHIP_RUBY_PREFIX="ruby:("
+SPACESHIP_RUBY_SUFFIX=") "
+SPACESHIP_RUBY_SYMBOL=""
 
-# # XCODE
-# SPACESHIP_XCODE_PREFIX="xcode:("
-# SPACESHIP_XCODE_SUFFIX=") "
-# SPACESHIP_XCODE_SYMBOL=""
+# XCODE
+SPACESHIP_XCODE_PREFIX="xcode:("
+SPACESHIP_XCODE_SUFFIX=") "
+SPACESHIP_XCODE_SYMBOL=""
 
-# # SWIFT
-# SPACESHIP_SWIFT_PREFIX="swift:("
-# SPACESHIP_SWIFT_SUFFIX=") "
-# SPACESHIP_SWIFT_SYMBOL=""
+# SWIFT
+SPACESHIP_SWIFT_PREFIX="swift:("
+SPACESHIP_SWIFT_SUFFIX=") "
+SPACESHIP_SWIFT_SYMBOL=""
 
-# # GOLANG
-# SPACESHIP_GOLANG_PREFIX="go:("
-# SPACESHIP_GOLANG_SUFFIX=") "
-# SPACESHIP_GOLANG_SYMBOL=""
+# GOLANG
+SPACESHIP_GOLANG_PREFIX="go:("
+SPACESHIP_GOLANG_SUFFIX=") "
+SPACESHIP_GOLANG_SYMBOL=""
 
-# # DOCKER
-# SPACESHIP_DOCKER_PREFIX="docker:("
-# SPACESHIP_DOCKER_SUFFIX=") "
-# SPACESHIP_DOCKER_SYMBOL=""
+# DOCKER
+SPACESHIP_DOCKER_PREFIX="docker:("
+SPACESHIP_DOCKER_SUFFIX=") "
+SPACESHIP_DOCKER_SYMBOL=""
 
-# # VENV
-# SPACESHIP_VENV_PREFIX="venv:("
-# SPACESHIP_VENV_SUFFIX=") "
+# VENV
+SPACESHIP_VENV_PREFIX="venv:("
+SPACESHIP_VENV_SUFFIX=") "
+
+zstyle ':vcs_info:*' enable git hg # You can add hg too if needed: `git hg`
 
 zstyle ":prezto:*:*" color "yes"
 zstyle ":prezto:*:*" case-sensitive "yes"
+
+zstyle ':prezto:module:prompt' theme 'nicoulaj'
 
 zstyle ":prezto:module:editor" key-bindings "emacs"
 zstyle ":prezto:module:editor" dot-expansion "yes"
@@ -107,9 +111,9 @@ zstyle ":prezto:*:*" color "yes"
 #   hook-build:"ln -s $ZPLUG_ROOT/repos/sorin-ionescu/prezto ${ZDOTDIR:-$HOME}/.zprezto"
 
 
-# zplug "modules/prompt", from:prezto
+zplug "modules/prompt", from:prezto
 # zplug "modules/haskell", from:prezto
-# zplug "modules/node", from:prezto
+zplug "modules/node", from:prezto
 # zplug "modules/ruby", from:prezto
 zplug "modules/tmux", from:prezto
 zplug "modules/directory", from:prezto
@@ -127,12 +131,14 @@ zplug "modules/syntax-highlighting", from:prezto
 zplug "modules/history-substring-search", from:prezto
 
 zplug "Tarrasch/zsh-autoenv", from:github
-zplug "mafredri/zsh-async", from:github
 zplug "zsh-users/zsh-completions", from:github
-# zplug "sindresorhus/pure, use:pure.zsh", from:github, as:theme
+
+# zsh-async is required for pure
+# zplug "mafredri/zsh-async", from:github
+# zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
 
 # Theme
-zplug "denysdovhan/spaceship-zsh-theme", use:spaceship.zsh, from:github, at:3.0, as:theme
+# zplug "denysdovhan/spaceship-zsh-theme", use:spaceship.zsh, from:github, at:3.0, as:theme
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
