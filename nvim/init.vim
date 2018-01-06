@@ -92,6 +92,7 @@ Plug 'Vimjas/vim-python-pep8-indent'
 " Javascript Plugins
 Plug 'pangloss/vim-javascript'
 Plug 'othree/javascript-libraries-syntax.vim' " For all JS libraries
+" Plug 'othree/yajs.vim', { 'for': 'javascript' }
 Plug 'mxw/vim-jsx' " For ReactJS
 
 " Ruby Plugins
@@ -135,6 +136,8 @@ let g:indentLine_char = '│'
 noremap <leader>y "*y
 noremap <leader>yy "*Y
 
+noremap <leader>f :ALEFix<CR>
+
 " Preserve indentation while pasting text from the OS X clipboard
 noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
 
@@ -146,45 +149,46 @@ set pumheight=25
 
 " Function to strip whitespaces on write, while retaining position in the file
 function! <SID>StripTrailingWhitespaces()
-    let l = line('.')
-    let c = col('.')
-    %s/\s\+$//e
-    call cursor(l, c)
+  let l = line('.')
+  let c = col('.')
+  %s/\s\+$//e
+  call cursor(l, c)
 endfun
 
 if has("autocmd")
-    autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
-    " Javascript, JSX
-    autocmd FileType javascript,javascript.jsx set ts=4 sts=4 sw=4 et
-    " Python files
-    augroup filetype_python
-      autocmd!
-      autocmd Filetype python setlocal ts=4 sts=4 sw=4 expandtab
-      autocmd Filetype python setlocal textwidth=120
-      autocmd Filetype python let &formatprg=expand('~/.virtualenvs/neovim/bin/yapf')
-    augroup END
-    " C files
-    autocmd Filetype c,h setlocal foldmethod=syntax ts=2 sts=2 sw=2 expandtab
-    " make files
-    autocmd FileType make setlocal noexpandtab
-    " Scheme- and Lisp-style files
-    autocmd Filetype lisp,scheme setlocal lisp "foldmethod=syntax
-    " Ruby
-    autocmd FileType ruby,eruby setlocal ts=2 sts=2 sw=2 expandtab
-    " Haskell
-    autocmd Filetype haskell setlocal omnifunc=necoghc#omnifunc foldlevelstart=20
-    " autocmd BufEnter *.hs compiler ghc
-    " HTML files
-    augroup filtype_html_jinja
-      autocmd!
-      autocmd Filetype html,jinja,jinja.html setlocal ts=2 sts=2 sw=2 expandtab
-      autocmd Filetype html,jinjs,jinja.html set formatprg=/usr/local/bin/tidy
-    augroup END
-    autocmd Filetype css,scss,xml setlocal ts=4 sts=4 sw=4 expandtab
-    " autocmd Filetype jinja setlocal syntax on
+  autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+  " Javascript, JSX
+  autocmd FileType javascript,javascript.jsx set ts=4 sts=4 sw=4 et
+  " autocmd FileType json setlocal conceallevel=0
+  " Python files
+  augroup filetype_python
+    autocmd!
+    autocmd Filetype python setlocal ts=4 sts=4 sw=4 expandtab
+    autocmd Filetype python setlocal textwidth=120
+    autocmd Filetype python let &formatprg=expand('~/.virtualenvs/neovim/bin/yapf')
+  augroup END
+  " C files
+  autocmd Filetype c,h setlocal foldmethod=syntax ts=2 sts=2 sw=2 expandtab
+  " make files
+  autocmd FileType make setlocal noexpandtab
+  " Scheme- and Lisp-style files
+  autocmd Filetype lisp,scheme setlocal lisp "foldmethod=syntax
+  " Ruby
+  autocmd FileType ruby,eruby setlocal ts=2 sts=2 sw=2 expandtab
+  " Haskell
+  autocmd Filetype haskell setlocal omnifunc=necoghc#omnifunc foldlevelstart=20
+  " autocmd BufEnter *.hs compiler ghc
+  " HTML files
+  augroup filtype_html_jinja
+    autocmd!
+    autocmd Filetype html,jinja,jinja.html setlocal ts=2 sts=2 sw=2 expandtab
+    autocmd Filetype html,jinjs,jinja.html set formatprg=/usr/local/bin/tidy
+  augroup END
+  autocmd Filetype css,scss,xml setlocal ts=4 sts=4 sw=4 expandtab
+  " autocmd Filetype jinja setlocal syntax on
 
-    "autocmd FileType * set tabstop=2|set shiftwidth=2|set noexpandtab
-    " autocmd Filetype python set foldmethod=indent
+  "autocmd FileType * set tabstop=2|set shiftwidth=2|set noexpandtab
+  " autocmd Filetype python set foldmethod=indent
 endif
 " }}}
 " Leaders: {{{
@@ -304,7 +308,7 @@ let g:ale_html_tidy_excecutable = expand('/usr/local/bin/tidy')
 let g:ale_vim_vint_executable = expand('~/.virtualenvs/neovim/bin/vint')
 
 " let g:ale_python_yapf_executable = expand('~/.virtualenvs/neovim/bin/yapf')
-" let g:ale_python_isort_executable = expand('~/.virtualenvs/neovim/bin/isort')
+let g:ale_python_isort_executable = expand('~/.virtualenvs/neovim/bin/isort')
 " let g:pylint_params = ''
 " if !empty($VIRTUAL_ENV)
 "   let g:venv = join([$VIRTUAL_ENV, 'lib/python2.7/site-packages'], '/')
@@ -409,6 +413,3 @@ autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 " }}}
 
 " vim: set sw=2 ts=2 sts=2 et tw=80 ft=vim fdm=marker:
-" (finished - exit code 1) ['/usr/local/bin/zsh', '-c', '''eslint'' -f unix --stdin --stdin-filename ''/Users/gideon/projects/webpack_samp
-le/webpack-demo/src/index.js'' < ''/var/folders/z8/7vv3761n3fgbdlqk50zdnsh00000gn/T/nvimvzzqqg/4/index.js''']
-
