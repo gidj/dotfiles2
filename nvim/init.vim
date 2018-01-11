@@ -318,8 +318,7 @@ function! s:find_root()
 endfunction
 
 command! FZFR call s:find_root()
-
-nmap <space> :<C-u>FZFR<CR>
+" nmap <space> :<C-u>FZFR<CR>
 "nmap <space> :<C-u>FZF<CR>
 
 " }}}

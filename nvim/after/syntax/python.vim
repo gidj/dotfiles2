@@ -135,11 +135,11 @@ endfun
 
 
 " Python highlighting
-call <sid>hi("pythonOperator",  s:gui0E, "", s:cterm0E, "", "", "")
+" call <sid>hi("pythonOperator",  s:gui0E, "", s:cterm0E, "", "", "")
 call <sid>hi("pythonRepeat",    s:gui0E, "", s:cterm0E, "", "", "")
 call <sid>hi("pythonInclude",   s:gui0E, "", s:cterm0E, "", "", "")
-call <sid>hi("pythonStatement", s:gui0E, "", s:cterm0E, "", "", "")
-
+" call <sid>hi("pythonStatement", s:gui0E, "", s:cterm0E, "", "", "")
+hi! link pythonStatement GruvboxYellow
 
 " Remove functions
 delf <sid>hi
