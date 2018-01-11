@@ -3,7 +3,7 @@
 call plug#begin('~/.config/nvim/plugged')
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Make sure neovim doesn't use the virtualenv
+" Make sure neovim doesn't use the current virtualenv
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if has('nvim')
     if filereadable(expand('~/.virtualenvs/neovim/bin/python'))
@@ -27,52 +27,30 @@ if has('nvim')
     endif
 endif
 
-" Recommended to install
-" Plug 'Shougo/vimproc', { 'do': 'make' }
-
 " My Plugins
-
 " Themes
 Plug 'morhetz/gruvbox'
-Plug 'skielbasa/vim-material-monokai'
 Plug 'drewtempelmeyer/palenight.vim'
-Plug 'mhartington/oceanic-next'
 Plug 'chriskempson/base16-vim'
 
-Plug 'ayu-theme/ayu-vim' " or other package manager
-Plug 'NLKNguyen/papercolor-theme'
-
-Plug 'tyrannicaltoucan/vim-quantum'
-" Plug 'TheBB/badwolf'
-" Plug 'gidj/vim-vimbrant'
-" Plug 'dikiaap/minimalist'
-" Plug 'rakr/vim-one'
-" Plug 'hzchirs/vim-material'
-" Plug 'NLKNguyen/papercolor-theme'
-
-
 " Indispensable Plugins
-" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-" Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
-" Plug 'Shougo/neco-syntax'
-"
-" Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
-
 Plug 'roxma/nvim-completion-manager'
 Plug 'roxma/nvim-cm-tern',  {'do': 'npm install'}
-
-" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-" Plug 'junegunn/fzf.vim'
 Plug 'w0rp/ale'
-" Plug 'ctrlpvim/ctrlp.vim'
+
 Plug 'sjl/gundo.vim'
 Plug 'majutsushi/tagbar'
 Plug 'epeli/slimux'
-Plug 'rking/ag.vim'
-Plug 'mileszs/ack.vim'
+" Plug 'rking/ag.vim'
 Plug 'bling/vim-airline'
-" Plug 'pearofducks/ansible-vim'
-Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
+
+Plug 'Valloric/ListToggle'
 
 " Useful plugins from Tim Pope
 Plug 'tpope/vim-fugitive'
@@ -83,28 +61,15 @@ Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-unimpaired'
 
-" Plug 'sheerun/vim-polyglot'
 " Python Plugins
-" Plug 'jmcantrell/vim-virtualenv'
 Plug 'vim-python/python-syntax'
 Plug 'Vimjas/vim-python-pep8-indent'
-" Plug 'python-mode/python-mode'
-" Plug 'tmhedberg/SimpylFold'
-
-" Haskell Plugins
-" Plug 'dag/vim2hs'
-" Plug 'eagletmt/ghcmod-vim'
-" Plug 'eagletmt/neco-ghc'
 
 " Javascript Plugins
 Plug 'pangloss/vim-javascript'
 Plug 'jelera/vim-javascript-syntax'
-" Plug 'othree/javascript-libraries-syntax.vim' " For all JS libraries
 Plug 'othree/yajs.vim'
-" Plug 'mxw/vim-jsx' " For ReactJS
-
-" Ruby Plugins
-" Plug 'vim-ruby/vim-ruby' " Doesn't work with Neovim yet
+" Plug 'othree/javascript-libraries-syntax.vim' " For all JS libraries
 
 " Version control related
 Plug 'mhinz/vim-signify'
@@ -114,35 +79,63 @@ Plug 'ludovicchabant/vim-lawrencium'
 Plug 'othree/html5.vim'
 Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'ap/vim-css-color'
-" Plug 'nathanaelkane/vim-indent-guides'
 Plug 'Yggdroot/indentLine'
-" Plug 'mattn/emmet-vim'
-" Plug 'Keithbsmiley/swift.vim'
-" Plug 'jiangmiao/auto-pairs'
-" Plug 'gidj/vim-csyn'
+Plug 'mattn/emmet-vim'
+Plug 'jiangmiao/auto-pairs'
 
 " All of your Plugins must be added before the following line
 call plug#end()            " required
 " }}}
+" Look and Feel: {{{
+set clipboard=unnamed
 
+set backspace=indent,eol,start  " Let backspace cross over end of line
+set modeline
+
+set splitright " Vertical split to the right
+set splitbelow " Horizontal split below
+
+set hlsearch " Hightlight search items
+set incsearch " Hightlight search items as they are searched for
+set showmatch
+
+set number " Activate line numbering on the left side of the screen
+highlight LineNr ctermfg=DarkGrey
+
+set cursorline " Turn on highlighting of active line:
+
+set mouse=a " Turn on mouse mode, for terminals that can use it
+
+set listchars=tab:▸\ ,eol:¬  " Use the same symbols as TextMate for tabstops and EOLs
+"Invisible character colors
+highlight NonText guifg=#4a4a59
+highlight SpecialKey guifg=#4a4a59
+" set list!
+
+set termguicolors
+
+" let g:palenight_terminal_italics=1
+" colorscheme palenight
+
+set background=dark " Set the background
+let g:gruvbox_italic=1
+let g:gruvbox_contrast_dark='hard'
+let g:gruvbox_italicize_strings=1
+let g:gruvbox_improved_warnings=1
+colorscheme gruvbox
+
+let g:python_highlight_indent_errors = 0
+let g:python_highlight_all = 1
+
+" }}}
 " Filetype: {{{
 syntax on
 filetype on
 filetype plugin on
 filetype indent on
-" set smartindent
 let mapleader=',' " Change the leader to the comma character
-" set encoding=utf8
-
-" for italics
-set t_ZH=[3m
-set t_ZR=[23m
 
 let g:indentLine_char = '│'
-
-"" Yank text to the OS X clipboard
-noremap <leader>y "*y
-noremap <leader>yy "*Y
 
 noremap <leader>f :ALEFix<CR>
 
@@ -189,7 +182,7 @@ if has("autocmd")
   " HTML files
   augroup filtype_html_jinja
     autocmd!
-    autocmd Filetype html,jinja,jinja.html setlocal ts=2 sts=2 sw=2 expandtab
+    autocmd Filetype html,jinja,jinja.html setlocal ts=4 sts=4 sw=4 expandtab
     autocmd Filetype html,jinjs,jinja.html set formatprg=/usr/local/bin/tidy
   augroup END
   autocmd Filetype css,scss,xml setlocal ts=4 sts=4 sw=4 expandtab
@@ -201,6 +194,11 @@ endif
 
 " }}}
 " Leaders: {{{
+" Quickly edit/reload the vimrc file
+nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <silent> <leader>sv :so $MYVIMRC<CR>
+
+nnoremap <leader><space> :noh<cr>
 " Map some macros to leaders for housecleaning
 " nnoremap <leader>ui :Commentary<CR>A ---UNUSEDIMPORT
 " vnoremap <leader>ui :Commentary<CR>gv:normal A ---UNUSEDIMPORT
@@ -221,8 +219,11 @@ endif
 " This makes the space bar toggle folding on and off.
 noremap <Space> za
 vnoremap . :norm.<CR>
-" }}}
 
+nnoremap <tab> %
+vnoremap <tab> %
+" }}}
+" Language Server: {{{
 let g:LanguageClient_serverCommands = {
     \ 'python': ['/Users/gideon/.virtualenvs/neovim/bin/pyls'],
     \ }
@@ -234,84 +235,9 @@ let g:LanguageClient_diagnosticsEnable=0
 
 nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
 nnoremap <silent> <leader>g :call LanguageClient_textDocument_definition()<CR>
-" nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
+nnoremap <silent> <leader>r :call LanguageClient_textDocument_rename()<CR>
 nnoremap <silent> <F2> :call LanguageClient_textDocument_references()<CR>
-
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
-endif
-
-let g:python_highlight_indent_errors = 0
-let g:python_highlight_all = 1
-
-" Theme settings
-" let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-set termguicolors
-
-let g:palenight_terminal_italics=1
-
-
-set background=dark " Set the background
-let g:gruvbox_italic=1
-let g:gruvbox_contrast_dark='hard'
-let g:gruvbox_italicize_strings=1
-let g:gruvbox_improved_warnings=1
-" let g:gruvbox_improved_strings=1
-colorscheme gruvbox
-
-" colorscheme base16-gruvbox-dark-hard
-" colorscheme gruvbox
-
-
-" let ayucolor="light"  " for light version of theme
-let ayucolor="mirage" " for mirage version of theme
-" let ayucolor="dark"   " for dark version of theme
-" colorscheme ayu
-
-" colorscheme quantum
-
-" colorscheme base16-material-palenight
-" colorscheme OceanicNext
-" let g:materialmonokai_italic=1
-" set background=dark
-" set termguicolors
-" colorscheme material-monokai
-
-set clipboard=unnamed
-
-" Quickly edit/reload the vimrc file
-nmap <silent> <leader>ev :e $MYVIMRC<CR>
-nmap <silent> <leader>sv :so $MYVIMRC<CR>
-
-set backspace=indent,eol,start  " Let backspace cross over end of line
-set modeline
-
-set splitright " Vertical split to the right
-set splitbelow " Horizontal split below
-
-set hlsearch " Hightlight search items
-set incsearch " Hightlight search items as they are searched for
-set showmatch
-nnoremap <leader><space> :noh<cr>
-nnoremap <tab> %
-vnoremap <tab> %
-
-set number " Activate line numbering on the left side of the screen
-highlight LineNr ctermfg=DarkGrey
-
-" set updatetime=1000 " This has syntastic update every second instead of every two
-" set synmaxcol=120 " This stops syntax highlighting from trying after column 120
-set cursorline " Turn on highlighting of active line:
-" set relativenumber
-
-set mouse=a " Turn on mouse mode, for terminals that can use it
-
-set listchars=tab:▸\ ,eol:¬  " Use the same symbols as TextMate for tabstops and EOLs
-"Invisible character colors
-highlight NonText guifg=#4a4a59
-highlight SpecialKey guifg=#4a4a59
-" set list!
-
+" }}}
 " Ale: {{{
 let g:ale_fixers = {
   \ 'html': ['tidy'],
@@ -338,30 +264,16 @@ let g:ale_vim_vint_executable = expand('~/.virtualenvs/neovim/bin/vint')
 
 " let g:ale_python_yapf_executable = expand('~/.virtualenvs/neovim/bin/yapf')
 let g:ale_python_isort_executable = expand('~/.virtualenvs/neovim/bin/isort')
-" let g:pylint_params = ''
-" if !empty($VIRTUAL_ENV)
-"   let g:venv = join([$VIRTUAL_ENV, 'lib/python2.7/site-packages'], '/')
-"   let g:pylint_params .= '--init-hook=''' . 'import sys; sys.path.insert(0, "' . g:venv . '")'''
-" else
-"   let g:venv = ''
-" endif
-
-" let g:ale_python_pylint_executable = expand('~/.virtualenvs/neovim/bin/pylint')
-" let g:ale_python_pylint_use_global = 1
-" " --disable=all
-" " --enalbe=E
-" let g:ale_python_pylint_options = g:pylint_params
-
 let g:ale_python_flake8_executable = expand('~/.virtualenvs/neovim/bin/flake8')
 let g:ale_python_flake8_use_global = 1
 let g:ale_python_flake8_options = '--ignore=E128,E221,E241,E251,E265,E303,E501'
 " }}}
 " Airline: {{{
-" let g:airline#extensions#whitespace#show_message = 0
-let g:airline#extensions#ale#enabled = 1
+" let g:airline#extensions#whitespace#show_message = 1
+" let g:airline#extensions#ale#enabled = 1
 let g:airline_powerline_fonts=1
 " let g:airline#extensions#branch#use_vcscommand=1
-let g:airline_theme='quantum'
+let g:airline_theme='gruvbox'
 
 " Removes delay when exiting Insert Mode
 if ! has('gui_running')
@@ -375,35 +287,6 @@ endif
 
 set laststatus=2 " Activate persistent status line:
 set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
-" }}}
-" Customized Syntax: {{{
-hi! link htmlTag GruvboxBlue
-hi! link htmlEndTag GruvboxBlue
-
-hi! link htmlTagName GruvboxBlueBold
-hi! link htmlArg GruvboxYellow
-
-hi! link htmlScriptTag GruvboxPurple
-hi! link htmlTagN GruvboxFg1
-hi! link htmlSpecialTagName GruvboxOrangeBold
-
-" highlight Comment cterm=italic
-
-" hi! link jsOperator GruvboxOrangeBold
-" hi! link jsStatement GruvboxOrangeBold
-" hi! link jsReturn GruvboxOrangeBold
-" hi! link jsThis GruvboxOrangeBold
-" hi! link jsClassDefinition GruvboxOrangeBold
-" hi! link jsFunction GruvboxOrangeBold
-" hi! link jsFuncName GruvboxOrangeBold
-" hi! link jsFuncCall GruvboxOrangeBold
-" hi! link jsClassFuncName GruvboxOrangeBold
-" hi! link jsClassMethodType GruvboxOrangeBold
-" hi! link jsRegexpString GruvboxOrangeBold
-" hi! link jsGlobalObjects GruvboxOrangeBold
-" hi! link jsGlobalNodeObjects GruvboxOrangeBold
-" hi! link jsExceptions GruvboxOrangeBold
-" hi! link jsBuiltins GruvboxOrangeBold
 " }}}
 " Gundo: {{{
 nnoremap <F5> :GundoToggle<CR>
@@ -422,42 +305,51 @@ hi link TagbarKind       Function
 hi link TagbarNestedKind SVDBlueBold
 nnoremap <F8> :TagbarToggle<CR>
 " }}}
+" FZF: {{{
+function! s:find_root()
+  for vcs in ['.venv', 'Pipfile', 'Gemfile', '.git', '.svn', '.hg']
+    let dir = finddir(vcs.'/..', ';')
+    if !empty(dir)
+      execute 'FZF' dir
+      return
+    endif
+  endfor
+  FZF
+endfunction
 
+command! FZFR call s:find_root()
 
+nmap <space> :<C-u>FZFR<CR>
+"nmap <space> :<C-u>FZF<CR>
+
+" }}}
+" Nvim Completion Manager: {{{
 inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
 
+" Show documentation of autocomplete option
+let g:cm_completeopt = 'menu,menuone,noinsert,noselect,preview'
+augroup ncm_preview
+  autocmd! InsertLeave <buffer> if pumvisible() == 0|pclose|endif
+augroup END
 
-" Deoplete: {{{
-let g:deoplete#enable_at_startup = 1
-" " Create comnifunc hash
-if !exists('g:deoplete#omni#input_patterns')
-  let g:deoplete#omni#input_patterns = {}
-endif
-let g:deoplete#omni_patterns = {}
-" let g:deoplete#omni_patterns.java = '[^. *\t].\w*'
-let g:deoplete#ignore_sources = {}
-" let g:deoplete#ignore_sources.java = ['tag']
-
-let g:deoplete#omni_patterns = {}
-" let g:deoplete#omni_patterns.ruby = '[^. *\t].\w*'
-let g:deoplete#auto_refresh_delay=200
-
-" " use tab to forward cycle
+" use tab to forward cycle
 inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-" " use tab to backward cycle
+" use tab to backward cycle
 inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
-" " Close the documentation window when completion is done
+" Close the documentation window when completion is done
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
-" }}}
 
+" Remove 'x of y' in preview window
+set shortmess+=c
+" }}}
 " EClim: {{{
 " let g:EclimCompletionMethod = 'omnifunc'
 " let g:EclimPythonValidate = 0 " Disable validation of python files so syntastic takes over
-let g:EclimJavascriptValidate = 0 " Disable validation of python files so syntastic takes over
-" }}}
-" Haskellmode-Vim: {{{
-" :let g:haddock_browser='/Applications/Google Chrome.app'
+" let g:EclimJavascriptValidate = 0 " Disable validation of python files so syntastic takes over
 " }}}
 
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
 
 " vim: set sw=2 ts=2 sts=2 et tw=80 ft=vim fdm=marker:
