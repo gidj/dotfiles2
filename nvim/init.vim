@@ -34,8 +34,15 @@ endif
 
 " Themes
 Plug 'morhetz/gruvbox'
+Plug 'skielbasa/vim-material-monokai'
+Plug 'drewtempelmeyer/palenight.vim'
+Plug 'mhartington/oceanic-next'
+Plug 'chriskempson/base16-vim'
 
-" Plug 'tyrannicaltoucan/vim-quantum'
+Plug 'ayu-theme/ayu-vim' " or other package manager
+Plug 'NLKNguyen/papercolor-theme'
+
+Plug 'tyrannicaltoucan/vim-quantum'
 " Plug 'TheBB/badwolf'
 " Plug 'gidj/vim-vimbrant'
 " Plug 'dikiaap/minimalist'
@@ -54,14 +61,14 @@ Plug 'morhetz/gruvbox'
 Plug 'roxma/nvim-completion-manager'
 Plug 'roxma/nvim-cm-tern',  {'do': 'npm install'}
 
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
+" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+" Plug 'junegunn/fzf.vim'
 Plug 'w0rp/ale'
 " Plug 'ctrlpvim/ctrlp.vim'
 Plug 'sjl/gundo.vim'
 Plug 'majutsushi/tagbar'
 Plug 'epeli/slimux'
-" Plug 'rking/ag.vim'
+Plug 'rking/ag.vim'
 Plug 'mileszs/ack.vim'
 Plug 'bling/vim-airline'
 " Plug 'pearofducks/ansible-vim'
@@ -91,9 +98,10 @@ Plug 'Vimjas/vim-python-pep8-indent'
 
 " Javascript Plugins
 Plug 'pangloss/vim-javascript'
-Plug 'othree/javascript-libraries-syntax.vim' " For all JS libraries
-" Plug 'othree/yajs.vim', { 'for': 'javascript' }
-Plug 'mxw/vim-jsx' " For ReactJS
+Plug 'jelera/vim-javascript-syntax'
+" Plug 'othree/javascript-libraries-syntax.vim' " For all JS libraries
+Plug 'othree/yajs.vim'
+" Plug 'mxw/vim-jsx' " For ReactJS
 
 " Ruby Plugins
 " Plug 'vim-ruby/vim-ruby' " Doesn't work with Neovim yet
@@ -190,6 +198,7 @@ if has("autocmd")
   "autocmd FileType * set tabstop=2|set shiftwidth=2|set noexpandtab
   " autocmd Filetype python set foldmethod=indent
 endif
+
 " }}}
 " Leaders: {{{
 " Map some macros to leaders for housecleaning
@@ -239,14 +248,34 @@ let g:python_highlight_all = 1
 " let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set termguicolors
 
+let g:palenight_terminal_italics=1
+
+
 set background=dark " Set the background
 let g:gruvbox_italic=1
 let g:gruvbox_contrast_dark='hard'
 let g:gruvbox_italicize_strings=1
 let g:gruvbox_improved_warnings=1
 " let g:gruvbox_improved_strings=1
-
 colorscheme gruvbox
+
+" colorscheme base16-gruvbox-dark-hard
+" colorscheme gruvbox
+
+
+" let ayucolor="light"  " for light version of theme
+let ayucolor="mirage" " for mirage version of theme
+" let ayucolor="dark"   " for dark version of theme
+" colorscheme ayu
+
+" colorscheme quantum
+
+" colorscheme base16-material-palenight
+" colorscheme OceanicNext
+" let g:materialmonokai_italic=1
+" set background=dark
+" set termguicolors
+" colorscheme material-monokai
 
 set clipboard=unnamed
 
@@ -332,7 +361,7 @@ let g:ale_python_flake8_options = '--ignore=E128,E221,E241,E251,E265,E303,E501'
 let g:airline#extensions#ale#enabled = 1
 let g:airline_powerline_fonts=1
 " let g:airline#extensions#branch#use_vcscommand=1
-let g:airline_theme='gruvbox'
+let g:airline_theme='quantum'
 
 " Removes delay when exiting Insert Mode
 if ! has('gui_running')
@@ -357,7 +386,24 @@ hi! link htmlArg GruvboxYellow
 hi! link htmlScriptTag GruvboxPurple
 hi! link htmlTagN GruvboxFg1
 hi! link htmlSpecialTagName GruvboxOrangeBold
+
 " highlight Comment cterm=italic
+
+" hi! link jsOperator GruvboxOrangeBold
+" hi! link jsStatement GruvboxOrangeBold
+" hi! link jsReturn GruvboxOrangeBold
+" hi! link jsThis GruvboxOrangeBold
+" hi! link jsClassDefinition GruvboxOrangeBold
+" hi! link jsFunction GruvboxOrangeBold
+" hi! link jsFuncName GruvboxOrangeBold
+" hi! link jsFuncCall GruvboxOrangeBold
+" hi! link jsClassFuncName GruvboxOrangeBold
+" hi! link jsClassMethodType GruvboxOrangeBold
+" hi! link jsRegexpString GruvboxOrangeBold
+" hi! link jsGlobalObjects GruvboxOrangeBold
+" hi! link jsGlobalNodeObjects GruvboxOrangeBold
+" hi! link jsExceptions GruvboxOrangeBold
+" hi! link jsBuiltins GruvboxOrangeBold
 " }}}
 " Gundo: {{{
 nnoremap <F5> :GundoToggle<CR>
@@ -407,9 +453,11 @@ autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 " EClim: {{{
 " let g:EclimCompletionMethod = 'omnifunc'
 " let g:EclimPythonValidate = 0 " Disable validation of python files so syntastic takes over
+let g:EclimJavascriptValidate = 0 " Disable validation of python files so syntastic takes over
 " }}}
 " Haskellmode-Vim: {{{
 " :let g:haddock_browser='/Applications/Google Chrome.app'
 " }}}
+
 
 " vim: set sw=2 ts=2 sts=2 et tw=80 ft=vim fdm=marker:
