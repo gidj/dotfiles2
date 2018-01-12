@@ -67,8 +67,8 @@ Plug 'Vimjas/vim-python-pep8-indent'
 
 " Javascript Plugins
 Plug 'pangloss/vim-javascript'
-Plug 'jelera/vim-javascript-syntax'
-Plug 'othree/yajs.vim'
+" Plug 'jelera/vim-javascript-syntax'
+" Plug 'othree/yajs.vim'
 " Plug 'othree/javascript-libraries-syntax.vim' " For all JS libraries
 
 " Version control related
@@ -81,7 +81,7 @@ Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'ap/vim-css-color'
 Plug 'Yggdroot/indentLine'
 Plug 'mattn/emmet-vim'
-Plug 'jiangmiao/auto-pairs'
+" Plug 'jiangmiao/auto-pairs'
 
 " All of your Plugins must be added before the following line
 call plug#end()            " required
@@ -156,10 +156,12 @@ function! <SID>StripTrailingWhitespaces()
   call cursor(l, c)
 endfun
 
+set ts=4 sts=4 sw=4 et
+
 if has("autocmd")
   autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
   " Javascript, JSX
-  autocmd FileType javascript,javascript.jsx set ts=4 sts=4 sw=4 et
+  autocmd FileType javascript,javascript.jsx set ts=2 sts=2 sw=2 et
   " autocmd FileType json setlocal conceallevel=0
   " Python files
   augroup filetype_python
@@ -323,6 +325,11 @@ command! FZFR call s:find_root()
 
 " }}}
 " Nvim Completion Manager: {{{
+" Disable tags
+let g:cm_sources_override = {
+    \ 'cm-tags': {'enable':0}
+    \ }
+
 inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
 
 " Show documentation of autocomplete option

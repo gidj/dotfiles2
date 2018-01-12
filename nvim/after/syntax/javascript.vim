@@ -137,23 +137,25 @@ endfun
 " JavaScript highlighting
 call <sid>hi("javaScript",        s:gui05, "", s:cterm05, "", "", "")
 call <sid>hi("javaScriptBraces",  s:gui05, "", s:cterm05, "", "", "")
-call <sid>hi("javaScriptNumber",  s:gui09, "", s:cterm09, "", "", "")
 " pangloss/vim-javascript highlighting
-call <sid>hi("jsOperator",          s:gui0D, "", s:cterm0D, "", "", "")
 call <sid>hi("jsStatement",         s:gui0E, "", s:cterm0E, "", "", "")
-call <sid>hi("jsReturn",            s:gui0E, "", s:cterm0E, "", "", "")
-call <sid>hi("jsThis",              s:gui08, "", s:cterm08, "", "", "")
-call <sid>hi("jsClassDefinition",   s:gui0A, "", s:cterm0A, "", "", "")
-call <sid>hi("jsFunction",          s:gui0E, "", s:cterm0E, "", "", "")
-call <sid>hi("jsFuncName",          s:gui0D, "", s:cterm0D, "", "", "")
 call <sid>hi("jsFuncCall",          s:gui0D, "", s:cterm0D, "", "", "")
 call <sid>hi("jsClassFuncName",     s:gui0D, "", s:cterm0D, "", "", "")
 call <sid>hi("jsClassMethodType",   s:gui0E, "", s:cterm0E, "", "", "")
-call <sid>hi("jsRegexpString",      s:gui0C, "", s:cterm0C, "", "", "")
 call <sid>hi("jsGlobalObjects",     s:gui0A, "", s:cterm0A, "", "", "")
-call <sid>hi("jsGlobalNodeObjects", s:gui0A, "", s:cterm0A, "", "", "")
 call <sid>hi("jsExceptions",        s:gui0A, "", s:cterm0A, "", "", "")
 call <sid>hi("jsBuiltins",          s:gui0A, "", s:cterm0A, "", "", "")
+
+hi! link javaScriptNumber GruvboxPurple
+hi! link jsOperator GruvboxBlue
+hi! link jsReturn GruvboxPurple
+hi! link jsThis GruvboxRed
+hi! link jsClassDefinition GruvboxAqua
+hi! link jsFuncName GruvboxBlue
+hi! link jsFunction GruvboxPurple
+hi! link jsClassFuncName GruvboxBlue
+hi! link jsRegexpString GruvboxAqua
+hi! link jsGlobalNodeObjects GruvboxYellow
 
 " Remove functions
 delf <sid>hi
