@@ -242,19 +242,21 @@ nnoremap <silent> <F2> :call LanguageClient_textDocument_references()<CR>
 " }}}
 " Ale: {{{
 let g:ale_fixers = {
-  \ 'html': ['tidy'],
-  \ 'python': ['isort'],
+\ 'html': ['tidy'],
+\ 'python': ['isort'],
 \}
-  " \ 'javascript': ['eslint'],
 let g:ale_linters = {
-  \ 'html': ['htmlhint'],
-  \ 'jinja': ['htmlhint'],
-  \ 'python': ['flake8'],
+\ 'html': ['htmlhint'],
+\ 'jinja': ['htmlhint'],
+\ 'python': ['flake8'],
 \}
-  " \ 'vim': ['vint'],
 let g:ale_linter_aliases = {
-  \ 'jinja': 'html',
+\ 'jinja': 'html',
 \}
+let g:ale_pattern_options = {
+\ '.*\.app\.js$': {'ale_enabled': 0},
+\}
+
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_lint_delay = 500
 let g:ale_set_highlights = 0
@@ -271,7 +273,7 @@ let g:ale_python_flake8_use_global = 1
 let g:ale_python_flake8_options = '--ignore=E128,E221,E241,E251,E265,E303,E501'
 " }}}
 " Airline: {{{
-" let g:airline#extensions#whitespace#show_message = 1
+let g:airline#extensions#whitespace#show_message = 1
 " let g:airline#extensions#ale#enabled = 1
 let g:airline_powerline_fonts=1
 " let g:airline#extensions#branch#use_vcscommand=1
