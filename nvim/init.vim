@@ -41,16 +41,18 @@ Plug 'w0rp/ale'
 Plug 'sjl/gundo.vim'
 Plug 'majutsushi/tagbar'
 Plug 'epeli/slimux'
-" Plug 'rking/ag.vim'
+Plug 'rking/ag.vim'
 Plug 'bling/vim-airline'
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
     \ }
 Plug '/usr/local/opt/fzf'
-Plug 'junegunn/fzf.vim'
+" Plug 'junegunn/fzf.vim'
 
+Plug 'SirVer/ultisnips'
 Plug 'Valloric/ListToggle'
+Plug 'honza/vim-snippets'
 
 " Useful plugins from Tim Pope
 Plug 'tpope/vim-fugitive'
@@ -162,6 +164,8 @@ if has("autocmd")
   autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
   " Javascript, JSX
   autocmd FileType javascript,javascript.jsx set ts=2 sts=2 sw=2 et
+  " YAML
+  autocmd FileType yaml set ts=2 sts=2 sw=2 et
   " autocmd FileType json setlocal conceallevel=0
   " Python files
   augroup filetype_python
@@ -184,7 +188,7 @@ if has("autocmd")
   " HTML files
   augroup filtype_html_jinja
     autocmd!
-    autocmd Filetype html,jinja,jinja.html setlocal ts=4 sts=4 sw=4 expandtab
+    autocmd Filetype html,jinja,jinja.html setlocal ts=2 sts=2 sw=2 expandtab
     autocmd Filetype html,jinjs,jinja.html set formatprg=/usr/local/bin/tidy
   augroup END
   autocmd Filetype css,scss,xml setlocal ts=4 sts=4 sw=4 expandtab
@@ -326,24 +330,38 @@ command! FZFR call s:find_root()
 "nmap <space> :<C-u>FZF<CR>
 
 " }}}
+" Snippets: {{{
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<C-J>"
+let g:UltiSnipsJumpForwardTrigger="<C-J>"
+let g:UltiSnipsJumpBackwardTrigger="<C-K>"
+" }}}
 " Nvim Completion Manager: {{{
 " Disable tags
 let g:cm_sources_override = {
     \ 'cm-tags': {'enable':0}
     \ }
 
-inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
+imap <expr> <CR>  (pumvisible() ?  "\<c-y>\<Plug>(expand_or_nl)" : "\<CR>")
+imap <expr> <Plug>(expand_or_nl) (cm#completed_is_snippet() ? "\<C-J>":"\<CR>")
+
+" inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
+
+" " use tab to forward cycle
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+" " use tab to backward cycle
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+" inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 
 " Show documentation of autocomplete option
 let g:cm_completeopt = 'menu,menuone,noinsert,noselect,preview'
+
+" Close preview window
 augroup ncm_preview
   autocmd! InsertLeave <buffer> if pumvisible() == 0|pclose|endif
 augroup END
 
-" use tab to forward cycle
-inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-" use tab to backward cycle
-inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 " Close the documentation window when completion is done
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 

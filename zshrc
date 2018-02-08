@@ -23,6 +23,7 @@ zstyle ":prezto:*:*" color "yes"
 zplug "modules/node", from:prezto
 # zplug "modules/ruby", from:prezto
 zplug "modules/tmux", from:prezto
+zplug "modules/docker", from:prezto
 zplug "modules/directory", from:prezto
 zplug "modules/history", from:prezto
 zplug "modules/editor", from:prezto

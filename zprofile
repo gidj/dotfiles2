@@ -11,13 +11,16 @@ export AUTOENV_FILE_LEAVE=".out.zsh"
 # path=(/usr/texbin $path)
 
 # Add Haskell
-path=(~/.cabal/bin $path)
+# path=(~/.cabal/bin $path)
 
 # Add Python
 path=(/usr/local/opt/python/libexec/bin $path)
 
 # Add Node
-# path=(~/node_modules/.bin $path)
+path=(~/node_modules/.bin $path)
+
+# Add docker completion
+# fpath=(/usr/local/share/zsh/site-functions $fpath)
 
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Projects
