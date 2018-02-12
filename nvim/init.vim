@@ -331,10 +331,17 @@ command! FZFR call s:find_root()
 
 " }}}
 " Snippets: {{{
+let g:UltiSnipsSnippetsDir="~/.config/nvim/myUltiSnips"
+let g:UltiSnipsSnippetDirectories=["UltiSnips", "myUltiSnips"]
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<C-J>"
 let g:UltiSnipsJumpForwardTrigger="<C-J>"
 let g:UltiSnipsJumpBackwardTrigger="<C-K>"
+" Vsplit if you want to edit a snippet
+let g:UltiSnipsEditSplit="vertical"
+map <leader>es :UltiSnipsEdit<CR>
+
+
 " }}}
 " Nvim Completion Manager: {{{
 " Disable tags
