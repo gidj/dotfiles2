@@ -41,7 +41,6 @@ Plug 'w0rp/ale'
 Plug 'sjl/gundo.vim'
 Plug 'majutsushi/tagbar'
 Plug 'epeli/slimux'
-" Plug 'rking/ag.vim'
 Plug 'bling/vim-airline'
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
@@ -135,17 +134,8 @@ syntax on
 filetype on
 filetype plugin on
 filetype indent on
-let mapleader=',' " Change the leader to the comma character
 
 let g:indentLine_char = '│'
-
-noremap <leader>f :ALEFix<CR>
-
-" Preserve indentation while pasting text from the OS X clipboard
-noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
-
-" Center search matches
-nnoremap n nzz
 
 " Limit autocomplete list length
 set pumheight=25
@@ -199,12 +189,30 @@ if has("autocmd")
 endif
 
 " }}}
-" Leaders: {{{
+" Keymapping: {{{
+let mapleader=',' " Change the leader to the comma character
+" Preserve indentation while pasting text from the OS X clipboard
+noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
+
+" Center search matches
+nnoremap n nzz
+
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
-nnoremap <leader><space> :noh<cr>
+" Let space bar toggle folding on and off.
+noremap <Space> za
+" Allow repeat in visual mode
+vnoremap . :norm.<CR>
+
+" Tab goes switches between matched surrounding tokens
+nnoremap <tab> %
+vnoremap <tab> %
+
+" Clear search
+nnoremap <leader>, :noh<cr>
+
 " Map some macros to leaders for housecleaning
 " nnoremap <leader>ui :Commentary<CR>A ---UNUSEDIMPORT
 " vnoremap <leader>ui :Commentary<CR>gv:normal A ---UNUSEDIMPORT
@@ -220,14 +228,6 @@ nnoremap <leader><space> :noh<cr>
 " nnoremap <leader>dm ggO# ---DEADMODULE
 " nnoremap <leader>dc A # ---DEADCLASS
 " nnoremap <leader>df A # ---DEADFUNCTION
-" }}}
-" Keymapping: {{{
-" This makes the space bar toggle folding on and off.
-noremap <Space> za
-vnoremap . :norm.<CR>
-
-nnoremap <tab> %
-vnoremap <tab> %
 " }}}
 " Language Server: {{{
 let g:LanguageClient_serverCommands = {
@@ -264,8 +264,6 @@ let g:ale_pattern_options = {
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_lint_delay = 500
 let g:ale_set_highlights = 0
-" let g:ale_sign_error = '⤫'
-" let g:ale_sign_warning = '⚠'
 
 let g:ale_html_tidy_excecutable = expand('/usr/local/bin/tidy')
 let g:ale_vim_vint_executable = expand('~/.virtualenvs/neovim/bin/vint')
@@ -275,12 +273,12 @@ let g:ale_python_isort_executable = expand('~/.virtualenvs/neovim/bin/isort')
 let g:ale_python_flake8_executable = expand('~/.virtualenvs/neovim/bin/flake8')
 let g:ale_python_flake8_use_global = 1
 let g:ale_python_flake8_options = '--ignore=E128,E221,E241,E251,E265,E303,E501'
+
+noremap <leader>f :ALEFix<CR>
 " }}}
 " Airline: {{{
 let g:airline#extensions#whitespace#show_message = 1
-" let g:airline#extensions#ale#enabled = 1
 let g:airline_powerline_fonts=1
-" let g:airline#extensions#branch#use_vcscommand=1
 let g:airline_theme='gruvbox'
 
 " Removes delay when exiting Insert Mode
@@ -326,8 +324,9 @@ function! s:find_root()
 endfunction
 
 command! FZFR call s:find_root()
-" nmap <space> :<C-u>FZFR<CR>
-"nmap <space> :<C-u>FZF<CR>
+nmap <leader><space> :<C-u>FZFR<CR>
+command! AGR call s:find_root()
+nmap <leader>a :<C-u>AGR<CR>
 
 " }}}
 " Snippets: {{{

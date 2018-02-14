@@ -4,23 +4,11 @@ typeset -U path
 export AUTOENV_FILE_ENTER=".env.zsh"
 export AUTOENV_FILE_LEAVE=".out.zsh"
 
-# Add Racket
-#path=("/Applications/Racket v5.3.5/bin" $path)
-
-# Add TEX
-# path=(/usr/texbin $path)
-
-# Add Haskell
-# path=(~/.cabal/bin $path)
-
 # Add Python
 path=(/usr/local/opt/python/libexec/bin $path)
 
 # Add Node
 path=(~/node_modules/.bin $path)
-
-# Add docker completion
-# fpath=(/usr/local/share/zsh/site-functions $fpath)
 
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Projects
@@ -35,10 +23,10 @@ export TERM=tmux-256color
 SSH_ENV="$HOME/.ssh/environment"
 
 # Make sure keys are loaded in ssh-agent
-if [ -z "$SSH_AUTH_SOCK" ] ; then
-    eval ssh-agent -s
-    ssh-add
-fi
+# if [ -z "$SSH_AUTH_SOCK" ] ; then
+#     eval ssh-agent -s
+#     ssh-add
+# fi
 
 # Aliases
 alias ll="ls -alrtFG"
@@ -58,8 +46,8 @@ alias vim="nvim"
 alias eclimd='/Applications/Eclipse.app/Contents/Eclipse/eclimd'
 
 # Node
-alias ng="npm list -g --depth=0 2>/dev/null"
-alias nl="npm list --depth=0 2>/dev/null"
+alias nlg="npm list -g --depth=0 2>/dev/null"
+alias nll="npm list --depth=0 2>/dev/null"
 
 # Be sure to always send a TERM that the other machines can understand
 alias ssh='TERM=screen-256color ssh'
