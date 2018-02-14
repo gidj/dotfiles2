@@ -41,14 +41,14 @@ Plug 'w0rp/ale'
 Plug 'sjl/gundo.vim'
 Plug 'majutsushi/tagbar'
 Plug 'epeli/slimux'
-Plug 'rking/ag.vim'
+" Plug 'rking/ag.vim'
 Plug 'bling/vim-airline'
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
     \ }
 Plug '/usr/local/opt/fzf'
-" Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf.vim'
 
 Plug 'SirVer/ultisnips'
 Plug 'Valloric/ListToggle'
