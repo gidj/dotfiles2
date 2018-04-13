@@ -6,11 +6,12 @@ export AUTOENV_FILE_LEAVE=".out.zsh"
 
 # Add Python
 path=(/usr/local/opt/python/libexec/bin $path)
+# path=(/usr/local/opt/python@2/libexec/bin $path)
 
 # Add Node
 path=(~/node_modules/.bin $path)
 
-export WORKON_HOME=$HOME/.virtualenvs
+export WORKON_HOME=$HOME/.venvs
 export PROJECT_HOME=$HOME/Projects
 source /usr/local/bin/virtualenvwrapper.sh
 
@@ -82,6 +83,8 @@ alias hgsl='hg log --limit 20 --template "{node|short} | {date|isodatesec} | {au
 alias hgca='hg commit --amend'
 # list unresolved files (since hg does not list unmerged files in the status command)
 alias hgun='hg resolve --list'
+# tags
+alias hgth='hg tags |head'
 
 # Eclimd
 alias eclimd='/Applications/Eclipse.app/Contents/Eclipse/eclimd'

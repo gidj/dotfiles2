@@ -11,3 +11,7 @@ snippet macro "Create Jinja Macro"
 ${0:${VISUAL}}
 {% endmacro %}
 endsnippet
+
+snippet linkv "Create anchor tag from visual selection" i
+<a href="${1:${VISUAL}}" target="_blank">${0:${VISUAL}}</a>
+endsnippet

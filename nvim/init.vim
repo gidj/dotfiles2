@@ -6,32 +6,39 @@ call plug#begin('~/.config/nvim/plugged')
 " Make sure neovim doesn't use the current virtualenv
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if has('nvim')
-    if filereadable(expand('~/.virtualenvs/neovim/bin/python'))
-        let g:python_host_prog = expand('~/.virtualenvs/neovim/bin/python')
-    elseif filereadable('/usr/local/bin/python2')
-        let g:python_host_prog = '/usr/local/bin/python'
-    elseif filereadable('/usr/bin/python')
-        let g:python_host_prog = '/usr/bin/python'
-    else
-        echom 'WARNING: no valid python2 install found'
-    endif
+    " if filereadable(expand('~/.venvs/neovim/bin/python'))
+    "     let g:python_host_prog = expand('~/.venvs/neovim/bin/python')
+    " elseif filereadable('/usr/local/bin/python2')
+    "     let g:python_host_prog = '/usr/local/bin/python'
+    " elseif filereadable('/usr/bin/python')
+    "     let g:python_host_prog = '/usr/bin/python'
+    " else
+    "     echom 'WARNING: no valid python2 install found'
+    " endif
+    " let g:loaded_python_provider = 1
+    " let g:python_host_prog = expand('~/.venvs/neovim/bin/python')
+    " let g:python3_host_prog = expand('~/.venvs/neovim/bin/python')
 
-    if filereadable(expand('~/.virtualenvs/neovim3/bin/python'))
-        let g:python3_host_prog = expand('~/.virtualenvs/neovim3/bin/python')
-    elseif filereadable('/usr/local/bin/python3')
-        let g:python3_host_prog = '/usr/local/bin/python3'
-    elseif filereadable('/usr/bin/python3')
-        let g:python3_host_prog = '/usr/bin/python3'
-    else
-        echom 'WARNING: no valid python3 install found'
-    endif
+    " if filereadable(expand('~/.venvs/neovim/bin/python'))
+    "     let g:python3_host_prog = expand('~/.venvs/neovim/bin/python')
+    " elseif filereadable('/usr/local/bin/python3')
+    "     let g:python3_host_prog = '/usr/local/bin/python3'
+    " elseif filereadable('/usr/bin/python3')
+    "     let g:python3_host_prog = '/usr/bin/python3'
+    " else
+    "     echom 'WARNING: no valid python3 install found'
+    " endif
 endif
+
+" let g:loaded_python_provider = 1
+let g:python_host_prog = expand('~/.venvs/neovim2/bin/python')
+let g:python3_host_prog = expand('~/.venvs/neovim/bin/python')
 
 " My Plugins
 " Themes
 Plug 'morhetz/gruvbox'
-Plug 'drewtempelmeyer/palenight.vim'
-Plug 'chriskempson/base16-vim'
+" Plug 'drewtempelmeyer/palenight.vim'
+" Plug 'chriskempson/base16-vim'
 
 " Indispensable Plugins
 Plug 'roxma/nvim-completion-manager'
@@ -68,9 +75,9 @@ Plug 'Vimjas/vim-python-pep8-indent'
 
 " Javascript Plugins
 Plug 'pangloss/vim-javascript'
-" Plug 'jelera/vim-javascript-syntax'
-" Plug 'othree/yajs.vim'
-" Plug 'othree/javascript-libraries-syntax.vim' " For all JS libraries
+Plug 'jelera/vim-javascript-syntax'
+Plug 'othree/yajs.vim'
+Plug 'othree/javascript-libraries-syntax.vim' " For all JS libraries
 
 " Version control related
 Plug 'mhinz/vim-signify'
@@ -82,6 +89,7 @@ Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'ap/vim-css-color'
 Plug 'Yggdroot/indentLine'
 Plug 'mattn/emmet-vim'
+Plug 'posva/vim-vue'
 " Plug 'jiangmiao/auto-pairs'
 
 " All of your Plugins must be added before the following line
@@ -162,7 +170,7 @@ if has("autocmd")
     autocmd!
     autocmd Filetype python setlocal ts=4 sts=4 sw=4 expandtab
     autocmd Filetype python setlocal textwidth=120
-    autocmd Filetype python let &formatprg=expand('~/.virtualenvs/neovim/bin/yapf')
+    " autocmd Filetype python let &formatprg=expand('~/.virtualenvs/neovim/bin/yapf')
   augroup END
   " C files
   autocmd Filetype c,h setlocal foldmethod=syntax ts=2 sts=2 sw=2 expandtab
@@ -173,7 +181,7 @@ if has("autocmd")
   " Ruby
   autocmd FileType ruby,eruby setlocal ts=2 sts=2 sw=2 expandtab
   " Haskell
-  autocmd Filetype haskell setlocal omnifunc=necoghc#omnifunc foldlevelstart=20
+  " autocmd Filetype haskell setlocal omnifunc=necoghc#omnifunc foldlevelstart=20
   " autocmd BufEnter *.hs compiler ghc
   " HTML files
   augroup filtype_html_jinja
@@ -181,6 +189,7 @@ if has("autocmd")
     autocmd Filetype html,jinja,jinja.html setlocal ts=2 sts=2 sw=2 expandtab
     autocmd Filetype html,jinjs,jinja.html set formatprg=/usr/local/bin/tidy
   augroup END
+  autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
   autocmd Filetype css,scss,xml setlocal ts=4 sts=4 sw=4 expandtab
   " autocmd Filetype jinja setlocal syntax on
 
@@ -231,9 +240,11 @@ nnoremap <leader>, :noh<cr>
 " }}}
 " Language Server: {{{
 let g:LanguageClient_serverCommands = {
-    \ 'python': ['/Users/gideon/.virtualenvs/neovim/bin/pyls'],
+    \ 'python': ['/Users/gideon/.venvs/neovim/bin/pyls'],
+    \ 'javascript': ['javascript-typescript-stdio'],
+    \ 'javascript.jsx': ['javascript-typescript-stdio'],
+    \ 'vue': ['javascript-typescript-stdio'],
     \ }
-
 " Automatically start language servers.
 let g:LanguageClient_autoStart = 1
 " Disable Diagnostics
@@ -241,8 +252,8 @@ let g:LanguageClient_diagnosticsEnable=0
 
 nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
 nnoremap <silent> <leader>g :call LanguageClient_textDocument_definition()<CR>
-nnoremap <silent> <leader>r :call LanguageClient_textDocument_rename()<CR>
-nnoremap <silent> <F2> :call LanguageClient_textDocument_references()<CR>
+nnoremap <silent> <leader>rn :call LanguageClient_textDocument_rename()<CR>
+nnoremap <silent> <leader>rf :call LanguageClient_textDocument_references()<CR>
 " }}}
 " Ale: {{{
 let g:ale_fixers = {
@@ -266,11 +277,11 @@ let g:ale_lint_delay = 500
 let g:ale_set_highlights = 0
 
 let g:ale_html_tidy_excecutable = expand('/usr/local/bin/tidy')
-let g:ale_vim_vint_executable = expand('~/.virtualenvs/neovim/bin/vint')
+let g:ale_vim_vint_executable = expand('~/.venvs/neovim/bin/vint')
 
-" let g:ale_python_yapf_executable = expand('~/.virtualenvs/neovim/bin/yapf')
-let g:ale_python_isort_executable = expand('~/.virtualenvs/neovim/bin/isort')
-let g:ale_python_flake8_executable = expand('~/.virtualenvs/neovim/bin/flake8')
+let g:ale_python_yapf_executable = expand('~/.venvs/neovim/bin/yapf')
+let g:ale_python_isort_executable = expand('~/.venvs/neovim/bin/isort')
+let g:ale_python_flake8_executable = expand('~/.venvs/neovim/bin/flake8')
 let g:ale_python_flake8_use_global = 1
 let g:ale_python_flake8_options = '--ignore=E128,E221,E241,E251,E265,E303,E501'
 
@@ -278,7 +289,7 @@ noremap <leader>f :ALEFix<CR>
 " }}}
 " Airline: {{{
 let g:airline#extensions#whitespace#show_message = 1
-let g:airline_powerline_fonts=1
+" let g:airline_powerline_fonts=1
 let g:airline_theme='gruvbox'
 
 " Removes delay when exiting Insert Mode
@@ -325,8 +336,8 @@ endfunction
 
 command! FZFR call s:find_root()
 nmap <leader><space> :<C-u>FZFR<CR>
-command! AGR call s:find_root()
-nmap <leader>a :<C-u>AGR<CR>
+" command! AGR call s:find_root('Ag')
+" nmap <leader>a :<C-u>AGR<CR>
 
 " }}}
 " Snippets: {{{
