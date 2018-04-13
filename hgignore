@@ -3,3 +3,4 @@ syntax: glob
 .out.zsh
 .tern-project
 .ropeproject
+node_modules
