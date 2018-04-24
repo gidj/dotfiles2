@@ -34,7 +34,7 @@ zplug "modules/python", from:prezto
 zplug "modules/syntax-highlighting", from:prezto
 zplug "modules/history-substring-search", from:prezto
 
-zplug "Tarrasch/zsh-autoenv", from:github
+# zplug "Tarrasch/zsh-autoenv", from:github
 zplug "zsh-users/zsh-completions", from:github
 
 # zsh-async is required for pure

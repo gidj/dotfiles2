@@ -249,6 +249,8 @@ let g:LanguageClient_serverCommands = {
 let g:LanguageClient_autoStart = 1
 " Disable Diagnostics
 let g:LanguageClient_diagnosticsEnable=0
+" Required for operations modifying multiple buffers like rename.
+set hidden
 
 nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
 nnoremap <silent> <leader>g :call LanguageClient_textDocument_definition()<CR>
