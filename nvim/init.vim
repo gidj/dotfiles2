@@ -90,6 +90,7 @@ Plug 'ap/vim-css-color'
 Plug 'Yggdroot/indentLine'
 Plug 'mattn/emmet-vim'
 Plug 'posva/vim-vue'
+Plug 'ekalinin/Dockerfile.vim'
 " Plug 'jiangmiao/auto-pairs'
 
 " All of your Plugins must be added before the following line
@@ -164,13 +165,11 @@ if has("autocmd")
   autocmd FileType javascript,javascript.jsx set ts=2 sts=2 sw=2 et
   " YAML
   autocmd FileType yaml set ts=2 sts=2 sw=2 et
-  " autocmd FileType json setlocal conceallevel=0
   " Python files
   augroup filetype_python
     autocmd!
     autocmd Filetype python setlocal ts=4 sts=4 sw=4 expandtab
     autocmd Filetype python setlocal textwidth=120
-    " autocmd Filetype python let &formatprg=expand('~/.virtualenvs/neovim/bin/yapf')
   augroup END
   " C files
   autocmd Filetype c,h setlocal foldmethod=syntax ts=2 sts=2 sw=2 expandtab
@@ -180,9 +179,6 @@ if has("autocmd")
   autocmd Filetype lisp,scheme setlocal lisp "foldmethod=syntax
   " Ruby
   autocmd FileType ruby,eruby setlocal ts=2 sts=2 sw=2 expandtab
-  " Haskell
-  " autocmd Filetype haskell setlocal omnifunc=necoghc#omnifunc foldlevelstart=20
-  " autocmd BufEnter *.hs compiler ghc
   " HTML files
   augroup filtype_html_jinja
     autocmd!
@@ -191,10 +187,6 @@ if has("autocmd")
   augroup END
   autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
   autocmd Filetype css,scss,xml setlocal ts=4 sts=4 sw=4 expandtab
-  " autocmd Filetype jinja setlocal syntax on
-
-  "autocmd FileType * set tabstop=2|set shiftwidth=2|set noexpandtab
-  " autocmd Filetype python set foldmethod=indent
 endif
 
 " }}}
@@ -294,6 +286,12 @@ let g:airline#extensions#whitespace#show_message = 1
 " let g:airline_powerline_fonts=1
 let g:airline_theme='gruvbox'
 
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.readonly = ''
+
 " Removes delay when exiting Insert Mode
 if ! has('gui_running')
     set ttimeoutlen=10
@@ -345,7 +343,7 @@ nmap <leader><space> :<C-u>FZFR<CR>
 " Snippets: {{{
 let g:UltiSnipsSnippetsDir="~/.config/nvim/myUltiSnips"
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "myUltiSnips"]
-" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+" Trigger configuration.
 let g:UltiSnipsExpandTrigger="<C-J>"
 let g:UltiSnipsJumpForwardTrigger="<C-J>"
 let g:UltiSnipsJumpBackwardTrigger="<C-K>"
@@ -358,20 +356,16 @@ map <leader>es :UltiSnipsEdit<CR>
 " Nvim Completion Manager: {{{
 " Disable tags
 let g:cm_sources_override = {
-    \ 'cm-tags': {'enable':0}
+    \ 'cm-tags': {'enable':0},
     \ }
 
 imap <expr> <CR>  (pumvisible() ?  "\<c-y>\<Plug>(expand_or_nl)" : "\<CR>")
 imap <expr> <Plug>(expand_or_nl) (cm#completed_is_snippet() ? "\<C-J>":"\<CR>")
 
-" inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
-
-" " use tab to forward cycle
+" use tab to forward cycle
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-" " use tab to backward cycle
+" use tab to backward cycle
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-" inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-" inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 
 " Show documentation of autocomplete option
 let g:cm_completeopt = 'menu,menuone,noinsert,noselect,preview'
