@@ -34,7 +34,6 @@ zplug "modules/python", from:prezto
 zplug "modules/syntax-highlighting", from:prezto
 zplug "modules/history-substring-search", from:prezto
 
-# zplug "Tarrasch/zsh-autoenv", from:github
 zplug "zsh-users/zsh-completions", from:github
 
 # zsh-async is required for pure
@@ -67,3 +66,8 @@ if _has fzf && _has ag; then
   # export FZF_DEFAULT_OPTS=''
 fi
 
+# pipenv completion
+eval "$(pipenv --completion)"
+
+# Activate direnv
+eval "$(direnv hook zsh)"
