@@ -232,7 +232,7 @@ nnoremap <leader>, :noh<cr>
 " }}}
 " Language Server: {{{
 let g:LanguageClient_serverCommands = {
-    \ 'python': ['/Users/gideon/.venvs/neovim/bin/pyls'],
+    \ 'python': [expand(g:neovim3_venv_path . '/bin/pyls')],
     \ 'javascript': ['javascript-typescript-stdio'],
     \ 'javascript.jsx': ['javascript-typescript-stdio'],
     \ 'vue': ['javascript-typescript-stdio'],
@@ -271,11 +271,10 @@ let g:ale_lint_delay = 500
 let g:ale_set_highlights = 0
 
 let g:ale_html_tidy_excecutable = expand('/usr/local/bin/tidy')
-let g:ale_vim_vint_executable = expand('~/.venvs/neovim/bin/vint')
-
-let g:ale_python_yapf_executable = expand('~/.venvs/neovim/bin/yapf')
-let g:ale_python_isort_executable = expand('~/.venvs/neovim/bin/isort')
-let g:ale_python_flake8_executable = expand('~/.venvs/neovim/bin/flake8')
+let g:ale_vim_vint_executable = expand(g:neovim3_venv_path . '/bin/vint')
+let g:ale_python_yapf_executable = expand(g:neovim3_venv_path . '/bin/yapf')
+let g:ale_python_isort_executable = expand(g:neovim3_venv_path . '/bin/isort')
+let g:ale_python_flake8_executable = expand(g:neovim3_venv_path . '/bin/flake8')
 let g:ale_python_flake8_use_global = 1
 let g:ale_python_flake8_options = '--ignore=E128,E221,E241,E251,E265,E303,E501'
 

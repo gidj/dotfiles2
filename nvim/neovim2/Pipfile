@@ -5,8 +5,6 @@ name = "pypi"
 
 [packages]
 neovim = "*"
-"flake8" = "*"
-isort = "*"
 python-language-server = "*"
 
 [dev-packages]
