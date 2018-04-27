@@ -1,19 +1,13 @@
 typeset -U path
 
-# Autoenv files
-export AUTOENV_FILE_ENTER=".env.zsh"
-export AUTOENV_FILE_LEAVE=".out.zsh"
-
-# Add Python
+# Add Python3
 path=(/usr/local/opt/python/libexec/bin $path)
-# path=(/usr/local/opt/python@2/libexec/bin $path)
 
 # Add Node
 path=(~/node_modules/.bin $path)
 
 export WORKON_HOME=$HOME/.venvs
 export PROJECT_HOME=$HOME/Projects
-source /usr/local/bin/virtualenvwrapper.sh
 
 export VISUAL=nvim
 export EDITOR=nvim
@@ -22,12 +16,6 @@ export PATH
 
 export TERM=tmux-256color
 SSH_ENV="$HOME/.ssh/environment"
-
-# Make sure keys are loaded in ssh-agent
-# if [ -z "$SSH_AUTH_SOCK" ] ; then
-#     eval ssh-agent -s
-#     ssh-add
-# fi
 
 # Aliases
 alias ll="ls -alrtFG"

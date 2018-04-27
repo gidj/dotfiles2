@@ -1,9 +1,6 @@
 export ZPLUG_HOME=/usr/local/opt/zplug
 source $ZPLUG_HOME/init.zsh
 
-# Autoenv files
-export AUTOENV_FILE_ENTER=".env.zsh"
-export AUTOENV_FILE_LEAVE=".out.zsh"
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 
 zstyle ":prezto:module:editor" key-bindings "emacs"
