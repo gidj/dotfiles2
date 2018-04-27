@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "cc49e3efe5ac3f531dbb893c593070ea045ee78e033792fd14b326ebeb762f61"
+            "sha256": "0c1c22748c0301fdbdbc0ae41fc748a246edfb1367ebadb92ba9fd65cc3a7ae0"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -122,13 +122,6 @@
             "index": "pypi",
             "version": "==0.2.4"
         },
-        "packaging": {
-            "hashes": [
-                "sha256:e9215d2d2535d3ae866c3d6efc77d5b24a0192cce0ff20e42896cc0664f889c0",
-                "sha256:f019b770dd64e585a99714f1fd5e01c7a8f11b45635aa953fd41c689a657375b"
-            ],
-            "version": "==17.1"
-        },
         "parso": {
             "hashes": [
                 "sha256:62bd6bf7f04ab5c817704ff513ef175328676471bdef3629d4bdd46626f75551",
@@ -136,14 +129,6 @@
             ],
             "index": "pypi",
             "version": "==0.2.0"
-        },
-        "pip-review": {
-            "hashes": [
-                "sha256:aa368c457e4b097d0cfbf9024eb574c57883177bc38d89c75eafc4e58174a82e",
-                "sha256:e4b27cdf0d74b519abc792eb4ab0d92471f1a378efa0f5e382ff9c7ad69916ab"
-            ],
-            "index": "pypi",
-            "version": "==1.0"
         },
         "pluggy": {
             "hashes": [
