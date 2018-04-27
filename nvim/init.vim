@@ -5,34 +5,34 @@ call plug#begin('~/.config/nvim/plugged')
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Make sure neovim doesn't use the current virtualenv
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-if has('nvim')
-    " if filereadable(expand('~/.venvs/neovim/bin/python'))
-    "     let g:python_host_prog = expand('~/.venvs/neovim/bin/python')
-    " elseif filereadable('/usr/local/bin/python2')
-    "     let g:python_host_prog = '/usr/local/bin/python'
-    " elseif filereadable('/usr/bin/python')
-    "     let g:python_host_prog = '/usr/bin/python'
-    " else
-    "     echom 'WARNING: no valid python2 install found'
-    " endif
-    " let g:loaded_python_provider = 1
-    " let g:python_host_prog = expand('~/.venvs/neovim/bin/python')
-    " let g:python3_host_prog = expand('~/.venvs/neovim/bin/python')
+function! s:python_venv(pipfile_dir)
+  if filereadable(expand(a:pipfile_dir . '/Pipfile'))
+    return substitute(system('cd ' . a:pipfile_dir . ' && pipenv --venv'), '\n\+$', '', '')
+  else
+    return v:null
+  endif
+endfunction
 
-    " if filereadable(expand('~/.venvs/neovim/bin/python'))
-    "     let g:python3_host_prog = expand('~/.venvs/neovim/bin/python')
-    " elseif filereadable('/usr/local/bin/python3')
-    "     let g:python3_host_prog = '/usr/local/bin/python3'
-    " elseif filereadable('/usr/bin/python3')
-    "     let g:python3_host_prog = '/usr/bin/python3'
-    " else
-    "     echom 'WARNING: no valid python3 install found'
-    " endif
-endif
+function! s:set_pyenv()
+  let s:path = s:python_venv('~/.config/nvim/neovim2')
+  if empty(s:path)
+    let g:loaded_python_provider = 1
+    let g:neovim2_venv_path = v:null
+  else
+    let g:neovim2_venv_path = expand(s:path)
+    let g:python_host_prog = expand(s:path . '/bin/python')
+  endif
+  let s:path = s:python_venv('~/.config/nvim/neovim3')
+  if empty(s:path)
+    let g:loaded_python3_provider = 1
+    let g:neovim3_venv_path = v:null
+  else
+    let g:neovim3_venv_path = expand(s:path)
+    let g:python3_host_prog = expand(s:path . '/bin/python')
+  endif
+endfunction
 
-" let g:loaded_python_provider = 1
-let g:python_host_prog = expand('~/.venvs/neovim2/bin/python')
-let g:python3_host_prog = expand('~/.venvs/neovim/bin/python')
+call s:set_pyenv()
 
 " My Plugins
 " Themes
