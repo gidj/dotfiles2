@@ -15,7 +15,7 @@ zstyle ":prezto:module:syntax-highlighting" highlighters \
 zstyle ":prezto:*:*" case-sensitive "yes"
 zstyle ":prezto:*:*" color "yes"
 
-# zplug "modules/node", from:prezto
+zplug "modules/node", from:prezto
 zplug "modules/tmux", from:prezto
 zplug "modules/docker", from:prezto
 zplug "modules/directory", from:prezto
