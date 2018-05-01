@@ -1,3 +1,4 @@
 .env.zsh
 .out.zsh
 .envrc
+node_modules
