@@ -86,10 +86,10 @@
         },
         "neovim": {
             "hashes": [
-                "sha256:a3caa424141521fecc17161122705e9bdc91b8e953bdabf84240c3b8fd738c29"
+                "sha256:6ce58a742e0427491c0e1c8108556ee72ba33844209bd9e226b8da9538299276"
             ],
             "index": "pypi",
-            "version": "==0.2.4"
+            "version": "==0.2.6"
         },
         "parso": {
             "hashes": [
