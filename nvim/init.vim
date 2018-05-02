@@ -80,6 +80,7 @@ Plug 'othree/javascript-libraries-syntax.vim' " For all JS libraries
 
 " Version control related
 Plug 'mhinz/vim-signify'
+Plug 'airblade/vim-gitgutter'
 Plug 'ludovicchabant/vim-lawrencium'
 
 " Various Language Plugings
@@ -90,6 +91,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'mattn/emmet-vim'
 Plug 'posva/vim-vue'
 Plug 'ekalinin/Dockerfile.vim'
+Plug 'leafgarland/typescript-vim'
 
 " All of your Plugins must be added before the following line
 call plug#end()            " required
@@ -299,8 +301,11 @@ set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusl
 " Gundo: {{{
 nnoremap <F5> :GundoToggle<CR>
 " }}}
+" GitGutter: {{{
+set updatetime=200
+" }}}
 " Signify: {{{
-let g:signify_vcs_list = ['hg', 'git']
+let g:signify_vcs_list = ['hg']
 " }}}
 " Slimux: {{{
 " let g:slimux_select_from_current_window=0
