@@ -37,8 +37,6 @@ call s:set_pyenv()
 " My Plugins
 " Themes
 Plug 'morhetz/gruvbox'
-" Plug 'drewtempelmeyer/palenight.vim'
-" Plug 'chriskempson/base16-vim'
 
 " Indispensable Plugins
 Plug 'roxma/nvim-completion-manager'
@@ -59,6 +57,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'SirVer/ultisnips'
 Plug 'Valloric/ListToggle'
 Plug 'honza/vim-snippets'
+Plug 'wellle/targets.vim'
 
 " Useful plugins from Tim Pope
 Plug 'tpope/vim-fugitive'
@@ -91,7 +90,6 @@ Plug 'Yggdroot/indentLine'
 Plug 'mattn/emmet-vim'
 Plug 'posva/vim-vue'
 Plug 'ekalinin/Dockerfile.vim'
-" Plug 'jiangmiao/auto-pairs'
 
 " All of your Plugins must be added before the following line
 call plug#end()            " required
@@ -120,13 +118,8 @@ set listchars=tab:▸\ ,eol:¬  " Use the same symbols as TextMate for tabstops 
 "Invisible character colors
 highlight NonText guifg=#4a4a59
 highlight SpecialKey guifg=#4a4a59
-" set list!
 
 set termguicolors
-
-" let g:palenight_terminal_italics=1
-" colorscheme palenight
-
 set background=dark " Set the background
 let g:gruvbox_italic=1
 let g:gruvbox_contrast_dark='hard'
@@ -136,7 +129,6 @@ colorscheme gruvbox
 
 let g:python_highlight_indent_errors = 0
 let g:python_highlight_all = 1
-
 " }}}
 " Filetype: {{{
 syntax on
@@ -349,8 +341,6 @@ let g:UltiSnipsJumpBackwardTrigger="<C-K>"
 " Vsplit if you want to edit a snippet
 let g:UltiSnipsEditSplit="vertical"
 map <leader>es :UltiSnipsEdit<CR>
-
-
 " }}}
 " Nvim Completion Manager: {{{
 " Disable tags
@@ -379,11 +369,6 @@ autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
 " Remove 'x of y' in preview window
 set shortmess+=c
-" }}}
-" EClim: {{{
-" let g:EclimCompletionMethod = 'omnifunc'
-" let g:EclimPythonValidate = 0 " Disable validation of python files so syntastic takes over
-" let g:EclimJavascriptValidate = 0 " Disable validation of python files so syntastic takes over
 " }}}
 
 if executable('ag')
