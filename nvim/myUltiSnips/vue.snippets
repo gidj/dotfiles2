@@ -1,0 +1,21 @@
+extends html, javascript, css
+
+snippet component "Create a basic Vue component"
+<template>
+	<div class="${1}">
+	</div>
+</template>
+
+<script>
+export default {
+  name: '${2:name}',
+  props: {
+	${0}
+  }
+}
+</script>
+
+<style scoped>
+</style>
+endsnippet
+
