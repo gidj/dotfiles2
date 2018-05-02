@@ -41,47 +41,50 @@ Plug 'morhetz/gruvbox'
 " Indispensable Plugins
 Plug 'roxma/nvim-completion-manager'
 Plug 'roxma/nvim-cm-tern',  {'do': 'npm install'}
-Plug 'w0rp/ale'
-
-Plug 'sjl/gundo.vim'
-Plug 'majutsushi/tagbar'
-Plug 'epeli/slimux'
-Plug 'bling/vim-airline'
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
     \ }
+
+Plug 'w0rp/ale'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 
+Plug 'bling/vim-airline'
+Plug 'sjl/gundo.vim'
+Plug 'majutsushi/tagbar'
+Plug 'epeli/slimux'
+
 Plug 'SirVer/ultisnips'
-Plug 'Valloric/ListToggle'
 Plug 'honza/vim-snippets'
+Plug 'Valloric/ListToggle'
 Plug 'wellle/targets.vim'
+Plug 'machakann/vim-sandwich'
+Plug 'justinmk/vim-dirvish'
 
 " Useful plugins from Tim Pope
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-vinegar'
+Plug 'tpope/vim-repeat'
+" Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-unimpaired'
 
 " Python Plugins
 Plug 'vim-python/python-syntax'
-Plug 'Vimjas/vim-python-pep8-indent'
+Plug 'Vimjas/vim-python-pep8-indent' " Fix indentation
 
 " Javascript Plugins
 Plug 'pangloss/vim-javascript'
-Plug 'jelera/vim-javascript-syntax'
 Plug 'othree/yajs.vim'
 Plug 'othree/javascript-libraries-syntax.vim' " For all JS libraries
+Plug 'posva/vim-vue'
+Plug 'leafgarland/typescript-vim'
 
 " Version control related
-Plug 'mhinz/vim-signify'
-Plug 'airblade/vim-gitgutter'
+Plug 'mhinz/vim-signify' " For hg
 Plug 'ludovicchabant/vim-lawrencium'
+Plug 'airblade/vim-gitgutter' " For git
+Plug 'tpope/vim-fugitive'
 
 " Various Language Plugings
 Plug 'othree/html5.vim'
@@ -89,9 +92,7 @@ Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'ap/vim-css-color'
 Plug 'Yggdroot/indentLine'
 Plug 'mattn/emmet-vim'
-Plug 'posva/vim-vue'
 Plug 'ekalinin/Dockerfile.vim'
-Plug 'leafgarland/typescript-vim'
 
 " All of your Plugins must be added before the following line
 call plug#end()            " required
@@ -99,14 +100,20 @@ call plug#end()            " required
 " Look and Feel: {{{
 set clipboard=unnamed
 
-set backspace=indent,eol,start  " Let backspace cross over end of line
+"" These are set by vim-sensible above
+" set backspace=indent,eol,start  " Let backspace cross over end of line
+" set incsearch " Hightlight search items as they are searched for
+" set listchars=tab:▸\ ,eol:¬  " Use the same symbols as TextMate for tabstops and EOLs
+""Invisible character colors
+"highlight NonText guifg=#4a4a59
+"highlight SpecialKey guifg=#4a4a59
+
 set modeline
 
 set splitright " Vertical split to the right
 set splitbelow " Horizontal split below
 
 set hlsearch " Hightlight search items
-set incsearch " Hightlight search items as they are searched for
 set showmatch
 
 set number " Activate line numbering on the left side of the screen
@@ -115,11 +122,6 @@ highlight LineNr ctermfg=DarkGrey
 set cursorline " Turn on highlighting of active line:
 
 set mouse=a " Turn on mouse mode, for terminals that can use it
-
-set listchars=tab:▸\ ,eol:¬  " Use the same symbols as TextMate for tabstops and EOLs
-"Invisible character colors
-highlight NonText guifg=#4a4a59
-highlight SpecialKey guifg=#4a4a59
 
 set termguicolors
 set background=dark " Set the background

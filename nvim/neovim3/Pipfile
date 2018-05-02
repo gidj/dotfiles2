@@ -25,6 +25,7 @@ rope = "*"
 six = "*"
 snowballstemmer = "*"
 yapf = "*"
+vint = "*"
 
 [dev-packages]
 
