@@ -51,7 +51,7 @@ Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 
 Plug 'bling/vim-airline'
-Plug 'sjl/gundo.vim'
+Plug 'simnalamburt/vim-mundo'
 Plug 'majutsushi/tagbar'
 Plug 'epeli/slimux'
 
@@ -65,7 +65,6 @@ Plug 'justinmk/vim-dirvish'
 " Useful plugins from Tim Pope
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
-" Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-unimpaired'
 
@@ -100,15 +99,17 @@ call plug#end()            " required
 " Look and Feel: {{{
 set clipboard=unnamed
 
-"" These are set by vim-sensible above
-" set backspace=indent,eol,start  " Let backspace cross over end of line
-" set incsearch " Hightlight search items as they are searched for
-" set listchars=tab:▸\ ,eol:¬  " Use the same symbols as TextMate for tabstops and EOLs
+set listchars=tab:▸\ ,eol:¬  " Use the same symbols as TextMate for tabstops and EOLs
 ""Invisible character colors
-"highlight NonText guifg=#4a4a59
-"highlight SpecialKey guifg=#4a4a59
+highlight NonText guifg=#4a4a59
+highlight SpecialKey guifg=#4a4a59
 
 set modeline
+
+if has("persistent_undo")
+  set undodir=~/.config/nvim/undodir/
+  set undofile
+endif
 
 set splitright " Vertical split to the right
 set splitbelow " Horizontal split below
@@ -188,8 +189,12 @@ endif
 " }}}
 " Keymapping: {{{
 let mapleader=',' " Change the leader to the comma character
+
 " Preserve indentation while pasting text from the OS X clipboard
 noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
+
+" ESC with jj
+inoremap jj <ESC>
 
 " Center search matches
 nnoremap n nzz
@@ -278,7 +283,6 @@ noremap <leader>f :ALEFix<CR>
 " }}}
 " Airline: {{{
 let g:airline#extensions#whitespace#show_message = 1
-" let g:airline_powerline_fonts=1
 let g:airline_theme='gruvbox'
 
 if !exists('g:airline_symbols')
@@ -287,21 +291,12 @@ endif
 let g:airline_symbols.branch = '⎇'
 let g:airline_symbols.readonly = ''
 
-" Removes delay when exiting Insert Mode
-if ! has('gui_running')
-    set ttimeoutlen=10
-    augroup FastEscape
-        autocmd!
-        au InsertEnter * set timeoutlen=0
-        au InsertLeave * set timeoutlen=1000
-    augroup END
-endif
-
 set laststatus=2 " Activate persistent status line:
 set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
 " }}}
-" Gundo: {{{
-nnoremap <F5> :GundoToggle<CR>
+" Mundo: {{{
+noremap <leader>u :MundoToggle<CR>
+let g:mundo_preview_bottom=1
 " }}}
 " GitGutter: {{{
 set updatetime=200
@@ -310,7 +305,6 @@ set updatetime=200
 let g:signify_vcs_list = ['hg']
 " }}}
 " Slimux: {{{
-" let g:slimux_select_from_current_window=0
 let g:slimux_exclude_vim_pane=0
 map <C-c><C-c> :SlimuxREPLSendLine<CR>
 vmap <C-c><C-c> :SlimuxREPLSendSelection<CR>
