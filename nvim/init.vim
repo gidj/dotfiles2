@@ -2,9 +2,7 @@
 " Use vim-plug to manage plugins
 call plug#begin('~/.config/nvim/plugged')
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Make sure neovim doesn't use the current virtualenv
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Use python2 and python3 from venvs
 function! s:python_venv(pipfile_dir)
   if filereadable(expand(a:pipfile_dir . '/Pipfile'))
     return substitute(system('cd ' . a:pipfile_dir . ' && pipenv --venv'), '\n\+$', '', '')
