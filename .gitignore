@@ -6,6 +6,7 @@ nvim/autoload
 nvim/eclim
 nvim/plugin
 nvim/plugged
+nvim/undodir
 nvim/workbench.xmi
 **/*.sqlite
 zgen
