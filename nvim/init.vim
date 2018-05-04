@@ -77,6 +77,11 @@ Plug 'othree/javascript-libraries-syntax.vim' " For all JS libraries
 Plug 'posva/vim-vue'
 Plug 'leafgarland/typescript-vim'
 
+" Clojure
+Plug 'tpope/vim-fireplace'
+Plug 'guns/vim-clojure-static'
+Plug 'guns/vim-clojure-highlight'
+
 " Version control related
 Plug 'mhinz/vim-signify' " For hg
 Plug 'ludovicchabant/vim-lawrencium'
