@@ -81,6 +81,7 @@ Plug 'leafgarland/typescript-vim'
 Plug 'tpope/vim-fireplace'
 Plug 'guns/vim-clojure-static'
 Plug 'guns/vim-clojure-highlight'
+Plug 'clojure-vim/async-clj-omni'
 
 " Version control related
 Plug 'mhinz/vim-signify' " For hg
@@ -270,7 +271,7 @@ let g:ale_pattern_options = {
 \ '.*\.app\.js$': {'ale_enabled': 0},
 \}
 
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+" let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_lint_delay = 500
 let g:ale_set_highlights = 0
 
@@ -286,6 +287,7 @@ noremap <leader>f :ALEFix<CR>
 " }}}
 " Airline: {{{
 let g:airline#extensions#whitespace#show_message = 1
+let g:airline#extensions#whitespace#enabled = 0
 let g:airline_theme='gruvbox'
 
 if !exists('g:airline_symbols')
