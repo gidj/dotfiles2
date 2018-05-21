@@ -79,6 +79,7 @@ Plug 'leafgarland/typescript-vim'
 
 " Clojure
 Plug 'tpope/vim-fireplace'
+Plug 'tpope/vim-salve'
 Plug 'guns/vim-clojure-static'
 Plug 'guns/vim-clojure-highlight'
 Plug 'clojure-vim/async-clj-omni'
