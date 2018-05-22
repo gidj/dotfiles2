@@ -6,13 +6,16 @@ path=(/usr/local/opt/python/libexec/bin $path)
 # Add Node
 path=(~/node_modules/.bin $path)
 
+# Add Homebrew sbin
+path=(/usr/local/sbin $path)
+
+export PATH
+
 export WORKON_HOME=$HOME/.venvs
 export PROJECT_HOME=$HOME/Projects
 
 export VISUAL=nvim
 export EDITOR=nvim
-
-export PATH
 
 export TERM=tmux-256color
 SSH_ENV="$HOME/.ssh/environment"
