@@ -1,3 +1,5 @@
+extends html, javascript, css
+
 snippet gettext" "Create doublequoted gettext" i
 {{ _("${1:${VISUAL}}") }}
 endsnippet
@@ -10,8 +12,4 @@ snippet macro "Create Jinja Macro"
 {% macro ${1:name}(${2}) %}
 ${0:${VISUAL}}
 {% endmacro %}
-endsnippet
-
-snippet linkv "Create anchor tag from visual selection" i
-<a href="${1:${VISUAL}}" target="_blank">${0:${VISUAL}}</a>
 endsnippet

@@ -100,6 +100,7 @@ Plug 'ekalinin/Dockerfile.vim'
 
 " All of your Plugins must be added before the following line
 call plug#end()            " required
+" runtime macros/sandwich/keymap/surround.vim
 " }}}
 " Look and Feel: {{{
 set clipboard=unnamed
