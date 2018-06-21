@@ -53,6 +53,7 @@ print(django.__path__)"'
 
 # Work aliases
 alias aya="/Volumes/Development/cloverwireless/aya"
+alias quote="~/Develop/quote_api"
 
 # Mercurial
 alias hgc='hg commit'
