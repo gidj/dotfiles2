@@ -37,8 +37,15 @@ call s:set_pyenv()
 Plug 'morhetz/gruvbox'
 
 " Indispensable Plugins
-Plug 'roxma/nvim-completion-manager'
-Plug 'roxma/nvim-cm-tern',  {'do': 'npm install'}
+Plug 'ncm2/ncm2'
+Plug 'roxma/nvim-yarp'
+
+" NOTE: you need to install completion sources to get completions. Check
+" our wiki page for a list of sources: https://github.com/ncm2/ncm2/wiki
+Plug 'ncm2/ncm2-bufword'
+Plug 'ncm2/ncm2-tmux'
+Plug 'ncm2/ncm2-path'
+
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
@@ -381,23 +388,29 @@ map <leader>es :UltiSnipsEdit<CR>
 " }}}
 " Nvim Completion Manager: {{{
 " Disable tags
+" enable ncm2 for all buffers
+autocmd BufEnter * call ncm2#enable_for_buffer()
+
+" Show documentation of autocomplete option
+let g:cm_completeopt = 'menu,menuone,noinsert,noselect,preview'
+
+" IMPORTANTE: :help Ncm2PopupOpen for more information
+set completeopt=menu,menuone,noinsert,noselect,preview
+
 let g:cm_sources_override = {
     \ 'cm-tags': {'enable':0},
     \ }
 
-imap <expr> <CR>  (pumvisible() ?  "\<c-y>\<Plug>(expand_or_nl)" : "\<CR>")
-imap <expr> <Plug>(expand_or_nl) (cm#completed_is_snippet() ? "\<C-J>":"\<CR>")
+" imap <expr> <CR>  (pumvisible() ?  "\<c-y>\<Plug>(expand_or_nl)" : "\<CR>")
+" imap <expr> <Plug>(expand_or_nl) (cm#completed_is_snippet() ? "\<C-J>":"\<CR>")
 
 " use tab to forward cycle
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 " use tab to backward cycle
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
-" Show documentation of autocomplete option
-let g:cm_completeopt = 'menu,menuone,noinsert,noselect,preview'
-
 " Close preview window
-augroup ncm_preview
+augroup ncm2_preview
   autocmd! InsertLeave <buffer> if pumvisible() == 0|pclose|endif
 augroup END
 
