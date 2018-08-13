@@ -17,7 +17,7 @@ zstyle ":prezto:*:*" color "yes"
 
 zplug "modules/node", from:prezto
 zplug "modules/tmux", from:prezto
-zplug "modules/docker", from:prezto
+# zplug "modules/docker", from:prezto
 zplug "modules/directory", from:prezto
 zplug "modules/history", from:prezto
 zplug "modules/editor", from:prezto
@@ -35,7 +35,7 @@ zplug "zsh-users/zsh-completions", from:github
 
 # zsh-async is required for pure
 zplug "mafredri/zsh-async", from:github
-zplug "mnpenner/pure", use:pure.zsh, from:github, as:theme
+zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
