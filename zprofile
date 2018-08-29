@@ -9,6 +9,9 @@ path=(~/node_modules/.bin $path)
 # Add Homebrew sbin
 path=(/usr/local/sbin $path)
 
+# Add ~/bin
+path=(~/bin $path)
+
 export PATH
 
 export WORKON_HOME=$HOME/.venvs
