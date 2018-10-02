@@ -45,6 +45,7 @@ Plug 'roxma/nvim-yarp'
 Plug 'ncm2/ncm2-bufword'
 Plug 'ncm2/ncm2-tmux'
 Plug 'ncm2/ncm2-path'
+Plug 'ncm2/ncm2-ultisnips'
 
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
@@ -385,28 +386,23 @@ let g:UltiSnipsJumpBackwardTrigger="<C-K>"
 " Vsplit if you want to edit a snippet
 let g:UltiSnipsEditSplit="vertical"
 map <leader>es :UltiSnipsEdit<CR>
+" Press enter key to trigger snippet expansion
+" The parameters are the same as `:help feedkeys()`
+inoremap <silent> <expr> <CR> ncm2_ultisnips#expand_or("\<CR>", 'n')
 " }}}
 " Nvim Completion Manager: {{{
-" Disable tags
 " enable ncm2 for all buffers
 autocmd BufEnter * call ncm2#enable_for_buffer()
 
-" Show documentation of autocomplete option
-let g:cm_completeopt = 'menu,menuone,noinsert,noselect,preview'
-
-" IMPORTANTE: :help Ncm2PopupOpen for more information
+" IMPORTANT: :help Ncm2PopupOpen for more information
 set completeopt=menu,menuone,noinsert,noselect,preview
 
 let g:cm_sources_override = {
     \ 'cm-tags': {'enable':0},
     \ }
 
-" imap <expr> <CR>  (pumvisible() ?  "\<c-y>\<Plug>(expand_or_nl)" : "\<CR>")
-" imap <expr> <Plug>(expand_or_nl) (cm#completed_is_snippet() ? "\<C-J>":"\<CR>")
-
-" use tab to forward cycle
+" Use <TAB> to select the popup menu:
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-" use tab to backward cycle
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 " Close preview window
