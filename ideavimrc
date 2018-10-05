@@ -1,1 +1,8 @@
 source ~/.config/nvim/init.vim
+set surround
+
+:map ,g :action GotoImplementation<CR>
+:map ,b :action Back<CR>
+:map ,ch :action CallHierarchy<CR>
+:map ,rf :action FindUsages<CR>
+" :map gc :action CommentByLineComment<CR>
