@@ -36,16 +36,25 @@ call s:set_pyenv()
 " Themes
 Plug 'morhetz/gruvbox'
 
-" Indispensable Plugins
-Plug 'ncm2/ncm2'
-Plug 'roxma/nvim-yarp'
+" " Indispensable Plugins
+" Plug 'ncm2/ncm2'
+" Plug 'roxma/nvim-yarp'
 
-" NOTE: you need to install completion sources to get completions. Check
-" our wiki page for a list of sources: https://github.com/ncm2/ncm2/wiki
-Plug 'ncm2/ncm2-bufword'
-Plug 'ncm2/ncm2-tmux'
-Plug 'ncm2/ncm2-path'
-Plug 'ncm2/ncm2-ultisnips'
+" " NOTE: you need to install completion sources to get completions. Check
+" " our wiki page for a list of sources: https://github.com/ncm2/ncm2/wiki
+" Plug 'ncm2/ncm2-bufword'
+" Plug 'ncm2/ncm2-tmux'
+" Plug 'ncm2/ncm2-path'
+" Plug 'ncm2/ncm2-ultisnips'
+
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+let g:deoplete#enable_at_startup = 1
 
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
@@ -98,8 +107,8 @@ Plug 'guns/vim-clojure-highlight'
 Plug 'clojure-vim/async-clj-omni'
 
 " Version control related
-Plug 'mhinz/vim-signify' " For hg
-Plug 'ludovicchabant/vim-lawrencium'
+" Plug 'mhinz/vim-signify' " For hg
+" Plug 'ludovicchabant/vim-lawrencium'
 Plug 'airblade/vim-gitgutter' " For git
 Plug 'tpope/vim-fugitive'
 
@@ -388,33 +397,36 @@ let g:UltiSnipsEditSplit="vertical"
 map <leader>es :UltiSnipsEdit<CR>
 " Press enter key to trigger snippet expansion
 " The parameters are the same as `:help feedkeys()`
-inoremap <silent> <expr> <CR> ncm2_ultisnips#expand_or("\<CR>", 'n')
+" inoremap <silent> <expr> <CR> ncm2_ultisnips#expand_or("\<CR>", 'n')
+" }}}
+" Deoplete: {{{
+
 " }}}
 " Nvim Completion Manager: {{{
-" enable ncm2 for all buffers
-autocmd BufEnter * call ncm2#enable_for_buffer()
+" " enable ncm2 for all buffers
+" autocmd BufEnter * call ncm2#enable_for_buffer()
 
-" IMPORTANT: :help Ncm2PopupOpen for more information
-set completeopt=menu,menuone,noinsert,noselect,preview
+" " IMPORTANT: :help Ncm2PopupOpen for more information
+" set completeopt=menu,menuone,noinsert,noselect,preview
 
-let g:cm_sources_override = {
-    \ 'cm-tags': {'enable':0},
-    \ }
+" let g:cm_sources_override = {
+"     \ 'cm-tags': {'enable':0},
+"     \ }
 
 " Use <TAB> to select the popup menu:
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <tab> pumvisible() ? "\<c-n>" : "\<tab>"
+inoremap <expr> <s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 
-" Close preview window
-augroup ncm2_preview
-  autocmd! InsertLeave <buffer> if pumvisible() == 0|pclose|endif
-augroup END
+" " Close preview window
+" augroup ncm2_preview
+"   autocmd! InsertLeave <buffer> if pumvisible() == 0|pclose|endif
+" augroup END
 
 " Close the documentation window when completion is done
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
-" Remove 'x of y' in preview window
-set shortmess+=c
+" " Remove 'x of y' in preview window
+" set shortmess+=c
 " }}}
 
 if executable('ag')
