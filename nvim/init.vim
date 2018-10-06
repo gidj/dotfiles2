@@ -2,59 +2,26 @@
 " Use vim-plug to manage plugins
 call plug#begin('~/.config/nvim/plugged')
 
-" Use python2 and python3 from venvs
-function! s:python_venv(pipfile_dir)
-  if filereadable(expand(a:pipfile_dir . '/Pipfile'))
-    return substitute(system('cd ' . a:pipfile_dir . ' && pipenv --venv'), '\n\+$', '', '')
-  else
-    return v:null
-  endif
-endfunction
-
-function! s:set_pyenv()
-  let s:path = s:python_venv('~/.config/nvim/neovim2')
-  if empty(s:path)
-    let g:loaded_python_provider = 1
-    let g:neovim2_venv_path = v:null
-  else
-    let g:neovim2_venv_path = expand(s:path)
-    let g:python_host_prog = expand(s:path . '/bin/python')
-  endif
-  let s:path = s:python_venv('~/.config/nvim/neovim3')
-  if empty(s:path)
-    let g:loaded_python3_provider = 1
-    let g:neovim3_venv_path = v:null
-  else
-    let g:neovim3_venv_path = expand(s:path)
-    let g:python3_host_prog = expand(s:path . '/bin/python')
-  endif
-endfunction
-
-call s:set_pyenv()
-
 " My Plugins
 " Themes
 Plug 'morhetz/gruvbox'
 
-" " Indispensable Plugins
-" Plug 'ncm2/ncm2'
-" Plug 'roxma/nvim-yarp'
+" Indispensable Plugins
+Plug 'ncm2/ncm2'
+Plug 'roxma/nvim-yarp'
+Plug 'ncm2/ncm2-bufword'
+Plug 'ncm2/ncm2-tmux'
+Plug 'ncm2/ncm2-path'
+Plug 'ncm2/ncm2-ultisnips'
 
-" " NOTE: you need to install completion sources to get completions. Check
-" " our wiki page for a list of sources: https://github.com/ncm2/ncm2/wiki
-" Plug 'ncm2/ncm2-bufword'
-" Plug 'ncm2/ncm2-tmux'
-" Plug 'ncm2/ncm2-path'
-" Plug 'ncm2/ncm2-ultisnips'
-
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
-let g:deoplete#enable_at_startup = 1
+" if has('nvim')
+"   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" else
+"   Plug 'Shougo/deoplete.nvim'
+"   Plug 'roxma/nvim-yarp'
+"   Plug 'roxma/vim-hug-neovim-rpc'
+" endif
+" let g:deoplete#enable_at_startup = 1
 
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
@@ -107,8 +74,6 @@ Plug 'guns/vim-clojure-highlight'
 Plug 'clojure-vim/async-clj-omni'
 
 " Version control related
-" Plug 'mhinz/vim-signify' " For hg
-" Plug 'ludovicchabant/vim-lawrencium'
 Plug 'airblade/vim-gitgutter' " For git
 Plug 'tpope/vim-fugitive'
 
@@ -122,8 +87,11 @@ Plug 'ekalinin/Dockerfile.vim'
 
 " All of your Plugins must be added before the following line
 call plug#end()            " required
-" runtime macros/sandwich/keymap/surround.vim
 " }}}
+
+" runtime macros/sandwich/keymap/surround.vim
+source ~/.config/nvim/settings/python.vim
+
 " Look and Feel: {{{
 set clipboard=unnamed
 
@@ -163,271 +131,21 @@ colorscheme gruvbox
 let g:python_highlight_indent_errors = 0
 let g:python_highlight_all = 1
 " }}}
-" Filetype: {{{
-syntax on
-filetype on
-filetype plugin on
-filetype indent on
 
-let g:indentLine_char = '│'
-
-" Limit autocomplete list length
-set pumheight=25
-
-" Function to strip whitespaces on write, while retaining position in the file
-function! <SID>StripTrailingWhitespaces()
-  let l = line('.')
-  let c = col('.')
-  %s/\s\+$//e
-  call cursor(l, c)
-endfun
-
-set ts=4 sts=4 sw=4 et
-
-if has("autocmd")
-  autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
-  " Javascript, JSX
-  autocmd FileType javascript,javascript.jsx set ts=2 sts=2 sw=2 et
-  " YAML
-  autocmd FileType yaml set ts=2 sts=2 sw=2 et
-  " Python files
-  augroup filetype_python
-    autocmd!
-    autocmd Filetype python setlocal ts=4 sts=4 sw=4 expandtab
-    autocmd Filetype python setlocal textwidth=120
-  augroup END
-  " C files
-  autocmd Filetype c,h setlocal foldmethod=syntax ts=2 sts=2 sw=2 expandtab
-  " make files
-  autocmd FileType make setlocal noexpandtab
-  " Scheme- and Lisp-style files
-  autocmd Filetype lisp,scheme setlocal lisp "foldmethod=syntax
-  " Ruby
-  autocmd FileType ruby,eruby setlocal ts=2 sts=2 sw=2 expandtab
-  " HTML files
-  augroup filtype_html_jinja
-    autocmd!
-    autocmd Filetype html,jinja,jinja.html setlocal ts=2 sts=2 sw=2 expandtab
-    autocmd Filetype html,jinjs,jinja.html set formatprg=/usr/local/bin/tidy
-  augroup END
-  autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
-  autocmd Filetype css,scss,xml setlocal ts=4 sts=4 sw=4 expandtab
-endif
-" }}}
-" Folding: {{{
-function! g:CoiledSnakeConfigureFold(fold)
-  " Don't fold nested classes.
-  if a:fold.type == 'class'
-    let a:fold.max_level = 1
-    " Don't fold nested functions, but do fold methods (i.e. functions
-    " nested inside a class).
-  elseif a:fold.type == 'function'
-    let a:fold.max_level = 1
-    if get(a:fold.parent, 'type') == 'class'
-      let a:fold.num_blanks_below = 2
-      let a:fold.max_level = 2
-    endif
-
-    " Only fold imports if there are 3 or more of them.
-  " elseif a:fold.type == 'import'
-  "   let a:fold.min_lines = 3
-  " endif
-
-  " Don't fold anything if the whole program is shorter than 30 lines.
-  if line('$') < 30
-    let a:fold.ignore = 1
-  endif
-endfunction
-" }}}
-" Keymapping: {{{
-let mapleader=',' " Change the leader to the comma character
-
-" Preserve indentation while pasting text from the OS X clipboard
-noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
-
-" ESC with jj
-inoremap jj <ESC>
-
-" Center search matches
-nnoremap n nzz
-
-" Quickly edit/reload the vimrc file
-nmap <silent> <leader>ev :e $MYVIMRC<CR>
-nmap <silent> <leader>sv :so $MYVIMRC<CR>
-
-" Let space bar toggle folding on and off.
-noremap <Space> za
-" Allow repeat in visual mode
-vnoremap . :norm.<CR>
-
-" Tab goes switches between matched surrounding tokens
-nnoremap <tab> %
-vnoremap <tab> %
-
-" Clear search
-nnoremap <leader>, :noh<cr>
-
-" Map some macros to leaders for housecleaning
-" nnoremap <leader>ui :Commentary<CR>A ---UNUSEDIMPORT
-" vnoremap <leader>ui :Commentary<CR>gv:normal A ---UNUSEDIMPORT
-" nnoremap <leader>uv :Commentary<CR>A ---UNUSEDVALUE
-" nnoremap <leader>r yy:Commentary<CR>A ---REVISIONp
-" vnoremap <leader>r ygv:Commentary<CR>gv:normal A ---REVISIONgv`>vvp
-" nnoremap <leader>cc A ---COMMENTEDCODE
-" vnoremap <leader>cc :normal A ---COMMENTEDCODE
-" nnoremap <leader>i A # ---IMPORTANTIMPORT
-" vnoremap <leader>i :normal A # ---IMPORTANTIMPORT
-" nnoremap <leader>w A # ---WILDCARDIMPORT
-" vnoremap <leader>w :normal A # ---WILDCARDIMPORT
-" nnoremap <leader>dm ggO# ---DEADMODULE
-" nnoremap <leader>dc A # ---DEADCLASS
-" nnoremap <leader>df A # ---DEADFUNCTION
-" }}}
-" Language Server: {{{
-let g:LanguageClient_serverCommands = {
-    \ 'python': [expand(g:neovim3_venv_path . '/bin/pyls')],
-    \ 'javascript': ['javascript-typescript-stdio'],
-    \ 'javascript.jsx': ['javascript-typescript-stdio'],
-    \ 'vue': ['javascript-typescript-stdio'],
-    \ }
-" Automatically start language servers.
-let g:LanguageClient_autoStart = 1
-" Disable Diagnostics
-let g:LanguageClient_diagnosticsEnable=0
-" Required for operations modifying multiple buffers like rename.
-set hidden
-
-nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
-nnoremap <silent> <leader>g :call LanguageClient_textDocument_definition()<CR>
-nnoremap <silent> <leader>rn :call LanguageClient_textDocument_rename()<CR>
-nnoremap <silent> <leader>rf :call LanguageClient_textDocument_references()<CR>
-" }}}
-" Ale: {{{
-let g:ale_fixers = {
-\ 'html': ['tidy'],
-\ 'python': ['isort'],
-\}
-let g:ale_linters = {
-\ 'html': ['htmlhint'],
-\ 'jinja': ['htmlhint'],
-\ 'python': ['flake8'],
-\}
-let g:ale_linter_aliases = {
-\ 'jinja': 'html',
-\}
-let g:ale_pattern_options = {
-\ '.*\.app\.js$': {'ale_enabled': 0},
-\}
-
-" let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-let g:ale_lint_delay = 500
-let g:ale_set_highlights = 0
-
-let g:ale_html_tidy_excecutable = expand('/usr/local/bin/tidy')
-let g:ale_vim_vint_executable = expand(g:neovim3_venv_path . '/bin/vint')
-let g:ale_python_yapf_executable = expand(g:neovim3_venv_path . '/bin/yapf')
-let g:ale_python_isort_executable = expand(g:neovim3_venv_path . '/bin/isort')
-let g:ale_python_flake8_executable = expand(g:neovim3_venv_path . '/bin/flake8')
-let g:ale_python_flake8_use_global = 1
-let g:ale_python_flake8_options = '--ignore=E128,E221,E241,E251,E265,E303,E501'
-
-noremap <leader>f :ALEFix<CR>
-" }}}
-" Airline: {{{
-let g:airline#extensions#whitespace#show_message = 1
-let g:airline#extensions#whitespace#enabled = 0
-let g:airline_theme='gruvbox'
-
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
-let g:airline_symbols.branch = '⎇'
-let g:airline_symbols.readonly = ''
-
-set laststatus=2 " Activate persistent status line:
-set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
-" }}}
-" Mundo: {{{
-noremap <leader>u :MundoToggle<CR>
-let g:mundo_preview_bottom=1
-" }}}
-" GitGutter: {{{
-set updatetime=200
-" }}}
-" Signify: {{{
-let g:signify_vcs_list = ['hg']
-" }}}
-" Slimux: {{{
-let g:slimux_exclude_vim_pane=0
-map <C-c><C-c> :SlimuxREPLSendLine<CR>
-vmap <C-c><C-c> :SlimuxREPLSendSelection<CR>
-" }}}
-" Tabar: {{{
-hi link TagbarKind       Function
-hi link TagbarNestedKind SVDBlueBold
-nnoremap <F8> :TagbarToggle<CR>
-" }}}
-" FZF: {{{
-function! s:find_root()
-  for vcs in ['.venv', 'Pipfile', 'Gemfile', '.git', '.svn', '.hg']
-    let dir = finddir(vcs.'/..', ';')
-    if !empty(dir)
-      execute 'FZF' dir
-      return
-    endif
-  endfor
-  FZF
-endfunction
-
-command! FZFR call s:find_root()
-nmap <leader><space> :<C-u>FZFR<CR>
-" command! AGR call s:find_root('Ag')
-" nmap <leader>a :<C-u>AGR<CR>
-
-" }}}
-" Snippets: {{{
-let g:UltiSnipsSnippetsDir="~/.config/nvim/myUltiSnips"
-let g:UltiSnipsSnippetDirectories=["UltiSnips", "myUltiSnips"]
-" Trigger configuration.
-let g:UltiSnipsExpandTrigger="<C-J>"
-let g:UltiSnipsJumpForwardTrigger="<C-J>"
-let g:UltiSnipsJumpBackwardTrigger="<C-K>"
-" Vsplit if you want to edit a snippet
-let g:UltiSnipsEditSplit="vertical"
-map <leader>es :UltiSnipsEdit<CR>
-" Press enter key to trigger snippet expansion
-" The parameters are the same as `:help feedkeys()`
-" inoremap <silent> <expr> <CR> ncm2_ultisnips#expand_or("\<CR>", 'n')
-" }}}
-" Deoplete: {{{
-
-" }}}
-" Nvim Completion Manager: {{{
-" " enable ncm2 for all buffers
-" autocmd BufEnter * call ncm2#enable_for_buffer()
-
-" " IMPORTANT: :help Ncm2PopupOpen for more information
-" set completeopt=menu,menuone,noinsert,noselect,preview
-
-" let g:cm_sources_override = {
-"     \ 'cm-tags': {'enable':0},
-"     \ }
-
-" Use <TAB> to select the popup menu:
-inoremap <expr> <tab> pumvisible() ? "\<c-n>" : "\<tab>"
-inoremap <expr> <s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
-
-" " Close preview window
-" augroup ncm2_preview
-"   autocmd! InsertLeave <buffer> if pumvisible() == 0|pclose|endif
-" augroup END
-
-" Close the documentation window when completion is done
-autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
-
-" " Remove 'x of y' in preview window
-" set shortmess+=c
-" }}}
+source ~/.config/nvim/mappings.vim
+source ~/.config/nvim/settings/language_server.vim
+source ~/.config/nvim/settings/mundo.vim
+source ~/.config/nvim/settings/ale.vim
+source ~/.config/nvim/settings/gitgutter.vim
+source ~/.config/nvim/settings/slimux.vim
+source ~/.config/nvim/settings/airline.vim
+source ~/.config/nvim/settings/folding.vim
+source ~/.config/nvim/settings/fzf.vim
+source ~/.config/nvim/settings/tagbar.vim
+" source ~/.config/nvim/settings/signify.vim
+source ~/.config/nvim/settings/behaviour.vim
+source ~/.config/nvim/settings/snippets.vim
+source ~/.config/nvim/settings/ncm2.vim
 
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
