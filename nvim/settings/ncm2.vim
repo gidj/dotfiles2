@@ -15,9 +15,9 @@ inoremap <expr> <tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <expr> <s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 
 " Close preview window
-augroup ncm2_preview
-  autocmd! InsertLeave <buffer> if pumvisible() == 0|pclose|endif
-augroup END
+" augroup ncm2_preview
+"   autocmd! InsertLeave <buffer> if pumvisible() == 0|pclose|endif
+" augroup END
 
 " Close the documentation window when completion is done
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
