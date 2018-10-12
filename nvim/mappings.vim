@@ -26,19 +26,3 @@ vnoremap <tab> %
 
 " Clear search
 nnoremap <leader>, :noh<cr>
-
-" Map some macros to leaders for housecleaning
-" nnoremap <leader>ui :Commentary<CR>A ---UNUSEDIMPORT
-" vnoremap <leader>ui :Commentary<CR>gv:normal A ---UNUSEDIMPORT
-" nnoremap <leader>uv :Commentary<CR>A ---UNUSEDVALUE
-" nnoremap <leader>r yy:Commentary<CR>A ---REVISIONp
-" vnoremap <leader>r ygv:Commentary<CR>gv:normal A ---REVISIONgv`>vvp
-" nnoremap <leader>cc A ---COMMENTEDCODE
-" vnoremap <leader>cc :normal A ---COMMENTEDCODE
-" nnoremap <leader>i A # ---IMPORTANTIMPORT
-" vnoremap <leader>i :normal A # ---IMPORTANTIMPORT
-" nnoremap <leader>w A # ---WILDCARDIMPORT
-" vnoremap <leader>w :normal A # ---WILDCARDIMPORT
-" nnoremap <leader>dm ggO# ---DEADMODULE
-" nnoremap <leader>dc A # ---DEADCLASS
-" nnoremap <leader>df A # ---DEADFUNCTION

@@ -21,77 +21,78 @@ Plug 'ncm2/ncm2-ultisnips'
 "   Plug 'roxma/nvim-yarp'
 "   Plug 'roxma/vim-hug-neovim-rpc'
 " endif
-" let g:deoplete#enable_at_startup = 1
 
+" Plug 'Shougo/neosnippet.vim'
+" Plug 'Shougo/neosnippet-snippets'
+
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
     \ }
 
-Plug 'w0rp/ale'
-Plug '/usr/local/opt/fzf'
-Plug 'junegunn/fzf.vim'
+ Plug 'w0rp/ale'
+ Plug '/usr/local/opt/fzf'
+ Plug 'junegunn/fzf.vim'
 
 Plug 'bling/vim-airline'
-Plug 'simnalamburt/vim-mundo'
-Plug 'majutsushi/tagbar'
-Plug 'epeli/slimux'
+ Plug 'simnalamburt/vim-mundo'
+" Plug 'majutsushi/tagbar'
+" Plug 'epeli/slimux'
 
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-Plug 'Valloric/ListToggle'
-Plug 'wellle/targets.vim'
-Plug 'machakann/vim-sandwich'
+ Plug 'Valloric/ListToggle'
+ Plug 'wellle/targets.vim'
+ Plug 'machakann/vim-sandwich'
 Plug 'justinmk/vim-dirvish'
 
 " Folding
 " Plug 'tmhedberg/SimpylFold'
 " Plug 'kalekundert/vim-coiled-snake'
-Plug 'Konfekt/FastFold'
+" Plug 'Konfekt/FastFold'
 
 " Useful plugins from Tim Pope
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-sensible'
-Plug 'tpope/vim-unimpaired'
+ Plug 'tpope/vim-repeat'
+ Plug 'tpope/vim-sensible'
+ Plug 'tpope/vim-unimpaired'
 
 " Python Plugins
-Plug 'vim-python/python-syntax'
-Plug 'Vimjas/vim-python-pep8-indent' " Fix indentation
+ Plug 'vim-python/python-syntax'
+ Plug 'Vimjas/vim-python-pep8-indent' " Fix indentation
 
 " Javascript Plugins
-Plug 'pangloss/vim-javascript'
-Plug 'othree/yajs.vim'
-Plug 'othree/javascript-libraries-syntax.vim' " For all JS libraries
-Plug 'posva/vim-vue'
-Plug 'leafgarland/typescript-vim'
+" Plug 'pangloss/vim-javascript'
+" Plug 'othree/yajs.vim'
+" Plug 'othree/javascript-libraries-syntax.vim' " For all JS libraries
+" Plug 'posva/vim-vue'
+" Plug 'leafgarland/typescript-vim'
 
 " Clojure
-Plug 'tpope/vim-fireplace'
-Plug 'tpope/vim-salve'
-Plug 'guns/vim-clojure-static'
-Plug 'guns/vim-clojure-highlight'
-Plug 'clojure-vim/async-clj-omni'
+" Plug 'tpope/vim-fireplace'
+" Plug 'tpope/vim-salve'
+" Plug 'guns/vim-clojure-static'
+" Plug 'guns/vim-clojure-highlight'
+" Plug 'clojure-vim/async-clj-omni'
 
 " Version control related
-Plug 'airblade/vim-gitgutter' " For git
-Plug 'tpope/vim-fugitive'
+ Plug 'airblade/vim-gitgutter' " For git
+ Plug 'tpope/vim-fugitive'
 
 " Various Language Plugings
-Plug 'othree/html5.vim'
-Plug 'Glench/Vim-Jinja2-Syntax'
-Plug 'ap/vim-css-color'
-Plug 'Yggdroot/indentLine'
-Plug 'mattn/emmet-vim'
-Plug 'ekalinin/Dockerfile.vim'
+" Plug 'othree/html5.vim'
+" Plug 'Glench/Vim-Jinja2-Syntax'
+" Plug 'ap/vim-css-color'
+" Plug 'Yggdroot/indentLine'
+" Plug 'mattn/emmet-vim'
+" Plug 'ekalinin/Dockerfile.vim'
 
 " All of your Plugins must be added before the following line
 call plug#end()            " required
 " }}}
 
-" runtime macros/sandwich/keymap/surround.vim
 source ~/.config/nvim/settings/python.vim
-
+" runtime macros/sandwich/keymap/surround.vim
 " Look and Feel: {{{
 set clipboard=unnamed
 
@@ -134,18 +135,19 @@ let g:python_highlight_all = 1
 
 source ~/.config/nvim/mappings.vim
 source ~/.config/nvim/settings/language_server.vim
-source ~/.config/nvim/settings/mundo.vim
-source ~/.config/nvim/settings/ale.vim
-source ~/.config/nvim/settings/gitgutter.vim
-source ~/.config/nvim/settings/slimux.vim
+" source ~/.config/nvim/settings/mundo.vim
+" source ~/.config/nvim/settings/ale.vim
+" source ~/.config/nvim/settings/gitgutter.vim
+" source ~/.config/nvim/settings/slimux.vim
 source ~/.config/nvim/settings/airline.vim
-source ~/.config/nvim/settings/folding.vim
-source ~/.config/nvim/settings/fzf.vim
-source ~/.config/nvim/settings/tagbar.vim
+" source ~/.config/nvim/settings/folding.vim
+" source ~/.config/nvim/settings/fzf.vim
+" source ~/.config/nvim/settings/tagbar.vim
 " source ~/.config/nvim/settings/signify.vim
 source ~/.config/nvim/settings/behaviour.vim
 source ~/.config/nvim/settings/snippets.vim
 source ~/.config/nvim/settings/ncm2.vim
+" source ~/.config/nvim/settings/deoplete.vim
 
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
