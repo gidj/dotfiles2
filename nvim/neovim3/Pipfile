@@ -4,8 +4,8 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+python-language-server = {extras = ["all"], version = "*"}
 neovim = "*"
-python-language-server = {version = "*", extras = ["all"]}
 
 [dev-packages]
 
