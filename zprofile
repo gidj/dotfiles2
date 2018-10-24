@@ -21,7 +21,7 @@ export VISUAL=nvim
 export EDITOR=nvim
 
 export TERM=tmux-256color
-SSH_ENV="$HOME/.ssh/environment"
+export SSH_ENV="$HOME/.ssh/environment"
 
 # Aliases
 alias ll="ls -alrtFG"
