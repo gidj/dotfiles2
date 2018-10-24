@@ -5,6 +5,7 @@ call plug#begin('~/.config/nvim/plugged')
 " My Plugins
 " Themes
 Plug 'morhetz/gruvbox'
+Plug 'hashivim/vim-terraform'
 
 " Indispensable Plugins
 Plug 'ncm2/ncm2'
