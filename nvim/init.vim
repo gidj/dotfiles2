@@ -5,6 +5,7 @@ call plug#begin('~/.config/nvim/plugged')
 " My Plugins
 " Themes
 Plug 'morhetz/gruvbox'
+Plug 'hashivim/vim-terraform'
 
 " Indispensable Plugins
 Plug 'ncm2/ncm2'
@@ -28,22 +29,22 @@ Plug 'ncm2/ncm2-ultisnips'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
+      \ 'branch': 'next',
+      \ 'do': 'bash install.sh',
+      \ }
 
- Plug 'w0rp/ale'
- Plug '/usr/local/opt/fzf'
- Plug 'junegunn/fzf.vim'
+Plug 'w0rp/ale'
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
 
 Plug 'bling/vim-airline'
- Plug 'simnalamburt/vim-mundo'
+Plug 'simnalamburt/vim-mundo'
 " Plug 'majutsushi/tagbar'
 " Plug 'epeli/slimux'
 
- Plug 'Valloric/ListToggle'
- Plug 'wellle/targets.vim'
- Plug 'machakann/vim-sandwich'
+Plug 'Valloric/ListToggle'
+Plug 'wellle/targets.vim'
+Plug 'machakann/vim-sandwich'
 Plug 'justinmk/vim-dirvish'
 
 " Folding
@@ -53,13 +54,13 @@ Plug 'justinmk/vim-dirvish'
 
 " Useful plugins from Tim Pope
 Plug 'tpope/vim-commentary'
- Plug 'tpope/vim-repeat'
- Plug 'tpope/vim-sensible'
- Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-unimpaired'
 
 " Python Plugins
- Plug 'vim-python/python-syntax'
- Plug 'Vimjas/vim-python-pep8-indent' " Fix indentation
+Plug 'vim-python/python-syntax'
+Plug 'Vimjas/vim-python-pep8-indent' " Fix indentation
 
 " Javascript Plugins
 " Plug 'pangloss/vim-javascript'
@@ -76,8 +77,8 @@ Plug 'tpope/vim-commentary'
 " Plug 'clojure-vim/async-clj-omni'
 
 " Version control related
- Plug 'airblade/vim-gitgutter' " For git
- Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter' " For git
+Plug 'tpope/vim-fugitive'
 
 " Various Language Plugings
 " Plug 'othree/html5.vim'
@@ -136,7 +137,7 @@ let g:python_highlight_all = 1
 source ~/.config/nvim/mappings.vim
 source ~/.config/nvim/settings/language_server.vim
 " source ~/.config/nvim/settings/mundo.vim
-" source ~/.config/nvim/settings/ale.vim
+source ~/.config/nvim/settings/ale.vim
 " source ~/.config/nvim/settings/gitgutter.vim
 " source ~/.config/nvim/settings/slimux.vim
 source ~/.config/nvim/settings/airline.vim
