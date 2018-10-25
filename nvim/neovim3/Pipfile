@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 python-language-server = {extras = ["all"], version = "*"}
 neovim = "*"
+isort = "*"
 
 [dev-packages]
 

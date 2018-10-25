@@ -51,7 +51,7 @@ Plug 'Vimjas/vim-python-pep8-indent' " Fix indentation
 " Version control related
 Plug 'airblade/vim-gitgutter' " For git
 Plug 'tpope/vim-fugitive'
-
+" Plug 'stephpy/vim-yaml'
 " if has('nvim')
 "   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " else
