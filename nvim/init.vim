@@ -5,26 +5,14 @@ call plug#begin('~/.config/nvim/plugged')
 " My Plugins
 " Themes
 Plug 'morhetz/gruvbox'
-Plug 'hashivim/vim-terraform'
 
-" Indispensable Plugins
+" Completion
 Plug 'ncm2/ncm2'
 Plug 'roxma/nvim-yarp'
 Plug 'ncm2/ncm2-bufword'
 Plug 'ncm2/ncm2-tmux'
 Plug 'ncm2/ncm2-path'
 Plug 'ncm2/ncm2-ultisnips'
-
-" if has('nvim')
-"   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-" else
-"   Plug 'Shougo/deoplete.nvim'
-"   Plug 'roxma/nvim-yarp'
-"   Plug 'roxma/vim-hug-neovim-rpc'
-" endif
-
-" Plug 'Shougo/neosnippet.vim'
-" Plug 'Shougo/neosnippet-snippets'
 
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
@@ -47,20 +35,38 @@ Plug 'wellle/targets.vim'
 Plug 'machakann/vim-sandwich'
 Plug 'justinmk/vim-dirvish'
 
-" Folding
-" Plug 'tmhedberg/SimpylFold'
-" Plug 'kalekundert/vim-coiled-snake'
-" Plug 'Konfekt/FastFold'
-
 " Useful plugins from Tim Pope
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-unimpaired'
 
+" Terraform
+Plug 'hashivim/vim-terraform'
+
 " Python Plugins
 Plug 'vim-python/python-syntax'
 Plug 'Vimjas/vim-python-pep8-indent' " Fix indentation
+
+" Version control related
+Plug 'airblade/vim-gitgutter' " For git
+Plug 'tpope/vim-fugitive'
+
+" if has('nvim')
+"   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" else
+"   Plug 'Shougo/deoplete.nvim'
+"   Plug 'roxma/nvim-yarp'
+"   Plug 'roxma/vim-hug-neovim-rpc'
+" endif
+
+" Plug 'Shougo/neosnippet.vim'
+" Plug 'Shougo/neosnippet-snippets'
+
+" Folding
+" Plug 'tmhedberg/SimpylFold'
+" Plug 'kalekundert/vim-coiled-snake'
+" Plug 'Konfekt/FastFold'
 
 " Javascript Plugins
 " Plug 'pangloss/vim-javascript'
@@ -76,10 +82,6 @@ Plug 'Vimjas/vim-python-pep8-indent' " Fix indentation
 " Plug 'guns/vim-clojure-highlight'
 " Plug 'clojure-vim/async-clj-omni'
 
-" Version control related
-Plug 'airblade/vim-gitgutter' " For git
-Plug 'tpope/vim-fugitive'
-
 " Various Language Plugings
 " Plug 'othree/html5.vim'
 " Plug 'Glench/Vim-Jinja2-Syntax'
@@ -92,8 +94,8 @@ Plug 'tpope/vim-fugitive'
 call plug#end()            " required
 " }}}
 
-source ~/.config/nvim/settings/python.vim
 " runtime macros/sandwich/keymap/surround.vim
+
 " Look and Feel: {{{
 set clipboard=unnamed
 
@@ -135,14 +137,15 @@ let g:python_highlight_all = 1
 " }}}
 
 source ~/.config/nvim/mappings.vim
+source ~/.config/nvim/settings/python.vim
 source ~/.config/nvim/settings/language_server.vim
-" source ~/.config/nvim/settings/mundo.vim
+source ~/.config/nvim/settings/mundo.vim
 source ~/.config/nvim/settings/ale.vim
-" source ~/.config/nvim/settings/gitgutter.vim
+source ~/.config/nvim/settings/gitgutter.vim
 " source ~/.config/nvim/settings/slimux.vim
 source ~/.config/nvim/settings/airline.vim
 " source ~/.config/nvim/settings/folding.vim
-" source ~/.config/nvim/settings/fzf.vim
+source ~/.config/nvim/settings/fzf.vim
 " source ~/.config/nvim/settings/tagbar.vim
 " source ~/.config/nvim/settings/signify.vim
 source ~/.config/nvim/settings/behaviour.vim
