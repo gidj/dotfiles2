@@ -49,11 +49,3 @@ alias vagrant='TERM=screen-256color vagrant'
 
 # Work aliases
 alias vivid="~/vividseats"
-
-# Terraform
-function terraform_do() {
-    terraform "$1" -var "do_token=${DO_TOKEN}" \
--var "pub_key=$HOME/.ssh/id_ed25519.pub" \
--var "pvt_key=$HOME/.ssh/id_ed25519" \
--var "ssh_fingerprint=dc:d3:31:d2:84:7c:55:b9:94:8d:dd:57:07:b0:18:c8"
-}
