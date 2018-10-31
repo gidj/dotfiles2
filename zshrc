@@ -31,8 +31,6 @@ zplug "modules/python", from:prezto
 zplug "modules/syntax-highlighting", from:prezto
 zplug "modules/history-substring-search", from:prezto
 
-zplug "zsh-users/zsh-completions", from:github
-
 # zsh-async is required for pure
 zplug "mafredri/zsh-async", from:github
 zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
@@ -71,4 +69,4 @@ eval "$(direnv hook zsh)"
 source ~/.zsecrets
 
 autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /usr/local/Cellar/terraform/0.11.8/bin/terraform terraform
+complete -o nospace -C /usr/local/bin/terraform terraform
