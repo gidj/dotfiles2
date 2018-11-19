@@ -18,16 +18,15 @@
     "default": {
         "autopep8": {
             "hashes": [
-                "sha256:1b8d42ebba751a91090d3adb5c06840b1151d71ed43e1c7a9ed6911bfe8ebe6c"
+                "sha256:33d2b5325b7e1afb4240814fe982eea3a92ebea712869bfd08b3c0393404248c"
             ],
-            "markers": "extra == 'all'",
-            "version": "==1.4.2"
+            "version": "==1.4.3"
         },
         "future": {
             "hashes": [
-                "sha256:e39ced1ab767b5936646cedba8bcce582398233d6a627067d4c6a454c90cfedb"
+                "sha256:67045236dcfd6816dc439556d009594abf643e5eb48992e36beac09c2ca659b8"
             ],
-            "version": "==0.16.0"
+            "version": "==0.17.1"
         },
         "greenlet": {
             "hashes": [
@@ -74,7 +73,6 @@
                 "sha256:ab8a6258860da4b6677da4bd2fe5dc2c659cff31b3ee4f7f5d64e79735b80d42",
                 "sha256:dd8d182285a0fe56bace7f45b5e7d1a6ebcbf524e8f3bd87eb0f125271b8831f"
             ],
-            "markers": "extra == 'all'",
             "version": "==0.6.1"
         },
         "msgpack": {
@@ -99,10 +97,10 @@
         },
         "neovim": {
             "hashes": [
-                "sha256:6ce58a742e0427491c0e1c8108556ee72ba33844209bd9e226b8da9538299276"
+                "sha256:a6a0e7a5b4433bf4e6ddcbc5c5ff44170be7d84259d002b8e8d8fb4ee78af60f"
             ],
             "index": "pypi",
-            "version": "==0.2.6"
+            "version": "==0.3.1"
         },
         "parso": {
             "hashes": [
@@ -123,7 +121,6 @@
                 "sha256:cbc619d09254895b0d12c2c691e237b2e91e9b2ecf5e84c26b35400f93dcfb83",
                 "sha256:cbfca99bd594a10f674d0cd97a3d802a1fdef635d4361e1a2658de47ed261e3a"
             ],
-            "markers": "extra == 'all'",
             "version": "==2.4.0"
         },
         "pydocstyle": {
@@ -132,7 +129,6 @@
                 "sha256:5741c85e408f9e0ddf873611085e819b809fca90b619f5fd7f34bd4959da3dd4",
                 "sha256:ed79d4ec5e92655eccc21eb0c6cf512e69512b4a97d215ace46d17e4990f2039"
             ],
-            "markers": "extra == 'all'",
             "version": "==3.0.0"
         },
         "pyflakes": {
@@ -140,8 +136,13 @@
                 "sha256:9a7662ec724d0120012f6e29d6248ae3727d821bba522a0e6b356eff19126a49",
                 "sha256:f661252913bc1dbe7fcfcbf0af0db3f42ab65aabd1a6ca68fe5d466bace94dae"
             ],
-            "markers": "extra == 'all'",
             "version": "==2.0.0"
+        },
+        "pynvim": {
+            "hashes": [
+                "sha256:dd881595055869c2de770517d403faf40d31aa991db2472a1843ff17db47b0fb"
+            ],
+            "version": "==0.3.1"
         },
         "python-jsonrpc-server": {
             "hashes": [
@@ -163,7 +164,6 @@
             "hashes": [
                 "sha256:a108c445e1cd897fe19272ab7877d172e7faf3d4148c80e7d20faba42ea8f7b2"
             ],
-            "markers": "extra == 'all'",
             "version": "==0.11.0"
         },
         "six": {
@@ -185,7 +185,6 @@
                 "sha256:b96815bd0bbd2ab290f2ae9e610756940b17a0523ef2f6b2d31da749fc395137",
                 "sha256:cebb6faf35c9027c08996c07831b8971f3d67c0eb615269f66dfd7e6815fdc2a"
             ],
-            "markers": "extra == 'all'",
             "version": "==0.24.0"
         }
     },
