@@ -2,6 +2,7 @@
 " }}}
 let g:ale_fixers = {
 \ 'html': ['tidy'],
+\ 'json': ['prettier'],
 \ 'python': ['isort', 'yapf'],
 \ 'xml': ['xmllint'],
 \ 'yml': ['xmllint'],
