@@ -4,9 +4,9 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-python-language-server = {extras = ["all"], version = "*"}
-neovim = "*"
+python-language-server = {extras = ["all"],version = "*"}
 isort = "*"
+pynvim = "*"
 
 [dev-packages]
 
