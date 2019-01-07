@@ -5,4 +5,5 @@ set surround
 :map ,b :action Back<CR>
 :map ,ch :action CallHierarchy<CR>
 :map ,rf :action FindUsages<CR>
+:map <SPACE> :action CollapseSelection<CR>
 " :map gc :action CommentByLineComment<CR>
