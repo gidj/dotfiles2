@@ -49,3 +49,4 @@ alias vagrant='TERM=screen-256color vagrant'
 
 # Work aliases
 alias vivid="~/vividseats"
+alias findRmi='lsof -i:1099'

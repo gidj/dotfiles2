@@ -61,7 +61,7 @@ if _has fzf && _has ag; then
 fi
 
 # pipenv completion
-eval "$(pipenv --completion)"
+# eval "$(pipenv --completion)"
 
 # Activate direnv
 eval "$(direnv hook zsh)"
