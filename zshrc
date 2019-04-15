@@ -53,15 +53,15 @@ _has() {
   return $( whence $1 >/dev/null )
 }
 
+# pipenv completion
+eval "$(pipenv --completion)"
+
 # fzf + ag configuration
 if _has fzf && _has ag; then
   export FZF_DEFAULT_COMMAND='ag --nocolor -g ""'
   export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
   export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
 fi
-
-# pipenv completion
-# eval "$(pipenv --completion)"
 
 # Activate direnv
 eval "$(direnv hook zsh)"
