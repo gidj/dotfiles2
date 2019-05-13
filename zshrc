@@ -70,3 +70,7 @@ source ~/.zsecrets
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/terraform terraform
+
+# export PATH="$HOME/.jenv/bin:$PATH"
+# eval "$(jenv init -)"
+
