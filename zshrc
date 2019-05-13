@@ -1,5 +1,12 @@
-export ZPLUG_HOME=/usr/local/opt/zplug
-source $ZPLUG_HOME/init.zsh
+### Added by Zplugin's installer
+source '/Users/gideon.vanriette/.zplugin/bin/zplugin.zsh'
+autoload -Uz _zplugin
+(( ${+_comps} )) && _comps[zplugin]=_zplugin
+### End of Zplugin's installer chunk
+#
+
+# export ZPLUG_HOME=/usr/local/opt/zplug
+# source $ZPLUG_HOME/init.zsh
 
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 
@@ -15,36 +22,30 @@ zstyle ":prezto:module:syntax-highlighting" highlighters \
 zstyle ":prezto:*:*" case-sensitive "yes"
 zstyle ":prezto:*:*" color "yes"
 
-zplug "modules/node", from:prezto
-zplug "modules/tmux", from:prezto
+zplugin snippet PZT::modules/node/init.zsh
+zplugin snippet PZT::modules/tmux/init.zsh
 # zplug "modules/docker", from:prezto
-zplug "modules/directory", from:prezto
-zplug "modules/history", from:prezto
-zplug "modules/editor", from:prezto
-zplug "modules/utility", from:prezto
-zplug "modules/completion", from:prezto
-zplug "modules/osx", from:prezto
-zplug "modules/git", from:prezto
-zplug "modules/terminal", from:prezto
-zplug "modules/homebrew", from:prezto
-zplug "modules/python", from:prezto
-zplug "modules/syntax-highlighting", from:prezto
-zplug "modules/history-substring-search", from:prezto
+zplugin snippet PZT::modules/directory/init.zsh
+zplugin snippet PZT::modules/history/init.zsh
+zplugin snippet PZT::modules/editor/init.zsh
+zplugin snippet PZT::modules/utility/init.zsh
+zplugin snippet PZT::modules/completion/init.zsh
+zplugin snippet PZT::modules/osx/init.zsh
+# zplugin snippet PZT::modules/git/init.zsh
+zplugin snippet PZT::modules/terminal/init.zsh
+zplugin snippet PZT::modules/homebrew/init.zsh
+zplugin snippet PZT::modules/python/init.zsh
+# zplugin snippet PZT::modules/history-substring-search/init.zsh
+# zplugin snippet PZT::modules/syntax-highlighting/init.zsh
 
 # zsh-async is required for pure
-zplug "mafredri/zsh-async", from:github
-zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
+zplugin light mafredri/zsh-async
+zplugin light sindresorhus/pure
 
-# Install plugins if there are plugins that have not been installed
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
-fi
 
-# Then, source plugins and add commands to $PATH
-zplug load
+
+
+
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -73,4 +74,5 @@ complete -o nospace -C /usr/local/bin/terraform terraform
 
 # export PATH="$HOME/.jenv/bin:$PATH"
 # eval "$(jenv init -)"
+
 
