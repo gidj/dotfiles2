@@ -10,7 +10,7 @@ let g:ale_fixers = {
 let g:ale_linters = {
 \ 'html': ['htmlhint'],
 \ 'jinja': ['htmlhint'],
-\ 'python': ['pyls'],
+\ 'python': ['flake8'],
 \ 'xml': ['xmllint'],
 \}
 let g:ale_linter_aliases = {
