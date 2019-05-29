@@ -13,6 +13,7 @@ Plug 'ncm2/ncm2-bufword'
 Plug 'ncm2/ncm2-tmux'
 Plug 'ncm2/ncm2-path'
 Plug 'ncm2/ncm2-ultisnips'
+" Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
 
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
@@ -150,6 +151,7 @@ source ~/.config/nvim/settings/fzf.vim
 " source ~/.config/nvim/settings/signify.vim
 source ~/.config/nvim/settings/behaviour.vim
 source ~/.config/nvim/settings/snippets.vim
+" source ~/.config/nvim/settings/coc.vim
 source ~/.config/nvim/settings/ncm2.vim
 " source ~/.config/nvim/settings/deoplete.vim
 
