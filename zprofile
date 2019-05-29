@@ -36,6 +36,8 @@ alias cl='clear'
 alias vi="nvim"
 alias vim="nvim"
 
+alias gla="git log --all --graph"
+
 # Eclimd
 alias eclimd='/Applications/Eclipse.app/Contents/Eclipse/eclimd'
 

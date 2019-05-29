@@ -8,6 +8,7 @@ python-language-server = {extras = ["all"],version = "*"}
 isort = "*"
 pynvim = "*"
 flake8 = "*"
+black = "*"
 
 [dev-packages]
 
