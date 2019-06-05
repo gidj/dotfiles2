@@ -31,14 +31,16 @@ zplugin snippet PZT::modules/editor/init.zsh
 zplugin snippet PZT::modules/utility/init.zsh
 zplugin snippet PZT::modules/completion/init.zsh
 zplugin snippet PZT::modules/osx/init.zsh
-# zplugin snippet PZT::modules/git/init.zsh
+zplugin snippet PZT::modules/git/init.zsh
 zplugin snippet PZT::modules/terminal/init.zsh
-zplugin snippet PZT::modules/homebrew/init.zsh
+zplugin light PZT::modules/homebrew/init.zsh
 zplugin snippet PZT::modules/python/init.zsh
-zplugin light zsh-users/zsh-history-substring-search
-# zplugin snippet PZT::modules/history-substring-search/init.zsh
+zplugin ice svn silent atclone'git clone https://github.com/zsh-users/zsh-history-substring-search external/zsh-history-substring-search'
+# zplugin light zsh-users/zsh-history-substring-search
+zplugin snippet PZT::modules/history-substring-search/init.zsh
 # zplugin snippet PZT::modules/syntax-highlighting/init.zsh
 zplugin light zdharma/fast-syntax-highlighting
+
 
 # zsh-async is required for pure
 zplugin light mafredri/zsh-async
