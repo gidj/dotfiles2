@@ -7,6 +7,8 @@ name = "pypi"
 python-language-server = {extras = ["all"],version = "*"}
 isort = "*"
 pynvim = "*"
+flake8 = "*"
+black = "==19.3b0"
 
 [dev-packages]
 
