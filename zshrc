@@ -35,8 +35,10 @@ zplugin snippet PZT::modules/osx/init.zsh
 zplugin snippet PZT::modules/terminal/init.zsh
 zplugin snippet PZT::modules/homebrew/init.zsh
 zplugin snippet PZT::modules/python/init.zsh
+zplugin light zsh-users/zsh-history-substring-search
 # zplugin snippet PZT::modules/history-substring-search/init.zsh
 # zplugin snippet PZT::modules/syntax-highlighting/init.zsh
+zplugin light zdharma/fast-syntax-highlighting
 
 # zsh-async is required for pure
 zplugin light mafredri/zsh-async
