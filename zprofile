@@ -1,5 +1,7 @@
 typeset -U path
 
+fpath=(/usr/local/share/zsh-completions $fpath)
+
 # Add Python3
 path=(/usr/local/opt/python/libexec/bin $path)
 

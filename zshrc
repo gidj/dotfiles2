@@ -6,6 +6,7 @@ export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.g
 zstyle ":prezto:module:editor" key-bindings "emacs"
 zstyle ":prezto:module:editor" dot-expansion "yes"
 zstyle ":prezto:module:terminal" auto-title "yes"
+zstyle ':prezto:module:history-substring-search' color 'yes'
 zstyle ":prezto:module:syntax-highlighting" highlighters \
     "main" \
     "brackets" \
@@ -17,18 +18,18 @@ zstyle ":prezto:*:*" color "yes"
 
 zplug "modules/node", from:prezto
 zplug "modules/tmux", from:prezto
-# zplug "modules/docker", from:prezto
+zplug "modules/docker", from:prezto
 zplug "modules/directory", from:prezto
 zplug "modules/history", from:prezto
 zplug "modules/editor", from:prezto
 zplug "modules/utility", from:prezto
 zplug "modules/completion", from:prezto
+zplug "modules/syntax-highlighting", from:prezto
 zplug "modules/osx", from:prezto
 zplug "modules/git", from:prezto
 zplug "modules/terminal", from:prezto
 zplug "modules/homebrew", from:prezto
 zplug "modules/python", from:prezto
-zplug "modules/syntax-highlighting", from:prezto
 zplug "modules/history-substring-search", from:prezto
 
 # zsh-async is required for pure
