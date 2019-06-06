@@ -9,45 +9,45 @@ export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.g
 
 zstyle ":prezto:module:editor" key-bindings "emacs"
 zstyle ":prezto:module:editor" dot-expansion "yes"
-zstyle ":prezto:module:terminal" auto-title "yes"
-zstyle ":prezto:module:syntax-highlighting" highlighters \
-    "main" \
-    "brackets" \
-    "pattern" \
-    "root"
-
-zstyle ":prezto:*:*" case-sensitive "yes"
-zstyle ":prezto:*:*" color "yes"
-
 zplugin snippet PZT::modules/node/init.zsh
 zplugin snippet PZT::modules/tmux/init.zsh
-# zplug "modules/docker", from:prezto
-# zplugin snippet PZT::modules/directory/init.zsh
+zplugin snippet PZT::modules/directory/init.zsh
 zplugin snippet PZT::modules/history/init.zsh
 zplugin snippet PZT::modules/editor/init.zsh
-# zplugin snippet PZT::modules/utility/init.zsh
+# # zplugin snippet PZT::modules/utility/init.zsh
 zplugin snippet PZT::modules/completion/init.zsh
-# zplugin snippet PZT::modules/osx/init.zsh
-# zplugin snippet PZT::modules/git/init.zsh
-# zplugin snippet PZT::modules/terminal/init.zsh
+# # zplugin snippet PZT::modules/osx/init.zsh
+zplugin snippet PZT::modules/terminal/init.zsh
 zplugin snippet PZT::modules/ssh/init.zsh
-# zplugin light PZT::modules/homebrew/init.zsh
-# zplugin snippet PZT::modules/python/init.zsh
-# zplugin ice svn silent atclone'git clone https://github.com/zsh-users/zsh-history-substring-search external/zsh-history-substring-search'
-zplugin light zsh-users/zsh-history-substring-search
-# zplugin snippet PZT::modules/syntax-highlighting/init.zsh
-# zplugin snippet PZT::modules/history-substring-search/init.zsh
-zplugin light zdharma/fast-syntax-highlighting
-
+zplugin snippet PZT::modules/homebrew/init.zsh
+zplugin snippet PZT::modules/python/init.zsh
 
 # zsh-async is required for pure
 zplugin light mafredri/zsh-async
 zplugin light sindresorhus/pure
 
+# A.
+setopt promptsubst
 
+# B.
+zplugin ice wait'0' lucid
+zplugin snippet OMZ::lib/git.zsh
 
+# C.
+# zplugin ice wait'0' atload"unalias grv" lucid
+zplugin snippet OMZ::plugins/git/git.plugin.zsh
 
+# D.
+# zplugin ice wait'0' lucid
+zplugin snippet OMZ::plugins/colored-man-pages/colored-man-pages.plugin.zsh
 
+# F.
+zplugin ice wait'0' as"completion" lucid
+zplugin snippet OMZ::plugins/docker/_docker
+
+# G.
+# zplugin ice wait'0' atinit"zpcompinit" lucid
+zplugin light zdharma/fast-syntax-highlighting
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
