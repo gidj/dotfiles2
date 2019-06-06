@@ -5,9 +5,6 @@ autoload -Uz _zplugin
 ### End of Zplugin's installer chunk
 #
 
-# export ZPLUG_HOME=/usr/local/opt/zplug
-# source $ZPLUG_HOME/init.zsh
-
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 
 zstyle ":prezto:module:editor" key-bindings "emacs"
@@ -25,20 +22,21 @@ zstyle ":prezto:*:*" color "yes"
 zplugin snippet PZT::modules/node/init.zsh
 zplugin snippet PZT::modules/tmux/init.zsh
 # zplug "modules/docker", from:prezto
-zplugin snippet PZT::modules/directory/init.zsh
+# zplugin snippet PZT::modules/directory/init.zsh
 zplugin snippet PZT::modules/history/init.zsh
 zplugin snippet PZT::modules/editor/init.zsh
-zplugin snippet PZT::modules/utility/init.zsh
+# zplugin snippet PZT::modules/utility/init.zsh
 zplugin snippet PZT::modules/completion/init.zsh
-zplugin snippet PZT::modules/osx/init.zsh
-zplugin snippet PZT::modules/git/init.zsh
-zplugin snippet PZT::modules/terminal/init.zsh
-zplugin light PZT::modules/homebrew/init.zsh
-zplugin snippet PZT::modules/python/init.zsh
-zplugin ice svn silent atclone'git clone https://github.com/zsh-users/zsh-history-substring-search external/zsh-history-substring-search'
-# zplugin light zsh-users/zsh-history-substring-search
-zplugin snippet PZT::modules/history-substring-search/init.zsh
+# zplugin snippet PZT::modules/osx/init.zsh
+# zplugin snippet PZT::modules/git/init.zsh
+# zplugin snippet PZT::modules/terminal/init.zsh
+zplugin snippet PZT::modules/ssh/init.zsh
+# zplugin light PZT::modules/homebrew/init.zsh
+# zplugin snippet PZT::modules/python/init.zsh
+# zplugin ice svn silent atclone'git clone https://github.com/zsh-users/zsh-history-substring-search external/zsh-history-substring-search'
+zplugin light zsh-users/zsh-history-substring-search
 # zplugin snippet PZT::modules/syntax-highlighting/init.zsh
+# zplugin snippet PZT::modules/history-substring-search/init.zsh
 zplugin light zdharma/fast-syntax-highlighting
 
 
@@ -58,9 +56,6 @@ _has() {
   return $( whence $1 >/dev/null )
 }
 
-# pipenv completion
-eval "$(pipenv --completion)"
-
 # fzf + ag configuration
 if _has fzf && _has ag; then
   export FZF_DEFAULT_COMMAND='ag --nocolor -g ""'
@@ -68,17 +63,20 @@ if _has fzf && _has ag; then
   export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
 fi
 
-# Activate direnv
-eval "$(direnv hook zsh)"
+# # pipenv completion
+# eval "$(pipenv --completion)"
+
+# # Activate direnv
+# eval "$(direnv hook zsh)"
 
 source ~/.zsecrets
 
-autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /usr/local/bin/terraform terraform
+# autoload -U +X bashcompinit && bashcompinit
+# complete -o nospace -C /usr/local/bin/terraform terraform
 
 # export PATH="$HOME/.jenv/bin:$PATH"
 # eval "$(jenv init -)"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+# [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
