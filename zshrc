@@ -24,17 +24,19 @@ zplug "modules/history", from:prezto
 zplug "modules/editor", from:prezto
 zplug "modules/utility", from:prezto
 zplug "modules/completion", from:prezto
-zplug "modules/syntax-highlighting", from:prezto
 zplug "modules/osx", from:prezto
 zplug "modules/git", from:prezto
 zplug "modules/terminal", from:prezto
 zplug "modules/homebrew", from:prezto
 zplug "modules/python", from:prezto
-zplug "modules/history-substring-search", from:prezto
+zplug "modules/syntax-highlighting", from:prezto
+zplug "zdharma/fast-syntax-highlighting"
 
 # zsh-async is required for pure
 zplug "mafredri/zsh-async", from:github
 zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
+
+zplug "modules/history-substring-search", from:prezto
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
@@ -54,9 +56,6 @@ _has() {
   return $( whence $1 >/dev/null )
 }
 
-# pipenv completion
-eval "$(pipenv --completion)"
-
 # fzf + ag configuration
 if _has fzf && _has ag; then
   export FZF_DEFAULT_COMMAND='ag --nocolor -g ""'
@@ -64,13 +63,16 @@ if _has fzf && _has ag; then
   export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
 fi
 
-# Activate direnv
-eval "$(direnv hook zsh)"
-
 source ~/.zsecrets
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/terraform terraform
+
+# pipenv completion
+eval "$(pipenv --completion)"
+
+# Activate direnv
+eval "$(direnv hook zsh)"
 
 # export PATH="$HOME/.jenv/bin:$PATH"
 # eval "$(jenv init -)"
