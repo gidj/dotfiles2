@@ -3,13 +3,13 @@ source '/Users/gideon.vanriette/.zplugin/bin/zplugin.zsh'
 autoload -Uz _zplugin
 (( ${+_comps} )) && _comps[zplugin]=_zplugin
 ### End of Zplugin's installer chunk
-#
 
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 
 zstyle ":prezto:module:editor" key-bindings "emacs"
 zstyle ":prezto:module:editor" dot-expansion "yes"
-# zplugin snippet PZT::modules/environment/init.zsh
+zstyle ":prezto:*:*" color "yes"
+zplugin snippet PZT::modules/environment/init.zsh
 # zplugin snippet PZT::modules/node/init.zsh
 zplugin snippet PZT::modules/tmux/init.zsh
 zplugin snippet PZT::modules/directory/init.zsh
@@ -17,7 +17,7 @@ zplugin snippet PZT::modules/history/init.zsh
 zplugin snippet PZT::modules/editor/init.zsh
 zplugin snippet PZT::modules/utility/init.zsh
 zplugin snippet PZT::modules/completion/init.zsh
-# zplugin snippet PZT::modules/osx/init.zsh
+zplugin snippet PZT::modules/osx/init.zsh
 zplugin snippet PZT::modules/terminal/init.zsh
 zplugin snippet PZT::modules/ssh/init.zsh
 zplugin snippet PZT::modules/homebrew/init.zsh

@@ -25,7 +25,7 @@ export SSH_ENV="$HOME/.ssh/environment"
 
 # Aliases
 # alias ll="ls -alrtFG"
-# alias lsa="ls -lahF"
+alias lsa="ls -lahF"
 # alias la="ls -AF"
 # alias l="ls -CF"
 # alias m='less'
