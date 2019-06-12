@@ -23,7 +23,7 @@ zplugin snippet PZT::modules/completion/init.zsh
 zplugin snippet PZT::modules/osx/init.zsh
 zplugin snippet PZT::modules/terminal/init.zsh
 zplugin snippet PZT::modules/ssh/init.zsh
-zplugin snippet PZT::modules/homebrew/init.zsh
+# zplugin snippet PZT::modules/homebrew/init.zsh
 
 setopt promptsubst
 
@@ -65,8 +65,8 @@ fi
 # Activate direnv
 eval "$(direnv hook zsh)"
 
-autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /usr/local/bin/terraform terraform
+# autoload -U +X bashcompinit && bashcompinit
+# complete -o nospace -C /usr/local/bin/terraform terraform
 
 # pipenv completion
 eval "$(pipenv --completion)"
