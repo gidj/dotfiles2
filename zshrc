@@ -4,13 +4,16 @@ autoload -Uz _zplugin
 (( ${+_comps} )) && _comps[zplugin]=_zplugin
 ### End of Zplugin's installer chunk
 
+autoload -Uz compinit
+compinit
+
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 
 zstyle ":prezto:module:editor" key-bindings "emacs"
 zstyle ":prezto:module:editor" dot-expansion "yes"
 zstyle ":prezto:*:*" color "yes"
+
 zplugin snippet PZT::modules/environment/init.zsh
-# zplugin snippet PZT::modules/node/init.zsh
 zplugin snippet PZT::modules/tmux/init.zsh
 zplugin snippet PZT::modules/directory/init.zsh
 zplugin snippet PZT::modules/history/init.zsh
@@ -39,8 +42,7 @@ zplugin snippet OMZ::plugins/docker/_docker
 zplugin ice wait'0' atinit"zpcompinit" lucid
 zplugin light zdharma/fast-syntax-highlighting
 
-zplugin ice wait'0' lucid
-zplugin light zsh-users/zsh-autosuggestions
+zplugin light gangleri/pipenv
 
 # zsh-async is required for pure
 zplugin light mafredri/zsh-async
@@ -59,9 +61,6 @@ if _has fzf && _has ag; then
   export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
   export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
 fi
-
-# pipenv completion
-eval "$(pipenv --completion)"
 
 # Activate direnv
 eval "$(direnv hook zsh)"

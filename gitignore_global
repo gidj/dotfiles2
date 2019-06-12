@@ -3,3 +3,4 @@ Pipfile*
 .out.zsh
 .envrc
 node_modules
+rebel.xml
