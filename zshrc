@@ -7,7 +7,6 @@ autoload -Uz _zplugin
 autoload -Uz compinit
 compinit
 
-export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 
 zstyle ":prezto:module:editor" key-bindings "emacs"
 zstyle ":prezto:module:editor" dot-expansion "yes"
@@ -55,21 +54,24 @@ _has() {
   return $( whence $1 >/dev/null )
 }
 
+
 # fzf + ag configuration
-if _has fzf && _has ag; then
-  export FZF_DEFAULT_COMMAND='ag --nocolor -g ""'
+if _has fzf && _has rg; then
+  # export FZF_DEFAULT_COMMAND='ag --nocolor -g "" | fzf-tmux --preview "head -100 {}"'
+  export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+  # export FZF_DEFAULT_COMMAND='ag --nocolor -g ""'
   export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
   export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
 fi
 
 # Activate direnv
-eval "$(direnv hook zsh)"
+# eval "$(direnv hook zsh)"
 
 # autoload -U +X bashcompinit && bashcompinit
 # complete -o nospace -C /usr/local/bin/terraform terraform
 
 # pipenv completion
-eval "$(pipenv --completion)"
+# eval "$(pipenv --completion)"
 
 # Activate direnv
 eval "$(direnv hook zsh)"
