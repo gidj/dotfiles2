@@ -2,8 +2,11 @@
 " }}}
 let g:LanguageClient_serverCommands = {
     \ 'python': [expand(g:neovim3_venv_path . '/bin/pyls')],
-    \ 'go': ['/Users/gideon.vanriette/go/bin/gopls']
     \ }
+" let g:LanguageClient_serverCommands = {
+"     \ 'python': [expand(g:neovim3_venv_path . '/bin/pyls')],
+"     \ 'go': ['/Users/gideon.vanriette/go/bin/gopls']
+"     \ }
 " Automatically start language servers.
 let g:LanguageClient_autoStart = 1
 " Disable Diagnostics
