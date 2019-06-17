@@ -48,9 +48,14 @@ Plug 'hashivim/vim-terraform'
 Plug 'vim-python/python-syntax'
 Plug 'Vimjas/vim-python-pep8-indent' " Fix indentation
 
+" Go Plugins
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
 " Version control related
 Plug 'airblade/vim-gitgutter' " For git
 Plug 'tpope/vim-fugitive'
+
+
 " Plug 'stephpy/vim-yaml'
 " if has('nvim')
 "   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -142,6 +147,7 @@ source ~/.config/nvim/settings/language_server.vim
 source ~/.config/nvim/settings/mundo.vim
 source ~/.config/nvim/settings/ale.vim
 source ~/.config/nvim/settings/gitgutter.vim
+source ~/.config/nvim/settings/go.vim
 " source ~/.config/nvim/settings/slimux.vim
 source ~/.config/nvim/settings/airline.vim
 " source ~/.config/nvim/settings/folding.vim

@@ -4,6 +4,7 @@ let g:ale_fixers = {
 \ 'html': ['tidy'],
 \ 'json': ['prettier'],
 \ 'python': ['isort', 'black'],
+\ 'go': ['gofmt'],
 \ 'xml': ['xmllint'],
 \ 'yml': ['xmllint'],
 \}

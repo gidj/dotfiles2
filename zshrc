@@ -46,8 +46,11 @@ zplugin light gangleri/pipenv
 # zsh-async is required for pure
 zplugin light mafredri/zsh-async
 zplugin light sindresorhus/pure
-
+# zplugin light denysdovhan/spaceship-prompt
+# zplugin light geometry-zsh/geometry
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+[ -f ~/dotfiles/functions.zsh ] && source ~/dotfiles/functions.zsh
 
 # Returns whether the given command is executable or aliased.
 _has() {
@@ -57,10 +60,11 @@ _has() {
 
 # fzf + ag configuration
 if _has fzf && _has rg; then
-  # export FZF_DEFAULT_COMMAND='ag --nocolor -g "" | fzf-tmux --preview "head -100 {}"'
+  export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
   export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
   # export FZF_DEFAULT_COMMAND='ag --nocolor -g ""'
   export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+  export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
   export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
 fi
 

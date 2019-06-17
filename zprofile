@@ -19,6 +19,8 @@ export PATH
 export WORKON_HOME=$HOME/.venvs
 export PROJECT_HOME=$HOME/Projects
 
+export GOPATH=$HOME/go
+
 export VISUAL=nvim
 export EDITOR=nvim
 
