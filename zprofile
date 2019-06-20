@@ -1,5 +1,7 @@
 typeset -U path
 
+fpath=(/usr/local/share/zsh-completions $fpath)
+
 # Add Python3
 path=(/usr/local/opt/python/libexec/bin $path)
 
@@ -17,6 +19,8 @@ export PATH
 export WORKON_HOME=$HOME/.venvs
 export PROJECT_HOME=$HOME/Projects
 
+export GOPATH=$HOME/go
+
 export VISUAL=nvim
 export EDITOR=nvim
 
@@ -24,22 +28,19 @@ export TERM=tmux-256color
 export SSH_ENV="$HOME/.ssh/environment"
 
 # Aliases
-alias ll="ls -alrtFG"
+# alias ll="ls -alrtFG"
 alias lsa="ls -lahF"
-alias la="ls -AF"
-alias l="ls -CF"
-alias m='less'
-alias ..='cd ..'
-alias ...='cd ..;cd ..'
-alias md='mkdir'
-alias cl='clear'
+# alias la="ls -AF"
+# alias l="ls -CF"
+# alias m='less'
+# alias ..='cd ..'
+# alias ...='cd ..;cd ..'
+# alias md='mkdir'
+# alias cl='clear'
 alias vi="nvim"
 alias vim="nvim"
 
 alias gla="git log --all --graph"
-
-# Eclimd
-alias eclimd='/Applications/Eclipse.app/Contents/Eclipse/eclimd'
 
 # Node
 alias nlg="npm list -g --depth=0 2>/dev/null"
@@ -52,3 +53,5 @@ alias vagrant='TERM=screen-256color vagrant'
 # Work aliases
 alias vivid="~/vividseats"
 alias findRmi='lsof -i:1099'
+
+source ~/.zsecrets

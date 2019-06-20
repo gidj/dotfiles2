@@ -7,20 +7,22 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'morhetz/gruvbox'
 
 " Completion
-Plug 'ncm2/ncm2'
-Plug 'roxma/nvim-yarp'
-Plug 'ncm2/ncm2-bufword'
-Plug 'ncm2/ncm2-tmux'
-Plug 'ncm2/ncm2-path'
-Plug 'ncm2/ncm2-ultisnips'
-" Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
+" Plug 'ncm2/ncm2'
+" Plug 'roxma/nvim-yarp'
+" Plug 'ncm2/ncm2-bufword'
+" Plug 'ncm2/ncm2-tmux'
+" Plug 'ncm2/ncm2-path'
+" Plug 'ncm2/ncm2-ultisnips'
+" Plug 'ncm2/ncm2-go'
 
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-Plug 'autozimu/LanguageClient-neovim', {
-      \ 'branch': 'next',
-      \ 'do': 'bash install.sh',
-      \ }
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" Plug 'SirVer/ultisnips'
+" Plug 'honza/vim-snippets'
+" Plug 'autozimu/LanguageClient-neovim', {
+"       \ 'branch': 'next',
+"       \ 'do': 'bash install.sh',
+"       \ }
 
 Plug 'w0rp/ale'
 Plug '/usr/local/opt/fzf'
@@ -49,9 +51,14 @@ Plug 'hashivim/vim-terraform'
 Plug 'vim-python/python-syntax'
 Plug 'Vimjas/vim-python-pep8-indent' " Fix indentation
 
+" Go Plugins
+" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
 " Version control related
 Plug 'airblade/vim-gitgutter' " For git
 Plug 'tpope/vim-fugitive'
+
+
 " Plug 'stephpy/vim-yaml'
 " if has('nvim')
 "   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -143,6 +150,7 @@ source ~/.config/nvim/settings/language_server.vim
 source ~/.config/nvim/settings/mundo.vim
 source ~/.config/nvim/settings/ale.vim
 source ~/.config/nvim/settings/gitgutter.vim
+source ~/.config/nvim/settings/go.vim
 " source ~/.config/nvim/settings/slimux.vim
 source ~/.config/nvim/settings/airline.vim
 " source ~/.config/nvim/settings/folding.vim
@@ -151,7 +159,7 @@ source ~/.config/nvim/settings/fzf.vim
 " source ~/.config/nvim/settings/signify.vim
 source ~/.config/nvim/settings/behaviour.vim
 source ~/.config/nvim/settings/snippets.vim
-" source ~/.config/nvim/settings/coc.vim
+source ~/.config/nvim/settings/coc.vim
 source ~/.config/nvim/settings/ncm2.vim
 " source ~/.config/nvim/settings/deoplete.vim
 

@@ -5,8 +5,6 @@ filetype on
 filetype plugin on
 filetype indent on
 
-let g:indentLine_char = '│'
-
 " Limit autocomplete list length
 set pumheight=25
 
