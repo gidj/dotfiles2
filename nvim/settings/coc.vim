@@ -3,12 +3,16 @@
 " if hidden is not set, TextEdit might fail.
 set hidden
 
+autocmd FileType python let b:coc_root_patterns = ['.git', '.env']
+
 " Some servers have issues with backup files, see #649
 set nobackup
 set nowritebackup
 
+" set completeopt=menu,menuone,noinsert,noselect,preview
+
 " Better display for messages
-set cmdheight=2
+" set cmdheight=2
 
 " Smaller updatetime for CursorHold & CursorHoldI
 set updatetime=300

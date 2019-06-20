@@ -16,9 +16,10 @@ Plug 'morhetz/gruvbox'
 " Plug 'ncm2/ncm2-go'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc-snippets'
 
 " Plug 'SirVer/ultisnips'
-" Plug 'honza/vim-snippets'
+Plug 'honza/vim-snippets'
 " Plug 'autozimu/LanguageClient-neovim', {
 "       \ 'branch': 'next',
 "       \ 'do': 'bash install.sh',
@@ -146,21 +147,21 @@ let g:python_highlight_all = 1
 
 source ~/.config/nvim/mappings.vim
 source ~/.config/nvim/settings/python.vim
-source ~/.config/nvim/settings/language_server.vim
+" source ~/.config/nvim/settings/language_server.vim
 source ~/.config/nvim/settings/mundo.vim
 source ~/.config/nvim/settings/ale.vim
 source ~/.config/nvim/settings/gitgutter.vim
-source ~/.config/nvim/settings/go.vim
+" source ~/.config/nvim/settings/go.vim
 " source ~/.config/nvim/settings/slimux.vim
 source ~/.config/nvim/settings/airline.vim
 " source ~/.config/nvim/settings/folding.vim
 source ~/.config/nvim/settings/fzf.vim
 " source ~/.config/nvim/settings/tagbar.vim
 " source ~/.config/nvim/settings/signify.vim
-source ~/.config/nvim/settings/behaviour.vim
-source ~/.config/nvim/settings/snippets.vim
+" source ~/.config/nvim/settings/behaviour.vim
+" source ~/.config/nvim/settings/snippets.vim
 source ~/.config/nvim/settings/coc.vim
-source ~/.config/nvim/settings/ncm2.vim
+" source ~/.config/nvim/settings/ncm2.vim
 " source ~/.config/nvim/settings/deoplete.vim
 
 if executable('ag')
