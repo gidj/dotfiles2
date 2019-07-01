@@ -7,25 +7,13 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'morhetz/gruvbox'
 
 " Completion
-" Plug 'ncm2/ncm2'
-" Plug 'roxma/nvim-yarp'
-" Plug 'ncm2/ncm2-bufword'
-" Plug 'ncm2/ncm2-tmux'
-" Plug 'ncm2/ncm2-path'
-" Plug 'ncm2/ncm2-ultisnips'
-" Plug 'ncm2/ncm2-go'
-
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'neoclide/coc-snippets'
-
-" Plug 'SirVer/ultisnips'
+Plug 'wellle/tmux-complete.vim'
 Plug 'honza/vim-snippets'
-" Plug 'autozimu/LanguageClient-neovim', {
-"       \ 'branch': 'next',
-"       \ 'do': 'bash install.sh',
-"       \ }
 
 Plug 'w0rp/ale'
+
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 
@@ -37,6 +25,7 @@ Plug 'simnalamburt/vim-mundo'
 Plug 'Valloric/ListToggle'
 Plug 'wellle/targets.vim'
 Plug 'machakann/vim-sandwich'
+
 Plug 'justinmk/vim-dirvish'
 
 " Useful plugins from Tim Pope
@@ -58,19 +47,6 @@ Plug 'Vimjas/vim-python-pep8-indent' " Fix indentation
 " Version control related
 Plug 'airblade/vim-gitgutter' " For git
 Plug 'tpope/vim-fugitive'
-
-
-" Plug 'stephpy/vim-yaml'
-" if has('nvim')
-"   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-" else
-"   Plug 'Shougo/deoplete.nvim'
-"   Plug 'roxma/nvim-yarp'
-"   Plug 'roxma/vim-hug-neovim-rpc'
-" endif
-
-" Plug 'Shougo/neosnippet.vim'
-" Plug 'Shougo/neosnippet-snippets'
 
 " Folding
 " Plug 'tmhedberg/SimpylFold'
