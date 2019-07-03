@@ -3,7 +3,7 @@
 " if hidden is not set, TextEdit might fail.
 set hidden
 
-let g:coc_global_extensions = ['coc-prettier', 'coc-json', 'coc-python'] 
+let g:coc_global_extensions = ['coc-prettier', 'coc-json', 'coc-python', 'coc-snippets'] 
 
 autocmd FileType python let b:coc_root_patterns = ['.git', '.env']
 
@@ -71,9 +71,9 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 " Remap for rename current word
 nmap <leader>rn <Plug>(coc-rename)
 
-" Remap for format selected region
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+" " Remap for format selected region
+" xmap <leader>f  <Plug>(coc-format-selected)
+" nmap <leader>f  <Plug>(coc-format-selected)
 
 augroup mygroup
   autocmd!
@@ -98,35 +98,20 @@ command! -nargs=0 Format :call CocAction('format')
 " Use `:Fold` to fold current buffer
 command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 
-
-" Add diagnostic info for https://github.com/itchyny/lightline.vim
-" let g:lightline = {
-"             \ 'colorscheme': 'wombat',
-"             \ 'active': {
-"             \   'left': [ [ 'mode', 'paste' ],
-"             \             [ 'cocstatus', 'readonly', 'filename', 'modified' ] ]
-"             \ },
-"             \ 'component_function': {
-"             \   'cocstatus': 'coc#status'
-"             \ },
-"             \ }
-
-
-
-" Using CocList
-" Show all diagnostics
-nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
-" Manage extensions
-nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
-" Show commands
-nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
-" Find symbol of current document
-nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
-" Search workspace symbols
-nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
-" Do default action for next item.
-nnoremap <silent> <space>j  :<C-u>CocNext<CR>
-" Do default action for previous item.
-nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
-" Resume latest coc list
-nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+" " Using CocList
+" " Show all diagnostics
+" nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
+" " Manage extensions
+" nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
+" " Show commands
+" nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
+" " Find symbol of current document
+" nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
+" " Search workspace symbols
+" nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
+" " Do default action for next item.
+" nnoremap <silent> <space>j  :<C-u>CocNext<CR>
+" " Do default action for previous item.
+" nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
+" " Resume latest coc list
+" nnoremap <silent> <space>p  :<C-u>CocListResume<CR>

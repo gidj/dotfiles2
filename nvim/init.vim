@@ -8,9 +8,8 @@ Plug 'morhetz/gruvbox'
 
 " Completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Plug 'neoclide/coc-snippets'
 Plug 'wellle/tmux-complete.vim'
-Plug 'honza/vim-snippets'
+" Plug 'honza/vim-snippets'
 
 Plug 'w0rp/ale'
 

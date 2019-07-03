@@ -16,8 +16,8 @@ path=(~/bin $path)
 
 export PATH
 
-export WORKON_HOME=$HOME/.venvs
-export PROJECT_HOME=$HOME/Projects
+# export WORKON_HOME=$HOME/.venvs
+# export PROJECT_HOME=$HOME/Projects
 
 export GOPATH=$HOME/go
 
@@ -26,6 +26,8 @@ export EDITOR=nvim
 
 export TERM=tmux-256color
 export SSH_ENV="$HOME/.ssh/environment"
+
+export PIPENV_VENV_IN_PROJECT=true
 
 # Aliases
 # alias ll="ls -alrtFG"

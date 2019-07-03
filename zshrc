@@ -68,20 +68,11 @@ if _has fzf && _has rg; then
   export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
 fi
 
-# Activate direnv
-# eval "$(direnv hook zsh)"
-
 # autoload -U +X bashcompinit && bashcompinit
 # complete -o nospace -C /usr/local/bin/terraform terraform
 
-# pipenv completion
-# eval "$(pipenv --completion)"
-
 # Activate direnv
 eval "$(direnv hook zsh)"
-
-# export PATH="$HOME/.jenv/bin:$PATH"
-# eval "$(jenv init -)"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm

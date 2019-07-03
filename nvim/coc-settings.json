@@ -3,7 +3,7 @@
 	"coc.preferences.previewAutoClose": true,
 	"languageserver": {
 		"python": {
-			"command": "/Users/gideon.vanriette/.venvs/neovim3-RJs8AJVy/bin/python",
+			"command": "python3",
 			"args": [
 				"-mpyls",
 				"-vv",
@@ -26,7 +26,7 @@
 					],
 					"plugins": {
 						"jedi_completion": {
-							"enabled": true
+							"enabled": false
 						},
 						"jedi_hover": {
 							"enabled": true
