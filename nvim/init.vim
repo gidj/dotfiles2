@@ -56,7 +56,7 @@ Plug 'tpope/vim-fugitive'
 " Plug 'pangloss/vim-javascript'
 " Plug 'othree/yajs.vim'
 " Plug 'othree/javascript-libraries-syntax.vim' " For all JS libraries
-" Plug 'posva/vim-vue'
+Plug 'posva/vim-vue'
 " Plug 'leafgarland/typescript-vim'
 
 " Clojure
@@ -121,6 +121,7 @@ let g:python_highlight_all = 1
 " }}}
 
 source ~/.config/nvim/mappings.vim
+source ~/.config/nvim/settings/vue.vim
 source ~/.config/nvim/settings/python.vim
 " source ~/.config/nvim/settings/language_server.vim
 source ~/.config/nvim/settings/mundo.vim
@@ -133,7 +134,7 @@ source ~/.config/nvim/settings/airline.vim
 source ~/.config/nvim/settings/fzf.vim
 " source ~/.config/nvim/settings/tagbar.vim
 " source ~/.config/nvim/settings/signify.vim
-" source ~/.config/nvim/settings/behaviour.vim
+source ~/.config/nvim/settings/behaviour.vim
 " source ~/.config/nvim/settings/snippets.vim
 source ~/.config/nvim/settings/coc.vim
 " source ~/.config/nvim/settings/ncm2.vim
