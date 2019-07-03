@@ -5,6 +5,9 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 # Add Python3
 path=(/usr/local/opt/python/libexec/bin $path)
 
+# Add global installs via pipenv
+path=(~/.local/bin $path)
+
 # Add Node
 path=(~/node_modules/.bin $path)
 
@@ -28,10 +31,11 @@ export TERM=tmux-256color
 export SSH_ENV="$HOME/.ssh/environment"
 
 export PIPENV_VENV_IN_PROJECT=true
+export PYTHONUSERBASE="$HOME/.local"
 
 # Aliases
-# alias ll="ls -alrtFG"
 alias lsa="ls -lahF"
+# alias ll="ls -alrtFG"
 # alias la="ls -AF"
 # alias l="ls -CF"
 # alias m='less'
