@@ -3,6 +3,8 @@
 " if hidden is not set, TextEdit might fail.
 set hidden
 
+let g:coc_global_extensions = ['coc-prettier', 'coc-json', 'coc-python'] 
+
 autocmd FileType python let b:coc_root_patterns = ['.git', '.env']
 
 " Some servers have issues with backup files, see #649
