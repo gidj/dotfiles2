@@ -122,7 +122,7 @@ let g:python_highlight_all = 1
 
 source ~/.config/nvim/mappings.vim
 source ~/.config/nvim/settings/vue.vim
-source ~/.config/nvim/settings/python.vim
+" source ~/.config/nvim/settings/python.vim
 " source ~/.config/nvim/settings/language_server.vim
 source ~/.config/nvim/settings/mundo.vim
 source ~/.config/nvim/settings/ale.vim

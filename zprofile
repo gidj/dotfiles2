@@ -5,7 +5,7 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 # Add Python3
 path=(/usr/local/opt/python/libexec/bin $path)
 
-# Add global installs via pipenv
+# Python user site-packages are here
 path=(~/.local/bin $path)
 
 # Add Node
@@ -18,9 +18,6 @@ path=(/usr/local/sbin $path)
 path=(~/bin $path)
 
 export PATH
-
-# export WORKON_HOME=$HOME/.venvs
-# export PROJECT_HOME=$HOME/Projects
 
 export GOPATH=$HOME/go
 
