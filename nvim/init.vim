@@ -43,6 +43,8 @@ Plug 'Vimjas/vim-python-pep8-indent' " Fix indentation
 " Go Plugins
 " Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
+Plug 'ekalinin/Dockerfile.vim'
+
 " Version control related
 Plug 'airblade/vim-gitgutter' " For git
 Plug 'tpope/vim-fugitive'
