@@ -1,5 +1,5 @@
 ### Added by Zplugin's installer
-source '/Users/gideon.vanriette/.zplugin/bin/zplugin.zsh'
+source ~/.zplugin/bin/zplugin.zsh
 autoload -Uz _zplugin
 (( ${+_comps} )) && _comps[zplugin]=_zplugin
 ### End of Zplugin's installer chunk
@@ -46,8 +46,10 @@ zplugin light gangleri/pipenv
 # zsh-async is required for pure
 zplugin light mafredri/zsh-async
 zplugin light sindresorhus/pure
+
 # zplugin light denysdovhan/spaceship-prompt
 # zplugin light geometry-zsh/geometry
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 [ -f ~/dotfiles/functions.zsh ] && source ~/dotfiles/functions.zsh
@@ -68,12 +70,9 @@ if _has fzf && _has rg; then
   export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
 fi
 
-# autoload -U +X bashcompinit && bashcompinit
-# complete -o nospace -C /usr/local/bin/terraform terraform
-
 # Activate direnv
 eval "$(direnv hook zsh)"
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+# [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 # [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
