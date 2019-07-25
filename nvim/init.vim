@@ -60,7 +60,7 @@ Plug 'tpope/vim-fugitive'
 " Plug 'othree/javascript-libraries-syntax.vim' " For all JS libraries
 Plug 'posva/vim-vue'
 Plug 'cespare/vim-toml'
-Plug 'chrisbra/csv.vim'
+Plug 'mechatroner/rainbow_csv'
 " Plug 'leafgarland/typescript-vim'
 
 " Clojure
