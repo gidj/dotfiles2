@@ -59,6 +59,7 @@ Plug 'tpope/vim-fugitive'
 " Plug 'othree/yajs.vim'
 " Plug 'othree/javascript-libraries-syntax.vim' " For all JS libraries
 Plug 'posva/vim-vue'
+Plug 'cespare/vim-toml'
 " Plug 'leafgarland/typescript-vim'
 
 " Clojure

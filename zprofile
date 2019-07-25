@@ -32,6 +32,7 @@ export PYTHONUSERBASE="$HOME/.local"
 
 # Aliases
 alias lsa="ls -lahF"
+alias tmat="tmux attach -t"
 # alias ll="ls -alrtFG"
 # alias la="ls -AF"
 # alias l="ls -CF"
