@@ -23,7 +23,7 @@ if has("autocmd")
   " Javascript, JSX
   autocmd FileType javascript,javascript.jsx set ts=2 sts=2 sw=2 et
   " Markdown
-  autocmd FileType markdown set spell spelllang=en_us
+  autocmd FileType markdown setlocal spell spelllang=en_us
   " YAML
   autocmd FileType yaml set ts=2 sts=2 sw=2 et
   " Python files
