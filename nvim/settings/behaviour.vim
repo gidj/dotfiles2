@@ -47,7 +47,7 @@ if has("autocmd")
     autocmd Filetype html,jinjs,jinja.html set formatprg=/usr/local/bin/tidy
   augroup END
   " Vue
-  autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
+  " autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
   " Jenkins
   autocmd BufNewFile,BufRead Jenkinsfile setf groovy
   autocmd Filetype css,scss,xml setlocal ts=4 sts=4 sw=4 expandtab

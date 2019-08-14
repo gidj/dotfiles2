@@ -55,13 +55,13 @@ Plug 'tpope/vim-fugitive'
 " Plug 'Konfekt/FastFold'
 
 " Javascript Plugins
-" Plug 'pangloss/vim-javascript'
+Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
 " Plug 'othree/yajs.vim'
 " Plug 'othree/javascript-libraries-syntax.vim' " For all JS libraries
 Plug 'posva/vim-vue'
 Plug 'cespare/vim-toml'
 Plug 'mechatroner/rainbow_csv'
-" Plug 'leafgarland/typescript-vim'
 
 " Clojure
 " Plug 'tpope/vim-fireplace'
