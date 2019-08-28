@@ -26,3 +26,10 @@ vnoremap <tab> %
 
 " Clear search
 nnoremap <leader>, :noh<cr>
+
+" inoremap (; (<CR>);<C-c>O
+" inoremap (, (<CR>),<C-c>O
+" inoremap {; {<CR>};<C-c>O
+" inoremap {, {<CR>},<C-c>O
+" inoremap [; [<CR>];<C-c>O
+" inoremap [, [<CR>],<C-c>O

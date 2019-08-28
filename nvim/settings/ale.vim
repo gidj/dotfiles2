@@ -1,10 +1,12 @@
 " Ale: {{{
 " }}}
 let g:ale_fixers = {
+\ 'go': ['gofmt'],
 \ 'html': ['tidy'],
 \ 'json': ['prettier'],
+\ 'javascript': ['prettier'],
 \ 'python': ['isort', 'black'],
-\ 'go': ['gofmt'],
+\ 'vue': ['prettier'],
 \ 'xml': ['xmllint'],
 \ 'yml': ['xmllint'],
 \}
@@ -24,6 +26,8 @@ let g:ale_lint_delay = 500
 let g:ale_set_highlights = 0
 
 let g:ale_html_tidy_excecutable = expand('/usr/local/bin/tidy')
+let g:ale_javascript_prettier_options = '--no-semi --single-quote --print-width 100 --trailing-comma es5'
+let g:ale_vue_prettier_options = '--no-semi --single-quote'
 let g:ale_python_flake8_use_global = 1
 let g:ale_python_flake8_options = '--ignore=E128,E221,E241,E251,E265,E303,E501'
 

@@ -48,6 +48,7 @@ if has("autocmd")
   augroup END
   " Vue
   " autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
+  autocmd FileType vue set ts=2 sts=2 sw=2 et
   " Jenkins
   autocmd BufNewFile,BufRead Jenkinsfile setf groovy
   autocmd Filetype css,scss,xml setlocal ts=4 sts=4 sw=4 expandtab

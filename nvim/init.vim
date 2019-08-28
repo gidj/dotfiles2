@@ -62,6 +62,7 @@ Plug 'leafgarland/typescript-vim'
 Plug 'posva/vim-vue'
 Plug 'cespare/vim-toml'
 Plug 'mechatroner/rainbow_csv'
+Plug 'RRethy/vim-illuminate'
 
 " Clojure
 " Plug 'tpope/vim-fireplace'
@@ -70,9 +71,9 @@ Plug 'mechatroner/rainbow_csv'
 " Plug 'guns/vim-clojure-highlight'
 " Plug 'clojure-vim/async-clj-omni'
 
+Plug 'Glench/Vim-Jinja2-Syntax'
 " Various Language Plugings
 " Plug 'othree/html5.vim'
-" Plug 'Glench/Vim-Jinja2-Syntax'
 " Plug 'ap/vim-css-color'
 " Plug 'Yggdroot/indentLine'
 " Plug 'mattn/emmet-vim'
