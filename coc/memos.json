@@ -1,0 +1,3400 @@
+{
+  "coc-python|global": {
+    "INTERPRETERS_CACHE_v3_CondaEnvFileService": [],
+    "INTERPRETERS_CACHE_v3_CondaEnvService": [],
+    "INTERPRETERS_CACHE_v3_VirtualEnvService": [],
+    "/usr/local/bin/python3.7.v3": {
+      "data": {
+        "architecture": 3,
+        "path": "/usr/local/bin/python3.7",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/usr/local/Cellar/python/3.7.4/Frameworks/Python.framework/Versions/3.7",
+        "fileHash": "a127db05e4058e5ef21ef6c0010bc0403d17f4cff966f886a216a63b0ca2fac047f3cc9f97272facd75264198017175b6834b30fe1493b48f0ce1e610f61caad"
+      },
+      "expiry": 1567005866574
+    },
+    "/usr/local/bin/python3.v3": {
+      "data": {
+        "architecture": 3,
+        "path": "/usr/local/bin/python3",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/usr/local/Cellar/python/3.7.4/Frameworks/Python.framework/Versions/3.7",
+        "fileHash": "448db4cc7ed755b826dd0842d006cf031eb7a34dbda1df4d1a03cb9d506437f620d5c2ed5062288b38b2957c2efd0b430d928ed255cb6336f48fe6af804da6cb"
+      },
+      "expiry": 1567005866571
+    },
+    "/usr/local/opt/python/libexec/bin/python.v3": {
+      "data": {
+        "architecture": 3,
+        "path": "/usr/local/opt/python/libexec/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/usr/local/Cellar/python/3.7.4/Frameworks/Python.framework/Versions/3.7",
+        "fileHash": "38cb5d9a5aeadbf378009ff9cc6dca3d3df45cb3fbc7b4f42d81d28da57921b4e0944fa3fd660e7c6ce9d9752af21c4b262713dd3a5ca1aed4d35134571a41ec"
+      },
+      "expiry": 1567005866568
+    },
+    "/Users/gideon.vanriette/projects/hazpak/.venv/bin/python3.7.v3": {
+      "data": {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/projects/hazpak/.venv/bin/python3.7",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/projects/hazpak/.venv/bin/..",
+        "fileHash": "cab041cb0d14128d6d5e45e88cf626f59686b34e73d35127018dff77e8bab5b7d9914844988f9de7a832315f44dabe92a9da5dd34b617531a82561aa25a0779d"
+      },
+      "expiry": 1566749253653
+    },
+    "/Users/gideon.vanriette/projects/hazpak/.venv/bin/python3.v3": {
+      "data": {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/projects/hazpak/.venv/bin/python3",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/projects/hazpak/.venv/bin/..",
+        "fileHash": "5b9f187a7baacff75f1703b266d09e5357cc0ac2e8e72929c9ad66d6d4a219f3de66bb729c1c86b01c11f5b6be0f7b93b586b547917a0e78efb53992000dcf7e"
+      },
+      "expiry": 1566749253671
+    },
+    "/Users/gideon.vanriette/projects/hazpak/.venv/bin/python.v3": {
+      "data": {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/projects/hazpak/.venv/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/projects/hazpak/.venv/bin/..",
+        "fileHash": "6ee179f9a6b282b0fdee2d3df75091323d9493d79ed9e0358c59e715f5bbab9dd46802b0909a6cfcfe2cb8efe683bedc8b5185e5fd4ddc74ffe52045e59bc597"
+      },
+      "expiry": 1566749253675
+    },
+    "INTERPRETERS_CACHE_v3_CurrentPathService": [
+      {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/develop/hazpak/.venv/bin/python3.7",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/develop/hazpak/.venv/bin/..",
+        "fileHash": "cab041cb0d14128d6d5e45e88cf626f59686b34e73d35127018dff77e8bab5b7d9914844988f9de7a832315f44dabe92a9da5dd34b617531a82561aa25a0779d",
+        "type": "Unknown"
+      },
+      {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/develop/hazpak/.venv/bin/python3",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/develop/hazpak/.venv/bin/..",
+        "fileHash": "5b9f187a7baacff75f1703b266d09e5357cc0ac2e8e72929c9ad66d6d4a219f3de66bb729c1c86b01c11f5b6be0f7b93b586b547917a0e78efb53992000dcf7e",
+        "type": "Unknown"
+      },
+      {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/develop/hazpak/.venv/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/develop/hazpak/.venv/bin/..",
+        "fileHash": "6ee179f9a6b282b0fdee2d3df75091323d9493d79ed9e0358c59e715f5bbab9dd46802b0909a6cfcfe2cb8efe683bedc8b5185e5fd4ddc74ffe52045e59bc597",
+        "type": "Unknown"
+      },
+      {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/develop/hazpak/.venv/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/develop/hazpak/.venv/bin/..",
+        "fileHash": "6ee179f9a6b282b0fdee2d3df75091323d9493d79ed9e0358c59e715f5bbab9dd46802b0909a6cfcfe2cb8efe683bedc8b5185e5fd4ddc74ffe52045e59bc597",
+        "type": "Unknown"
+      }
+    ],
+    "/usr/bin/python.v3": {
+      "data": {
+        "architecture": 3,
+        "path": "/usr/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "2.7.10-final",
+          "major": 2,
+          "minor": 7,
+          "patch": 10,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "2.7.10-final"
+        },
+        "sysPrefix": "/System/Library/Frameworks/Python.framework/Versions/2.7",
+        "fileHash": "80ad9b6114d961499c91f6484273e21b854aa7f3b1343276e2c4325433a6f6765d9d69e2b479ea13b0626af5dae82fbf3c4330dcf06a9b6d2f12563de916b445"
+      },
+      "expiry": 1567005866556
+    },
+    "/usr/bin/python2.7.v3": {
+      "data": {
+        "architecture": 3,
+        "path": "/usr/bin/python2.7",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "2.7.10-final",
+          "major": 2,
+          "minor": 7,
+          "patch": 10,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "2.7.10-final"
+        },
+        "sysPrefix": "/System/Library/Frameworks/Python.framework/Versions/2.7",
+        "fileHash": "9e34c13590a69281612904d04a656aa6288e0708fcc6160f289b0aabcbf401fbe7a7411f4dfd92ff31b406e518d5b1c3fc1b4c18ee76f00c67218da33d44cc20"
+      },
+      "expiry": 1567005866597
+    },
+    "/Users/gideon.vanriette/projects/hazpak/.venv/bin/python3.interpreter.Details.v7": {
+      "data": {
+        "fileHash": "0ef51d3a77f0684ff1a1f93c9bec1568e060b7766464ca7bcf66c2d1e3ea329b22d06854028a2896cf1dd6508d8e344a8b393b2ab4aca51f5755e3fe019453a4"
+      },
+      "expiry": 1563283943507
+    },
+    "INTERPRETERS_CACHE_v3_KnownPathsService": [
+      {
+        "architecture": 3,
+        "path": "/usr/local/opt/python/libexec/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/usr/local/Cellar/python/3.7.4/Frameworks/Python.framework/Versions/3.7",
+        "fileHash": "38cb5d9a5aeadbf378009ff9cc6dca3d3df45cb3fbc7b4f42d81d28da57921b4e0944fa3fd660e7c6ce9d9752af21c4b262713dd3a5ca1aed4d35134571a41ec",
+        "type": "Unknown"
+      },
+      {
+        "architecture": 3,
+        "path": "/usr/local/bin/python3",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/usr/local/Cellar/python/3.7.4/Frameworks/Python.framework/Versions/3.7",
+        "fileHash": "448db4cc7ed755b826dd0842d006cf031eb7a34dbda1df4d1a03cb9d506437f620d5c2ed5062288b38b2957c2efd0b430d928ed255cb6336f48fe6af804da6cb",
+        "type": "Unknown"
+      },
+      {
+        "architecture": 3,
+        "path": "/usr/local/bin/python3.7",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/usr/local/Cellar/python/3.7.4/Frameworks/Python.framework/Versions/3.7",
+        "fileHash": "a127db05e4058e5ef21ef6c0010bc0403d17f4cff966f886a216a63b0ca2fac047f3cc9f97272facd75264198017175b6834b30fe1493b48f0ce1e610f61caad",
+        "type": "Unknown"
+      },
+      {
+        "architecture": 3,
+        "path": "/usr/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "2.7.10-final",
+          "major": 2,
+          "minor": 7,
+          "patch": 10,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "2.7.10-final"
+        },
+        "sysPrefix": "/System/Library/Frameworks/Python.framework/Versions/2.7",
+        "fileHash": "80ad9b6114d961499c91f6484273e21b854aa7f3b1343276e2c4325433a6f6765d9d69e2b479ea13b0626af5dae82fbf3c4330dcf06a9b6d2f12563de916b445",
+        "type": "Unknown"
+      },
+      {
+        "architecture": 3,
+        "path": "/usr/bin/python2.7",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "2.7.10-final",
+          "major": 2,
+          "minor": 7,
+          "patch": 10,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "2.7.10-final"
+        },
+        "sysPrefix": "/System/Library/Frameworks/Python.framework/Versions/2.7",
+        "fileHash": "9e34c13590a69281612904d04a656aa6288e0708fcc6160f289b0aabcbf401fbe7a7411f4dfd92ff31b406e518d5b1c3fc1b4c18ee76f00c67218da33d44cc20",
+        "type": "Unknown"
+      },
+      {
+        "architecture": 3,
+        "path": "/usr/local/bin/python3",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/usr/local/Cellar/python/3.7.4/Frameworks/Python.framework/Versions/3.7",
+        "fileHash": "448db4cc7ed755b826dd0842d006cf031eb7a34dbda1df4d1a03cb9d506437f620d5c2ed5062288b38b2957c2efd0b430d928ed255cb6336f48fe6af804da6cb",
+        "type": "Unknown"
+      },
+      {
+        "architecture": 3,
+        "path": "/usr/local/bin/python3.7",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/usr/local/Cellar/python/3.7.4/Frameworks/Python.framework/Versions/3.7",
+        "fileHash": "a127db05e4058e5ef21ef6c0010bc0403d17f4cff966f886a216a63b0ca2fac047f3cc9f97272facd75264198017175b6834b30fe1493b48f0ce1e610f61caad",
+        "type": "Unknown"
+      },
+      {
+        "architecture": 3,
+        "path": "/usr/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "2.7.10-final",
+          "major": 2,
+          "minor": 7,
+          "patch": 10,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "2.7.10-final"
+        },
+        "sysPrefix": "/System/Library/Frameworks/Python.framework/Versions/2.7",
+        "fileHash": "80ad9b6114d961499c91f6484273e21b854aa7f3b1343276e2c4325433a6f6765d9d69e2b479ea13b0626af5dae82fbf3c4330dcf06a9b6d2f12563de916b445",
+        "type": "Unknown"
+      },
+      {
+        "architecture": 3,
+        "path": "/usr/bin/python2.7",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "2.7.10-final",
+          "major": 2,
+          "minor": 7,
+          "patch": 10,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "2.7.10-final"
+        },
+        "sysPrefix": "/System/Library/Frameworks/Python.framework/Versions/2.7",
+        "fileHash": "9e34c13590a69281612904d04a656aa6288e0708fcc6160f289b0aabcbf401fbe7a7411f4dfd92ff31b406e518d5b1c3fc1b4c18ee76f00c67218da33d44cc20",
+        "type": "Unknown"
+      }
+    ],
+    "/Users/gideon.vanriette/projects/hazpak/.venv/bin/python3.interpreter.displayName.v7": {
+      "data": {
+        "displayName": "Python 3.7.4 64-bit ('.venv': virtualenv)",
+        "hash": "0ef51d3a77f0684ff1a1f93c9bec1568e060b7766464ca7bcf66c2d1e3ea329b22d06854028a2896cf1dd6508d8e344a8b393b2ab4aca51f5755e3fe019453a4-eda97022a87fd69e35022554ca956ee5"
+      },
+      "expiry": 1563283943571
+    },
+    "PipEnvInformation": [
+      {
+        "pythonPath": "/Users/gideon.vanriette/vividseats/airflow-dags/.venv/bin/python",
+        "workspaceFolder": "/Users/gideon.vanriette/vividseats/airflow-dags",
+        "envName": "airflow-dags"
+      },
+      {
+        "pythonPath": "/Users/gideon.vanriette/develop/hazpak/.venv/bin/python",
+        "workspaceFolder": "/Users/gideon.vanriette/develop/hazpak",
+        "envName": "hazpak"
+      }
+    ],
+    "/Users/gideon.vanriette/projects/hazpak/.venv/bin/python.interpreter.displayName.v7": {
+      "data": {
+        "displayName": "Python 3.7.4 64-bit ('.venv': virtualenv)",
+        "hash": "6ee179f9a6b282b0fdee2d3df75091323d9493d79ed9e0358c59e715f5bbab9dd46802b0909a6cfcfe2cb8efe683bedc8b5185e5fd4ddc74ffe52045e59bc597-8af06234119a9610cd5ba38f413bcf0a"
+      },
+      "expiry": 1566749253904
+    },
+    "/usr/local/opt/python/libexec/bin/python.interpreter.displayName.v7": {
+      "data": {
+        "displayName": "Python 3.7.4 64-bit",
+        "hash": "38cb5d9a5aeadbf378009ff9cc6dca3d3df45cb3fbc7b4f42d81d28da57921b4e0944fa3fd660e7c6ce9d9752af21c4b262713dd3a5ca1aed4d35134571a41ec-e40c82b726ccc61c88e36cded1aa82c7"
+      },
+      "expiry": 1567005866777
+    },
+    "/usr/local/bin/python3.interpreter.displayName.v7": {
+      "data": {
+        "displayName": "Python 3.7.4 64-bit",
+        "hash": "448db4cc7ed755b826dd0842d006cf031eb7a34dbda1df4d1a03cb9d506437f620d5c2ed5062288b38b2957c2efd0b430d928ed255cb6336f48fe6af804da6cb-d4f2fbec573bcd589a90c7835537691f"
+      },
+      "expiry": 1567005866780
+    },
+    "/usr/bin/python.interpreter.displayName.v7": {
+      "data": {
+        "displayName": "Python 2.7.10 64-bit",
+        "hash": "80ad9b6114d961499c91f6484273e21b854aa7f3b1343276e2c4325433a6f6765d9d69e2b479ea13b0626af5dae82fbf3c4330dcf06a9b6d2f12563de916b445-abfd92a6ece3ad888c88089a1437fd3e"
+      },
+      "expiry": 1567005866783
+    },
+    "InterpreterAutoSeletionRule-system": {
+      "architecture": 3,
+      "path": "/Users/gideon.vanriette/develop/hazpak/.venv/bin/python3.7",
+      "version": {
+        "options": {
+          "loose": false,
+          "includePrerelease": false
+        },
+        "loose": false,
+        "raw": "3.7.4-final",
+        "major": 3,
+        "minor": 7,
+        "patch": 4,
+        "prerelease": [
+          "final"
+        ],
+        "build": [],
+        "version": "3.7.4-final"
+      },
+      "sysPrefix": "/Users/gideon.vanriette/develop/hazpak/.venv/bin/..",
+      "fileHash": "cab041cb0d14128d6d5e45e88cf626f59686b34e73d35127018dff77e8bab5b7d9914844988f9de7a832315f44dabe92a9da5dd34b617531a82561aa25a0779d",
+      "type": "Unknown",
+      "cachedEntry": true,
+      "displayName": "Python 3.7.4 64-bit"
+    },
+    "/Users/gideon.vanriette/projects/hazpak/.venv/bin/python.interpreter.Details.v7": {
+      "data": {
+        "fileHash": "6ee179f9a6b282b0fdee2d3df75091323d9493d79ed9e0358c59e715f5bbab9dd46802b0909a6cfcfe2cb8efe683bedc8b5185e5fd4ddc74ffe52045e59bc597",
+        "info": {
+          "architecture": 3,
+          "path": "/Users/gideon.vanriette/projects/hazpak/.venv/bin/python",
+          "version": {
+            "options": {
+              "loose": false,
+              "includePrerelease": false
+            },
+            "loose": false,
+            "raw": "3.7.4-final",
+            "major": 3,
+            "minor": 7,
+            "patch": 4,
+            "prerelease": [
+              "final"
+            ],
+            "build": [],
+            "version": "3.7.4-final"
+          },
+          "sysPrefix": "/Users/gideon.vanriette/projects/hazpak/.venv/bin/..",
+          "fileHash": "6ee179f9a6b282b0fdee2d3df75091323d9493d79ed9e0358c59e715f5bbab9dd46802b0909a6cfcfe2cb8efe683bedc8b5185e5fd4ddc74ffe52045e59bc597",
+          "type": "PipEnv",
+          "pipEnvWorkspaceFolder": "/Users/gideon.vanriette/projects/hazpak",
+          "cachedEntry": true,
+          "envName": "hazpak",
+          "displayName": "Python 3.7.4 64-bit ('hazpak': pipenv)",
+          "__store": true
+        }
+      },
+      "expiry": 1566749253835
+    },
+    "/usr/local/opt/python/libexec/bin/python.interpreter.Details.v7": {
+      "data": {
+        "fileHash": "38cb5d9a5aeadbf378009ff9cc6dca3d3df45cb3fbc7b4f42d81d28da57921b4e0944fa3fd660e7c6ce9d9752af21c4b262713dd3a5ca1aed4d35134571a41ec",
+        "info": {
+          "architecture": 3,
+          "path": "/usr/local/opt/python/libexec/bin/python",
+          "version": {
+            "options": {
+              "loose": false,
+              "includePrerelease": false
+            },
+            "loose": false,
+            "raw": "3.7.4-final",
+            "major": 3,
+            "minor": 7,
+            "patch": 4,
+            "prerelease": [
+              "final"
+            ],
+            "build": [],
+            "version": "3.7.4-final"
+          },
+          "sysPrefix": "/usr/local/Cellar/python/3.7.4/Frameworks/Python.framework/Versions/3.7",
+          "fileHash": "38cb5d9a5aeadbf378009ff9cc6dca3d3df45cb3fbc7b4f42d81d28da57921b4e0944fa3fd660e7c6ce9d9752af21c4b262713dd3a5ca1aed4d35134571a41ec",
+          "type": "Unknown",
+          "displayName": "Python 3.7.4 64-bit"
+        }
+      },
+      "expiry": 1567005866809
+    },
+    "/usr/local/bin/python3.interpreter.Details.v7": {
+      "data": {
+        "fileHash": "448db4cc7ed755b826dd0842d006cf031eb7a34dbda1df4d1a03cb9d506437f620d5c2ed5062288b38b2957c2efd0b430d928ed255cb6336f48fe6af804da6cb",
+        "info": {
+          "architecture": 3,
+          "path": "/usr/local/bin/python3",
+          "version": {
+            "options": {
+              "loose": false,
+              "includePrerelease": false
+            },
+            "loose": false,
+            "raw": "3.7.4-final",
+            "major": 3,
+            "minor": 7,
+            "patch": 4,
+            "prerelease": [
+              "final"
+            ],
+            "build": [],
+            "version": "3.7.4-final"
+          },
+          "sysPrefix": "/usr/local/Cellar/python/3.7.4/Frameworks/Python.framework/Versions/3.7",
+          "fileHash": "448db4cc7ed755b826dd0842d006cf031eb7a34dbda1df4d1a03cb9d506437f620d5c2ed5062288b38b2957c2efd0b430d928ed255cb6336f48fe6af804da6cb",
+          "type": "Unknown",
+          "displayName": "Python 3.7.4 64-bit"
+        }
+      },
+      "expiry": 1567005866816
+    },
+    "/usr/bin/python.interpreter.Details.v7": {
+      "data": {
+        "fileHash": "80ad9b6114d961499c91f6484273e21b854aa7f3b1343276e2c4325433a6f6765d9d69e2b479ea13b0626af5dae82fbf3c4330dcf06a9b6d2f12563de916b445",
+        "info": {
+          "architecture": 3,
+          "path": "/usr/bin/python",
+          "version": {
+            "options": {
+              "loose": false,
+              "includePrerelease": false
+            },
+            "loose": false,
+            "raw": "2.7.10-final",
+            "major": 2,
+            "minor": 7,
+            "patch": 10,
+            "prerelease": [
+              "final"
+            ],
+            "build": [],
+            "version": "2.7.10-final"
+          },
+          "sysPrefix": "/System/Library/Frameworks/Python.framework/Versions/2.7",
+          "fileHash": "80ad9b6114d961499c91f6484273e21b854aa7f3b1343276e2c4325433a6f6765d9d69e2b479ea13b0626af5dae82fbf3c4330dcf06a9b6d2f12563de916b445",
+          "type": "Unknown",
+          "displayName": "Python 2.7.10 64-bit"
+        }
+      },
+      "expiry": 1567005866822
+    },
+    "InterpreterAutoSeletionRule-cachedInterpreters": {
+      "architecture": 3,
+      "path": "/usr/local/bin/python3",
+      "version": {
+        "options": {
+          "loose": false,
+          "includePrerelease": false
+        },
+        "loose": false,
+        "raw": "3.7.4-final",
+        "major": 3,
+        "minor": 7,
+        "patch": 4,
+        "prerelease": [
+          "final"
+        ],
+        "build": [],
+        "version": "3.7.4-final"
+      },
+      "sysPrefix": "/usr/local/Cellar/python/3.7.4/Frameworks/Python.framework/Versions/3.7",
+      "fileHash": "448db4cc7ed755b826dd0842d006cf031eb7a34dbda1df4d1a03cb9d506437f620d5c2ed5062288b38b2957c2efd0b430d928ed255cb6336f48fe6af804da6cb",
+      "type": "Unknown",
+      "displayName": "Python 3.7.4 64-bit"
+    },
+    "ProposeLSBanner": false,
+    "/usr/local/opt/python/bin/python3.7.v3": {
+      "data": {
+        "architecture": 3,
+        "path": "/usr/local/opt/python/bin/python3.7",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/usr/local/Cellar/python/3.7.4/Frameworks/Python.framework/Versions/3.7",
+        "fileHash": "b5a038d0b55b5c345ababeeb34b3a43c0d66a8b20fab2ce18d81b42136f8c78a263f5a06e5582424e2f35950dc029afe11eddb009a8429d5920dcf33c7cf9736"
+      },
+      "expiry": 1567085184574
+    },
+    "/usr/local/opt/python/bin/python3.7.interpreter.displayName.v7": {
+      "data": {
+        "displayName": "Python 3.7.4 64-bit",
+        "hash": "b5a038d0b55b5c345ababeeb34b3a43c0d66a8b20fab2ce18d81b42136f8c78a263f5a06e5582424e2f35950dc029afe11eddb009a8429d5920dcf33c7cf9736-172782a05db8f403e4d06d2231c699df"
+      },
+      "expiry": 1566482389075
+    },
+    "/usr/local/opt/python/bin/python3.7.interpreter.Details.v7": {
+      "data": {
+        "fileHash": "b5a038d0b55b5c345ababeeb34b3a43c0d66a8b20fab2ce18d81b42136f8c78a263f5a06e5582424e2f35950dc029afe11eddb009a8429d5920dcf33c7cf9736"
+      },
+      "expiry": 1567085184547
+    },
+    "preferredGlobalPyInterpreter": {
+      "architecture": 3,
+      "path": "/usr/local/opt/python/bin/python3.7",
+      "version": {
+        "options": {
+          "loose": false,
+          "includePrerelease": false
+        },
+        "loose": false,
+        "raw": "3.7.4-final",
+        "major": 3,
+        "minor": 7,
+        "patch": 4,
+        "prerelease": [
+          "final"
+        ],
+        "build": [],
+        "version": "3.7.4-final"
+      },
+      "sysPrefix": "/usr/local/Cellar/python/3.7.4/Frameworks/Python.framework/Versions/3.7",
+      "fileHash": "b5a038d0b55b5c345ababeeb34b3a43c0d66a8b20fab2ce18d81b42136f8c78a263f5a06e5582424e2f35950dc029afe11eddb009a8429d5920dcf33c7cf9736",
+      "type": "Unknown",
+      "displayName": "Python 3.7.4 64-bit"
+    },
+    "pylint_DisableLinterInstallPrompt": true,
+    "/Users/gideon.vanriette/vividseats/airflow-dags/.venv/bin/python.v3": {
+      "data": {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/vividseats/airflow-dags/.venv/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/vividseats/airflow-dags/.venv/bin/..",
+        "fileHash": "f530db2d155d58b074d632aa3aa2ba6b2c8a259f31d3efc79b0a179045a52e4490dd9d738c8c00e259a8e6e5f00abd8187dd493fa52d8ce8febbbd63fa1f7276"
+      },
+      "expiry": 1564173145839
+    },
+    "/Users/gideon.vanriette/vividseats/airflow-dags/.venv/bin/python3.v3": {
+      "data": {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/vividseats/airflow-dags/.venv/bin/python3",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/vividseats/airflow-dags/.venv/bin/..",
+        "fileHash": "a4d688a5203165d02ce0d6197f7eab508330aed9e66dbcc2ef04254f00f8cdd08a5c87dadf73bc150a50ab8d248b14b330b352d85f0ded0c2215f2d01dba788c"
+      },
+      "expiry": 1564173145837
+    },
+    "/Users/gideon.vanriette/vividseats/airflow-dags/.venv/bin/python3.7.v3": {
+      "data": {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/vividseats/airflow-dags/.venv/bin/python3.7",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/vividseats/airflow-dags/.venv/bin/..",
+        "fileHash": "e2d33ed6adfccf46dcdb779310bb300b7a47766fc5905ae566ea803a562b0d2de40a402f67c79b1807d7a03a05cfc6d726ebe1956870f0dbec9703d38057b2ea"
+      },
+      "expiry": 1564173145822
+    },
+    "/Users/gideon.vanriette/vividseats/airflow-dags/.venv/bin/python3.7.interpreter.Details.v7": {
+      "data": {
+        "fileHash": "e2d33ed6adfccf46dcdb779310bb300b7a47766fc5905ae566ea803a562b0d2de40a402f67c79b1807d7a03a05cfc6d726ebe1956870f0dbec9703d38057b2ea"
+      },
+      "expiry": 1564173145977
+    },
+    "/Users/gideon.vanriette/vividseats/airflow-dags/.venv/bin/python3.7.interpreter.displayName.v7": {
+      "data": {
+        "displayName": "Python 3.7.4 64-bit ('.venv': virtualenv)",
+        "hash": "e2d33ed6adfccf46dcdb779310bb300b7a47766fc5905ae566ea803a562b0d2de40a402f67c79b1807d7a03a05cfc6d726ebe1956870f0dbec9703d38057b2ea-2442b17744a6ab14e17d96ec8ac1dba3"
+      },
+      "expiry": 1564173146151
+    },
+    "/Users/gideon.vanriette/vividseats/airflow-dags/.venv/bin/python.interpreter.displayName.v7": {
+      "data": {
+        "displayName": "Python 3.7.4 64-bit ('airflow-dags': pipenv)",
+        "hash": "f530db2d155d58b074d632aa3aa2ba6b2c8a259f31d3efc79b0a179045a52e4490dd9d738c8c00e259a8e6e5f00abd8187dd493fa52d8ce8febbbd63fa1f7276-7187e3ea0006aed4acd7f8f56fb7af8b"
+      },
+      "expiry": 1564173147010
+    },
+    "/Users/gideon.vanriette/vividseats/airflow-dags/.venv/bin/python.interpreter.Details.v7": {
+      "data": {
+        "fileHash": "f530db2d155d58b074d632aa3aa2ba6b2c8a259f31d3efc79b0a179045a52e4490dd9d738c8c00e259a8e6e5f00abd8187dd493fa52d8ce8febbbd63fa1f7276",
+        "info": {
+          "architecture": 3,
+          "path": "/Users/gideon.vanriette/vividseats/airflow-dags/.venv/bin/python",
+          "version": {
+            "options": {
+              "loose": false,
+              "includePrerelease": false
+            },
+            "loose": false,
+            "raw": "3.7.4-final",
+            "major": 3,
+            "minor": 7,
+            "patch": 4,
+            "prerelease": [
+              "final"
+            ],
+            "build": [],
+            "version": "3.7.4-final"
+          },
+          "sysPrefix": "/Users/gideon.vanriette/vividseats/airflow-dags/.venv/bin/..",
+          "fileHash": "f530db2d155d58b074d632aa3aa2ba6b2c8a259f31d3efc79b0a179045a52e4490dd9d738c8c00e259a8e6e5f00abd8187dd493fa52d8ce8febbbd63fa1f7276",
+          "type": "PipEnv",
+          "pipEnvWorkspaceFolder": "/Users/gideon.vanriette/vividseats/airflow-dags",
+          "envName": "airflow-dags",
+          "displayName": "Python 3.7.4 64-bit ('airflow-dags': pipenv)"
+        }
+      },
+      "expiry": 1564173147022
+    },
+    "/Users/gideon.vanriette/projects/bazaar/.venv/bin/python.v3": {
+      "data": {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/projects/bazaar/.venv/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/projects/bazaar/.venv/bin/..",
+        "fileHash": "652f79beece082bf33ca5c3ac624ef9e7e301c55733354f1a072ae029ebbb488fbc29238a42fa3a54a7dcc1d2b5cb504ebac6700f8e8e9e032637e0f49a5215b"
+      },
+      "expiry": 1564167912257
+    },
+    "/Users/gideon.vanriette/projects/bazaar/.venv/bin/python3.v3": {
+      "data": {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/projects/bazaar/.venv/bin/python3",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/projects/bazaar/.venv/bin/..",
+        "fileHash": "79ab92b0a32e5ed4b9d84e714af924dab2b8ef4a48d19167fba7b8e5011d0203a791a6cec5f07d54306336e12a4da466daef298a5e5f926900b6aba770551a05"
+      },
+      "expiry": 1564167912263
+    },
+    "/Users/gideon.vanriette/projects/bazaar/.venv/bin/python3.7.v3": {
+      "data": {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/projects/bazaar/.venv/bin/python3.7",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/projects/bazaar/.venv/bin/..",
+        "fileHash": "c9bcce31253359008ab51aacd9eb68ba0caca8d9d09fdcd3b7d5d25e1dd3438b4154e05b7f019c68e307b332a829ba590a7311aed573e93002f5af8f811752dc"
+      },
+      "expiry": 1564167912370
+    },
+    "/Users/gideon.vanriette/projects/bazaar/.venv/bin/python3.7.interpreter.Details.v7": {
+      "data": {
+        "fileHash": "c9bcce31253359008ab51aacd9eb68ba0caca8d9d09fdcd3b7d5d25e1dd3438b4154e05b7f019c68e307b332a829ba590a7311aed573e93002f5af8f811752dc"
+      },
+      "expiry": 1564167912351
+    },
+    "/Users/gideon.vanriette/projects/bazaar/.venv/bin/python3.7.interpreter.displayName.v7": {
+      "data": {
+        "displayName": "Python 3.7.4 64-bit ('.venv': virtualenv)",
+        "hash": "c9bcce31253359008ab51aacd9eb68ba0caca8d9d09fdcd3b7d5d25e1dd3438b4154e05b7f019c68e307b332a829ba590a7311aed573e93002f5af8f811752dc-c3885b83299c3d7e32d7155de8c18264"
+      },
+      "expiry": 1564167912403
+    },
+    "/Users/gideon.vanriette/projects/bazaar/.venv/bin/python.interpreter.displayName.v7": {
+      "data": {
+        "displayName": "Python 3.7.4 64-bit ('bazaar': pipenv)",
+        "hash": "652f79beece082bf33ca5c3ac624ef9e7e301c55733354f1a072ae029ebbb488fbc29238a42fa3a54a7dcc1d2b5cb504ebac6700f8e8e9e032637e0f49a5215b-1f74270063c58088ef20162b3110c836"
+      },
+      "expiry": 1564167913378
+    },
+    "/Users/gideon.vanriette/projects/bazaar/.venv/bin/python.interpreter.Details.v7": {
+      "data": {
+        "fileHash": "652f79beece082bf33ca5c3ac624ef9e7e301c55733354f1a072ae029ebbb488fbc29238a42fa3a54a7dcc1d2b5cb504ebac6700f8e8e9e032637e0f49a5215b",
+        "info": {
+          "architecture": 3,
+          "path": "/Users/gideon.vanriette/projects/bazaar/.venv/bin/python",
+          "version": {
+            "options": {
+              "loose": false,
+              "includePrerelease": false
+            },
+            "loose": false,
+            "raw": "3.7.4-final",
+            "major": 3,
+            "minor": 7,
+            "patch": 4,
+            "prerelease": [
+              "final"
+            ],
+            "build": [],
+            "version": "3.7.4-final"
+          },
+          "sysPrefix": "/Users/gideon.vanriette/projects/bazaar/.venv/bin/..",
+          "fileHash": "652f79beece082bf33ca5c3ac624ef9e7e301c55733354f1a072ae029ebbb488fbc29238a42fa3a54a7dcc1d2b5cb504ebac6700f8e8e9e032637e0f49a5215b",
+          "type": "PipEnv",
+          "pipEnvWorkspaceFolder": "/Users/gideon.vanriette/projects/bazaar",
+          "envName": "bazaar",
+          "displayName": "Python 3.7.4 64-bit ('bazaar': pipenv)"
+        }
+      },
+      "expiry": 1564167913447
+    },
+    "/Users/gideon.vanriette/projects/restful_people/.venv/bin/python3.7.v3": {
+      "data": {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/projects/restful_people/.venv/bin/python3.7",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/projects/restful_people/.venv/bin/..",
+        "fileHash": "b154c8931134a02870a55b3c9ec24cf11907b7ddac0392d1d6de7dac25631ab81b423b941ad535b645b4bbbd66e8676ea6631903c3cd0eab7aaab22754c678d6"
+      },
+      "expiry": 1566755912180
+    },
+    "/Users/gideon.vanriette/projects/restful_people/.venv/bin/python.v3": {
+      "data": {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/projects/restful_people/.venv/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/projects/restful_people/.venv/bin/..",
+        "fileHash": "e54a6d9fa2e27736686e0db0ec4467b58da7d0d6a96415665ce507eee81d95998b5dcdaeff4a45fab097dcad45600c547401109220b0ca762679056143cfdcf5"
+      },
+      "expiry": 1566755912118
+    },
+    "/Users/gideon.vanriette/projects/restful_people/.venv/bin/python3.v3": {
+      "data": {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/projects/restful_people/.venv/bin/python3",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/projects/restful_people/.venv/bin/..",
+        "fileHash": "3cfdb7373d01321a22cabccbe91a5bcc305f66a18ba6e83ddaaa815591193673253053a3712f638e2c22ca323fdc3504c99f050fc00c9d0b4e136d179883bb68"
+      },
+      "expiry": 1566755912117
+    },
+    "/Users/gideon.vanriette/projects/restful_people/.venv/bin/python.interpreter.displayName.v7": {
+      "data": {
+        "displayName": "Python 3.7.4 64-bit ('restful_people': pipenv)",
+        "hash": "e54a6d9fa2e27736686e0db0ec4467b58da7d0d6a96415665ce507eee81d95998b5dcdaeff4a45fab097dcad45600c547401109220b0ca762679056143cfdcf5-d5d3db0859ec730a412271fca10aef8d"
+      },
+      "expiry": 1566755913269
+    },
+    "/Users/gideon.vanriette/projects/restful_people/.venv/bin/python3.interpreter.Details.v7": {
+      "data": {
+        "fileHash": "3cfdb7373d01321a22cabccbe91a5bcc305f66a18ba6e83ddaaa815591193673253053a3712f638e2c22ca323fdc3504c99f050fc00c9d0b4e136d179883bb68"
+      },
+      "expiry": 1566755912227
+    },
+    "/Users/gideon.vanriette/projects/restful_people/.venv/bin/python.interpreter.Details.v7": {
+      "data": {
+        "fileHash": "e54a6d9fa2e27736686e0db0ec4467b58da7d0d6a96415665ce507eee81d95998b5dcdaeff4a45fab097dcad45600c547401109220b0ca762679056143cfdcf5",
+        "info": {
+          "architecture": 3,
+          "path": "/Users/gideon.vanriette/projects/restful_people/.venv/bin/python",
+          "version": {
+            "options": {
+              "loose": false,
+              "includePrerelease": false
+            },
+            "loose": false,
+            "raw": "3.7.4-final",
+            "major": 3,
+            "minor": 7,
+            "patch": 4,
+            "prerelease": [
+              "final"
+            ],
+            "build": [],
+            "version": "3.7.4-final"
+          },
+          "sysPrefix": "/Users/gideon.vanriette/projects/restful_people/.venv/bin/..",
+          "fileHash": "e54a6d9fa2e27736686e0db0ec4467b58da7d0d6a96415665ce507eee81d95998b5dcdaeff4a45fab097dcad45600c547401109220b0ca762679056143cfdcf5",
+          "type": "PipEnv",
+          "pipEnvWorkspaceFolder": "/Users/gideon.vanriette/projects/restful_people",
+          "envName": "restful_people",
+          "displayName": "Python 3.7.4 64-bit ('restful_people': pipenv)"
+        }
+      },
+      "expiry": 1566755913332
+    },
+    "/Users/gideon.vanriette/projects/restful_people/.venv/bin/python3.interpreter.displayName.v7": {
+      "data": {
+        "displayName": "Python 3.7.4 64-bit ('.venv': virtualenv)",
+        "hash": "3cfdb7373d01321a22cabccbe91a5bcc305f66a18ba6e83ddaaa815591193673253053a3712f638e2c22ca323fdc3504c99f050fc00c9d0b4e136d179883bb68-1e68a3bc33a4a3637d47553c9d839b29"
+      },
+      "expiry": 1566755912299
+    },
+    "/Users/gideon.vanriette/projects/test/.venv/bin/python.v3": {
+      "data": {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/projects/test/.venv/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/projects/test/.venv/bin/..",
+        "fileHash": "f0e8848bdfea460f7f472276c5a1138a4ff5ba71ed703f78fa1e8866438707a5a4a6026dcaf75d2401cd86e163918dc3ee84fdda2fd5891728a9e30bed35d1fe"
+      },
+      "expiry": 1565230883495
+    },
+    "/Users/gideon.vanriette/projects/test/.venv/bin/python3.7.v3": {
+      "data": {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/projects/test/.venv/bin/python3.7",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/projects/test/.venv/bin/..",
+        "fileHash": "90c41744aca4f41b785deb1ea15d13cb40ee6fa7b75f0613c0cfd51b8c24df46034b42c668716b70c2fd5f93a7652aa1c2b1fc39ee4908aacf6e8ca159508684"
+      },
+      "expiry": 1565230883631
+    },
+    "/Users/gideon.vanriette/projects/test/.venv/bin/python3.v3": {
+      "data": {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/projects/test/.venv/bin/python3",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/projects/test/.venv/bin/..",
+        "fileHash": "0d57b40b681bffa76c2a223cba9827643c4de6c1fca27dc7caf97ffd53640493479bffa78dc622f9e40b7b5986116b2f387df47d5f4312c48d0ea819222ce5d7"
+      },
+      "expiry": 1565230883629
+    },
+    "/Users/gideon.vanriette/projects/test/.venv/bin/python.interpreter.displayName.v7": {
+      "data": {
+        "displayName": "Python 3.7.4 64-bit",
+        "hash": "f0e8848bdfea460f7f472276c5a1138a4ff5ba71ed703f78fa1e8866438707a5a4a6026dcaf75d2401cd86e163918dc3ee84fdda2fd5891728a9e30bed35d1fe-35430e5ee7a22ab9bd3ec6a334264e1a"
+      },
+      "expiry": 1565230883605
+    },
+    "/Users/gideon.vanriette/projects/test/.venv/bin/python.interpreter.Details.v7": {
+      "data": {
+        "fileHash": "f0e8848bdfea460f7f472276c5a1138a4ff5ba71ed703f78fa1e8866438707a5a4a6026dcaf75d2401cd86e163918dc3ee84fdda2fd5891728a9e30bed35d1fe",
+        "info": {
+          "architecture": 3,
+          "path": "/Users/gideon.vanriette/projects/test/.venv/bin/python",
+          "version": {
+            "options": {
+              "loose": false,
+              "includePrerelease": false
+            },
+            "loose": false,
+            "raw": "3.7.4-final",
+            "major": 3,
+            "minor": 7,
+            "patch": 4,
+            "prerelease": [
+              "final"
+            ],
+            "build": [],
+            "version": "3.7.4-final"
+          },
+          "sysPrefix": "/Users/gideon.vanriette/projects/test/.venv/bin/..",
+          "fileHash": "f0e8848bdfea460f7f472276c5a1138a4ff5ba71ed703f78fa1e8866438707a5a4a6026dcaf75d2401cd86e163918dc3ee84fdda2fd5891728a9e30bed35d1fe",
+          "type": "Unknown",
+          "displayName": "Python 3.7.4 64-bit"
+        }
+      },
+      "expiry": 1565230883640
+    },
+    "/Users/gideon.vanriette/projects/sfp-serverless/.venv/bin/python3.7.v3": {
+      "data": {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/projects/sfp-serverless/.venv/bin/python3.7",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/projects/sfp-serverless/.venv/bin/..",
+        "fileHash": "5be6307c07d83a71a43da9a5e832a98ecf0fb9a3050c19d2e35ab9e890041e391573d2df5bbe782f77651e378330eb04eb7adc20b24290c53a79f3a147548bb1"
+      },
+      "expiry": 1565903560936
+    },
+    "/Users/gideon.vanriette/projects/sfp-serverless/.venv/bin/python3.v3": {
+      "data": {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/projects/sfp-serverless/.venv/bin/python3",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/projects/sfp-serverless/.venv/bin/..",
+        "fileHash": "adf3063d3eb32030109544edc686aaf4e24879904108664eaac615acc0205b010cc146194a275a99d9866cb24a4157ef13030d5d2f84590cff75104226019f7f"
+      },
+      "expiry": 1565903560949
+    },
+    "/Users/gideon.vanriette/projects/sfp-serverless/.venv/bin/python.v3": {
+      "data": {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/projects/sfp-serverless/.venv/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/projects/sfp-serverless/.venv/bin/..",
+        "fileHash": "ccce0723aae64259bb0079e9b248521f058f1b34dfb36e5ec9b5c33e2dfff9e7a4ef9c77efca3dc407703ceb3876af1f0d8f817e9aa0eabf83ccef7862b67db6"
+      },
+      "expiry": 1565903560951
+    },
+    "/Users/gideon.vanriette/projects/sfp-serverless/.venv/bin/python3.interpreter.Details.v7": {
+      "data": {
+        "fileHash": "adf3063d3eb32030109544edc686aaf4e24879904108664eaac615acc0205b010cc146194a275a99d9866cb24a4157ef13030d5d2f84590cff75104226019f7f"
+      },
+      "expiry": 1565903561085
+    },
+    "/Users/gideon.vanriette/projects/sfp-serverless/.venv/bin/python3.interpreter.displayName.v7": {
+      "data": {
+        "displayName": "Python 3.7.4 64-bit ('.venv': virtualenv)",
+        "hash": "adf3063d3eb32030109544edc686aaf4e24879904108664eaac615acc0205b010cc146194a275a99d9866cb24a4157ef13030d5d2f84590cff75104226019f7f-8ebcdcf73d1d39a22d1287c05839ba55"
+      },
+      "expiry": 1565903561183
+    },
+    "/Users/gideon.vanriette/projects/sfp-serverless/.venv/bin/python.interpreter.displayName.v7": {
+      "data": {
+        "displayName": "Python 3.7.4 64-bit ('sfp-serverless': pipenv)",
+        "hash": "ccce0723aae64259bb0079e9b248521f058f1b34dfb36e5ec9b5c33e2dfff9e7a4ef9c77efca3dc407703ceb3876af1f0d8f817e9aa0eabf83ccef7862b67db6-6c7436e8d5698ad15f164c0e5858bb0a"
+      },
+      "expiry": 1565903574195
+    },
+    "/Users/gideon.vanriette/projects/sfp-serverless/.venv/bin/python.interpreter.Details.v7": {
+      "data": {
+        "fileHash": "ccce0723aae64259bb0079e9b248521f058f1b34dfb36e5ec9b5c33e2dfff9e7a4ef9c77efca3dc407703ceb3876af1f0d8f817e9aa0eabf83ccef7862b67db6",
+        "info": {
+          "architecture": 3,
+          "path": "/Users/gideon.vanriette/projects/sfp-serverless/.venv/bin/python",
+          "version": {
+            "options": {
+              "loose": false,
+              "includePrerelease": false
+            },
+            "loose": false,
+            "raw": "3.7.4-final",
+            "major": 3,
+            "minor": 7,
+            "patch": 4,
+            "prerelease": [
+              "final"
+            ],
+            "build": [],
+            "version": "3.7.4-final"
+          },
+          "sysPrefix": "/Users/gideon.vanriette/projects/sfp-serverless/.venv/bin/..",
+          "fileHash": "ccce0723aae64259bb0079e9b248521f058f1b34dfb36e5ec9b5c33e2dfff9e7a4ef9c77efca3dc407703ceb3876af1f0d8f817e9aa0eabf83ccef7862b67db6",
+          "type": "PipEnv",
+          "pipEnvWorkspaceFolder": "/Users/gideon.vanriette/projects/sfp-serverless",
+          "envName": "sfp-serverless",
+          "displayName": "Python 3.7.4 64-bit ('sfp-serverless': pipenv)"
+        }
+      },
+      "expiry": 1565903574201
+    },
+    "/Users/gideon.vanriette/develop/hazpak/.venv/bin/python3.7.v3": {
+      "data": {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/develop/hazpak/.venv/bin/python3.7",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/develop/hazpak/.venv/bin/..",
+        "fileHash": "cab041cb0d14128d6d5e45e88cf626f59686b34e73d35127018dff77e8bab5b7d9914844988f9de7a832315f44dabe92a9da5dd34b617531a82561aa25a0779d"
+      },
+      "expiry": 1567005866603
+    },
+    "/Users/gideon.vanriette/develop/hazpak/.venv/bin/python3.v3": {
+      "data": {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/develop/hazpak/.venv/bin/python3",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/develop/hazpak/.venv/bin/..",
+        "fileHash": "5b9f187a7baacff75f1703b266d09e5357cc0ac2e8e72929c9ad66d6d4a219f3de66bb729c1c86b01c11f5b6be0f7b93b586b547917a0e78efb53992000dcf7e"
+      },
+      "expiry": 1567005866613
+    },
+    "/Users/gideon.vanriette/develop/hazpak/.venv/bin/python.v3": {
+      "data": {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/develop/hazpak/.venv/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/develop/hazpak/.venv/bin/..",
+        "fileHash": "6ee179f9a6b282b0fdee2d3df75091323d9493d79ed9e0358c59e715f5bbab9dd46802b0909a6cfcfe2cb8efe683bedc8b5185e5fd4ddc74ffe52045e59bc597"
+      },
+      "expiry": 1567005866615
+    },
+    "InterpreterAutoSeletionRule-environment": {
+      "architecture": 3,
+      "path": "/Users/gideon.vanriette/develop/hazpak/.venv/bin/python3",
+      "version": {
+        "options": {
+          "loose": false,
+          "includePrerelease": false
+        },
+        "loose": false,
+        "raw": "3.7.4-final",
+        "major": 3,
+        "minor": 7,
+        "patch": 4,
+        "prerelease": [
+          "final"
+        ],
+        "build": [],
+        "version": "3.7.4-final"
+      },
+      "sysPrefix": "/Users/gideon.vanriette/develop/hazpak/.venv/bin/..",
+      "fileHash": "5b9f187a7baacff75f1703b266d09e5357cc0ac2e8e72929c9ad66d6d4a219f3de66bb729c1c86b01c11f5b6be0f7b93b586b547917a0e78efb53992000dcf7e",
+      "type": "VirtualEnv"
+    },
+    "InterpreterAutoSeletionRule-currentPath": {
+      "architecture": 3,
+      "path": "/Users/gideon.vanriette/develop/hazpak/.venv/bin/python",
+      "version": {
+        "options": {
+          "loose": false,
+          "includePrerelease": false
+        },
+        "loose": false,
+        "raw": "3.7.4-final",
+        "major": 3,
+        "minor": 7,
+        "patch": 4,
+        "prerelease": [
+          "final"
+        ],
+        "build": [],
+        "version": "3.7.4-final"
+      },
+      "sysPrefix": "/Users/gideon.vanriette/develop/hazpak/.venv/bin/..",
+      "fileHash": "6ee179f9a6b282b0fdee2d3df75091323d9493d79ed9e0358c59e715f5bbab9dd46802b0909a6cfcfe2cb8efe683bedc8b5185e5fd4ddc74ffe52045e59bc597",
+      "type": "Unknown",
+      "cachedEntry": true
+    },
+    "/Users/gideon.vanriette/develop/hazpak/.venv/bin/python3.interpreter.Details.v7": {
+      "data": {
+        "fileHash": "5b9f187a7baacff75f1703b266d09e5357cc0ac2e8e72929c9ad66d6d4a219f3de66bb729c1c86b01c11f5b6be0f7b93b586b547917a0e78efb53992000dcf7e"
+      },
+      "expiry": 1567005866709
+    },
+    "/Users/gideon.vanriette/develop/hazpak/.venv/bin/python.interpreter.displayName.v7": {
+      "data": {
+        "displayName": "Python 3.7.4 64-bit ('hazpak': pipenv)",
+        "hash": "6ee179f9a6b282b0fdee2d3df75091323d9493d79ed9e0358c59e715f5bbab9dd46802b0909a6cfcfe2cb8efe683bedc8b5185e5fd4ddc74ffe52045e59bc597-370a1edb0d0f6a39859a47974deb9ad7"
+      },
+      "expiry": 1567005866763
+    },
+    "/Users/gideon.vanriette/develop/hazpak/.venv/bin/python3.interpreter.displayName.v7": {
+      "data": {
+        "displayName": "Python 3.7.4 64-bit ('.venv': virtualenv)",
+        "hash": "5b9f187a7baacff75f1703b266d09e5357cc0ac2e8e72929c9ad66d6d4a219f3de66bb729c1c86b01c11f5b6be0f7b93b586b547917a0e78efb53992000dcf7e-0efd03102b8df18103e1c7e31ff9d27f"
+      },
+      "expiry": 1567005866789
+    },
+    "/Users/gideon.vanriette/develop/hazpak/.venv/bin/python.interpreter.Details.v7": {
+      "data": {
+        "fileHash": "6ee179f9a6b282b0fdee2d3df75091323d9493d79ed9e0358c59e715f5bbab9dd46802b0909a6cfcfe2cb8efe683bedc8b5185e5fd4ddc74ffe52045e59bc597",
+        "info": {
+          "architecture": 3,
+          "path": "/Users/gideon.vanriette/develop/hazpak/.venv/bin/python",
+          "version": {
+            "options": {
+              "loose": false,
+              "includePrerelease": false
+            },
+            "loose": false,
+            "raw": "3.7.4-final",
+            "major": 3,
+            "minor": 7,
+            "patch": 4,
+            "prerelease": [
+              "final"
+            ],
+            "build": [],
+            "version": "3.7.4-final"
+          },
+          "sysPrefix": "/Users/gideon.vanriette/develop/hazpak/.venv/bin/..",
+          "fileHash": "6ee179f9a6b282b0fdee2d3df75091323d9493d79ed9e0358c59e715f5bbab9dd46802b0909a6cfcfe2cb8efe683bedc8b5185e5fd4ddc74ffe52045e59bc597",
+          "type": "PipEnv",
+          "pipEnvWorkspaceFolder": "/Users/gideon.vanriette/develop/hazpak",
+          "envName": "hazpak",
+          "displayName": "Python 3.7.4 64-bit ('hazpak': pipenv)"
+        }
+      },
+      "expiry": 1567005866800
+    }
+  },
+  "coc-python|/Users/gideon.vanriette/projects/hazpak": {
+    "SelectedPythonPath": "/Users/gideon.vanriette/projects/hazpak/.venv/bin/python",
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:29344545501f957db08184d7124b4f20": [
+      {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/projects/hazpak/.venv/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/projects/hazpak/.venv/bin/..",
+        "fileHash": "6ee179f9a6b282b0fdee2d3df75091323d9493d79ed9e0358c59e715f5bbab9dd46802b0909a6cfcfe2cb8efe683bedc8b5185e5fd4ddc74ffe52045e59bc597",
+        "envName": ".venv",
+        "type": "VirtualEnv"
+      },
+      {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/projects/hazpak/.venv/bin/python3",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/projects/hazpak/.venv/bin/..",
+        "fileHash": "5b9f187a7baacff75f1703b266d09e5357cc0ac2e8e72929c9ad66d6d4a219f3de66bb729c1c86b01c11f5b6be0f7b93b586b547917a0e78efb53992000dcf7e",
+        "envName": ".venv",
+        "type": "VirtualEnv"
+      },
+      {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/projects/hazpak/.venv/bin/python3.7",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/projects/hazpak/.venv/bin/..",
+        "fileHash": "cab041cb0d14128d6d5e45e88cf626f59686b34e73d35127018dff77e8bab5b7d9914844988f9de7a832315f44dabe92a9da5dd34b617531a82561aa25a0779d",
+        "envName": ".venv",
+        "type": "VirtualEnv"
+      }
+    ],
+    "INTERPRETERS_CACHE_v3_PipEnvService:29344545501f957db08184d7124b4f20": [
+      {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/projects/hazpak/.venv/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/projects/hazpak/.venv/bin/..",
+        "fileHash": "6ee179f9a6b282b0fdee2d3df75091323d9493d79ed9e0358c59e715f5bbab9dd46802b0909a6cfcfe2cb8efe683bedc8b5185e5fd4ddc74ffe52045e59bc597",
+        "type": "PipEnv",
+        "pipEnvWorkspaceFolder": "/Users/gideon.vanriette/projects/hazpak"
+      }
+    ],
+    "autoSelectedWorkspacePythonInterpreter-/Users/gideon.vanriette/projects/hazpak": {
+      "architecture": 3,
+      "path": "/Users/gideon.vanriette/projects/hazpak/.venv/bin/python3",
+      "version": {
+        "options": {
+          "loose": false,
+          "includePrerelease": false
+        },
+        "loose": false,
+        "raw": "3.7.4-final",
+        "major": 3,
+        "minor": 7,
+        "patch": 4,
+        "prerelease": [
+          "final"
+        ],
+        "build": [],
+        "version": "3.7.4-final"
+      },
+      "sysPrefix": "/Users/gideon.vanriette/projects/hazpak/.venv/bin/..",
+      "fileHash": "5b9f187a7baacff75f1703b266d09e5357cc0ac2e8e72929c9ad66d6d4a219f3de66bb729c1c86b01c11f5b6be0f7b93b586b547917a0e78efb53992000dcf7e",
+      "type": "VirtualEnv"
+    },
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": [
+      {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/projects/hazpak/.venv/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/projects/hazpak/.venv/bin/..",
+        "fileHash": "6ee179f9a6b282b0fdee2d3df75091323d9493d79ed9e0358c59e715f5bbab9dd46802b0909a6cfcfe2cb8efe683bedc8b5185e5fd4ddc74ffe52045e59bc597",
+        "envName": ".venv",
+        "type": "VirtualEnv"
+      },
+      {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/projects/hazpak/.venv/bin/python3",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/projects/hazpak/.venv/bin/..",
+        "fileHash": "5b9f187a7baacff75f1703b266d09e5357cc0ac2e8e72929c9ad66d6d4a219f3de66bb729c1c86b01c11f5b6be0f7b93b586b547917a0e78efb53992000dcf7e",
+        "envName": ".venv",
+        "type": "VirtualEnv"
+      },
+      {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/projects/hazpak/.venv/bin/python3.7",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/projects/hazpak/.venv/bin/..",
+        "fileHash": "cab041cb0d14128d6d5e45e88cf626f59686b34e73d35127018dff77e8bab5b7d9914844988f9de7a832315f44dabe92a9da5dd34b617531a82561aa25a0779d",
+        "envName": ".venv",
+        "type": "VirtualEnv"
+      }
+    ],
+    "INTERPRETERS_CACHE_v3_PipEnvService": [
+      {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/projects/hazpak/.venv/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/projects/hazpak/.venv/bin/..",
+        "fileHash": "6ee179f9a6b282b0fdee2d3df75091323d9493d79ed9e0358c59e715f5bbab9dd46802b0909a6cfcfe2cb8efe683bedc8b5185e5fd4ddc74ffe52045e59bc597",
+        "type": "PipEnv",
+        "pipEnvWorkspaceFolder": "/Users/gideon.vanriette/projects/hazpak"
+      }
+    ]
+  },
+  "coc-python|/Users/gideon.vanriette/projects/exercism/python/two-fer": {
+    "INTERPRETERS_CACHE_v3_PipEnvService:528ee9e19948b7d87352c57f3a467246": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:528ee9e19948b7d87352c57f3a467246": [],
+    "autoSelectedWorkspacePythonInterpreter-/Users/gideon.vanriette/projects/exercism/python/two-fer": {
+      "architecture": 3,
+      "path": "/usr/local/opt/python/bin/python3.7",
+      "version": {
+        "options": {
+          "loose": false,
+          "includePrerelease": false
+        },
+        "loose": false,
+        "raw": "3.7.3-final",
+        "major": 3,
+        "minor": 7,
+        "patch": 3,
+        "prerelease": [
+          "final"
+        ],
+        "build": [],
+        "version": "3.7.3-final"
+      },
+      "sysPrefix": "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7",
+      "fileHash": "019de37680053e3d70f356cba4729c76f77b14d27d0c19ff542eaccd527f378ed0cd794e498eb07af34215a9d23271e6ee3155511a44aa60ea1db87c91b58559",
+      "type": "Unknown",
+      "displayName": "Python 3.7.3 64-bit"
+    },
+    "INTERPRETERS_CACHE_v3_PipEnvService": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": []
+  },
+  "coc-python|/Users/gideon.vanriette/projects/functional_python": {
+    "INTERPRETERS_CACHE_v3_PipEnvService:3467807cbc228af6df9cfb51c6bb8379": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:3467807cbc228af6df9cfb51c6bb8379": [],
+    "autoSelectedWorkspacePythonInterpreter-/Users/gideon.vanriette/projects/functional_python": {
+      "architecture": 3,
+      "path": "/usr/local/opt/python/bin/python3.7",
+      "version": {
+        "options": {
+          "loose": false,
+          "includePrerelease": false
+        },
+        "loose": false,
+        "raw": "3.7.3-final",
+        "major": 3,
+        "minor": 7,
+        "patch": 3,
+        "prerelease": [
+          "final"
+        ],
+        "build": [],
+        "version": "3.7.3-final"
+      },
+      "sysPrefix": "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7",
+      "fileHash": "019de37680053e3d70f356cba4729c76f77b14d27d0c19ff542eaccd527f378ed0cd794e498eb07af34215a9d23271e6ee3155511a44aa60ea1db87c91b58559",
+      "type": "Unknown",
+      "displayName": "Python 3.7.3 64-bit"
+    },
+    "INTERPRETERS_CACHE_v3_PipEnvService": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": []
+  },
+  "coc-python|/Users/gideon.vanriette/projects/hazpak/src/cabinet": {
+    "INTERPRETERS_CACHE_v3_PipEnvService": [],
+    "SelectedPythonPath": "/Users/gideon.vanriette/projects/hazpak/.venv/bin/python3",
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": [
+      {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/projects/hazpak/.venv/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/projects/hazpak/.venv/bin/..",
+        "fileHash": "74a81454e820d4cadec3a35a6fb337e53a2b0af85cfdc4d1d1399007e42f5eb5129eba169d06f340d3ae51e764aa3665ead28990f900b2837205b335a2c10aeb",
+        "envName": ".venv",
+        "type": "VirtualEnv"
+      },
+      {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/projects/hazpak/.venv/bin/python3",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/projects/hazpak/.venv/bin/..",
+        "fileHash": "0ef51d3a77f0684ff1a1f93c9bec1568e060b7766464ca7bcf66c2d1e3ea329b22d06854028a2896cf1dd6508d8e344a8b393b2ab4aca51f5755e3fe019453a4",
+        "envName": ".venv",
+        "type": "VirtualEnv"
+      },
+      {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/projects/hazpak/.venv/bin/python3.7",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/projects/hazpak/.venv/bin/..",
+        "fileHash": "f9597a3b64d3cfd189e4efea8b63b942a1ccb4aee404a40518b2f3cbfc02b7dbe437be17d50d1197e2fecd40bd7aee606711fd2db420f5a2bf6365a71618358c",
+        "envName": ".venv",
+        "type": "VirtualEnv"
+      }
+    ],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:29344545501f957db08184d7124b4f20": [
+      {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/projects/hazpak/.venv/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/projects/hazpak/.venv/bin/..",
+        "fileHash": "74a81454e820d4cadec3a35a6fb337e53a2b0af85cfdc4d1d1399007e42f5eb5129eba169d06f340d3ae51e764aa3665ead28990f900b2837205b335a2c10aeb",
+        "envName": ".venv",
+        "type": "VirtualEnv"
+      },
+      {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/projects/hazpak/.venv/bin/python3",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/projects/hazpak/.venv/bin/..",
+        "fileHash": "0ef51d3a77f0684ff1a1f93c9bec1568e060b7766464ca7bcf66c2d1e3ea329b22d06854028a2896cf1dd6508d8e344a8b393b2ab4aca51f5755e3fe019453a4",
+        "envName": ".venv",
+        "type": "VirtualEnv"
+      },
+      {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/projects/hazpak/.venv/bin/python3.7",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/projects/hazpak/.venv/bin/..",
+        "fileHash": "f9597a3b64d3cfd189e4efea8b63b942a1ccb4aee404a40518b2f3cbfc02b7dbe437be17d50d1197e2fecd40bd7aee606711fd2db420f5a2bf6365a71618358c",
+        "envName": ".venv",
+        "type": "VirtualEnv"
+      }
+    ],
+    "autoSelectedWorkspacePythonInterpreter-/Users/gideon.vanriette/projects/hazpak": {
+      "architecture": 3,
+      "path": "/Users/gideon.vanriette/projects/hazpak/.venv/bin/python3.7",
+      "version": {
+        "options": {
+          "loose": false,
+          "includePrerelease": false
+        },
+        "loose": false,
+        "raw": "3.7.4-final",
+        "major": 3,
+        "minor": 7,
+        "patch": 4,
+        "prerelease": [
+          "final"
+        ],
+        "build": [],
+        "version": "3.7.4-final"
+      },
+      "sysPrefix": "/Users/gideon.vanriette/projects/hazpak/.venv/bin/..",
+      "fileHash": "f9597a3b64d3cfd189e4efea8b63b942a1ccb4aee404a40518b2f3cbfc02b7dbe437be17d50d1197e2fecd40bd7aee606711fd2db420f5a2bf6365a71618358c",
+      "envName": ".venv",
+      "type": "VirtualEnv"
+    },
+    "INTERPRETERS_CACHE_v3_PipEnvService:29344545501f957db08184d7124b4f20": [
+      {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/projects/hazpak/.venv/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/projects/hazpak/.venv/bin/..",
+        "fileHash": "74a81454e820d4cadec3a35a6fb337e53a2b0af85cfdc4d1d1399007e42f5eb5129eba169d06f340d3ae51e764aa3665ead28990f900b2837205b335a2c10aeb",
+        "type": "PipEnv",
+        "pipEnvWorkspaceFolder": "/Users/gideon.vanriette/projects/hazpak"
+      }
+    ]
+  },
+  "coc-python|/Users/gideon.vanriette/vividseats/airflow-dags": {
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:61c449d13da7853175bccebfbbd9a091": [
+      {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/vividseats/airflow-dags/.venv/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/vividseats/airflow-dags/.venv/bin/..",
+        "fileHash": "f530db2d155d58b074d632aa3aa2ba6b2c8a259f31d3efc79b0a179045a52e4490dd9d738c8c00e259a8e6e5f00abd8187dd493fa52d8ce8febbbd63fa1f7276",
+        "envName": ".venv",
+        "type": "VirtualEnv"
+      },
+      {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/vividseats/airflow-dags/.venv/bin/python3",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/vividseats/airflow-dags/.venv/bin/..",
+        "fileHash": "a4d688a5203165d02ce0d6197f7eab508330aed9e66dbcc2ef04254f00f8cdd08a5c87dadf73bc150a50ab8d248b14b330b352d85f0ded0c2215f2d01dba788c",
+        "envName": ".venv",
+        "type": "VirtualEnv"
+      },
+      {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/vividseats/airflow-dags/.venv/bin/python3.7",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/vividseats/airflow-dags/.venv/bin/..",
+        "fileHash": "e2d33ed6adfccf46dcdb779310bb300b7a47766fc5905ae566ea803a562b0d2de40a402f67c79b1807d7a03a05cfc6d726ebe1956870f0dbec9703d38057b2ea",
+        "envName": ".venv",
+        "type": "VirtualEnv"
+      }
+    ],
+    "SelectedPythonPath": "/Users/gideon.vanriette/vividseats/airflow-dags/.venv/bin/python3.7",
+    "INTERPRETERS_CACHE_v3_PipEnvService:61c449d13da7853175bccebfbbd9a091": [
+      {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/vividseats/airflow-dags/.venv/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/vividseats/airflow-dags/.venv/bin/..",
+        "fileHash": "f530db2d155d58b074d632aa3aa2ba6b2c8a259f31d3efc79b0a179045a52e4490dd9d738c8c00e259a8e6e5f00abd8187dd493fa52d8ce8febbbd63fa1f7276",
+        "type": "PipEnv",
+        "pipEnvWorkspaceFolder": "/Users/gideon.vanriette/vividseats/airflow-dags"
+      }
+    ],
+    "autoSelectedWorkspacePythonInterpreter-/Users/gideon.vanriette/vividseats/airflow-dags": {
+      "architecture": 3,
+      "path": "/Users/gideon.vanriette/vividseats/airflow-dags/.venv/bin/python3",
+      "version": {
+        "options": {
+          "loose": false,
+          "includePrerelease": false
+        },
+        "loose": false,
+        "raw": "3.7.4-final",
+        "major": 3,
+        "minor": 7,
+        "patch": 4,
+        "prerelease": [
+          "final"
+        ],
+        "build": [],
+        "version": "3.7.4-final"
+      },
+      "sysPrefix": "/Users/gideon.vanriette/vividseats/airflow-dags/.venv/bin/..",
+      "fileHash": "a4d688a5203165d02ce0d6197f7eab508330aed9e66dbcc2ef04254f00f8cdd08a5c87dadf73bc150a50ab8d248b14b330b352d85f0ded0c2215f2d01dba788c",
+      "type": "VirtualEnv"
+    },
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": [
+      {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/vividseats/airflow-dags/.venv/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/vividseats/airflow-dags/.venv/bin/..",
+        "fileHash": "f530db2d155d58b074d632aa3aa2ba6b2c8a259f31d3efc79b0a179045a52e4490dd9d738c8c00e259a8e6e5f00abd8187dd493fa52d8ce8febbbd63fa1f7276",
+        "envName": ".venv",
+        "type": "VirtualEnv"
+      },
+      {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/vividseats/airflow-dags/.venv/bin/python3",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/vividseats/airflow-dags/.venv/bin/..",
+        "fileHash": "a4d688a5203165d02ce0d6197f7eab508330aed9e66dbcc2ef04254f00f8cdd08a5c87dadf73bc150a50ab8d248b14b330b352d85f0ded0c2215f2d01dba788c",
+        "envName": ".venv",
+        "type": "VirtualEnv"
+      },
+      {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/vividseats/airflow-dags/.venv/bin/python3.7",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/vividseats/airflow-dags/.venv/bin/..",
+        "fileHash": "e2d33ed6adfccf46dcdb779310bb300b7a47766fc5905ae566ea803a562b0d2de40a402f67c79b1807d7a03a05cfc6d726ebe1956870f0dbec9703d38057b2ea",
+        "envName": ".venv",
+        "type": "VirtualEnv"
+      }
+    ],
+    "INTERPRETERS_CACHE_v3_PipEnvService": [
+      {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/vividseats/airflow-dags/.venv/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/vividseats/airflow-dags/.venv/bin/..",
+        "fileHash": "f530db2d155d58b074d632aa3aa2ba6b2c8a259f31d3efc79b0a179045a52e4490dd9d738c8c00e259a8e6e5f00abd8187dd493fa52d8ce8febbbd63fa1f7276",
+        "type": "PipEnv",
+        "pipEnvWorkspaceFolder": "/Users/gideon.vanriette/vividseats/airflow-dags"
+      }
+    ]
+  },
+  "coc-python|/Users/gideon.vanriette/projects/bazaar": {
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:1fe8bfee42f766f70ec806eadd5fcf57": [
+      {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/projects/bazaar/.venv/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/projects/bazaar/.venv/bin/..",
+        "fileHash": "652f79beece082bf33ca5c3ac624ef9e7e301c55733354f1a072ae029ebbb488fbc29238a42fa3a54a7dcc1d2b5cb504ebac6700f8e8e9e032637e0f49a5215b",
+        "envName": ".venv",
+        "type": "VirtualEnv"
+      },
+      {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/projects/bazaar/.venv/bin/python3",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/projects/bazaar/.venv/bin/..",
+        "fileHash": "79ab92b0a32e5ed4b9d84e714af924dab2b8ef4a48d19167fba7b8e5011d0203a791a6cec5f07d54306336e12a4da466daef298a5e5f926900b6aba770551a05",
+        "envName": ".venv",
+        "type": "VirtualEnv"
+      },
+      {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/projects/bazaar/.venv/bin/python3.7",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/projects/bazaar/.venv/bin/..",
+        "fileHash": "c9bcce31253359008ab51aacd9eb68ba0caca8d9d09fdcd3b7d5d25e1dd3438b4154e05b7f019c68e307b332a829ba590a7311aed573e93002f5af8f811752dc",
+        "envName": ".venv",
+        "type": "VirtualEnv"
+      }
+    ],
+    "SelectedPythonPath": "/Users/gideon.vanriette/projects/bazaar/.venv/bin/python3.7",
+    "INTERPRETERS_CACHE_v3_PipEnvService:1fe8bfee42f766f70ec806eadd5fcf57": [
+      {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/projects/bazaar/.venv/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/projects/bazaar/.venv/bin/..",
+        "fileHash": "652f79beece082bf33ca5c3ac624ef9e7e301c55733354f1a072ae029ebbb488fbc29238a42fa3a54a7dcc1d2b5cb504ebac6700f8e8e9e032637e0f49a5215b",
+        "type": "PipEnv",
+        "pipEnvWorkspaceFolder": "/Users/gideon.vanriette/projects/bazaar"
+      }
+    ],
+    "autoSelectedWorkspacePythonInterpreter-/Users/gideon.vanriette/projects/bazaar": {
+      "architecture": 3,
+      "path": "/Users/gideon.vanriette/projects/bazaar/.venv/bin/python3",
+      "version": {
+        "options": {
+          "loose": false,
+          "includePrerelease": false
+        },
+        "loose": false,
+        "raw": "3.7.4-final",
+        "major": 3,
+        "minor": 7,
+        "patch": 4,
+        "prerelease": [
+          "final"
+        ],
+        "build": [],
+        "version": "3.7.4-final"
+      },
+      "sysPrefix": "/Users/gideon.vanriette/projects/bazaar/.venv/bin/..",
+      "fileHash": "79ab92b0a32e5ed4b9d84e714af924dab2b8ef4a48d19167fba7b8e5011d0203a791a6cec5f07d54306336e12a4da466daef298a5e5f926900b6aba770551a05",
+      "type": "VirtualEnv"
+    },
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": [
+      {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/projects/bazaar/.venv/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/projects/bazaar/.venv/bin/..",
+        "fileHash": "652f79beece082bf33ca5c3ac624ef9e7e301c55733354f1a072ae029ebbb488fbc29238a42fa3a54a7dcc1d2b5cb504ebac6700f8e8e9e032637e0f49a5215b",
+        "envName": ".venv",
+        "type": "VirtualEnv"
+      },
+      {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/projects/bazaar/.venv/bin/python3",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/projects/bazaar/.venv/bin/..",
+        "fileHash": "79ab92b0a32e5ed4b9d84e714af924dab2b8ef4a48d19167fba7b8e5011d0203a791a6cec5f07d54306336e12a4da466daef298a5e5f926900b6aba770551a05",
+        "envName": ".venv",
+        "type": "VirtualEnv"
+      },
+      {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/projects/bazaar/.venv/bin/python3.7",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/projects/bazaar/.venv/bin/..",
+        "fileHash": "c9bcce31253359008ab51aacd9eb68ba0caca8d9d09fdcd3b7d5d25e1dd3438b4154e05b7f019c68e307b332a829ba590a7311aed573e93002f5af8f811752dc",
+        "envName": ".venv",
+        "type": "VirtualEnv"
+      }
+    ],
+    "INTERPRETERS_CACHE_v3_PipEnvService": [
+      {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/projects/bazaar/.venv/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/projects/bazaar/.venv/bin/..",
+        "fileHash": "652f79beece082bf33ca5c3ac624ef9e7e301c55733354f1a072ae029ebbb488fbc29238a42fa3a54a7dcc1d2b5cb504ebac6700f8e8e9e032637e0f49a5215b",
+        "type": "PipEnv",
+        "pipEnvWorkspaceFolder": "/Users/gideon.vanriette/projects/bazaar"
+      }
+    ]
+  },
+  "coc-python|/Users/gideon.vanriette/projects/restful_people": {
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:47219732c6f5c0015c42d3192d6b187d": [
+      {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/projects/restful_people/.venv/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/projects/restful_people/.venv/bin/..",
+        "fileHash": "e54a6d9fa2e27736686e0db0ec4467b58da7d0d6a96415665ce507eee81d95998b5dcdaeff4a45fab097dcad45600c547401109220b0ca762679056143cfdcf5",
+        "envName": ".venv",
+        "type": "VirtualEnv"
+      },
+      {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/projects/restful_people/.venv/bin/python3",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/projects/restful_people/.venv/bin/..",
+        "fileHash": "3cfdb7373d01321a22cabccbe91a5bcc305f66a18ba6e83ddaaa815591193673253053a3712f638e2c22ca323fdc3504c99f050fc00c9d0b4e136d179883bb68",
+        "envName": ".venv",
+        "type": "VirtualEnv"
+      },
+      {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/projects/restful_people/.venv/bin/python3.7",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/projects/restful_people/.venv/bin/..",
+        "fileHash": "b154c8931134a02870a55b3c9ec24cf11907b7ddac0392d1d6de7dac25631ab81b423b941ad535b645b4bbbd66e8676ea6631903c3cd0eab7aaab22754c678d6",
+        "envName": ".venv",
+        "type": "VirtualEnv"
+      }
+    ],
+    "INTERPRETERS_CACHE_v3_PipEnvService:47219732c6f5c0015c42d3192d6b187d": [
+      {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/projects/restful_people/.venv/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/projects/restful_people/.venv/bin/..",
+        "fileHash": "e54a6d9fa2e27736686e0db0ec4467b58da7d0d6a96415665ce507eee81d95998b5dcdaeff4a45fab097dcad45600c547401109220b0ca762679056143cfdcf5",
+        "type": "PipEnv",
+        "pipEnvWorkspaceFolder": "/Users/gideon.vanriette/projects/restful_people"
+      }
+    ],
+    "autoSelectedWorkspacePythonInterpreter-/Users/gideon.vanriette/projects/restful_people": {
+      "architecture": 3,
+      "path": "/Users/gideon.vanriette/projects/restful_people/.venv/bin/python3",
+      "version": {
+        "options": {
+          "loose": false,
+          "includePrerelease": false
+        },
+        "loose": false,
+        "raw": "3.7.4-final",
+        "major": 3,
+        "minor": 7,
+        "patch": 4,
+        "prerelease": [
+          "final"
+        ],
+        "build": [],
+        "version": "3.7.4-final"
+      },
+      "sysPrefix": "/Users/gideon.vanriette/projects/restful_people/.venv/bin/..",
+      "fileHash": "3cfdb7373d01321a22cabccbe91a5bcc305f66a18ba6e83ddaaa815591193673253053a3712f638e2c22ca323fdc3504c99f050fc00c9d0b4e136d179883bb68",
+      "type": "VirtualEnv"
+    },
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": [
+      {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/projects/restful_people/.venv/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/projects/restful_people/.venv/bin/..",
+        "fileHash": "e54a6d9fa2e27736686e0db0ec4467b58da7d0d6a96415665ce507eee81d95998b5dcdaeff4a45fab097dcad45600c547401109220b0ca762679056143cfdcf5",
+        "envName": ".venv",
+        "type": "VirtualEnv"
+      },
+      {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/projects/restful_people/.venv/bin/python3",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/projects/restful_people/.venv/bin/..",
+        "fileHash": "3cfdb7373d01321a22cabccbe91a5bcc305f66a18ba6e83ddaaa815591193673253053a3712f638e2c22ca323fdc3504c99f050fc00c9d0b4e136d179883bb68",
+        "envName": ".venv",
+        "type": "VirtualEnv"
+      },
+      {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/projects/restful_people/.venv/bin/python3.7",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/projects/restful_people/.venv/bin/..",
+        "fileHash": "b154c8931134a02870a55b3c9ec24cf11907b7ddac0392d1d6de7dac25631ab81b423b941ad535b645b4bbbd66e8676ea6631903c3cd0eab7aaab22754c678d6",
+        "envName": ".venv",
+        "type": "VirtualEnv"
+      }
+    ],
+    "INTERPRETERS_CACHE_v3_PipEnvService": [
+      {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/projects/restful_people/.venv/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/projects/restful_people/.venv/bin/..",
+        "fileHash": "e54a6d9fa2e27736686e0db0ec4467b58da7d0d6a96415665ce507eee81d95998b5dcdaeff4a45fab097dcad45600c547401109220b0ca762679056143cfdcf5",
+        "type": "PipEnv",
+        "pipEnvWorkspaceFolder": "/Users/gideon.vanriette/projects/restful_people"
+      }
+    ],
+    "SelectedPythonPath": "/Users/gideon.vanriette/projects/restful_people/.venv/bin/python3"
+  },
+  "coc-python|/Users/gideon.vanriette/vividseats/vivid-sales": {
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": [],
+    "INTERPRETERS_CACHE_v3_PipEnvService": []
+  },
+  "coc-python|/Users/gideon.vanriette/projects/test/tutorial": {
+    "INTERPRETERS_CACHE_v3_PipEnvService:24b9e3255d142dc163a78f15c6ac26ec": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:24b9e3255d142dc163a78f15c6ac26ec": [],
+    "autoSelectedWorkspacePythonInterpreter-/Users/gideon.vanriette/projects/test/tutorial": {
+      "architecture": 3,
+      "path": "/usr/local/opt/python/bin/python3.7",
+      "version": {
+        "options": {
+          "loose": false,
+          "includePrerelease": false
+        },
+        "loose": false,
+        "raw": "3.7.4-final",
+        "major": 3,
+        "minor": 7,
+        "patch": 4,
+        "prerelease": [
+          "final"
+        ],
+        "build": [],
+        "version": "3.7.4-final"
+      },
+      "sysPrefix": "/usr/local/Cellar/python/3.7.4/Frameworks/Python.framework/Versions/3.7",
+      "fileHash": "b5a038d0b55b5c345ababeeb34b3a43c0d66a8b20fab2ce18d81b42136f8c78a263f5a06e5582424e2f35950dc029afe11eddb009a8429d5920dcf33c7cf9736",
+      "type": "Unknown",
+      "displayName": "Python 3.7.4 64-bit"
+    },
+    "INTERPRETERS_CACHE_v3_PipEnvService": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": []
+  },
+  "coc-python|/Users/gideon.vanriette/projects/sfp-serverless": {
+    "SelectedPythonPath": "/Users/gideon.vanriette/projects/sfp-serverless/.venv/bin/python3",
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:ccaeea98cf946f9b55ce02bbeca05c8f": [
+      {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/projects/sfp-serverless/.venv/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/projects/sfp-serverless/.venv/bin/..",
+        "fileHash": "ccce0723aae64259bb0079e9b248521f058f1b34dfb36e5ec9b5c33e2dfff9e7a4ef9c77efca3dc407703ceb3876af1f0d8f817e9aa0eabf83ccef7862b67db6",
+        "envName": ".venv",
+        "type": "VirtualEnv"
+      },
+      {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/projects/sfp-serverless/.venv/bin/python3",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/projects/sfp-serverless/.venv/bin/..",
+        "fileHash": "adf3063d3eb32030109544edc686aaf4e24879904108664eaac615acc0205b010cc146194a275a99d9866cb24a4157ef13030d5d2f84590cff75104226019f7f",
+        "envName": ".venv",
+        "type": "VirtualEnv"
+      },
+      {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/projects/sfp-serverless/.venv/bin/python3.7",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/projects/sfp-serverless/.venv/bin/..",
+        "fileHash": "5be6307c07d83a71a43da9a5e832a98ecf0fb9a3050c19d2e35ab9e890041e391573d2df5bbe782f77651e378330eb04eb7adc20b24290c53a79f3a147548bb1",
+        "envName": ".venv",
+        "type": "VirtualEnv"
+      }
+    ],
+    "INTERPRETERS_CACHE_v3_PipEnvService:ccaeea98cf946f9b55ce02bbeca05c8f": [
+      {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/projects/sfp-serverless/.venv/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/projects/sfp-serverless/.venv/bin/..",
+        "fileHash": "ccce0723aae64259bb0079e9b248521f058f1b34dfb36e5ec9b5c33e2dfff9e7a4ef9c77efca3dc407703ceb3876af1f0d8f817e9aa0eabf83ccef7862b67db6",
+        "type": "PipEnv",
+        "pipEnvWorkspaceFolder": "/Users/gideon.vanriette/projects/sfp-serverless"
+      }
+    ],
+    "autoSelectedWorkspacePythonInterpreter-/Users/gideon.vanriette/projects/sfp-serverless": {
+      "architecture": 3,
+      "path": "/Users/gideon.vanriette/projects/sfp-serverless/.venv/bin/python3",
+      "version": {
+        "options": {
+          "loose": false,
+          "includePrerelease": false
+        },
+        "loose": false,
+        "raw": "3.7.4-final",
+        "major": 3,
+        "minor": 7,
+        "patch": 4,
+        "prerelease": [
+          "final"
+        ],
+        "build": [],
+        "version": "3.7.4-final"
+      },
+      "sysPrefix": "/Users/gideon.vanriette/projects/sfp-serverless/.venv/bin/..",
+      "fileHash": "adf3063d3eb32030109544edc686aaf4e24879904108664eaac615acc0205b010cc146194a275a99d9866cb24a4157ef13030d5d2f84590cff75104226019f7f",
+      "type": "VirtualEnv"
+    },
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": [
+      {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/projects/sfp-serverless/.venv/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/projects/sfp-serverless/.venv/bin/..",
+        "fileHash": "ccce0723aae64259bb0079e9b248521f058f1b34dfb36e5ec9b5c33e2dfff9e7a4ef9c77efca3dc407703ceb3876af1f0d8f817e9aa0eabf83ccef7862b67db6",
+        "envName": ".venv",
+        "type": "VirtualEnv"
+      },
+      {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/projects/sfp-serverless/.venv/bin/python3",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/projects/sfp-serverless/.venv/bin/..",
+        "fileHash": "adf3063d3eb32030109544edc686aaf4e24879904108664eaac615acc0205b010cc146194a275a99d9866cb24a4157ef13030d5d2f84590cff75104226019f7f",
+        "envName": ".venv",
+        "type": "VirtualEnv"
+      },
+      {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/projects/sfp-serverless/.venv/bin/python3.7",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/projects/sfp-serverless/.venv/bin/..",
+        "fileHash": "5be6307c07d83a71a43da9a5e832a98ecf0fb9a3050c19d2e35ab9e890041e391573d2df5bbe782f77651e378330eb04eb7adc20b24290c53a79f3a147548bb1",
+        "envName": ".venv",
+        "type": "VirtualEnv"
+      }
+    ],
+    "INTERPRETERS_CACHE_v3_PipEnvService": [
+      {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/projects/sfp-serverless/.venv/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/projects/sfp-serverless/.venv/bin/..",
+        "fileHash": "ccce0723aae64259bb0079e9b248521f058f1b34dfb36e5ec9b5c33e2dfff9e7a4ef9c77efca3dc407703ceb3876af1f0d8f817e9aa0eabf83ccef7862b67db6",
+        "type": "PipEnv",
+        "pipEnvWorkspaceFolder": "/Users/gideon.vanriette/projects/sfp-serverless"
+      }
+    ]
+  },
+  "coc-python|/Users/gideon.vanriette/fanxchange/fanx-apis": {
+    "INTERPRETERS_CACHE_v3_PipEnvService:6eae7d1732e1b18f16fb7c1af8e049f5": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:6eae7d1732e1b18f16fb7c1af8e049f5": [],
+    "autoSelectedWorkspacePythonInterpreter-/Users/gideon.vanriette/fanxchange/fanx-apis": {
+      "architecture": 3,
+      "path": "/usr/local/opt/python/bin/python3.7",
+      "version": {
+        "options": {
+          "loose": false,
+          "includePrerelease": false
+        },
+        "loose": false,
+        "raw": "3.7.4-final",
+        "major": 3,
+        "minor": 7,
+        "patch": 4,
+        "prerelease": [
+          "final"
+        ],
+        "build": [],
+        "version": "3.7.4-final"
+      },
+      "sysPrefix": "/usr/local/Cellar/python/3.7.4/Frameworks/Python.framework/Versions/3.7",
+      "fileHash": "b5a038d0b55b5c345ababeeb34b3a43c0d66a8b20fab2ce18d81b42136f8c78a263f5a06e5582424e2f35950dc029afe11eddb009a8429d5920dcf33c7cf9736",
+      "type": "Unknown",
+      "displayName": "Python 3.7.4 64-bit"
+    },
+    "INTERPRETERS_CACHE_v3_PipEnvService": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": []
+  },
+  "coc-python|/Users/gideon.vanriette/fanxchange/fanx-jobs": {
+    "INTERPRETERS_CACHE_v3_PipEnvService:fc2098b4a09b0e0a54cf6711390a3762": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:fc2098b4a09b0e0a54cf6711390a3762": [],
+    "autoSelectedWorkspacePythonInterpreter-/Users/gideon.vanriette/fanxchange/fanx-jobs": {
+      "architecture": 3,
+      "path": "/usr/local/opt/python/bin/python3.7",
+      "version": {
+        "options": {
+          "loose": false,
+          "includePrerelease": false
+        },
+        "loose": false,
+        "raw": "3.7.4-final",
+        "major": 3,
+        "minor": 7,
+        "patch": 4,
+        "prerelease": [
+          "final"
+        ],
+        "build": [],
+        "version": "3.7.4-final"
+      },
+      "sysPrefix": "/usr/local/Cellar/python/3.7.4/Frameworks/Python.framework/Versions/3.7",
+      "fileHash": "b5a038d0b55b5c345ababeeb34b3a43c0d66a8b20fab2ce18d81b42136f8c78a263f5a06e5582424e2f35950dc029afe11eddb009a8429d5920dcf33c7cf9736",
+      "type": "Unknown",
+      "displayName": "Python 3.7.4 64-bit"
+    },
+    "INTERPRETERS_CACHE_v3_PipEnvService": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": []
+  },
+  "coc-python|/Users/gideon.vanriette/fanxchange/service-partners": {
+    "INTERPRETERS_CACHE_v3_PipEnvService:f4826814f6aa63c3dd3c642f9a98f45a": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:f4826814f6aa63c3dd3c642f9a98f45a": [],
+    "autoSelectedWorkspacePythonInterpreter-/Users/gideon.vanriette/fanxchange/service-partners": {
+      "architecture": 3,
+      "path": "/usr/local/opt/python/bin/python3.7",
+      "version": {
+        "options": {
+          "loose": false,
+          "includePrerelease": false
+        },
+        "loose": false,
+        "raw": "3.7.4-final",
+        "major": 3,
+        "minor": 7,
+        "patch": 4,
+        "prerelease": [
+          "final"
+        ],
+        "build": [],
+        "version": "3.7.4-final"
+      },
+      "sysPrefix": "/usr/local/Cellar/python/3.7.4/Frameworks/Python.framework/Versions/3.7",
+      "fileHash": "b5a038d0b55b5c345ababeeb34b3a43c0d66a8b20fab2ce18d81b42136f8c78a263f5a06e5582424e2f35950dc029afe11eddb009a8429d5920dcf33c7cf9736",
+      "type": "Unknown",
+      "displayName": "Python 3.7.4 64-bit"
+    },
+    "INTERPRETERS_CACHE_v3_PipEnvService": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": []
+  },
+  "coc-python|/Users/gideon.vanriette/fanxchange/ansible-centos": {
+    "INTERPRETERS_CACHE_v3_PipEnvService:1230322cf4542ff7f0f6ecc5c0844e1b": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:1230322cf4542ff7f0f6ecc5c0844e1b": [],
+    "autoSelectedWorkspacePythonInterpreter-/Users/gideon.vanriette/fanxchange/ansible-centos": {
+      "architecture": 3,
+      "path": "/usr/local/opt/python/bin/python3.7",
+      "version": {
+        "options": {
+          "loose": false,
+          "includePrerelease": false
+        },
+        "loose": false,
+        "raw": "3.7.4-final",
+        "major": 3,
+        "minor": 7,
+        "patch": 4,
+        "prerelease": [
+          "final"
+        ],
+        "build": [],
+        "version": "3.7.4-final"
+      },
+      "sysPrefix": "/usr/local/Cellar/python/3.7.4/Frameworks/Python.framework/Versions/3.7",
+      "fileHash": "b5a038d0b55b5c345ababeeb34b3a43c0d66a8b20fab2ce18d81b42136f8c78a263f5a06e5582424e2f35950dc029afe11eddb009a8429d5920dcf33c7cf9736",
+      "type": "Unknown",
+      "displayName": "Python 3.7.4 64-bit"
+    },
+    "INTERPRETERS_CACHE_v3_PipEnvService": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": []
+  },
+  "coc-python|/Users/gideon.vanriette/fanxchange/pipeline": {
+    "INTERPRETERS_CACHE_v3_PipEnvService:c7bcae824953fad8c81f7513a52660c2": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:c7bcae824953fad8c81f7513a52660c2": [],
+    "autoSelectedWorkspacePythonInterpreter-/Users/gideon.vanriette/fanxchange/pipeline": {
+      "architecture": 3,
+      "path": "/usr/local/opt/python/bin/python3.7",
+      "version": {
+        "options": {
+          "loose": false,
+          "includePrerelease": false
+        },
+        "loose": false,
+        "raw": "3.7.4-final",
+        "major": 3,
+        "minor": 7,
+        "patch": 4,
+        "prerelease": [
+          "final"
+        ],
+        "build": [],
+        "version": "3.7.4-final"
+      },
+      "sysPrefix": "/usr/local/Cellar/python/3.7.4/Frameworks/Python.framework/Versions/3.7",
+      "fileHash": "b5a038d0b55b5c345ababeeb34b3a43c0d66a8b20fab2ce18d81b42136f8c78a263f5a06e5582424e2f35950dc029afe11eddb009a8429d5920dcf33c7cf9736",
+      "type": "Unknown",
+      "displayName": "Python 3.7.4 64-bit"
+    },
+    "INTERPRETERS_CACHE_v3_PipEnvService": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": []
+  },
+  "coc-python|/Users/gideon.vanriette/develop/hazpak": {
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:81c88c3edf3dffccd3ce1bc0f4774d4e": [
+      {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/develop/hazpak/.venv/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/develop/hazpak/.venv/bin/..",
+        "fileHash": "6ee179f9a6b282b0fdee2d3df75091323d9493d79ed9e0358c59e715f5bbab9dd46802b0909a6cfcfe2cb8efe683bedc8b5185e5fd4ddc74ffe52045e59bc597",
+        "envName": ".venv",
+        "type": "VirtualEnv"
+      },
+      {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/develop/hazpak/.venv/bin/python3",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/develop/hazpak/.venv/bin/..",
+        "fileHash": "5b9f187a7baacff75f1703b266d09e5357cc0ac2e8e72929c9ad66d6d4a219f3de66bb729c1c86b01c11f5b6be0f7b93b586b547917a0e78efb53992000dcf7e",
+        "envName": ".venv",
+        "type": "VirtualEnv"
+      },
+      {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/develop/hazpak/.venv/bin/python3.7",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/develop/hazpak/.venv/bin/..",
+        "fileHash": "cab041cb0d14128d6d5e45e88cf626f59686b34e73d35127018dff77e8bab5b7d9914844988f9de7a832315f44dabe92a9da5dd34b617531a82561aa25a0779d",
+        "envName": ".venv",
+        "type": "VirtualEnv"
+      }
+    ],
+    "SelectedPythonPath": "/Users/gideon.vanriette/develop/hazpak/.venv/bin/python3",
+    "INTERPRETERS_CACHE_v3_PipEnvService:81c88c3edf3dffccd3ce1bc0f4774d4e": [
+      {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/develop/hazpak/.venv/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/develop/hazpak/.venv/bin/..",
+        "fileHash": "6ee179f9a6b282b0fdee2d3df75091323d9493d79ed9e0358c59e715f5bbab9dd46802b0909a6cfcfe2cb8efe683bedc8b5185e5fd4ddc74ffe52045e59bc597",
+        "type": "PipEnv",
+        "pipEnvWorkspaceFolder": "/Users/gideon.vanriette/develop/hazpak"
+      }
+    ],
+    "autoSelectedWorkspacePythonInterpreter-/Users/gideon.vanriette/develop/hazpak": {
+      "architecture": 3,
+      "path": "/Users/gideon.vanriette/develop/hazpak/.venv/bin/python3",
+      "version": {
+        "options": {
+          "loose": false,
+          "includePrerelease": false
+        },
+        "loose": false,
+        "raw": "3.7.4-final",
+        "major": 3,
+        "minor": 7,
+        "patch": 4,
+        "prerelease": [
+          "final"
+        ],
+        "build": [],
+        "version": "3.7.4-final"
+      },
+      "sysPrefix": "/Users/gideon.vanriette/develop/hazpak/.venv/bin/..",
+      "fileHash": "5b9f187a7baacff75f1703b266d09e5357cc0ac2e8e72929c9ad66d6d4a219f3de66bb729c1c86b01c11f5b6be0f7b93b586b547917a0e78efb53992000dcf7e",
+      "type": "VirtualEnv"
+    },
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": [
+      {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/develop/hazpak/.venv/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/develop/hazpak/.venv/bin/..",
+        "fileHash": "6ee179f9a6b282b0fdee2d3df75091323d9493d79ed9e0358c59e715f5bbab9dd46802b0909a6cfcfe2cb8efe683bedc8b5185e5fd4ddc74ffe52045e59bc597",
+        "envName": ".venv",
+        "type": "VirtualEnv"
+      },
+      {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/develop/hazpak/.venv/bin/python3",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/develop/hazpak/.venv/bin/..",
+        "fileHash": "5b9f187a7baacff75f1703b266d09e5357cc0ac2e8e72929c9ad66d6d4a219f3de66bb729c1c86b01c11f5b6be0f7b93b586b547917a0e78efb53992000dcf7e",
+        "envName": ".venv",
+        "type": "VirtualEnv"
+      },
+      {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/develop/hazpak/.venv/bin/python3.7",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/develop/hazpak/.venv/bin/..",
+        "fileHash": "cab041cb0d14128d6d5e45e88cf626f59686b34e73d35127018dff77e8bab5b7d9914844988f9de7a832315f44dabe92a9da5dd34b617531a82561aa25a0779d",
+        "envName": ".venv",
+        "type": "VirtualEnv"
+      }
+    ],
+    "INTERPRETERS_CACHE_v3_PipEnvService": [
+      {
+        "architecture": 3,
+        "path": "/Users/gideon.vanriette/develop/hazpak/.venv/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.7.4-final",
+          "major": 3,
+          "minor": 7,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.7.4-final"
+        },
+        "sysPrefix": "/Users/gideon.vanriette/develop/hazpak/.venv/bin/..",
+        "fileHash": "6ee179f9a6b282b0fdee2d3df75091323d9493d79ed9e0358c59e715f5bbab9dd46802b0909a6cfcfe2cb8efe683bedc8b5185e5fd4ddc74ffe52045e59bc597",
+        "type": "PipEnv",
+        "pipEnvWorkspaceFolder": "/Users/gideon.vanriette/develop/hazpak"
+      }
+    ]
+  },
+  "coc-python|/Users/gideon.vanriette/develop": {
+    "INTERPRETERS_CACHE_v3_PipEnvService:d0bc84e3fae055d146c2a921d43b7859": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:d0bc84e3fae055d146c2a921d43b7859": []
+  }
+}

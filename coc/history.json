@@ -1,0 +1,33 @@
+{
+  "commands": {
+    "%2FUsers%2Fgideon": {
+      "vanriette%2Fprojects%2Fbazaar%2Faccounts%2Faccounts": [
+        "setinterpre",
+        "python.a:q"
+      ]
+    }
+  },
+  "symbols": {
+    "%2FUsers%2Fgideon": {
+      "vanriette%2Fprojects%2Fbazaar%2Faccounts%2Faccounts": [
+        "Accou"
+      ]
+    }
+  },
+  "extensions": {
+    "%2FUsers%2Fgideon": {
+      "vanriette%2Fdotfiles%2Fnvim": [
+        "pyq"
+      ],
+      "vanriette%2Fprojects%2Fhazpak": [
+        "pyfj"
+      ],
+      "vanriette%2Fprojects%2Fhazpak%2Fhazpak": [
+        ":wq"
+      ],
+      "vanriette%2Fvividseats%2Fvivid-sales": [
+        ":q"
+      ]
+    }
+  }
+}
