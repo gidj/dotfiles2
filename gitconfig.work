@@ -1,0 +1,5 @@
+[core]
+	excludesFile = /Users/gideon.vanriette/.gitignore_global
+[user]
+	name = Gideon VanRiette
+	email = gideon.vanriette@vividseats.com

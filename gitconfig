@@ -5,3 +5,5 @@
 	email = gvanriette@gmail.com
 [push]
 	default = matching
+[includeIf "gitdir:~/vividseats/"]
+    path = ~/dotfiles/gitconfig.work
