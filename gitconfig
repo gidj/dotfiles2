@@ -1,5 +1,5 @@
 [core]
-	excludesfile = /Users/gideon/.gitignore_global
+	excludesFile = ~/.gitignore_global
 [user]
 	name = Gideon VanRiette
 	email = gvanriette@gmail.com
