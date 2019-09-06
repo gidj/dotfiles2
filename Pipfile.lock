@@ -68,10 +68,10 @@
         },
         "importlib-metadata": {
             "hashes": [
-                "sha256:23d3d873e008a513952355379d93cbcab874c58f4f034ff657c7a87422fa64e8",
-                "sha256:80d2de76188eabfbfcf27e6a37342c2827801e59c4cc14b0371c56fed43820e3"
+                "sha256:9ff1b1c5a354142de080b8a4e9803e5d0d59283c93aed808617c787d16768375",
+                "sha256:b7143592e374e50584564794fcb8aaf00a23025f9db866627f89a21491847a8d"
             ],
-            "version": "==0.19"
+            "version": "==0.20"
         },
         "isort": {
             "hashes": [
@@ -138,10 +138,10 @@
         },
         "python-language-server": {
             "hashes": [
-                "sha256:75f49d5459cc3a498fcea3d2251348564b7af6de74828558d9c7919393c1d020"
+                "sha256:bf172c9c21fc5c2baa293155ddcb27712905f1ea1ebc0ba90985f7fd13039550"
             ],
             "index": "pypi",
-            "version": "==0.28.2"
+            "version": "==0.28.3"
         },
         "toml": {
             "hashes": [
