@@ -8,6 +8,9 @@ path=(/usr/local/opt/python/libexec/bin $path)
 # Python user site-packages are here
 path=(~/.local/bin $path)
 
+# Python's Poetry
+path=(~/.poetry/bin $path)
+
 # Add Node
 path=(~/node_modules/.bin $path)
 

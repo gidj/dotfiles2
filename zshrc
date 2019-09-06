@@ -4,9 +4,6 @@ autoload -Uz _zplugin
 (( ${+_comps} )) && _comps[zplugin]=_zplugin
 ### End of Zplugin's installer chunk
 
-autoload -Uz compinit
-compinit
-
 
 zstyle ":prezto:module:editor" key-bindings "emacs"
 zstyle ":prezto:module:editor" dot-expansion "yes"
@@ -77,5 +74,13 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 # [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
 
-# autoload -U +X bashcompinit && bashcompinit
-# complete -o nospace -C /usr/local/bin/terraform terraform
+autoload -U +X bashcompinit && bashcompinit
+
+# poetry completions
+fpath+=~/.zfunc
+
+autoload -Uz compinit
+compinit
+
+# terraform completions
+complete -o nospace -C /usr/local/bin/terraform terraform
