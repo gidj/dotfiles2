@@ -7,3 +7,5 @@
 	default = matching
 [includeIf "gitdir:~/vividseats/"]
     path = ~/dotfiles/gitconfig.work
+[includeIf "gitdir:~/fanxchange/"]
+    path = ~/dotfiles/gitconfig.work

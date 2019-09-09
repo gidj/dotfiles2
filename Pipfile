@@ -11,6 +11,7 @@ yapf = "*"
 black = "*"
 isort = "*"
 flake8 = "*"
+future = "*"
 
 [requires]
 python_version = "3.7"

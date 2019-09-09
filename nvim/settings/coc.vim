@@ -3,13 +3,13 @@
 " if hidden is not set, TextEdit might fail.
 set hidden
 
-let g:coc_global_extensions = [
-			\'coc-prettier',
-			\'coc-json',
-			\'coc-python',
-			\'coc-snippets',
-			\'coc-vetur'
-			\]
+" let g:coc_global_extensions = [
+" 			\'coc-prettier',
+" 			\'coc-json',
+" 			\'coc-python',
+" 			\'coc-snippets',
+" 			\'coc-vetur'
+" 			\]
 
 autocmd FileType python let b:coc_root_patterns = ['.git', '.env']
 
