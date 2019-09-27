@@ -8,7 +8,8 @@ let g:coc_global_extensions = [
 			\'coc-json',
 			\'coc-python',
 			\'coc-snippets',
-			\'coc-vetur'
+			\'coc-vetur',
+            \'coc-pairs'
 			\]
 
 autocmd FileType python let b:coc_root_patterns = ['.git', '.env']

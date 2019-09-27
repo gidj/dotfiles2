@@ -21,11 +21,13 @@ set ts=4 sts=4 sw=4 et
 if has("autocmd")
   autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
   " Javascript, JSX
-  autocmd FileType javascript,javascript.jsx set ts=2 sts=2 sw=2 et
+  autocmd FileType javascript,javascript.jsx setlocal ts=2 sts=2 sw=2 et
   " Markdown
   autocmd FileType markdown setlocal spell spelllang=en_us
   " YAML
-  autocmd FileType yaml set ts=2 sts=2 sw=2 et
+  autocmd FileType yaml setlocal ts=2 sts=2 sw=2 et
+  " Conf"
+  autocmd FileType conf,hcl setlocal ts=2 sts=2 sw=2 et
   " Python files
   augroup filetype_python
     autocmd!
@@ -44,11 +46,11 @@ if has("autocmd")
   augroup filtype_html_jinja
     autocmd!
     autocmd Filetype html,jinja,jinja.html setlocal ts=2 sts=2 sw=2 expandtab
-    autocmd Filetype html,jinjs,jinja.html set formatprg=/usr/local/bin/tidy
+    autocmd Filetype html,jinjs,jinja.html setlocal formatprg=/usr/local/bin/tidy
   augroup END
   " Vue
   " autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
-  autocmd FileType vue set ts=2 sts=2 sw=2 et
+  autocmd FileType vue setlocal ts=2 sts=2 sw=2 et
   " Jenkins
   autocmd BufNewFile,BufRead Jenkinsfile setf groovy
   autocmd Filetype css,scss,xml setlocal ts=4 sts=4 sw=4 expandtab

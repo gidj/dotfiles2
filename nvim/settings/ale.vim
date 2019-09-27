@@ -2,6 +2,7 @@
 " }}}
 let g:ale_fixers = {
 \ 'go': ['gofmt'],
+\ 'hcl': ['terraform'],
 \ 'html': ['tidy'],
 \ 'json': ['prettier'],
 \ 'javascript': ['prettier'],

@@ -84,3 +84,7 @@ compinit
 
 # terraform completions
 complete -o nospace -C /usr/local/bin/terraform terraform
+
+complete -o nospace -C /usr/local/bin/packer packer
+
+complete -o nospace -C /usr/local/bin/nomad nomad

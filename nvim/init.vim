@@ -35,6 +35,8 @@ Plug 'tpope/vim-unimpaired'
 
 " Terraform
 Plug 'hashivim/vim-terraform'
+Plug 'b4b4r07/vim-hcl'
+" Plug 'jvirtanen/vim-hcl'
 
 " Python Plugins
 Plug 'vim-python/python-syntax'
@@ -75,7 +77,7 @@ Plug 'Glench/Vim-Jinja2-Syntax'
 " Various Language Plugings
 " Plug 'othree/html5.vim'
 " Plug 'ap/vim-css-color'
-" Plug 'Yggdroot/indentLine'
+Plug 'Yggdroot/indentLine'
 " Plug 'mattn/emmet-vim'
 " Plug 'ekalinin/Dockerfile.vim'
 

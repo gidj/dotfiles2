@@ -1,10 +1,13 @@
 -i https://pypi.org/simple
 appdirs==1.4.3
 attrs==19.1.0
+awscli-local==0.4
+awscli==1.16.239
 black==19.3b0
-boto3==1.9.227
-botocore==1.12.227
+boto3==1.9.229
+botocore==1.12.229
 click==7.0
+colorama==0.3.9
 dnslib==0.9.10
 dnspython==1.16.0
 docopt==0.6.2
@@ -12,26 +15,29 @@ docutils==0.15.2
 entrypoints==0.3
 flake8==3.7.8
 future==0.17.1
-importlib-metadata==0.22 ; python_version < '3.8'
+importlib-metadata==0.23 ; python_version < '3.8'
 isort==4.3.21
 jedi==0.14.1
 jmespath==0.9.4
-localstack-client==0.11
-localstack-ext==0.10.24
-localstack==0.10.2.5
+localstack-client==0.12
+localstack-ext==0.10.25
+localstack==0.10.3
 mccabe==0.6.1
 more-itertools==7.2.0
 parso==0.5.1
 pluggy==0.13.0
 pyaes==1.6.0
+pyasn1==0.4.7
 pycodestyle==2.5.0
 pyflakes==2.1.1
 python-dateutil==2.8.0 ; python_version >= '2.7'
 python-jsonrpc-server==0.2.0
 python-language-server==0.28.3
+pyyaml==5.1.2 ; python_version != '2.6'
+rsa==3.4.2
 s3transfer==0.2.1
 six==1.12.0
-subprocess32-ext==3.2.8.2
+subprocess32==3.5.4
 toml==0.10.0
 urllib3==1.25.3 ; python_version >= '3.4'
 yapf==0.28.0
