@@ -9,7 +9,7 @@ let g:ale_fixers = {
 \ 'python': ['isort', 'black'],
 \ 'vue': ['prettier'],
 \ 'xml': ['xmllint'],
-\ 'yml': ['xmllint'],
+\ 'yaml': ['prettier'],
 \}
 
 let g:ale_linters = {

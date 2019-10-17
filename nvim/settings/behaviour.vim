@@ -30,7 +30,7 @@ if has("autocmd")
   autocmd FileType conf,hcl setlocal ts=2 sts=2 sw=2 et
   " Python files
   augroup filetype_python
-    autocmd!
+    " autocmd!
     autocmd Filetype python setlocal ts=4 sts=4 sw=4 expandtab
     autocmd Filetype python setlocal textwidth=120
   augroup END
