@@ -2,10 +2,12 @@
 appdirs==1.4.3
 attrs==19.3.0
 awscli-local==0.4
-awscli==1.16.262
-black==19.3b0
-boto3==1.9.252
-botocore==1.12.252
+awscli==1.16.282
+black==19.10b0
+boto3==1.10.18
+botocore==1.13.18
+certifi==2019.9.11
+chardet==3.0.4
 click==7.0
 colorama==0.4.1 ; python_version != '2.6' and python_version != '3.3'
 dnslib==0.9.10
@@ -13,18 +15,20 @@ dnspython==1.16.0
 docopt==0.6.2
 docutils==0.15.2
 entrypoints==0.3
-flake8==3.7.8
-future==0.18.1
+flake8==3.7.9
+future==0.18.2
+idna==2.8
 importlib-metadata==0.23 ; python_version < '3.8'
 isort==4.3.21
 jedi==0.15.1
 jmespath==0.9.4
-localstack-client==0.14
-localstack-ext==0.10.46
-localstack==0.10.4.2
+localstack-client==0.15
+localstack-ext==0.10.60
+localstack==0.10.5
 mccabe==0.6.1
 more-itertools==7.2.0
 parso==0.5.1
+pathspec==0.6.0
 pluggy==0.13.0
 pyaes==1.6.0
 pyasn1==0.4.7
@@ -32,13 +36,16 @@ pycodestyle==2.5.0
 pyflakes==2.1.1
 python-dateutil==2.8.0 ; python_version >= '2.7'
 python-jsonrpc-server==0.2.0
-python-language-server==0.29.1
+python-language-server==0.30.0
 pyyaml==5.1.2 ; python_version != '2.6' and python_version != '3.3'
+regex==2019.11.1
+requests==2.22.0
 rsa==3.4.2
 s3transfer==0.2.1
-six==1.12.0
+six==1.13.0
 subprocess32==3.5.4
 toml==0.10.0
-urllib3==1.25.6 ; python_version >= '3.4'
+typed-ast==1.4.0
+urllib3==1.25.7 ; python_version >= '3.4'
 yapf==0.28.0
 zipp==0.6.0
