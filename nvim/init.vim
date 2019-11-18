@@ -50,6 +50,7 @@ Plug 'ekalinin/Dockerfile.vim'
 " Version control related
 Plug 'airblade/vim-gitgutter' " For git
 Plug 'tpope/vim-fugitive'
+Plug 'ruanyl/vim-gh-line'
 
 " Folding
 " Plug 'tmhedberg/SimpylFold'
