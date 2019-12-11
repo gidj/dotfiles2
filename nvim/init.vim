@@ -13,6 +13,7 @@ Plug 'wellle/tmux-complete.vim'
 
 Plug 'w0rp/ale'
 
+Plug 'liuchengxu/vista.vim'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 
@@ -65,7 +66,7 @@ Plug 'leafgarland/typescript-vim'
 Plug 'posva/vim-vue'
 Plug 'cespare/vim-toml'
 Plug 'mechatroner/rainbow_csv'
-Plug 'RRethy/vim-illuminate'
+" Plug 'RRethy/vim-illuminate'
 
 " Clojure
 " Plug 'tpope/vim-fireplace'
@@ -128,6 +129,8 @@ let g:python_highlight_indent_errors = 0
 let g:python_highlight_all = 1
 " }}}
 
+runtime macros/sandwich/keymap/surround.vim
+
 source ~/.config/nvim/mappings.vim
 source ~/.config/nvim/settings/vue.vim
 " source ~/.config/nvim/settings/python.vim
@@ -145,6 +148,7 @@ source ~/.config/nvim/settings/fzf.vim
 source ~/.config/nvim/settings/behaviour.vim
 " source ~/.config/nvim/settings/snippets.vim
 source ~/.config/nvim/settings/coc.vim
+source ~/.config/nvim/settings/vista.vim
 " source ~/.config/nvim/settings/ncm2.vim
 " source ~/.config/nvim/settings/deoplete.vim
 
@@ -152,6 +156,6 @@ if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
 
-" hi link illuminatedWord Visual
+hi link CocHighlightText CtrlPMode2
 
 " vim: set sw=2 ts=2 sts=2 et tw=80 ft=vim fdm=marker:

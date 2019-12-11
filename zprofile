@@ -69,3 +69,5 @@ export JAVA_11_HOME=$(/usr/libexec/java_home -v11)
 alias java8='export JAVA_HOME=$JAVA_8_HOME'
 alias java11='export JAVA_HOME=$JAVA_11_HOME'
 java11
+
+export PATH="$HOME/.poetry/bin:$PATH"
