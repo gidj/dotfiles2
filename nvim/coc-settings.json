@@ -1,79 +1,71 @@
 {
-	"suggest.enablePreview": true,
-	"coc.preferences.previewAutoClose": true,
-	"languageserver": {
-		"python": {
-			"command": "python",
-			"args": [
-				"-mpyls",
-				"-vv",
-				"--log-file",
-				"/tmp/lsp_python.log"
-			],
-			"trace.server": "verbose",
-			"filetypes": [
-				"python"
-			],
-			"settings": {
-				"pyls": {
-					"enable": true,
-					"trace": {
-						"server": "verbose"
-					},
-					"commandPath": "",
-					"configurationSources": [
-						"pycodestyle"
-					],
-					"plugins": {
-						"jedi_completion": {
-							"enabled": false
-						},
-						"jedi_hover": {
-							"enabled": true
-						},
-						"jedi_references": {
-							"enabled": true
-						},
-						"jedi_signature_help": {
-							"enabled": true
-						},
-						"jedi_symbols": {
-							"enabled": true,
-							"all_scopes": true
-						},
-						"mccabe": {
-							"enabled": false,
-							"threshold": 15
-						},
-						"preload": {
-							"enabled": true
-						},
-						"pycodestyle": {
-							"enabled": false
-						},
-						"pydocstyle": {
-							"enabled": false,
-							"match": "(?!test_).*\\.py",
-							"matchDir": "[^\\.].*"
-						},
-						"pyflakes": {
-							"enabled": false
-						},
-						"flake8": {
-							"enabled": false
-						},
-						"pylint": {
-							"enabled": false
-						},
-						"rope_completion": {
-							"enabled": true
-						},
-						"yapf": {
-							"enabled": false
-						}
-					}
-				}
-			}
-		}
-	}
+  "coc.preferences.currentFunctionSymbolAutoUpdate": true,
+  "suggest.enablePreview": true,
+  "coc.preferences.previewAutoClose": true,
+  "languageserver": {
+    "python": {
+      "command": "python",
+      "args": ["-mpyls", "-vv", "--log-file", "/tmp/lsp_python.log"],
+      "trace.server": "verbose",
+      "filetypes": ["python"],
+      "settings": {
+        "pyls": {
+          "enable": true,
+          "trace": {
+            "server": "verbose"
+          },
+          "commandPath": "",
+          "configurationSources": ["pycodestyle"],
+          "plugins": {
+            "jedi_completion": {
+              "enabled": false
+            },
+            "jedi_hover": {
+              "enabled": true
+            },
+            "jedi_references": {
+              "enabled": true
+            },
+            "jedi_signature_help": {
+              "enabled": true
+            },
+            "jedi_symbols": {
+              "enabled": true,
+              "all_scopes": true
+            },
+            "mccabe": {
+              "enabled": false,
+              "threshold": 15
+            },
+            "preload": {
+              "enabled": true
+            },
+            "pycodestyle": {
+              "enabled": false
+            },
+            "pydocstyle": {
+              "enabled": false,
+              "match": "(?!test_).*\\.py",
+              "matchDir": "[^\\.].*"
+            },
+            "pyflakes": {
+              "enabled": false
+            },
+            "flake8": {
+              "enabled": false
+            },
+            "pylint": {
+              "enabled": false
+            },
+            "rope_completion": {
+              "enabled": true
+            },
+            "yapf": {
+              "enabled": false
+            }
+          }
+        }
+      }
+    }
+  }
 }

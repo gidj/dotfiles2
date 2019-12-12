@@ -158,4 +158,5 @@ endif
 
 hi link CocHighlightText CtrlPMode2
 
+let g:gh_open_command = 'fn() { echo "$@" | pbcopy; }; fn '
 " vim: set sw=2 ts=2 sts=2 et tw=80 ft=vim fdm=marker:
