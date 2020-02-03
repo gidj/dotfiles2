@@ -4,6 +4,7 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 
 # Add Python3
 path=(/usr/local/opt/python/libexec/bin $path)
+# path=(/usr/local/opt/python@3.8/bin $path)
 
 # Python user site-packages are here
 path=(~/.local/bin $path)
