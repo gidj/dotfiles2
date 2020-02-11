@@ -403,7 +403,7 @@ marker = "python_version < \"3.8\""
 name = "zipp"
 optional = false
 python-versions = ">=3.6"
-version = "2.1.0"
+version = "2.2.0"
 
 [package.extras]
 docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
@@ -599,6 +599,6 @@ yapf = [
     {file = "yapf-0.29.0.tar.gz", hash = "sha256:712e23c468506bf12cadd10169f852572ecc61b266258422d45aaf4ad7ef43de"},
 ]
 zipp = [
-    {file = "zipp-2.1.0-py3-none-any.whl", hash = "sha256:ccc94ed0909b58ffe34430ea5451f07bc0c76467d7081619a454bf5c98b89e28"},
-    {file = "zipp-2.1.0.tar.gz", hash = "sha256:feae2f18633c32fc71f2de629bfb3bd3c9325cd4419642b1f1da42ee488d9b98"},
+    {file = "zipp-2.2.0-py36-none-any.whl", hash = "sha256:d65287feb793213ffe11c0f31b81602be31448f38aeb8ffc2eb286c4f6f6657e"},
+    {file = "zipp-2.2.0.tar.gz", hash = "sha256:5c56e330306215cd3553342cfafc73dda2c60792384117893f3a83f8a1209f50"},
 ]

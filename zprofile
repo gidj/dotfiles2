@@ -72,3 +72,7 @@ alias java11='export JAVA_HOME=$JAVA_11_HOME'
 java11
 
 export PATH="$HOME/.poetry/bin:$PATH"
+
+# Handle regression with postgres 12.x client
+export GSSENCMODE=disable
+export PGGSSENCMODE=disable
