@@ -18,6 +18,9 @@ path=(~/node_modules/.bin $path)
 # Add Homebrew sbin
 path=(/usr/local/sbin $path)
 
+# For oursql stuff
+path=(/usr/local/opt/mysql-client/bin $path)
+
 # Add ~/bin
 path=(~/bin $path)
 

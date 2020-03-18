@@ -8,6 +8,7 @@ authors = ["Gideon VanRiette <gvanriette@gmail.com>"]
 python = "^3.7"
 python-language-server = {extras = ["all"], version = "^0.31.4"}
 black = "^19.10b0"
+virtualenv = "^20.0.10"
 
 [tool.poetry.dev-dependencies]
 

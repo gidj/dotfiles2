@@ -67,6 +67,7 @@ Plug 'posva/vim-vue'
 Plug 'cespare/vim-toml'
 Plug 'mechatroner/rainbow_csv'
 " Plug 'RRethy/vim-illuminate'
+Plug 'jparise/vim-graphql'
 
 " Clojure
 " Plug 'tpope/vim-fireplace'
