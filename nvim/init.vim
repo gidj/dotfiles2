@@ -11,7 +11,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'wellle/tmux-complete.vim'
 " Plug 'honza/vim-snippets'
 
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
 
 Plug 'liuchengxu/vista.vim'
 Plug '/usr/local/opt/fzf'
