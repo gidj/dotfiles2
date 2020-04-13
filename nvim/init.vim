@@ -27,6 +27,7 @@ Plug 'wellle/targets.vim'
 Plug 'machakann/vim-sandwich'
 
 Plug 'justinmk/vim-dirvish'
+Plug 'preservim/nerdtree'
 
 " Useful plugins from Tim Pope
 Plug 'tpope/vim-commentary'
