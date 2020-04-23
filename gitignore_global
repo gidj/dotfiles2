@@ -5,6 +5,5 @@ node_modules
 rebel.xml
 .vim
 .venv
-secrets/
 pyproject.toml
 poetry.lock

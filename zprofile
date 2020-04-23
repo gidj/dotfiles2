@@ -72,10 +72,14 @@ export JAVA_11_HOME=$(/usr/libexec/java_home -v11)
 
 alias java8='export JAVA_HOME=$JAVA_8_HOME'
 alias java11='export JAVA_HOME=$JAVA_11_HOME'
-java11
+java8
 
 export PATH="$HOME/.poetry/bin:$PATH"
+
+eval "$(gh completion --shell zsh)"
 
 # Handle regression with postgres 12.x client
 export GSSENCMODE=disable
 export PGGSSENCMODE=disable
+
+export JREBEL=n
