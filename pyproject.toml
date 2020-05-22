@@ -6,10 +6,13 @@ authors = ["Gideon VanRiette <gvanriette@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.7"
-python-language-server = {extras = ["all"], version = "^0.31.4"}
+pipenv = {version = "^2020.4.1-beta.1", allow-prereleases = true}
+# python-language-server = {extras = ["all"], version = "^0.31.10"}
 black = "^19.10b0"
-virtualenv = "^20.0.10"
+virtualenv = "^20.0.18"
 neovim = "^0.3.1"
+jedi = "^0.17.0"
+pip-autoremove = "^0.9.1"
 
 [tool.poetry.dev-dependencies]
 
