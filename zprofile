@@ -67,8 +67,8 @@ alias findRmi='lsof -i:1099'
 
 source ~/.zsecrets
 
-export JAVA_8_HOME=$(/usr/libexec/java_home -v1.8)
-export JAVA_11_HOME=$(/usr/libexec/java_home -v11)
+# export JAVA_8_HOME=$(/usr/libexec/java_home -v1.8)
+# export JAVA_11_HOME=$(/usr/libexec/java_home -v11)
 
 alias java8='export JAVA_HOME=$JAVA_8_HOME'
 alias java11='export JAVA_HOME=$JAVA_11_HOME'
@@ -76,7 +76,7 @@ java8
 
 export PATH="$HOME/.poetry/bin:$PATH"
 
-eval "$(gh completion --shell zsh)"
+# eval "$(gh completion --shell zsh)"
 
 # Handle regression with postgres 12.x client
 export GSSENCMODE=disable
