@@ -28,6 +28,7 @@ zinit snippet PZT::modules/environment/init.zsh
 zinit snippet PZT::modules/tmux/init.zsh
 zinit snippet PZT::modules/directory/init.zsh
 zinit snippet PZT::modules/history/init.zsh
+zinit snippet PZT::modules/homebrew/init.zsh
 zinit snippet PZT::modules/editor/init.zsh
 zinit snippet PZT::modules/utility/init.zsh
 zinit snippet PZT::modules/completion/init.zsh
