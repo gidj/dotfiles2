@@ -12,6 +12,7 @@ black = "^19.10b0"
 virtualenv = "^20.0.18"
 pynvim = "*"
 isort = "^4.3.21"
+flake8 = "^3.8.3"
 
 [tool.poetry.dev-dependencies]
 

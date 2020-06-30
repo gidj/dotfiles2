@@ -22,3 +22,5 @@
   prompt = false
 [diff]
   tool = vimdiff
+[pull]
+	rebase = false
