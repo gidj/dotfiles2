@@ -8,3 +8,4 @@ rebel.xml
 pyproject.toml
 poetry.lock
 Pipfile*
+ignore
