@@ -1,3 +1,5 @@
+ZSH_DISABLE_COMPFIX="true"
+
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
     print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
@@ -62,15 +64,23 @@ zinit light zdharma/fast-syntax-highlighting
 zinit light mafredri/zsh-async
 zinit light sindresorhus/pure
 
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 [ -f ~/dotfiles/functions.zsh ] && source ~/dotfiles/functions.zsh
 
-# # Returns whether the given command is executable or aliased.
-# _has() {
-#   return $( whence $1 >/dev/null )
-# }
+# Returns whether the given command is executable or aliased.
+_has() {
+  return $( whence $1 >/dev/null )
+}
+
+
+if _has fzf + _has fd; then
+    export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
+    export FZF_DEFAULT_COMMAND='fd --type f'
+    export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+    export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
+    export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
+fi
 
 
 # # fzf + ag configuration
@@ -83,10 +93,6 @@ zinit light sindresorhus/pure
 #   export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
 # fi
 
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-# [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_co
-
 autoload -U +X bashcompinit && bashcompinit
 
 # poetry completions
@@ -95,9 +101,3 @@ fpath+=~/.zfunc
 autoload -Uz compinit
 compinit
 
-# terraform completions
-# complete -o nospace -C /usr/local/bin/terraform terraform
-
-# complete -o nospace -C /usr/local/bin/packer packer
-
-# complete -o nospace -C /usr/local/bin/nomad nomad

@@ -8,20 +8,20 @@ filetype indent on
 " Limit autocomplete list length
 set pumheight=25
 
-" Function to strip whitespaces on write, while retaining position in the file
-function! <SID>StripTrailingWhitespaces()
-  let l = line('.')
-  let c = col('.')
-  %s/\s\+$//e
-  call cursor(l, c)
-endfun
+" " Function to strip whitespaces on write, while retaining position in the file
+" function! <SID>StripTrailingWhitespaces()
+"   let l = line('.')
+"   let c = col('.')
+"   %s/\s\+$//e
+"   call cursor(l, c)
+" endfun
 
 set ts=4 sts=4 sw=4 et
 
 if has("autocmd")
-  autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+  " autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
   " Javascript, JSX
-  autocmd FileType javascript,javascript.jsx setlocal ts=2 sts=2 sw=2 et
+  autocmd FileType javascript,javascript.jsx,typescript.tsx setlocal ts=2 sts=2 sw=2 et
   " Markdown
   autocmd FileType markdown setlocal spell spelllang=en_us
   " YAML
@@ -53,5 +53,6 @@ if has("autocmd")
   autocmd FileType vue setlocal ts=2 sts=2 sw=2 et
   " Jenkins
   autocmd BufNewFile,BufRead Jenkinsfile setf groovy
+  autocmd BufNewFile,BufRead Config setf perl
   autocmd Filetype css,scss,xml setlocal ts=4 sts=4 sw=4 expandtab
 endif

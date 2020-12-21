@@ -1,6 +1,9 @@
 {
-  "coc.preferences.currentFunctionSymbolAutoUpdate": true,
-  "suggest.enablePreview": true,
-  "coc.preferences.previewAutoClose": true,
-  "python.jediEnabled": false
+    "coc.preferences.currentFunctionSymbolAutoUpdate": true,
+    "suggest.enablePreview": true,
+    "coc.preferences.previewAutoClose": true,
+    "tsserver.npm": "~/.nvm/versions/node/v14.9.0/bin/npm",
+    "python.analysis.useLibraryCodeForTypes":true,
+    "python.formatting.provider":"black",
+    "python.formatting.blackPath":"~/.local/bin/black"
 }
