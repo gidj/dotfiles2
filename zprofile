@@ -27,6 +27,9 @@ path=(~/bin $path)
 # Add Amazon Toolbox
 path=(~/.toolbox/bin $path)
 
+# Rust
+path=(~/.cargo/bin $path)
+
 # Needed for Virtual envs for BrazilPython
 export BRAZIL_CLI_BIN=$HOME/.toolbox/bin
 
