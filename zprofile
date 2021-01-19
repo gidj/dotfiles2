@@ -1,5 +1,8 @@
 typeset -U path
 
+# For whatever reason, this is required for nvm's default alias to work
+PATH="/usr/local/bin:$(getconf PATH)"
+
 fpath=(/usr/local/share/zsh-completions $fpath)
 
 # Add Python3
@@ -13,20 +16,19 @@ path=(~/.local/bin $path)
 path=(~/.poetry/bin $path)
 
 # Add Node
-path=(~/node_modules/.bin $path)
+# path=(~/node_modules/.bin $path)
 
 # Add Homebrew sbin
 path=(/usr/local/sbin $path)
 
-# For oursql stuff
-path=(/usr/local/opt/mysql-client/bin $path)
-
 # Add ~/bin
 path=(~/bin $path)
 
-export PATH
+# Add Amazon Toolbox
+path=(~/.toolbox/bin $path)
 
-export GOPATH=$HOME/go
+# Needed for Virtual envs for BrazilPython
+export BRAZIL_CLI_BIN=$HOME/.toolbox/bin
 
 export VISUAL=nvim
 export EDITOR=nvim
@@ -61,25 +63,23 @@ alias nll="npm list --depth=0 2>/dev/null"
 alias ssh='TERM=screen-256color ssh'
 alias vagrant='TERM=screen-256color vagrant'
 
-# Work aliases
-alias vivid="~/vividseats"
-alias findRmi='lsof -i:1099'
-
-source ~/.zsecrets
-
-# export JAVA_8_HOME=$(/usr/libexec/java_home -v1.8)
-# export JAVA_11_HOME=$(/usr/libexec/java_home -v11)
+export JAVA_8_HOME=$(/usr/libexec/java_home -v1.8)
+export JAVA_11_HOME=$(/usr/libexec/java_home -v11)
 
 alias java8='export JAVA_HOME=$JAVA_8_HOME'
 alias java11='export JAVA_HOME=$JAVA_11_HOME'
-java8
+java11
 
-export PATH="$HOME/.poetry/bin:$PATH"
+# Amazon aliases
+alias bb='brazil-build'
+alias workplace='cd ~/workplace'
 
-# eval "$(gh completion --shell zsh)"
+export HOMEBREW_NO_AUTO_UPDATE=1
 
-# Handle regression with postgres 12.x client
-export GSSENCMODE=disable
-export PGGSSENCMODE=disable
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-export JREBEL=n
+export PATH
+
+# export PATH="$HOME/.poetry/bin:$PATH"

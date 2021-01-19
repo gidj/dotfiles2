@@ -1,12 +1,15 @@
 " Ale: {{{
 " }}}
+let g:ale_disable_lsp = 1
+
 let g:ale_fixers = {
 \ 'go': ['gofmt'],
 \ 'hcl': ['terraform'],
 \ 'html': ['tidy'],
 \ 'json': ['prettier'],
-\ 'javascript': ['prettier'],
+\ 'javascript': ['eslint'],
 \ 'python': ['isort', 'black'],
+\ 'typescript': ['eslint'],
 \ 'vue': ['prettier'],
 \ 'xml': ['xmllint'],
 \ 'yaml': ['prettier'],
@@ -21,6 +24,9 @@ let g:ale_linters = {
 let g:ale_linter_aliases = {
 \ 'jinja': 'html',
 \}
+
+let g:ale_python_black_use_global = 1
+let g:ale_python_black_executable = expand('~/.local/bin/black')
 
 " let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_lint_delay = 500

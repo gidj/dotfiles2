@@ -5,14 +5,15 @@ description = ""
 authors = ["Gideon VanRiette <gvanriette@gmail.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.7"
+python = "^3.9"
 # pipenv = {version = "^2020.4.1-beta.1", allow-prereleases = true}
 # python-language-server = {extras = ["all"], version = "^0.31.10"}
-black = "^19.10b0"
+black = "*"
 virtualenv = "^20.0.18"
 pynvim = "*"
-isort = "^4.3.21"
+isort = "*"
 flake8 = "^3.8.3"
+Jinja2 = "^2.11.2"
 
 [tool.poetry.dev-dependencies]
 
