@@ -1,7 +1,7 @@
 let g:airline#extensions#whitespace#show_message = 1
 let g:airline#extensions#coc#enabled = 1
 let g:airline#extensions#whitespace#enabled = 0
-let g:airline_theme='gruvbox'
+let g:airline_theme='palenight'
 
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}

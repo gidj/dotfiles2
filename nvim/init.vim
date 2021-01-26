@@ -5,11 +5,16 @@ call plug#begin('~/.config/nvim/plugged')
 " My Plugins
 " Themes
 Plug 'morhetz/gruvbox'
+Plug 'sainnhe/gruvbox-material'
+Plug 'ayu-theme/ayu-vim'
+Plug 'drewtempelmeyer/palenight.vim'
 
 " Completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'wellle/tmux-complete.vim'
 Plug 'honza/vim-snippets'
+
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " Plug 'dense-analysis/ale'
 
@@ -42,6 +47,9 @@ Plug 'b4b4r07/vim-hcl'
 " Python Plugins
 Plug 'vim-python/python-syntax'
 Plug 'Vimjas/vim-python-pep8-indent' " Fix indentation
+
+" Rust
+Plug 'rust-lang/rust.vim'
 
 Plug 'ekalinin/Dockerfile.vim'
 
@@ -111,11 +119,23 @@ set mouse=a " Turn on mouse mode, for terminals that can use it
 
 set termguicolors
 set background=dark " Set the background
+
+let ayucolor="mirage"
+
 let g:gruvbox_italic=1
 let g:gruvbox_contrast_dark='hard'
 let g:gruvbox_italicize_strings=1
 let g:gruvbox_improved_warnings=1
-colorscheme gruvbox
+
+let g:gruvbox_material_enable_italic=1
+let g:gruvbox_material_enable_bold=1
+let g:gruvbox_material_background='hard'
+let g:gruvbox_material_palette='mix'
+" let g:gruvbox_italicize_strings=1
+" let g:gruvbox_improved_warnings=1
+
+let g:palenight_terminal_italics=1
+colorscheme palenight
 let g:python3_host_prog = expand('~/dotfiles/.venv/bin/python')
 let g:python_highlight_indent_errors = 0
 let g:python_highlight_all = 1
@@ -191,3 +211,15 @@ hi link CocHighlightText CtrlPMode2
 
 let g:gh_open_command = 'fn() { echo "$@" | pbcopy; }; fn '
 " vim: set sw=2 ts=2 sts=2 et tw=80 ft=vim fdm=marker:
+
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  highlight = {
+    enable = true,
+    custom_captures = {
+      -- Highlight the @foo.bar capture group with the "Identifier" highlight group.
+      ["foo.bar"] = "Identifier",
+    },
+  },
+}
+EOF
