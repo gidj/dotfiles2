@@ -1,7 +1,7 @@
 typeset -U path
 
 # For whatever reason, this is required for nvm's default alias to work
-PATH="/usr/local/bin:$(getconf PATH)"
+# PATH="/usr/local/bin:$(getconf PATH)"
 
 fpath=(/usr/local/share/zsh-completions $fpath)
 
@@ -79,8 +79,8 @@ alias workplace='cd ~/workplace'
 
 export HOMEBREW_NO_AUTO_UPDATE=1
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export PATH
