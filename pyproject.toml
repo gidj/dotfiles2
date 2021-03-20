@@ -13,7 +13,7 @@ virtualenv = "^20.0.18"
 pynvim = "*"
 isort = "*"
 flake8 = "^3.8.3"
-Jinja2 = "^2.11.2"
+Jinja2 = "^2.11.3"
 
 [tool.poetry.dev-dependencies]
 
