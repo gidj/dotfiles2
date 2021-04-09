@@ -14,7 +14,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'wellle/tmux-complete.vim'
 Plug 'honza/vim-snippets'
 
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+" Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " Plug 'dense-analysis/ale'
 
@@ -135,7 +135,7 @@ let g:gruvbox_material_palette='mix'
 " let g:gruvbox_improved_warnings=1
 
 let g:palenight_terminal_italics=1
-colorscheme palenight
+colorscheme gruvbox
 let g:python3_host_prog = expand('~/dotfiles/.venv/bin/python')
 let g:python_highlight_indent_errors = 0
 let g:python_highlight_all = 1
@@ -212,14 +212,14 @@ hi link CocHighlightText CtrlPMode2
 let g:gh_open_command = 'fn() { echo "$@" | pbcopy; }; fn '
 " vim: set sw=2 ts=2 sts=2 et tw=80 ft=vim fdm=marker:
 
-lua <<EOF
-require'nvim-treesitter.configs'.setup {
-  highlight = {
-    enable = true,
-    custom_captures = {
-      -- Highlight the @foo.bar capture group with the "Identifier" highlight group.
-      ["foo.bar"] = "Identifier",
-    },
-  },
-}
-EOF
+"lua <<EOF
+"require'nvim-treesitter.configs'.setup {
+"  highlight = {
+"    enable = true,
+"    custom_captures = {
+"      -- Highlight the @foo.bar capture group with the "Identifier" highlight group.
+"      ["foo.bar"] = "Identifier",
+"    },
+"  },
+"}
+"EOF

@@ -97,6 +97,8 @@ autoload -U +X bashcompinit && bashcompinit
 
 # poetry completions
 fpath+=~/.zfunc
+# Amazon completion
+fpath+=~/.zsh/completion
 
 autoload -Uz compinit
 compinit
