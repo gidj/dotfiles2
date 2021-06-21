@@ -4,6 +4,8 @@ call plug#begin('~/.config/nvim/plugged')
 
 " My Plugins
 " Themes
+" Plug 'rktjmp/lush.nvim'
+" Plug 'npxbr/gruvbox.nvim'
 Plug 'morhetz/gruvbox'
 Plug 'sainnhe/gruvbox-material'
 Plug 'ayu-theme/ayu-vim'
@@ -17,6 +19,11 @@ Plug 'honza/vim-snippets'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " Plug 'dense-analysis/ale'
+
+" Telescope
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 
 Plug 'liuchengxu/vista.vim'
 Plug '/usr/local/opt/fzf'
@@ -32,7 +39,7 @@ Plug 'wellle/targets.vim'
 Plug 'machakann/vim-sandwich'
 
 Plug 'justinmk/vim-dirvish'
-Plug 'preservim/nerdtree'
+" Plug 'preservim/nerdtree'
 
 " Useful plugins from Tim Pope
 Plug 'tpope/vim-commentary'
@@ -135,7 +142,7 @@ let g:gruvbox_material_palette='mix'
 " let g:gruvbox_improved_warnings=1
 
 let g:palenight_terminal_italics=1
-colorscheme palenight
+colorscheme gruvbox
 let g:python3_host_prog = expand('~/dotfiles/.venv/bin/python')
 let g:python_highlight_indent_errors = 0
 let g:python_highlight_all = 1
@@ -212,14 +219,24 @@ hi link CocHighlightText CtrlPMode2
 let g:gh_open_command = 'fn() { echo "$@" | pbcopy; }; fn '
 " vim: set sw=2 ts=2 sts=2 et tw=80 ft=vim fdm=marker:
 
+" lua <<EOF
+" require'nvim-treesitter.configs'.setup {
+"   highlight = {
+"     enable = true,
+"     custom_captures = {
+"       -- Highlight the @foo.bar capture group with the "Identifier" highlight group.
+"       ["foo.bar"] = "Identifier",
+"     },
+"   },
+" }
+" EOF
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
+  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  ignore_install = { "javascript" }, -- List of parsers to ignore installing
   highlight = {
-    enable = true,
-    custom_captures = {
-      -- Highlight the @foo.bar capture group with the "Identifier" highlight group.
-      ["foo.bar"] = "Identifier",
-    },
+    enable = true,              -- false will disable the whole extension
+    disable = { "c", "rust" },  -- list of language that will be disabled
   },
 }
 EOF

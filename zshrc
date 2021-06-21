@@ -36,7 +36,7 @@ zinit snippet PZT::modules/utility/init.zsh
 zinit snippet PZT::modules/completion/init.zsh
 zinit snippet PZT::modules/osx/init.zsh
 zinit snippet PZT::modules/terminal/init.zsh
-zinit snippet PZT::modules/ssh/init.zsh
+# zinit snippet PZT::modules/ssh/init.zsh
 
 setopt promptsubst
 
