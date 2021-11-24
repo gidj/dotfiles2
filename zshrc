@@ -95,11 +95,15 @@ fi
 
 autoload -U +X bashcompinit && bashcompinit
 
+
 # poetry completions
 fpath+=~/.zfunc
 # Amazon completion
 fpath+=~/.zsh/completion
 
+
+eval "$(register-python-argcomplete pipx)"
+eval "$(pipenv --completion)"
 autoload -Uz compinit
 compinit
 

@@ -14,7 +14,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'wellle/tmux-complete.vim'
 Plug 'honza/vim-snippets'
 
-" Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " Plug 'dense-analysis/ale'
 
@@ -136,7 +136,9 @@ let g:gruvbox_material_palette='mix'
 
 let g:palenight_terminal_italics=1
 colorscheme gruvbox
-let g:python3_host_prog = expand('~/dotfiles/.venv/bin/python')
+
+" let g:python3_host_prog = '/full/path/to/neovim3/bin/python'
+let g:python3_host_prog = expand('~/.pyenv/versions/neovim3/bin/python')
 let g:python_highlight_indent_errors = 0
 let g:python_highlight_all = 1
 " }}}

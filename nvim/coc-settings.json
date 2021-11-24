@@ -1,9 +1,22 @@
 {
     "coc.preferences.currentFunctionSymbolAutoUpdate": true,
     "suggest.enablePreview": true,
-    "coc.preferences.previewAutoClose": true,
     "tsserver.npm": "~/.nvm/versions/node/v14.9.0/bin/npm",
-    "python.analysis.useLibraryCodeForTypes":true,
-    "python.formatting.provider":"black",
-    "python.formatting.blackPath":"~/.local/bin/black"
+    "python.analysis.useLibraryCodeForTypes": true,
+    "python.formatting.provider": "black",
+    "python.formatting.blackPath": "~/.local/bin/black",
+    "languageserver": {
+        "terraform": {
+            "command": "terraform-ls",
+            "args": [
+                "serve"
+            ],
+            "filetypes": [
+                "terraform",
+                "tf"
+            ],
+            "initializationOptions": {},
+            "settings": {}
+        }
+    }
 }
