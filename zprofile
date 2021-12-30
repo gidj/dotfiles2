@@ -3,7 +3,7 @@ typeset -U path
 # source "$HOME/.zsecrets"
 
 # For whatever reason, this is required for nvm's default alias to work
-# PATH="/usr/local/bin:$(getconf PATH)"
+PATH="/usr/local/bin:$(getconf PATH)"
 fpath=(/usr/local/share/zsh-completions $fpath)
 
 # Add Python3
