@@ -8,6 +8,7 @@ nvim/eclim
 nvim/plugin
 nvim/plugged
 nvim/undodir
+nvim2/undodir
 nvim/workbench.xmi
 **/*.sqlite
 zgen
