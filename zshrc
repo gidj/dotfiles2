@@ -48,11 +48,6 @@ zinit wait lucid for \
   atload"unalias grv" \
         OMZP::git
 
-# direnv
-zinit as"program" make'!' atclone'./direnv hook zsh > zhook.zsh' \
-    atpull'%atclone' pick"direnv" src"zhook.zsh" for \
-        direnv/direnv
-
 zinit ice as"completion"
 zinit snippet PZT::modules/docker
 
@@ -106,6 +101,8 @@ fpath+=~/.zsh/completion
 
 eval "$(register-python-argcomplete pipx)"
 # eval "$(pipenv --completion)"
+eval "$(direnv hook zsh)"
+
 autoload -Uz compinit
 compinit
 
