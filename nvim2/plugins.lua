@@ -5,17 +5,10 @@ require('packer').startup(function(use)
 	use 'neovim/nvim-lspconfig'
 	use 'williamboman/nvim-lsp-installer'
 	use 'tami5/lspsaga.nvim'
-
   use 'windwp/nvim-autopairs'
+
 	-- Completion
-	--use 'hrsh7th/cmp-nvim-lsp'
-	--use 'hrsh7th/cmp-buffer'
-	--use 'hrsh7th/cmp-path'
 	use 'hrsh7th/cmp-cmdline'
-	--use 'L3MON4D3/LuaSnip'
-	-- use 'hrsh7th/vim-vsnip'
-	--use 'rafamadriz/friendly-snippets'
-	--use 'hrsh7th/nvim-cmp'
 	use 'ray-x/lsp_signature.nvim'
   use { -- Autocompletion plugin
     'hrsh7th/nvim-cmp',
@@ -42,11 +35,21 @@ require('packer').startup(function(use)
   use { 'nvim-lualine/lualine.nvim', requires = {'kyazdani42/nvim-web-devicons', opt = true}
   }
 
-	use 'pwntester/octo.nvim'
+  use {
+    'pwntester/octo.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim',
+      'nvim-telescope/telescope.nvim',
+      'kyazdani42/nvim-web-devicons',
+    },
+    config = function ()
+      require"octo".setup()
+    end
+  }
+
+  use 'machakann/vim-sandwich'
 
 	-- Themes
-	-- use 'morhetz/gruvbox'
-  --	use 'rmehri01/onenord.nvim'
   use {"ellisonleao/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
 	use 'folke/tokyonight.nvim'
 	use 'Mangeshrex/uwu.vim'

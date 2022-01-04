@@ -105,7 +105,7 @@ fpath+=~/.zsh/completion
 
 
 eval "$(register-python-argcomplete pipx)"
-eval "$(pipenv --completion)"
+# eval "$(pipenv --completion)"
 autoload -Uz compinit
 compinit
 

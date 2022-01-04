@@ -9,7 +9,7 @@ runtime ./treesitter.lua
 runtime ./telescope.vim
 runtime ./cmp.lua
 runtime ./maps.vim
-
+runtime macros/sandwich/keymap/surround.vim
 
 
 set clipboard=unnamed
@@ -41,6 +41,7 @@ set mouse=a " Turn on mouse mode, for terminals that can use it
 
 set termguicolors
 set background=dark " Set the background
+
 
 let g:gruvbox_italic=1
 let g:gruvbox_contrast_dark='hard'
