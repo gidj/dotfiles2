@@ -6,6 +6,7 @@ require('packer').startup(function(use)
 	use 'williamboman/nvim-lsp-installer'
 	use 'tami5/lspsaga.nvim'
   use 'windwp/nvim-autopairs'
+  use 'b3nj5m1n/kommentary'
 
 	-- Completion
 	use 'hrsh7th/cmp-cmdline'

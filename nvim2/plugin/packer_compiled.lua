@@ -119,6 +119,11 @@ _G.packer_plugins = {
     path = "/Users/gideon/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
     url = "https://github.com/ellisonleao/gruvbox.nvim"
   },
+  kommentary = {
+    loaded = true,
+    path = "/Users/gideon/.local/share/nvim/site/pack/packer/start/kommentary",
+    url = "https://github.com/b3nj5m1n/kommentary"
+  },
   ["lsp_signature.nvim"] = {
     loaded = true,
     path = "/Users/gideon/.local/share/nvim/site/pack/packer/start/lsp_signature.nvim",

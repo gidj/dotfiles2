@@ -38,6 +38,8 @@ local on_attach = function(_, bufnr)
   -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>so', [[<cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>]], opts)
   vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+
+  require("lsp_signature").on_attach() -- Note: add in lsp client on-attach
 end
 
 -- nvim-cmp supports additional completion capabilities
@@ -68,7 +70,27 @@ lsp_installer.on_server_ready(function(server)
   }
 
   if server.name == "sumneko_lua" then
-    local Lua = {diagnostics = {globals = {"vim"}}}
+    local runtime_path = vim.split(package.path, ';')
+    table.insert(runtime_path, "lua/?.lua")
+    table.insert(runtime_path, "lua/?/init.lua")
+    local Lua = {
+      runtime = {
+        -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+        version = 'LuaJIT',
+        -- Setup your lua path
+        path = runtime_path
+      },
+      diagnostics = {
+        -- Get the language server to recognize the `vim` global
+        globals = {'vim'}
+      },
+      workspace = {
+        -- Make the server aware of Neovim runtime files
+        library = vim.api.nvim_get_runtime_file("", true)
+      },
+      -- Do not send telemetry data containing a randomized but unique identifier
+      telemetry = {enable = false}
+    }
     opts.settings.Lua = Lua
   end
 
@@ -83,6 +105,13 @@ lsp_installer.on_server_ready(function(server)
             formatStdin = true
           }
         },
+        json = {
+          {
+            formatCommand = 'prettier --config-precedence prefer-file --stdin-filepath ${INPUT}',
+            -- formatCommand = 'prettier --parser json'
+            formatStdin = true
+          }
+        },
         python = {
           {formatCommand = "black --quiet -", formatStdin = true}, {
             lintCommand = 'pylint --output-format text --score no --msg-template {path}:{line}:{column}:{C}:{msg} ${INPUT}',
@@ -92,34 +121,11 @@ lsp_installer.on_server_ready(function(server)
             rootMarkers = {}
           }
         }
-
       }
     }
   end
-
-  require"lsp_signature".on_attach() -- Note: add in lsp client on-attach
-
-  -- (optional) Customize the options passed to the server
-  -- if server.name == "tsserver" then
-  --     opts.root_dir = function() ... end
-  -- end
 
   -- This setup() function is exactly the same as lspconfig's setup function.
   -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
   server:setup(opts)
 end)
--- {
---    lintCommand: 'pylint --output-format text --score no --msg-template {path}:{line}:{column}:{C}:{msg} ${INPUT}'
---    lint-stdin: false
---    lint-formats:
---      - '%f:%l:%c:%t:%m'
---    lint-offset-columns: 1
---    lint-category-map:
---      I: H
---      R: I
---      C: I
---      W: W
---      E: E
---      F: E
---    }
-

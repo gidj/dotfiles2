@@ -22,11 +22,11 @@ cmp.setup {
     format = lspkind.cmp_format {
       with_text = false,
       menu = {
-        buffer = '[buf]',
+        buffer = '[Buff]',
         nvim_lsp = '[LSP]',
-        nvim_lua = '[api]',
-        path = '[path]',
-        luasnip = '[snip]',
+        nvim_lua = '[Vim]',
+        path = '[Path]',
+        luasnip = '[Snip]',
       },
     },
   },
@@ -35,6 +35,13 @@ cmp.setup {
     ['<C-n>'] = cmp.mapping.select_next_item(),
     ['<C-d>'] = cmp.mapping.scroll_docs(-4),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
+    ["<C-j>"] = cmp.mapping(function(fallback)
+      if luasnip.expand_or_jumpable() then
+        luasnip.expand_or_jump()
+      else
+        fallback()
+      end
+    end, { "i", "s" }),
     ['<C-Space>'] = cmp.mapping.complete(),
     ['<C-e>'] = cmp.mapping.close(),
     ['<CR>'] = cmp.mapping.confirm {
@@ -61,24 +68,6 @@ cmp.setup {
         fallback()
       end
     end, { "i", "s" }),
-    --['<Tab>'] = function(fallback)
-    --  if cmp.visible() then
-    --    cmp.select_next_item()
-    --  elseif luasnip.expand_or_jumpable() then
-    --    vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<Plug>luasnip-expand-or-jump', true, true, true), '')
-    --  else
-    --    fallback()
-    --  end
-    --end,
-    --['<S-Tab>'] = function(fallback)
-    --  if cmp.visible() then
-    --    cmp.select_prev_item()
-    --  elseif luasnip.jumpable(-1) then
-    --    vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<Plug>luasnip-jump-prev', true, true, true), '')
-    --  else
-    --    fallback()
-    --  end
-    --end,
   },
   sources = {
     { name = 'nvim_lsp' },
@@ -86,6 +75,13 @@ cmp.setup {
     { name = 'luasnip', options = { use_show_condition = false} },
   },
 }
+
+local keymap = vim.api.nvim_set_keymap
+local opts = { noremap = true, silent = true }
+keymap("i", "<c-j>", "<cmd>lua require'luasnip'.jump(1)<CR>", opts)
+keymap("s", "<c-j>", "<cmd>lua require'luasnip'.jump(1)<CR>", opts)
+keymap("i", "<c-k>", "<cmd>lua require'luasnip'.jump(-1)<CR>", opts)
+keymap("s", "<c-k>", "<cmd>lua require'luasnip'.jump(-1)<CR>", opts)
 
 require("luasnip").config.set_config({ history = true, updateevents = "TextChanged,TextChangedI" })
 require("luasnip.loaders.from_vscode").load()
