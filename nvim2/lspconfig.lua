@@ -2,7 +2,9 @@
 local lsp_installer = require("nvim-lsp-installer")
 
 -- Include the servers you want to have installed by default below
-local servers = {"pyright", "sumneko_lua", "vimls", "tsserver", "efm"}
+local servers = {
+  "pyright", "sumneko_lua", "vimls", "tsserver" -- "efm"
+}
 
 for _, name in pairs(servers) do
   local server_is_found, server = lsp_installer.get_server(name)
@@ -29,7 +31,7 @@ local on_attach = function(_, bufnr)
   -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
   -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-  -- vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
   -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
   -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
   -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
@@ -92,37 +94,6 @@ lsp_installer.on_server_ready(function(server)
       telemetry = {enable = false}
     }
     opts.settings.Lua = Lua
-  end
-
-  if server.name == "efm" then
-    opts.init_options = {documentFormatting = true}
-    opts.settings = {
-      rootMarkers = {".git/"},
-      languages = {
-        lua = {
-          {
-            formatCommand = "lua-format --indent-width 2 --tab-width 2 --no-use-tab --column-limit 120 --column-table-limit 100 --no-keep-simple-function-one-line --no-chop-down-table --chop-down-kv-table --no-keep-simple-control-block-one-line --no-keep-simple-function-one-line --no-break-after-functioncall-lp --no-break-after-operator",
-            formatStdin = true
-          }
-        },
-        json = {
-          {
-            formatCommand = 'prettier --config-precedence prefer-file --stdin-filepath ${INPUT}',
-            -- formatCommand = 'prettier --parser json'
-            formatStdin = true
-          }
-        },
-        python = {
-          {formatCommand = "black --quiet -", formatStdin = true}, {
-            lintCommand = 'pylint --output-format text --score no --msg-template {path}:{line}:{column}:{C}:{msg} ${INPUT}',
-            prefix = 'pylint',
-            lintStdin = false,
-            lintFormats = {'%.%#:%l:%c: %t%.%#: %m'},
-            rootMarkers = {}
-          }
-        }
-      }
-    }
   end
 
   -- This setup() function is exactly the same as lspconfig's setup function.
