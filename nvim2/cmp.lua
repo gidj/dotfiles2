@@ -16,7 +16,7 @@ cmp.setup {
   snippet = {
     expand = function(args)
       luasnip.lsp_expand(args.body)
-    end,
+    end
   },
   formatting = {
     format = lspkind.cmp_format {
@@ -26,9 +26,9 @@ cmp.setup {
         nvim_lsp = '[LSP]',
         nvim_lua = '[Vim]',
         path = '[Path]',
-        luasnip = '[Snip]',
-      },
-    },
+        luasnip = '[Snip]'
+      }
+    }
   },
   mapping = {
     ['<C-p>'] = cmp.mapping.select_prev_item(),
@@ -41,13 +41,10 @@ cmp.setup {
       else
         fallback()
       end
-    end, { "i", "s" }),
+    end, {"i", "s"}),
     ['<C-Space>'] = cmp.mapping.complete(),
     ['<C-e>'] = cmp.mapping.close(),
-    ['<CR>'] = cmp.mapping.confirm {
-      behavior = cmp.ConfirmBehavior.Replace,
-      select = true,
-    },
+    ['<CR>'] = cmp.mapping.confirm {behavior = cmp.ConfirmBehavior.Replace, select = true},
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
@@ -58,7 +55,7 @@ cmp.setup {
       else
         fallback()
       end
-    end, { "i", "s" }),
+    end, {"i", "s"}),
     ["<S-Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_prev_item()
@@ -67,21 +64,20 @@ cmp.setup {
       else
         fallback()
       end
-    end, { "i", "s" }),
+    end, {"i", "s"})
   },
   sources = {
-    { name = 'nvim_lsp' },
-    { name = 'buffer' },
-    { name = 'luasnip', options = { use_show_condition = false} },
-  },
+    {name = 'nvim_lsp'}, {name = 'buffer'},
+    {name = 'luasnip', options = {use_show_condition = false}}
+  }
 }
 
 local keymap = vim.api.nvim_set_keymap
-local opts = { noremap = true, silent = true }
+local opts = {noremap = true, silent = true}
 keymap("i", "<c-j>", "<cmd>lua require'luasnip'.jump(1)<CR>", opts)
 keymap("s", "<c-j>", "<cmd>lua require'luasnip'.jump(1)<CR>", opts)
 keymap("i", "<c-k>", "<cmd>lua require'luasnip'.jump(-1)<CR>", opts)
 keymap("s", "<c-k>", "<cmd>lua require'luasnip'.jump(-1)<CR>", opts)
 
-require("luasnip").config.set_config({ history = true, updateevents = "TextChanged,TextChangedI" })
+require("luasnip").config.set_config({history = true, updateevents = "TextChanged,TextChangedI"})
 require("luasnip.loaders.from_vscode").load()

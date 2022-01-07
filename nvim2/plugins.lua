@@ -44,19 +44,19 @@ require('packer').startup(function(use)
     config = function()
       local null_ls = require("null-ls")
       local sources = {
-        null_ls.builtins.formatting.prettier, null_ls.builtins.formatting.black,
-        null_ls.builtins.formatting.prettier, null_ls.builtins.diagnostics.pylint,
-        null_ls.builtins.formatting.lua_format.with({
+        null_ls.builtins.formatting.black,
+        null_ls.builtins.formatting.prettier.with({filtetypes = {"json"}}),
+        null_ls.builtins.diagnostics.pylint, null_ls.builtins.formatting.lua_format.with({
           args = {
-            "--indent-width", "2", "--tab-width", "2", "--no-use-tab", "--column-limit", "120",
-            "--column-table-limit", "100", "--no-keep-simple-function-one-line",
+            "-i", "--indent-width", "2", "--tab-width", "2", "--no-use-tab", "--column-limit",
+            "120", "--column-table-limit", "100", "--no-keep-simple-function-one-line",
             "--no-chop-down-table", "--chop-down-kv-table",
             "--no-keep-simple-control-block-one-line", "--no-keep-simple-function-one-line",
             "--no-break-after-functioncall-lp", "--no-break-after-operator"
           }
         })
       }
-      require"null-ls".setup({sources = sources})
+      require"null-ls".setup({sources = sources, debug = true})
     end
   }
 

@@ -11,7 +11,6 @@ runtime ./cmp.lua
 runtime ./maps.vim
 runtime macros/sandwich/keymap/surround.vim
 
-
 set clipboard=unnamed
 
 set listchars=tab:▸\ ,eol:¬  " Use the same symbols as TextMate for tabstops and EOLs
@@ -41,12 +40,6 @@ set mouse=a " Turn on mouse mode, for terminals that can use it
 
 set termguicolors
 set background=dark " Set the background
-
-
-let g:gruvbox_italic=1
-let g:gruvbox_contrast_dark='hard'
-let g:gruvbox_italicize_strings=1
-let g:gruvbox_improved_warnings=1
 
 let g:tokyonight_style='night'
 colorscheme tokyonight
