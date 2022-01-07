@@ -12,6 +12,7 @@ local lspkind = require 'lspkind'
 
 -- nvim-cmp setup
 local cmp = require 'cmp'
+local cmp_buffer = require('cmp_buffer')
 cmp.setup {
   snippet = {
     expand = function(args)
@@ -69,6 +70,14 @@ cmp.setup {
   sources = {
     {name = 'nvim_lsp'}, {name = 'buffer'},
     {name = 'luasnip', options = {use_show_condition = false}}
+  },
+  sorting = {
+    comparators = {
+      function(...)
+        return cmp_buffer:compare_locality(...)
+      end
+      -- The rest of your comparators...
+    }
   }
 }
 
