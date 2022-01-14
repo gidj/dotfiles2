@@ -29,7 +29,6 @@ brew "lazygit"
 brew "go"
 brew "lua"
 brew "luarocks"
-brew "nvm"
 
 # Vim
 brew "neovim"
