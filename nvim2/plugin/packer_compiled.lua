@@ -260,10 +260,6 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: gitsigns.nvim
-time([[Config for gitsigns.nvim]], true)
-try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
-time([[Config for gitsigns.nvim]], false)
 -- Config for: octo.nvim
 time([[Config for octo.nvim]], true)
 try_loadstring("\27LJ\2\n2\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\tocto\frequire\0", "config", "octo.nvim")
@@ -272,6 +268,10 @@ time([[Config for octo.nvim]], false)
 time([[Config for null-ls.nvim]], true)
 try_loadstring("\27LJ\2\n\\\0\2\5\0\3\0\0056\2\0\0009\2\1\2'\4\2\0B\2\2\1K\0\1\0= command! Format execute 'lua vim.lsp.buf.formatting()' \bcmd\bvim÷\4\1\0\6\0\21\1(6\0\0\0'\2\1\0B\0\2\0024\1\5\0009\2\2\0009\2\3\0029\2\4\2>\2\1\0019\2\2\0009\2\3\0029\2\5\0029\2\6\0025\4\b\0005\5\a\0=\5\t\4B\2\2\2>\2\2\0019\2\2\0009\2\n\0029\2\v\2>\2\3\0019\2\2\0009\2\3\0029\2\f\0029\2\6\0025\4\14\0005\5\r\0=\5\15\4B\2\2\0?\2\0\0006\2\0\0'\4\1\0B\2\2\0029\2\16\0025\4\17\0=\1\18\0043\5\19\0=\5\20\4B\2\2\1K\0\1\0\14on_attach\0\fsources\1\0\1\ndebug\2\nsetup\targs\1\0\0\1\18\0\0\a-i\19--indent-width\0062\16--tab-width\0062\17--no-use-tab\19--column-limit\b120\25--column-table-limit\b100'--no-keep-simple-function-one-line\25--no-chop-down-table\25--chop-down-kv-table,--no-keep-simple-control-block-one-line'--no-keep-simple-function-one-line%--no-break-after-functioncall-lp\30--no-break-after-operator\15lua_format\vpylint\16diagnostics\15filtetypes\1\0\0\1\2\0\0\tjson\twith\rprettier\nblack\15formatting\rbuiltins\fnull-ls\frequire\t€€À™\4\0", "config", "null-ls.nvim")
 time([[Config for null-ls.nvim]], false)
+-- Config for: gitsigns.nvim
+time([[Config for gitsigns.nvim]], true)
+try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
+time([[Config for gitsigns.nvim]], false)
 if should_profile then save_profiles() end
 
 end)
