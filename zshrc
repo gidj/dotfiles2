@@ -70,7 +70,6 @@ _has() {
   return $( whence $1 >/dev/null )
 }
 
-
 if _has fzf + _has fd; then
     export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
     export FZF_DEFAULT_COMMAND='fd --type f'
@@ -90,19 +89,16 @@ fi
 #   export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
 # fi
 
-autoload -U +X bashcompinit && bashcompinit
+autoload -Uz compinit
+compinit
 
+autoload -U +X bashcompinit && bashcompinit
 
 # poetry completions
 fpath+=~/.zfunc
 # Amazon completion
 fpath+=~/.zsh/completion
 
-
 eval "$(register-python-argcomplete pipx)"
 # eval "$(pipenv --completion)"
 eval "$(direnv hook zsh)"
-
-autoload -Uz compinit
-compinit
-

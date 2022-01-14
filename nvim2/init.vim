@@ -1,5 +1,6 @@
 set completeopt=menuone,noselect
 
+
 runtime ./plugins.lua
 
 runtime ./lspconfig.lua

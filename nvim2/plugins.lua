@@ -29,6 +29,18 @@ require('packer').startup(function(use)
     }
   }
 
+  --[[ use {
+    "folke/trouble.nvim",
+    requires = "kyazdani42/nvim-web-devicons",
+    config = function()
+      require("trouble").setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      }
+    end
+  }
+ ]]
   use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
 
   use 'nvim-lua/popup.nvim'
@@ -56,7 +68,13 @@ require('packer').startup(function(use)
           }
         })
       }
-      require"null-ls".setup({sources = sources, debug = true})
+      require"null-ls".setup({
+        sources = sources,
+        debug = true,
+        on_attach = function(_, bufnr)
+          vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
+        end
+      })
     end
   }
 
@@ -74,6 +92,7 @@ require('packer').startup(function(use)
 
   -- Themes
   use {"ellisonleao/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
+  use 'projekt0n/github-nvim-theme'
   use 'folke/tokyonight.nvim'
   use 'Mangeshrex/uwu.vim'
   use 'marko-cerovac/material.nvim'
