@@ -22,7 +22,7 @@ highlight SpecialKey guifg=#4a4a59
 set modeline
 
 if has("persistent_undo")
-  set undodir=~/.config/nvim/undodir/
+  set undodir=~/.local/tmp/undodir/
   set undofile
 endif
 
@@ -91,3 +91,5 @@ if has("autocmd")
         autocmd BufWritePost plugins.lua source <afile> | PackerCompile
     augroup END
 endif
+
+let g:gh_open_command = 'fn() { echo "$@" | pbcopy; }; fn '

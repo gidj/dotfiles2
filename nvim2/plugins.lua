@@ -14,7 +14,7 @@ require('packer').startup(function(use)
       require('gitsigns').setup()
     end
   }
-
+  use 'ruanyl/vim-gh-line'
   use 'simrat39/symbols-outline.nvim'
   -- Completion
   use 'hrsh7th/cmp-cmdline'
@@ -46,6 +46,7 @@ require('packer').startup(function(use)
   use 'nvim-lua/popup.nvim'
   use 'nvim-lua/plenary.nvim'
   use 'nvim-telescope/telescope.nvim'
+  use 'RRethy/vim-illuminate'
 
   use 'justinmk/vim-dirvish'
   use {'nvim-lualine/lualine.nvim', requires = {'kyazdani42/nvim-web-devicons', opt = true}}
@@ -58,7 +59,8 @@ require('packer').startup(function(use)
       local sources = {
         null_ls.builtins.formatting.black,
         null_ls.builtins.formatting.prettier.with({filtetypes = {"json"}}),
-        null_ls.builtins.diagnostics.pylint, null_ls.builtins.formatting.lua_format.with({
+        null_ls.builtins.diagnostics.pylint, 
+        null_ls.builtins.formatting.lua_format.with({
           args = {
             "-i", "--indent-width", "2", "--tab-width", "2", "--no-use-tab", "--column-limit",
             "120", "--column-table-limit", "100", "--no-keep-simple-function-one-line",
@@ -89,6 +91,7 @@ require('packer').startup(function(use)
   }
 
   use 'machakann/vim-sandwich'
+  use 'chrisbra/csv.vim'
 
   -- Themes
   use {"ellisonleao/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}

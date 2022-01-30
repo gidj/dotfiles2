@@ -27,7 +27,9 @@ export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/bzip2/lib"
 export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include"
 
 # Python's Poetry
-# path=(~/.poetry/bin $path)
+export POETRY_VIRTUALENVS_IN_PROJECT="true"
+
+path=(~/.poetry/bin $path)
 
 # Add Node
 # path=(~/node_modules/.bin $path)
