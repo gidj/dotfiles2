@@ -6,13 +6,17 @@ require('telescope').setup{
       n = {
         ["q"] = actions.close
       },
+      i = {
+        ["<esc>"] = actions.close
+      },
     },
   }
 }
 EOF
 
 nnoremap <silent> ;f <cmd>Telescope find_files<cr>
-nnoremap <silent> ;gf <cmd>Telescope git_files<cr>
+nnoremap <silent> // <cmd>Telescope git_files<cr>
+nnoremap <silent> ,gr <cmd>Telescope lsp_references<cr>
 nnoremap <silent> ;r <cmd>Telescope live_grep<cr>
 nnoremap <silent> \\ <cmd>Telescope buffers<cr>
 nnoremap <silent> ;; <cmd>Telescope help_tags<cr>

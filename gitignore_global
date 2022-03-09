@@ -9,3 +9,4 @@ pyproject.toml
 poetry.lock
 Pipfile*
 ignore
+.terraform.lock.hcl

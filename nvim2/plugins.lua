@@ -18,6 +18,14 @@ require('packer').startup(function(use)
   use 'simrat39/symbols-outline.nvim'
   -- Completion
   use 'hrsh7th/cmp-cmdline'
+
+  use {
+    "danymat/neogen",
+    config = function()
+      require('neogen').setup {enabled = true}
+    end,
+    requires = "nvim-treesitter/nvim-treesitter"
+  }
   use 'ray-x/lsp_signature.nvim'
   use { -- Autocompletion plugin
     'hrsh7th/nvim-cmp',
@@ -59,8 +67,7 @@ require('packer').startup(function(use)
       local sources = {
         null_ls.builtins.formatting.black,
         null_ls.builtins.formatting.prettier.with({filtetypes = {"json"}}),
-        null_ls.builtins.diagnostics.pylint, 
-        null_ls.builtins.formatting.lua_format.with({
+        null_ls.builtins.diagnostics.pylint, null_ls.builtins.formatting.lua_format.with({
           args = {
             "-i", "--indent-width", "2", "--tab-width", "2", "--no-use-tab", "--column-limit",
             "120", "--column-table-limit", "100", "--no-keep-simple-function-one-line",
@@ -78,6 +85,22 @@ require('packer').startup(function(use)
         end
       })
     end
+  }
+
+  use {
+    "nvim-neorg/neorg",
+    config = function()
+      require('neorg').setup {
+        load = {
+          ["core.defaults"] = {},
+          ["core.norg.completion"] = {config = {engine = "nvim-cmp"}},
+          ["core.norg.dirman"] = {
+            config = {workspaces = {work = "~/notes/work", home = "~/notes/home"}}
+          }
+        }
+      }
+    end,
+    requires = "nvim-lua/plenary.nvim"
   }
 
   use {
@@ -100,4 +123,6 @@ require('packer').startup(function(use)
   use 'Mangeshrex/uwu.vim'
   use 'marko-cerovac/material.nvim'
   use 'shaunsingh/moonlight.nvim'
+  use 'rebelot/kanagawa.nvim'
+  use 'EdenEast/nightfox.nvim'
 end)

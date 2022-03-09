@@ -68,7 +68,7 @@ cmp.setup {
     end, {"i", "s"})
   },
   sources = {
-    {name = 'nvim_lsp'}, {name = 'buffer'},
+    {name = 'nvim_lsp'}, {name = 'buffer'}, {name = 'norg'},
     {name = 'luasnip', options = {use_show_condition = false}}
   },
   sorting = {

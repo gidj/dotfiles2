@@ -85,15 +85,23 @@ alias vagrant='TERM=screen-256color vagrant'
 
 # export JAVA_8_HOME=$(/usr/libexec/java_home -v1.8)
 # export JAVA_11_HOME=$(/usr/libexec/java_home -v11)
+export JAVA_11_HOME=/opt/homebrew/Cellar/openjdk@11/11.0.12/libexec/openjdk.jdk/Contents/Home/bin
 
 # alias java8='export JAVA_HOME=$JAVA_8_HOME'
-# alias java11='export JAVA_HOME=$JAVA_11_HOME'
-# java11
+alias java11='export JAVA_HOME=$JAVA_11_HOME'
+java11
+
+export PATH=$JAVA_HOME:$PATH
 
 export HOMEBREW_NO_AUTO_UPDATE=1
+
+
+# Sonar
+export SONAR_HOME=/opt/homebrew/Cellar/sonar-scanner/4.6.2.2472_1/libexec
+export SONAR=$SONAR_HOME/bin
+export PATH=$SONAR:$PATH
 
 # export NVM_DIR="$HOME/.nvm"
 # [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 # [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
-export PATH

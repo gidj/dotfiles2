@@ -2,9 +2,12 @@ cask "font-iosevka"
 cask "font-iosevka-slab"
 
 brew "postgresql"
+brew "terraform"
 
 # Dev stuff
 brew "direnv"
+brew "sonar-scanner"
+brew "openjdk@11"
 
 # Docker
 brew "docker-completion"
@@ -32,6 +35,7 @@ brew "luarocks"
 
 # Vim
 brew "neovim"
+brew "gcc" # required for some tree-sitter grammars
 brew "tree-sitter"
 
 # Python
