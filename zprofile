@@ -100,8 +100,11 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 export SONAR_HOME=/opt/homebrew/Cellar/sonar-scanner/4.6.2.2472_1/libexec
 export SONAR=$SONAR_HOME/bin
 export PATH=$SONAR:$PATH
-
+alias loginaws="aws sso login && aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 212544173670.dkr.ecr.us-east-1.amazonaws.com"
 # export NVM_DIR="$HOME/.nvm"
 # [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 # [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
+json_escape () {
+    printf '%s' "$1" | python -c 'import json,sys; print(json.dumps(sys.stdin.read()))'
+}

@@ -8,6 +8,7 @@ brew "terraform"
 brew "direnv"
 brew "sonar-scanner"
 brew "openjdk@11"
+brew "exercism"
 
 # Docker
 brew "docker-completion"

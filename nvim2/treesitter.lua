@@ -21,7 +21,7 @@ parser_configs.norg_table = {
 treesitter.setup {
   highlight = {enable = true, disable = {}},
   indent = {enable = false, disable = {}},
-  ensure_installed = {"python", "json", "javascript", "hcl", "norg", "norg_meta", "norg_table"}
+  ensure_installed = {"python", "json", "javascript", "hcl", "norg", "norg_meta", "norg_table", "go"}
 }
 
 parser_configs.markdown.used_by = "octo" -- These two are optional and provide syntax highlighting
