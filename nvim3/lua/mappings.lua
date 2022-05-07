@@ -36,3 +36,9 @@ map("v", "<tab>", "%")
 -- " Clear search
 map("n", "<leader>,", ":noh<cr>")
 
+map("n", ";f", "<cmd>Telescope find_files<cr>", {silent=true})
+map("n", "//", "<cmd>Telescope git_files<cr>", {silent=true})
+map("n", ",gr", "<cmd>Telescope lsp_references<cr>", {silent=true})
+map("n", ";r", "<cmd>Telescope live_grep<cr>", {silent=true})
+map("n", "\\\\", "<cmd>Telescope buffers<cr>", {silent=true})
+map("n", ";;", "<cmd>Telescope help_tags<cr>", {silent=true})

@@ -20,9 +20,7 @@ capabilities.textDocument.completion.completionItem.resolveSupport = {
 }
 
 local lspconfig = require("lspconfig")
-local servers = {
-  "pyright", "sumneko_lua", "vimls", "tsserver", "terraformls" -- "efm"
-}
+local servers = {"pyright", "rust_analyzer", "sumneko_lua", "vimls", "tsserver", "terraformls"}
 
 for _, lsp in pairs(servers) do
   local opts = {
@@ -44,7 +42,7 @@ for _, lsp in pairs(servers) do
       },
       diagnostics = {
         -- Get the language server to recognize the `vim` global
-        globals = {'vim'}
+        globals = {'vim', 'use'}
       },
       workspace = {
         -- Make the server aware of Neovim runtime files

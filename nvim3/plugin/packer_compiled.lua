@@ -94,6 +94,11 @@ _G.packer_plugins = {
     path = "/Users/gideon/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
+  ["cmp-nvim-lsp-signature-help"] = {
+    loaded = true,
+    path = "/Users/gideon/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp-signature-help",
+    url = "https://github.com/hrsh7th/cmp-nvim-lsp-signature-help"
+  },
   ["cmp-nvim-lua"] = {
     loaded = true,
     path = "/Users/gideon/.local/share/nvim/site/pack/packer/start/cmp-nvim-lua",
@@ -104,25 +109,10 @@ _G.packer_plugins = {
     path = "/Users/gideon/.local/share/nvim/site/pack/packer/start/cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
   },
-  cmp_luasnip = {
-    loaded = true,
-    path = "/Users/gideon/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
-    url = "https://github.com/saadparwaiz1/cmp_luasnip"
-  },
-  ["csv.vim"] = {
-    loaded = true,
-    path = "/Users/gideon/.local/share/nvim/site/pack/packer/start/csv.vim",
-    url = "https://github.com/chrisbra/csv.vim"
-  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/Users/gideon/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
-  },
-  ["github-nvim-theme"] = {
-    loaded = true,
-    path = "/Users/gideon/.local/share/nvim/site/pack/packer/start/github-nvim-theme",
-    url = "https://github.com/projekt0n/github-nvim-theme"
   },
   ["gitsigns.nvim"] = {
     config = { "\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0" },
@@ -135,30 +125,15 @@ _G.packer_plugins = {
     path = "/Users/gideon/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
     url = "https://github.com/ellisonleao/gruvbox.nvim"
   },
-  ["kanagawa.nvim"] = {
-    loaded = true,
-    path = "/Users/gideon/.local/share/nvim/site/pack/packer/start/kanagawa.nvim",
-    url = "https://github.com/rebelot/kanagawa.nvim"
-  },
   kommentary = {
     loaded = true,
     path = "/Users/gideon/.local/share/nvim/site/pack/packer/start/kommentary",
     url = "https://github.com/b3nj5m1n/kommentary"
   },
-  ["lsp_signature.nvim"] = {
-    loaded = true,
-    path = "/Users/gideon/.local/share/nvim/site/pack/packer/start/lsp_signature.nvim",
-    url = "https://github.com/ray-x/lsp_signature.nvim"
-  },
   ["lspkind-nvim"] = {
     loaded = true,
     path = "/Users/gideon/.local/share/nvim/site/pack/packer/start/lspkind-nvim",
     url = "https://github.com/onsails/lspkind-nvim"
-  },
-  ["lspsaga.nvim"] = {
-    loaded = true,
-    path = "/Users/gideon/.local/share/nvim/site/pack/packer/start/lspsaga.nvim",
-    url = "https://github.com/tami5/lspsaga.nvim"
   },
   ["lualine.nvim"] = {
     loaded = true,
@@ -169,16 +144,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/gideon/.local/share/nvim/site/pack/packer/start/lush.nvim",
     url = "https://github.com/rktjmp/lush.nvim"
-  },
-  ["material.nvim"] = {
-    loaded = true,
-    path = "/Users/gideon/.local/share/nvim/site/pack/packer/start/material.nvim",
-    url = "https://github.com/marko-cerovac/material.nvim"
-  },
-  ["moonlight.nvim"] = {
-    loaded = true,
-    path = "/Users/gideon/.local/share/nvim/site/pack/packer/start/moonlight.nvim",
-    url = "https://github.com/shaunsingh/moonlight.nvim"
   },
   neogen = {
     config = { "\27LJ\2\nD\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\fenabled\2\nsetup\vneogen\frequire\0" },
@@ -192,21 +157,11 @@ _G.packer_plugins = {
     path = "/Users/gideon/.local/share/nvim/site/pack/packer/start/neorg",
     url = "https://github.com/nvim-neorg/neorg"
   },
-  ["nightfox.nvim"] = {
-    loaded = true,
-    path = "/Users/gideon/.local/share/nvim/site/pack/packer/start/nightfox.nvim",
-    url = "https://github.com/EdenEast/nightfox.nvim"
-  },
   ["null-ls.nvim"] = {
     config = { "\27LJ\2\n\\\0\2\5\0\3\0\0056\2\0\0009\2\1\2'\4\2\0B\2\2\1K\0\1\0= command! Format execute 'lua vim.lsp.buf.formatting()' \bcmd\bvim÷\4\1\0\6\0\21\1(6\0\0\0'\2\1\0B\0\2\0024\1\5\0009\2\2\0009\2\3\0029\2\4\2>\2\1\0019\2\2\0009\2\3\0029\2\5\0029\2\6\0025\4\b\0005\5\a\0=\5\t\4B\2\2\2>\2\2\0019\2\2\0009\2\n\0029\2\v\2>\2\3\0019\2\2\0009\2\3\0029\2\f\0029\2\6\0025\4\14\0005\5\r\0=\5\15\4B\2\2\0?\2\0\0006\2\0\0'\4\1\0B\2\2\0029\2\16\0025\4\17\0=\1\18\0043\5\19\0=\5\20\4B\2\2\1K\0\1\0\14on_attach\0\fsources\1\0\1\ndebug\2\nsetup\targs\1\0\0\1\18\0\0\a-i\19--indent-width\0062\16--tab-width\0062\17--no-use-tab\19--column-limit\b120\25--column-table-limit\b100'--no-keep-simple-function-one-line\25--no-chop-down-table\25--chop-down-kv-table,--no-keep-simple-control-block-one-line'--no-keep-simple-function-one-line%--no-break-after-functioncall-lp\30--no-break-after-operator\15lua_format\vpylint\16diagnostics\15filtetypes\1\0\0\1\2\0\0\tjson\twith\rprettier\nblack\15formatting\rbuiltins\fnull-ls\frequire\t€€À™\4\0" },
     loaded = true,
     path = "/Users/gideon/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
     url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
-  },
-  ["nvim-autopairs"] = {
-    loaded = true,
-    path = "/Users/gideon/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
-    url = "https://github.com/windwp/nvim-autopairs"
   },
   ["nvim-cmp"] = {
     loaded = true,
@@ -219,7 +174,7 @@ _G.packer_plugins = {
     url = "https://github.com/williamboman/nvim-lsp-installer"
   },
   ["nvim-lspconfig"] = {
-    config = { "\27LJ\2\nª\1\0\0\4\0\a\0\f5\0\0\0006\1\1\0'\3\2\0B\1\2\0029\1\3\0015\3\4\0=\0\5\3B\1\2\0016\1\1\0'\3\6\0B\1\2\1K\0\1\0\15config/lsp\21ensure_installed\1\0\0\nsetup\23nvim-lsp-installer\frequire\1\6\0\0\fpyright\16sumneko_lua\nvimls\rtsserver\16terraformls\0" },
+    config = { "\27LJ\2\n¸\1\0\0\4\0\a\0\f5\0\0\0006\1\1\0'\3\2\0B\1\2\0029\1\3\0015\3\4\0=\0\5\3B\1\2\0016\1\1\0'\3\6\0B\1\2\1K\0\1\0\15config/lsp\21ensure_installed\1\0\0\nsetup\23nvim-lsp-installer\frequire\1\a\0\0\fpyright\18rust_analyzer\16sumneko_lua\nvimls\rtsserver\16terraformls\0" },
     loaded = true,
     path = "/Users/gideon/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
@@ -270,11 +225,6 @@ _G.packer_plugins = {
     path = "/Users/gideon/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
     url = "https://github.com/folke/tokyonight.nvim"
   },
-  ["uwu.vim"] = {
-    loaded = true,
-    path = "/Users/gideon/.local/share/nvim/site/pack/packer/start/uwu.vim",
-    url = "https://github.com/Mangeshrex/uwu.vim"
-  },
   ["vim-dirvish"] = {
     loaded = true,
     path = "/Users/gideon/.local/share/nvim/site/pack/packer/start/vim-dirvish",
@@ -285,11 +235,6 @@ _G.packer_plugins = {
     path = "/Users/gideon/.local/share/nvim/site/pack/packer/start/vim-gh-line",
     url = "https://github.com/ruanyl/vim-gh-line"
   },
-  ["vim-illuminate"] = {
-    loaded = true,
-    path = "/Users/gideon/.local/share/nvim/site/pack/packer/start/vim-illuminate",
-    url = "https://github.com/RRethy/vim-illuminate"
-  },
   ["vim-sandwich"] = {
     loaded = true,
     path = "/Users/gideon/.local/share/nvim/site/pack/packer/start/vim-sandwich",
@@ -298,6 +243,18 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: octo.nvim
+time([[Config for octo.nvim]], true)
+try_loadstring("\27LJ\2\n2\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\tocto\frequire\0", "config", "octo.nvim")
+time([[Config for octo.nvim]], false)
+-- Config for: gitsigns.nvim
+time([[Config for gitsigns.nvim]], true)
+try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
+time([[Config for gitsigns.nvim]], false)
+-- Config for: neogen
+time([[Config for neogen]], true)
+try_loadstring("\27LJ\2\nD\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\fenabled\2\nsetup\vneogen\frequire\0", "config", "neogen")
+time([[Config for neogen]], false)
 -- Config for: null-ls.nvim
 time([[Config for null-ls.nvim]], true)
 try_loadstring("\27LJ\2\n\\\0\2\5\0\3\0\0056\2\0\0009\2\1\2'\4\2\0B\2\2\1K\0\1\0= command! Format execute 'lua vim.lsp.buf.formatting()' \bcmd\bvim÷\4\1\0\6\0\21\1(6\0\0\0'\2\1\0B\0\2\0024\1\5\0009\2\2\0009\2\3\0029\2\4\2>\2\1\0019\2\2\0009\2\3\0029\2\5\0029\2\6\0025\4\b\0005\5\a\0=\5\t\4B\2\2\2>\2\2\0019\2\2\0009\2\n\0029\2\v\2>\2\3\0019\2\2\0009\2\3\0029\2\f\0029\2\6\0025\4\14\0005\5\r\0=\5\15\4B\2\2\0?\2\0\0006\2\0\0'\4\1\0B\2\2\0029\2\16\0025\4\17\0=\1\18\0043\5\19\0=\5\20\4B\2\2\1K\0\1\0\14on_attach\0\fsources\1\0\1\ndebug\2\nsetup\targs\1\0\0\1\18\0\0\a-i\19--indent-width\0062\16--tab-width\0062\17--no-use-tab\19--column-limit\b120\25--column-table-limit\b100'--no-keep-simple-function-one-line\25--no-chop-down-table\25--chop-down-kv-table,--no-keep-simple-control-block-one-line'--no-keep-simple-function-one-line%--no-break-after-functioncall-lp\30--no-break-after-operator\15lua_format\vpylint\16diagnostics\15filtetypes\1\0\0\1\2\0\0\tjson\twith\rprettier\nblack\15formatting\rbuiltins\fnull-ls\frequire\t€€À™\4\0", "config", "null-ls.nvim")
@@ -308,20 +265,8 @@ try_loadstring("\27LJ\2\nƒ\2\0\0\a\0\16\0\0216\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2
 time([[Config for neorg]], false)
 -- Config for: nvim-lspconfig
 time([[Config for nvim-lspconfig]], true)
-try_loadstring("\27LJ\2\nª\1\0\0\4\0\a\0\f5\0\0\0006\1\1\0'\3\2\0B\1\2\0029\1\3\0015\3\4\0=\0\5\3B\1\2\0016\1\1\0'\3\6\0B\1\2\1K\0\1\0\15config/lsp\21ensure_installed\1\0\0\nsetup\23nvim-lsp-installer\frequire\1\6\0\0\fpyright\16sumneko_lua\nvimls\rtsserver\16terraformls\0", "config", "nvim-lspconfig")
+try_loadstring("\27LJ\2\n¸\1\0\0\4\0\a\0\f5\0\0\0006\1\1\0'\3\2\0B\1\2\0029\1\3\0015\3\4\0=\0\5\3B\1\2\0016\1\1\0'\3\6\0B\1\2\1K\0\1\0\15config/lsp\21ensure_installed\1\0\0\nsetup\23nvim-lsp-installer\frequire\1\a\0\0\fpyright\18rust_analyzer\16sumneko_lua\nvimls\rtsserver\16terraformls\0", "config", "nvim-lspconfig")
 time([[Config for nvim-lspconfig]], false)
--- Config for: octo.nvim
-time([[Config for octo.nvim]], true)
-try_loadstring("\27LJ\2\n2\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\tocto\frequire\0", "config", "octo.nvim")
-time([[Config for octo.nvim]], false)
--- Config for: neogen
-time([[Config for neogen]], true)
-try_loadstring("\27LJ\2\nD\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\fenabled\2\nsetup\vneogen\frequire\0", "config", "neogen")
-time([[Config for neogen]], false)
--- Config for: gitsigns.nvim
-time([[Config for gitsigns.nvim]], true)
-try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
-time([[Config for gitsigns.nvim]], false)
 if should_profile then save_profiles() end
 
 end)
