@@ -1,12 +1,14 @@
 -- Lsp Installer
-local lsp_installer = require("nvim-lsp-installer")
+-- local lsp_installer = require("nvim-lsp-installer")
 
 -- Include the servers you want to have installed by default below
-local servers = {
+--[[ local servers = {
   "pyright", "sumneko_lua", "vimls", "tsserver", "terraformls" -- "efm"
 }
-
-for _, name in pairs(servers) do
+ ]]
+--[[ local lspconfig = require("lspconfig")
+lspconfig.sumneko_lua.setup {} ]]
+--[[ for _, name in pairs(servers) do
   local server_is_found, server = lsp_installer.get_server(name)
   if server_is_found then
     if not server:is_installed() then
@@ -14,7 +16,7 @@ for _, name in pairs(servers) do
       server:install()
     end
   end
-end
+end ]]
 
 -- LSP settings
 local on_attach = function(_, bufnr)
@@ -63,7 +65,50 @@ capabilities.textDocument.completion.completionItem.resolveSupport = {
 
 -- Register a handler that will be called for all installed servers.
 -- Alternatively, you may also register handlers on specific server instances instead (see example below).
-lsp_installer.on_server_ready(function(server)
+
+local lspconfig = require("lspconfig")
+-- lspconfig.sumneko_lua.setup({})
+
+-- Include the servers you want to have installed by default below
+local servers = {
+  "pyright", "sumneko_lua", "vimls", "tsserver", "terraformls" -- "efm"
+}
+for _, lsp in pairs(servers) do
+  local opts = {
+    settings = {},
+    on_attach = on_attach,
+    flags = {debounce_text_changes = 150},
+    capabilities = capabilities
+  }
+  if lsp == "sumneko_lua" then
+    local runtime_path = vim.split(package.path, ';')
+    table.insert(runtime_path, "lua/?.lua")
+    table.insert(runtime_path, "lua/?/init.lua")
+    local Lua = {
+      runtime = {
+        -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+        version = 'LuaJIT',
+        -- Setup your lua path
+        path = runtime_path
+      },
+      diagnostics = {
+        -- Get the language server to recognize the `vim` global
+        globals = {'vim'}
+      },
+      workspace = {
+        -- Make the server aware of Neovim runtime files
+        library = vim.api.nvim_get_runtime_file("", true)
+      },
+      -- Do not send telemetry data containing a randomized but unique identifier
+      telemetry = {enable = false}
+    }
+    opts.settings.Lua = Lua
+  end
+
+  lspconfig[lsp].setup(opts)
+end
+
+--[[ lsp_installer.on_server_ready(function(server)
   local opts = {
     settings = {},
     on_attach = on_attach,
@@ -99,4 +144,4 @@ lsp_installer.on_server_ready(function(server)
   -- This setup() function is exactly the same as lspconfig's setup function.
   -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
   server:setup(opts)
-end)
+end) ]]

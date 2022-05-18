@@ -17,7 +17,6 @@ brew "docker-compose-completion"
 # Command line utils
 brew "fd"
 brew "fzf"
-brew "grep"
 brew "ripgrep"
 brew "the_silver_searcher"
 brew "tmux"

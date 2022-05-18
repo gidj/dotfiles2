@@ -3,11 +3,11 @@ set completeopt=menuone,noselect
 
 runtime ./plugins.lua
 
-runtime ./lspconfig.lua
-runtime ./lualine.lua
-runtime ./lspsaga.vim
-runtime ./treesitter.lua
-runtime ./telescope.vim
+" runtime ./lspconfig.lua
+" runtime ./lualine.lua
+" runtime ./lspsaga.vim
+" runtime ./treesitter.lua
+" runtime ./telescope.vim
 runtime ./cmp.lua
 runtime ./maps.vim
 runtime macros/sandwich/keymap/surround.vim
