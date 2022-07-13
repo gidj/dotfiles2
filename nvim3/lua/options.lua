@@ -15,6 +15,7 @@ vim.cmd("highlight NonText guifg=#4a4a59")
 vim.cmd("highlight SpecialKey guifg=#4a4a59")
 
 vim.cmd("set modeline")
+vim.cmd("set undofile")
 
 --[[ if has("persistent_undo")
   set undodir=~/.local/tmp/undodir/

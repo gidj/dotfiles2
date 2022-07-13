@@ -12,7 +12,7 @@ require('packer').startup(function()
     'hrsh7th/nvim-cmp',
     requires = {
       'hrsh7th/cmp-buffer', 'hrsh7th/cmp-emoji', 'hrsh7th/cmp-nvim-lsp', 'hrsh7th/cmp-nvim-lua',
-      'hrsh7th/cmp-path', 'hrsh7th/cmp-nvim-lsp-signature-help', -- 'saadparwaiz1/cmp_luasnip',
+      'hrsh7th/cmp-path', 'hrsh7th/cmp-nvim-lsp-signature-help', 'saadparwaiz1/cmp_luasnip',
       'onsails/lspkind-nvim', -- Enables icons on completions
       {'L3MON4D3/LuaSnip', requires = {'rafamadriz/friendly-snippets'}}
     }
@@ -22,7 +22,7 @@ require('packer').startup(function()
       "neovim/nvim-lspconfig",
       config = function()
         local servers = {
-          "pyright", "rust_analyzer", "sumneko_lua", "vimls", "tsserver", "terraformls"
+          "gopls", "pyright", "rust_analyzer", "sumneko_lua", "vimls", "tsserver", "terraformls"
         }
         require("nvim-lsp-installer").setup({
           ensure_installed = servers -- ensure these servers are always installed
@@ -107,6 +107,12 @@ require('packer').startup(function()
   -- Themes
   use {"ellisonleao/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
   use 'folke/tokyonight.nvim'
+  use {
+    "windwp/nvim-autopairs",
+    config = function()
+      require("nvim-autopairs").setup {}
+    end
+  }
 
   -- use 'ray-x/lsp_signature.nvim'
 
@@ -124,7 +130,6 @@ require('packer').startup(function()
  ]]
 
   -- use 'tami5/lspsaga.nvim'
-  -- use 'windwp/nvim-autopairs'
   -- use 'RRethy/vim-illuminate'
   -- use 'chrisbra/csv.vim'
   -- use 'projekt0n/github-nvim-theme'

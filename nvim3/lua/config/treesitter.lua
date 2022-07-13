@@ -22,7 +22,7 @@ treesitter.setup {
   highlight = {enable = true, disable = {}},
   indent = {enable = false, disable = {}},
   ensure_installed = {
-    "python", "json", "javascript", "hcl", "norg", "norg_meta", "norg_table", "go"
+    "python", "json", "javascript", "hcl", "norg", "norg_meta", "norg_table", "go", "yaml"
   },
   refactor = {
     highlight_definitions = {
