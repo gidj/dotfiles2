@@ -24,7 +24,7 @@ map("n", "<leader>sv", ":so $MYVIMRC<CR>", {silent=true})
 --
 map("n", "<Space>", "za")
 -- " Allow repeat in visual mode
-map("n", ".", ":norm.<CR>")
+map("v", ".", ":norm.<CR>")
 
 -- " Preserve indentation while pasting text from the OS X clipboard
 map("n", "<leader>p", ":set paste<CR>:put  *<CR>:set nopaste<CR>")
