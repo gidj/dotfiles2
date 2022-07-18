@@ -8,7 +8,6 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 
 # Add Python3
 path=(/usr/local/opt/python/libexec/bin $path)
-# path=(/usr/local/opt/python@3.8/bin $path)
 
 # Python user site-packages are here
 path=(~/.local/bin $path)
@@ -40,8 +39,8 @@ path=(/usr/local/sbin $path)
 # Add ~/bin
 # path=(~/bin $path)
 
-# Add Amazon Toolbox
-# path=(~/.toolbox/bin $path)
+# Go
+path=(~/go/bin $path)
 
 # Rust
 path=(~/.cargo/bin $path)
