@@ -12,24 +12,30 @@ local lspkind = require 'lspkind'
 
 -- nvim-cmp setup
 local cmp = require 'cmp'
-local cmp_buffer = require('cmp_buffer')
 cmp.setup {
+  view = {entries = {name = "custom", selection_order = "near_cursor"}},
   snippet = {
     expand = function(args)
       luasnip.lsp_expand(args.body)
     end
   },
-  formatting = {
-    format = lspkind.cmp_format {
-      with_text = false,
-      menu = {
-        buffer = '[Buff]',
-        nvim_lsp = '[LSP]',
-        nvim_lua = '[Vim]',
-        path = '[Path]',
-        luasnip = '[Snip]'
-      }
+  window = {
+    completion = {
+      winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
+      col_offset = -3,
+      side_padding = 0
     }
+  },
+  formatting = {
+    fields = {"kind", "abbr", "menu"},
+    format = function(entry, vim_item)
+      local kind = lspkind.cmp_format({mode = "symbol_text", preset = "codicons", maxwidth = 50})(entry, vim_item)
+      local strings = vim.split(kind.kind, "%s", {trimempty = true})
+      kind.kind = " " .. strings[1] .. " "
+      kind.menu = "    (" .. strings[2] .. ")"
+
+      return kind
+    end
   },
   mapping = {
     ['<C-p>'] = cmp.mapping.select_prev_item(),
@@ -68,15 +74,25 @@ cmp.setup {
     end, {"i", "s"})
   },
   sources = {
-    {name = 'nvim_lsp'}, {name = 'buffer'}, {name = 'norg'}, {name = 'path'},
-    {name = 'nvim_lsp_signature_help'}, {name = 'luasnip', options = {use_show_condition = false}}
+    {name = 'luasnip', options = {use_show_condition = false}}, {name = 'nvim_lsp'},
+    {name = 'buffer'}, {name = 'norg'}, {name = 'path'}, {name = 'nvim_lsp_signature_help'}
   },
   sorting = {
     comparators = {
-      function(...)
+      --[[ function(...)
         return cmp_buffer:compare_locality(...)
-      end
-      -- The rest of your comparators...
+      end, ]]
+  -- cmp.config.compare.score_offset, -- not good at all
+  cmp.config.compare.locality,
+  cmp.config.compare.recently_used,
+  cmp.config.compare.score, -- based on :  score = score + ((#sources - (source_index - 1)) * sorting.priority_weight)
+  cmp.config.compare.offset,
+  cmp.config.compare.order,
+  -- cmp.config.compare.scopes, -- what?
+  -- cmp.config.compare.sort_text,
+  -- cmp.config.compare.exact,
+  -- cmp.config.compare.kind,
+  -- cmp.config.compare.length, -- useless 
     }
   }
 }

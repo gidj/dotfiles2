@@ -17,6 +17,7 @@ require('packer').startup(function()
       {'L3MON4D3/LuaSnip', requires = {'rafamadriz/friendly-snippets'}}
     }
   }
+
   use {
     "williamboman/nvim-lsp-installer", {
       "neovim/nvim-lspconfig",
@@ -64,7 +65,7 @@ require('packer').startup(function()
           args = {
             "-i", "--indent-width", "2", "--tab-width", "2", "--no-use-tab", "--column-limit",
             "120", "--column-table-limit", "100", "--no-keep-simple-function-one-line",
-            "--no-chop-down-table", "--chop-down-kv-table",
+            "--no-chop-down-table", -- "--chop-down-kv-table",
             "--no-keep-simple-control-block-one-line", "--no-keep-simple-function-one-line",
             "--no-break-after-functioncall-lp", "--no-break-after-operator"
           }
