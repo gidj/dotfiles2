@@ -1,3 +1,4 @@
+# /* vim: set filetype=zsh : */ 
 # Start configuration added by Zim install {{{
 #
 # This is not sourced during shell startup, and it's only used to configure the
@@ -33,7 +34,7 @@ zmodule homebrew
 zmodule duration-info
 # Exposes git repository status information to prompts, used by asciiship.
 zmodule git-info
-# A heavily reduced, ASCII-only version of the Spaceship and Starship prompts.
+# Themes
 # zmodule asciiship
 zmodule sindresorhus/pure --source async.zsh --source pure.zsh
 
@@ -54,11 +55,11 @@ zmodule completion
 
 # Fish-like syntax highlighting for Zsh.
 # zsh-users/zsh-syntax-highlighting must be sourced after completion
-zmodule zsh-users/zsh-syntax-highlighting
+# zmodule zsh-users/zsh-syntax-highlighting
+zmodule zdharma-continuum/fast-syntax-highlighting
 # Fish-like history search (up arrow) for Zsh.
 # zsh-users/zsh-history-substring-search must be sourced after zsh-users/zsh-syntax-highlighting
 zmodule zsh-users/zsh-history-substring-search
 # Fish-like autosuggestions for Zsh.
 zmodule zsh-users/zsh-autosuggestions
 # }}} End configuration added by Zim install
-
