@@ -5,6 +5,8 @@ brew "postgresql"
 brew "terraform"
 
 # Dev stuff
+brew "asdf"
+brew "exa"
 brew "direnv"
 brew "sonar-scanner"
 brew "openjdk@11"
