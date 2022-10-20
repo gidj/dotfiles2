@@ -44,7 +44,6 @@ vim.cmd("set mouse=a")
 vim.cmd("set termguicolors")
 vim.cmd("set background=dark") -- " Set the background
 
-vim.g.tokyonight_style = 'night'
-vim.cmd("colorscheme tokyonight")
+vim.cmd("colorscheme tokyonight-night")
 
 vim.cmd("set ts=4 sts=4 sw=4 et")
