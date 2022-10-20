@@ -114,29 +114,4 @@ require('packer').startup(function()
       require("nvim-autopairs").setup {}
     end
   }
-
-  -- use 'ray-x/lsp_signature.nvim'
-
-  --[[ use {
-    "folke/trouble.nvim",
-    requires = "kyazdani42/nvim-web-devicons",
-    config = function()
-      require("trouble").setup {
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
-      }
-    end
-  }
- ]]
-
-  -- use 'tami5/lspsaga.nvim'
-  -- use 'RRethy/vim-illuminate'
-  -- use 'chrisbra/csv.vim'
-  -- use 'projekt0n/github-nvim-theme'
-  -- use 'Mangeshrex/uwu.vim'
-  -- use 'marko-cerovac/material.nvim'
-  -- use 'shaunsingh/moonlight.nvim'
-  -- use 'rebelot/kanagawa.nvim'
-  -- use 'EdenEast/nightfox.nvim'
 end)

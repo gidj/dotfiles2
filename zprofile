@@ -1,7 +1,15 @@
 # Python's Poetry
 export POETRY_VIRTUALENVS_IN_PROJECT="true"
+export PIPENV_VENV_IN_PROJECT=true
+export PYTHONUSERBASE="$HOME/.local"
 
 path=(~/.poetry/bin $path)
+
+# Add Python3
+path=(/usr/local/opt/python/libexec/bin $path)
+
+# Python user site-packages are here
+path=(~/.local/bin $path)
 
 # Add Homebrew sbin
 path=(/usr/local/sbin $path)
