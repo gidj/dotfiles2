@@ -10,3 +10,4 @@ poetry.lock
 Pipfile*
 ignore
 .terraform.lock.hcl
+.tool-versions
