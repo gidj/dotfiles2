@@ -61,7 +61,7 @@ require('packer').startup(function()
       local sources = {
         null_ls.builtins.formatting.black,
         null_ls.builtins.formatting.prettier.with({filtetypes = {"json"}}),
-        null_ls.builtins.diagnostics.pylint, null_ls.builtins.formatting.lua_format.with({
+        --[[ null_ls.builtins.diagnostics.pylint, null_ls.builtins.formatting.lua_format.with({
           args = {
             "-i", "--indent-width", "2", "--tab-width", "2", "--no-use-tab", "--column-limit",
             "120", "--column-table-limit", "100", "--no-keep-simple-function-one-line",
@@ -69,7 +69,7 @@ require('packer').startup(function()
             "--no-keep-simple-control-block-one-line", "--no-keep-simple-function-one-line",
             "--no-break-after-functioncall-lp", "--no-break-after-operator"
           }
-        })
+        }) ]]
       }
       require"null-ls".setup({
         sources = sources,

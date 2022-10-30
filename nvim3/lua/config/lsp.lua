@@ -11,9 +11,7 @@ local on_attach = function(_, bufnr)
 end
 --
 -- nvim-cmp supports additional completion capabilities
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
-
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 capabilities.textDocument.completion.completionItem.resolveSupport = {
     properties = { "documentation", "detail", "additionalTextEdits" }
@@ -21,7 +19,14 @@ capabilities.textDocument.completion.completionItem.resolveSupport = {
 
 local lspconfig = require("lspconfig")
 local servers = {
-    "pyright", "rust_analyzer", "sumneko_lua", "vimls", "tsserver", "terraformls", "gopls", "golangci_lint_ls"
+    "golangci_lint_ls",
+    "gopls",
+    "pyright",
+    "rust_analyzer",
+    "sumneko_lua",
+    "terraformls",
+    "tsserver",
+    "vimls",
 }
 
 for _, lsp in pairs(servers) do
