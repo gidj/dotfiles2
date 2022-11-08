@@ -24,5 +24,3 @@ treesitter.setup {
         }
     }
 }
-
-parser_configs.markdown.used_by = "octo" -- These two are optional and provide syntax highlighting

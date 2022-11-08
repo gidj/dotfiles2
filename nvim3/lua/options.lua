@@ -1,9 +1,5 @@
 vim.cmd("set completeopt=menuone,noselect")
 
--- vim.g.do_filetype_lua = 1
--- disable filetype.vim
--- vim.g.did_load_filetypes = 0
-
 vim.cmd("runtime macros/sandwich/keymap/surround.vim")
 
 vim.cmd("set clipboard=unnamed")
@@ -16,11 +12,6 @@ vim.cmd("highlight SpecialKey guifg=#4a4a59")
 
 vim.cmd("set modeline")
 vim.cmd("set undofile")
-
---[[ if has("persistent_undo")
-  set undodir=~/.local/tmp/undodir/
-  set undofile
-endif ]]
 
  -- " Vertical split to the right
 vim.cmd("set splitright")
@@ -40,9 +31,6 @@ vim.cmd("set cursorline ")
 
  -- " Turn on mouse mode, for terminals that can use it
 vim.cmd("set mouse=a")
-
---[[ vim.cmd("set termguicolors")
-vim.cmd("set background=dark") -- " Set the background ]]
 
 vim.cmd("colorscheme tokyonight-night")
 
