@@ -20,6 +20,9 @@ path=(~/go/bin $path)
 # Rust
 path=(~/.cargo/bin $path)
 
+# Amazon
+path=(~/.toolbox/bin $path)
+
 export VISUAL=nvim
 export EDITOR=nvim
 
@@ -38,3 +41,10 @@ alias gla="git log --all --graph"
 alias ssh='TERM=screen-256color ssh'
 
 export HOMEBREW_NO_AUTO_UPDATE=1
+
+# Set PATH, MANPATH, etc., for Homebrew.
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+SITE_FUNCTIONS=$(echo /opt/homebrew/Cellar/env-improvement/*/share/zsh/site-functions | awk '{print $1}')
+fpath=($SITE_FUNCTIONS $fpath)
+autoload -U $SITE_FUNCTIONS/*(:t)
