@@ -1,3 +1,19 @@
+eval "$(brew shellenv)"
+
+FPATH="${HOMEBREW_PREFIX}/share/zsh/site-functions:${FPATH}"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+source "${HOMEBREW_PREFIX}/opt/asdf/libexec/asdf.sh"
+source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
+
+# Brazil completion
+SITE_FUNCTIONS=$(echo ${HOMEBREW_CELLAR}/env-improvement/*/share/zsh/site-functions(N) | awk '{print $1}')
+fpath=($SITE_FUNCTIONS $fpath)
+autoload -U $SITE_FUNCTIONS/*(:t)
+
+# export JAVA_HOME="/Library/Java/JavaVirtualMachines/amazon-corretto-18.jdk/Contents/Home"
+
 # Python's Poetry
 export POETRY_VIRTUALENVS_IN_PROJECT="true"
 export PIPENV_VENV_IN_PROJECT=true
@@ -42,9 +58,3 @@ alias ssh='TERM=screen-256color ssh'
 
 export HOMEBREW_NO_AUTO_UPDATE=1
 
-# Set PATH, MANPATH, etc., for Homebrew.
-eval "$(/opt/homebrew/bin/brew shellenv)"
-
-SITE_FUNCTIONS=$(echo /opt/homebrew/Cellar/env-improvement/*/share/zsh/site-functions | awk '{print $1}')
-fpath=($SITE_FUNCTIONS $fpath)
-autoload -U $SITE_FUNCTIONS/*(:t)
