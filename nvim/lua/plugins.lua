@@ -54,7 +54,6 @@ require('packer').startup(function()
     use 'nvim-lua/popup.nvim'
     use 'justinmk/vim-dirvish'
     use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } }
-
     use {
         'jose-elias-alvarez/null-ls.nvim',
         requires = { 'nvim-lua/plenary.nvim' },
