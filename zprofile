@@ -1,3 +1,6 @@
+# This needs to be present for Apple Silicon
+path=(/opt/homebrew/bin $path)
+
 eval "$(brew shellenv)"
 
 FPATH="${HOMEBREW_PREFIX}/share/zsh/site-functions:${FPATH}"
