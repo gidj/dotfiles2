@@ -10,3 +10,11 @@ poetry.lock
 ignore
 .terraform.lock.hcl
 .tool-versions
+
+# Amazon 
+build
+# Bemol
+.classpath
+.factorypath
+.project
+.settings

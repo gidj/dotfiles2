@@ -1,7 +1,3 @@
-cask "font-iosevka"
-cask "font-iosevka-slab"
-
-brew "postgresql"
 brew "terraform"
 
 # Dev stuff
@@ -9,12 +5,10 @@ brew "asdf"
 brew "exa"
 brew "direnv"
 brew "sonar-scanner"
-brew "openjdk@11"
 brew "exercism"
 
 # Docker
 brew "docker-completion"
-brew "docker-compose-completion"
 
 # Command line utils
 brew "fd"
@@ -28,7 +22,6 @@ brew "zsh"
 # Git
 brew "gh"
 brew "git"
-brew "lazygit"
 
 # Languages
 brew "go"
