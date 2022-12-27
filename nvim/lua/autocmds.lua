@@ -3,8 +3,6 @@ local autocmd = vim.api.nvim_create_autocmd -- Create autocommand
 
 -- " autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 -- " Javascript, JSX
-autocmd('Filetype', { pattern = { "javascript", "javascript.jsx", "typescript.tsx" },
-    command = "setlocal ts=2 sts=2 sw=2 et" })
 --[[ -- " Markdown
   autocmd FileType markdown setlocal spell spelllang=en_us
   -- " YAML
@@ -44,6 +42,9 @@ autocmd('Filetype', { pattern = { "javascript", "javascript.jsx", "typescript.ts
         autocmd!
         autocmd BufWritePost plugins.lua source <afile> | PackerCompile
     augroup END ]]
+
+--[[ autocmd('Filetype', { pattern = { "javascript", "javascript.jsx", "typescript.tsx" },
+    command = "setlocal ts=2 sts=2 sw=2 et" }) ]]
 
 augroup("packerUseConfig", { clear = true })
 autocmd('BufWritePost', { group = "packerUseConfig", pattern = "plugins.lua", command = "source <afile> | PackerCompile" })

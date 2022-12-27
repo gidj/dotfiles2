@@ -25,6 +25,7 @@ local lspkind = require 'lspkind'
 local config = lsp.defaults.cmp_mappings
 
 local select_opts = {behavior = cmp.SelectBehavior.Select}
+local luasnip = require("luasnip")
 local cmp_config = lsp.defaults.cmp_config({
     formatting = {
         fields = { "kind", "abbr", "menu" },

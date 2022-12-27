@@ -13,6 +13,7 @@ ignore
 
 # Amazon 
 build
+tst/*/generated-op-config
 # Bemol
 .classpath
 .factorypath
