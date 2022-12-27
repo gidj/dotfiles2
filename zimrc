@@ -24,7 +24,7 @@ zmodule fzf
 zmodule asdf
 zmodule exa
 zmodule homebrew
-
+zmodule kiesman99/zim-zoxide
 
 #
 # Prompt
@@ -37,7 +37,6 @@ zmodule git-info
 # Themes
 # zmodule asciiship
 zmodule sindresorhus/pure --source async.zsh --source pure.zsh
-
 
 #
 # Completion

@@ -4,19 +4,20 @@ brew "terraform"
 brew "asdf"
 brew "exa"
 brew "direnv"
-brew "sonar-scanner"
 brew "exercism"
 
 # Docker
 brew "docker-completion"
 
 # Command line utils
+brew "bat"
 brew "fd"
 brew "fzf"
 brew "ripgrep"
 brew "the_silver_searcher"
 brew "tmux"
 brew "tree"
+brew "zoxide"
 brew "zsh"
 
 # Git
@@ -34,7 +35,5 @@ brew "gcc" # required for some tree-sitter grammars
 brew "tree-sitter"
 
 # Python
-brew "pyenv"
-brew "pyenv-virtualenv"
 brew "python"
 brew "pipx"
